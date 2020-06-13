@@ -1,3 +1,26 @@
+// import colours from PDS design system
+@import '../Design_System_SASS/sass/core/colours.scss';
+
+
+.paraBusinessTodayChamberHeading {
+    text-transform: uppercase;
+    // margin-top: 38px;
+    // line-height: 1.1em;
+    // padding: 4px 0 3px 4.7%;
+    // margin-top: 0;
+    background-color: $colour-grey-2;
+    // margin-bottom: 1em;
+    // line-height: 1.5em;
+    // margin-right: -4.7%;
+    padding-left: 4.7%;
+    // text-indent: -4.7%;
+    // font-weight: 700;
+    color: $colour-white;
+    // vertical-align: .3%;
+    // font-size: 1.3em;
+    // margin-left: -4.7%;
+}
+
 /*  ---- CSS for anchor link  ---- */
 
 /* Change anchor link to white on headings */
@@ -27,7 +50,7 @@
     line-height: 1;
     padding-left: 1em;
     padding-right: 1em;
-    font-size: 0.9em;
+    font-size: 0.7em;
     vertical-align:middle;
     /*hide unless hover on parent*/
     display: none;
@@ -39,3 +62,4 @@
 :hover > .anchor-link{display: inline; text-decoration: none;}
 
 /* ---- End of CSS for anchor link ---- */
+

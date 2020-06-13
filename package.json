@@ -1,0 +1,24 @@
+{
+  "name": "business-papers",
+  "version": "1.0.0",
+  "description": "Redesign of House of Commons business papers pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "node-sass sass/businesspapers.scss css/businesspapers.css -w & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markfawcett/business-papers.git"
+  },
+  "author": "Mark Fawcett",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/markfawcett/business-papers/issues"
+  },
+  "homepage": "https://github.com/markfawcett/business-papers#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.14.1"
+  }
+}

@@ -1,3 +1,6 @@
+# the font is not an open font so maybe don't put on github etc.
+fonts/
+
 # mac junk
 .DS_Store
 
@@ -8,8 +11,6 @@
 *.sass.map
 *.scss.map
 
-# the font is not an open font so maybe don't put on github etc.
-fonts/
 
 ################################
 
