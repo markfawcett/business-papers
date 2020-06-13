@@ -1,0 +1,57 @@
+footer {
+    background-color: $colour-deep-purple;
+    padding: 10px 0;
+    color: $colour-white;
+    flex-shrink: 0;
+    @include font-size-milli;
+
+    a {
+        color: $colour-white;
+
+        &:hover {
+            color: $colour-white;
+        }
+
+        &:focus {
+            color: $colour-deep-purple;
+        }
+    }
+
+    .secondary {
+        margin-top: 5px;
+
+        @include media-breakpoint-up(md) {
+            margin-top: 0;
+            text-align: right;
+        }
+
+        a {
+            display: block;
+            margin-bottom: 5px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+                margin-right: 23px;
+                margin-bottom: 0;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+    @include media-print {
+        background-color: $colour-white;
+        color: $colour-deep-purple;
+        border-top: 1px solid $colour-grey-4;
+
+        a {
+            color: $colour-deep-purple;
+        }
+    }
+}

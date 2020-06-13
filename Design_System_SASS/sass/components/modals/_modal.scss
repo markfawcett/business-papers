@@ -1,0 +1,52 @@
+﻿.modal {
+    .modal-content {
+        border-radius: 0;
+        box-shadow: none;
+        border: none;
+
+        .modal-header {
+            padding: 15px 20px;
+            background-color: $colour-deep-purple-light;
+            color: $colour-white;
+            border-radius: 0;
+
+            .modal-title {
+                @include font-size-epsilon;
+                color: $colour-white;
+                margin-top: 1px;
+            }
+
+            .close {
+                @include font-size-base;
+                font-weight: normal;
+                padding: 0;
+                opacity: 1;
+                text-shadow: none;
+                text-decoration: none;
+                margin: 1px 0 0 0;
+                color: $colour-white;
+
+                &:after {
+                    @include icon-close;
+                    font-size: 1.1rem;
+                    margin-left: 1px;
+                    vertical-align: -1px;
+                }
+
+                &:focus {
+                    background-color: transparent;
+                    @include focus-highlight-border-2;
+                }
+            }
+        }
+
+        .modal-body {
+            padding: 15px 20px;
+            color: $colour-grey-1;
+
+            strong {
+                color: $colour-deep-purple;
+            }
+        }
+    }
+}

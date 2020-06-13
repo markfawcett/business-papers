@@ -1,0 +1,55 @@
+﻿form {
+    label {
+        @include font-bold();
+    }
+
+    input[type=text],
+    input[type=search],
+    select {
+        @extend .form-control;
+        border-radius: 0;
+        border: 2px solid $colour-grey-4;
+        padding: 9px 13px;
+        height: 49px;
+        @include font-size-base();
+        background: $colour-white;
+        box-shadow: none;
+
+        &:focus {
+            border-color: $colour-mint;
+            box-shadow: none;
+            border-width: 3px;
+            padding: 8px 12px;
+        }
+    }
+
+    .form-group {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &.form-slim {
+        input[type=text],
+        input[type=search],
+        select {
+            padding: 5px 13px;
+            height: 43px;
+
+            &:focus {
+                border-width: 3px;
+                padding: 4px 12px;
+            }
+        }
+
+        .input-group-append {
+            .btn {
+                padding: 5px 17px 4px 17px;
+
+                @include media-breakpoint-up(md) {
+                    min-width: 60px;
+                }
+            }
+        }
+    }
+}

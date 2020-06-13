@@ -1,0 +1,46 @@
+﻿@mixin focus-highlight-border-5() {
+    @include focus-highlight-border(5);
+}
+
+@mixin focus-highlight-border-4() {
+    @include focus-highlight-border(4);
+}
+
+@mixin focus-highlight-border-3() {
+    @include focus-highlight-border(3);
+}
+
+@mixin focus-highlight-border-2() {
+    @include focus-highlight-border(2);
+}
+
+@mixin focus-highlight-border($thickness) {
+    box-shadow: 0 0 0 #{$thickness}px $colour-mint;
+    outline: none;
+}
+
+@mixin reading-width() {
+    @include media-breakpoint-up(md) {
+        max-width: 75%;
+    }
+}
+
+@mixin centre-vertically() {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+}
+
+@mixin media-print() {
+    @media print { 
+        @content;
+    }
+}
+
+@mixin shadow-border {
+    box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.08), 0 1px 3px 1px rgba(60, 64, 67, 0.16);
+}
+
+
+

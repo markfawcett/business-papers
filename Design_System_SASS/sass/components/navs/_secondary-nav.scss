@@ -1,0 +1,216 @@
+﻿.secondary-nav {
+    $child-spacing: 32px;
+    @include font-size-milli;
+
+    $start: 0;
+    $end: 9;
+
+    .secondary-nav-final-element {
+        border-bottom: none;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &[aria-expanded=true] {
+        .heading {
+            border-bottom-color: transparent;
+            margin-bottom: 5px;
+        }
+        .toggle {
+            &:before {
+                @include icon-chevron-up;
+                color: $colour-purple;
+            }
+            .show-button {
+                display: none;
+            }
+        }
+    }
+
+    &[aria-expanded=false] {
+        .toggle {
+            &:before {
+                @include icon-chevron-down;
+                color: $colour-purple;
+            }
+            .hide-button {
+                display: none;
+            }
+        }
+    }
+
+    .heading {
+        margin-bottom: 20px;
+        border-bottom: 2px solid $colour-purple;
+        padding-bottom: 8px;
+        padding-right: 70px;
+        position: relative;
+
+        @include media-breakpoint-up(lg) {
+            border-bottom: none;
+            padding-bottom: 0;
+            padding-right: 0;
+        }
+
+        h2 {
+            font-weight: normal;
+            margin-bottom: 0;
+            @include font-size-epsilon;
+            @include media-breakpoint-up(lg) {
+                @include font-bold;
+                margin-bottom: 18px;
+                @include font-size-delta;
+            }
+        }
+
+        .toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+
+            a {
+                color: $colour-purple;
+            }
+
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
+
+            &:before {
+                display: inline-block;
+                margin-right: 6px;
+                vertical-align: 0;
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .items {
+        border-left: 4px solid $colour-purple;
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block !important;
+        }
+
+        ul.secondary-nav-level-0 {
+            margin-bottom: 0;
+        }
+
+        @for $i from $start through $end {
+            ul.secondary-nav-level-#{$i} {
+                li.active{
+                    > a 
+                    {
+                        .indicator-box{
+                            left: #{$i*$child-spacing*-1 - 3};
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        ul {
+            padding-left: $child-spacing;
+
+            li {
+
+                a {
+                    &:focus {
+                        margin-left: -$child-spacing;
+                        padding-left: $child-spacing;
+                        margin-top: -1px;
+                        margin-bottom: -1px;
+                        padding-top: 9px;
+                        padding-bottom: 8px;
+
+                        &:after {
+                            top: 13px;
+                        }
+                    }
+                }
+            }
+        }
+
+        li {
+            a {
+                display: block;
+                padding: 8px 35px 7px 0;
+                text-decoration: none;
+                border-bottom: 1px dotted $colour-grey-4;
+                position: relative;
+
+                .icon-box {
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    width: 18px;
+                    position: absolute;
+
+                    .icon {
+                        color: $colour-deep-purple-light;
+                        opacity: 0.8;
+                        @include centre-vertically;
+
+                        &:after {
+                            @include icon-chevron-right;
+                            font-size: 0.8rem;
+                            line-height: 0.8rem;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                > a {
+                    pointer-events: none;
+                    @include font-bold;
+                    color: $colour-purple;
+
+                    &:after {
+                        display: none;
+                    }
+
+                    .indicator-box {
+                        top: 0;
+                        bottom: 0;
+                        width: 20px;
+                        position: absolute;
+
+                        .indicator {
+                            color: $colour-purple;
+                            @include centre-vertically;
+
+                            &:after {
+                                @include icon-caret-right;
+                                font-size: 2rem;
+                                line-height: 2rem;
+                            }
+                        }
+                    }
+                    .icon-box {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    > .items {
+        > ul {
+            > li {
+                > a {
+                    // Padding on root
+                    padding-left: 18px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,16 @@
+﻿.modal {
+    &.modal-help {
+        .modal-header {
+            background-color: $colour-white;
+            color: $colour-deep-purple;
+
+            .modal-title {
+                color: $colour-deep-purple;
+            }
+
+            .close {
+                color: $colour-deep-purple;
+            }
+        }
+    }
+}

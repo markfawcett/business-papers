@@ -1,0 +1,79 @@
+header {
+    background-color: $colour-deep-purple;
+    padding: 5px 0;
+    color: $colour-white;
+
+    @include media-breakpoint-up(md) {
+        padding: 20px 0;
+    }
+
+    a.parliament-home {
+        display: inline-block;
+        padding: 2px;
+
+        svg {
+            width: 100px;
+
+            @include media-breakpoint-up(md) {
+                width: 159px;
+            }
+        }
+    }
+
+    a {
+        color: $colour-white;
+        text-decoration: none;
+
+        &:focus {
+            color: $colour-deep-purple;
+        }
+
+        &:hover {
+            color: $colour-white;
+            text-decoration: none;
+
+            &:focus {
+                color: $colour-deep-purple;
+            }
+        }
+    }
+
+    .product-header {
+        border-top: 1px solid $colour-deep-purple-light;
+        padding: 15px 0 10px 0;
+        margin-top: 5px;
+
+        @include media-breakpoint-up(md) {
+            padding: 20px 0 0 0;
+            margin-top: 20px;
+        }
+
+        .title {
+            @include font-size-beta();
+            @include font-bold();
+            color: $colour-white;
+        }
+    }
+
+    @include media-print {
+        background-color: $colour-white;
+        border-bottom: 1px solid $colour-grey-4;
+
+        a.parliament-home {
+            svg {
+                path {
+                    fill: $colour-deep-purple;
+                }
+            }
+        }
+
+        .product-header {
+            border-top-color: $colour-grey-4;
+
+            .title {
+                color: $colour-deep-purple;
+                text-decoration: none;
+            }
+        }
+    }
+}

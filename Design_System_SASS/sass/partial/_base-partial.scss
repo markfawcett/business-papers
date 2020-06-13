@@ -1,0 +1,15 @@
+﻿// This file is used where you need to apply the design system to a partial section of a page.
+// Should be combined with importing the components inside the .apply-design-system CSS class.
+.apply-design-system {
+    color: $colour-grey-2;
+    @include national-regular-force;
+    @include font-size-base;
+
+    strong {
+        @include font-bold();
+    }
+}
+
+html {
+    font-size: 16px; // Reset to browser base
+}

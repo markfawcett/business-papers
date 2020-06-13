@@ -1,0 +1,63 @@
+$font-path: '~@pds-design-system/core/src/fonts/' !default;;
+$font-weight-bold: 500;
+$font-face-output: true !default;
+
+// We can disable font face output if we need to - useful in some scenarios where the font may already 
+// be loaded, etc.
+@if $font-face-output {
+    @font-face {
+        font-family: 'National';
+        src: url("#{$font-path}/National-LFS-Book.eot");
+        src: url("#{$font-path}/National-LFS-Book.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/National-LFS-Book.woff2") format("woff2"), url("#{$font-path}/National-LFS-Book.woff") format("woff")
+    }
+
+    @font-face {
+        font-family: 'National';
+         src: url("#{$font-path}/National-LF-BookItalic.eot");
+         src: url("#{$font-path}/National-LF-BookItalic.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/National-LF-BookItalic.woff2") format("woff2"), url("#{$font-path}/National-LF-BookItalic.woff") format("woff");
+        font-style: italic
+     }
+
+    @font-face {
+        font-family: 'National';
+        src: url("#{$font-path}/National-LFS-Semibold.eot");
+        src: url("#{$font-path}/National-LFS-Semibold.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/National-LFS-Semibold.woff2") format("woff2"), url("#{$font-path}/National-LFS-Semibold.woff") format("woff");
+        font-weight: 500
+    }
+
+    @font-face {
+        font-family: 'National';
+        src: url("#{$font-path}/National-LF-SemiboldItalic.eot");
+        src: url("#{$font-path}/National-LF-SemiboldItalic.eot?#iefix") format("embedded-opentype"), url("#{$font-path}/National-LF-SemiboldItalic.woff2") format("woff2"), url("#{$font-path}/National-LF-SemiboldItalic.woff") format("woff");
+        font-weight: $font-weight-bold;
+        font-style: italic
+    }
+}
+
+@mixin national-regular() {
+    font-family: National, Arial, Helvetica, sans-serif;
+}
+
+@mixin national-bold() {
+    @include national-regular();
+    font-weight: $font-weight-bold;
+}
+
+@mixin national-italic() {
+    @include national-regular();
+    font-style: italic;
+}
+
+@mixin national-bold-italic() {
+    @include national-regular();
+    font-style: italic;
+    @include font-bold();
+}
+
+@mixin font-bold() {
+    font-weight: $font-weight-bold;
+}
+
+strong {
+    @include font-bold();
+}

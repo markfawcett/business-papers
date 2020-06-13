@@ -1,0 +1,28 @@
+﻿.attention-banner {
+    padding: 7px 0 8px 0;
+    background-color: $colour-warning-light;
+    color: $colour-grey-1;
+    font-size: 16px;
+
+    &.attention-banner-dismissable {
+        .container {
+            position: relative;
+            padding-right: 80px;
+
+            a {
+                color: $colour-grey-1;
+
+                &:focus {
+                    color: $colour-deep-purple;
+                }
+
+                &.dismiss-button {
+                    position: absolute;
+                    top: 0;
+                    right: 15px;
+                    @include font-bold;
+                }
+            }
+        }
+    }
+}

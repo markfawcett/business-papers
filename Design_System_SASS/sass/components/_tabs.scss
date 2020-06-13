@@ -1,0 +1,226 @@
+﻿$tab-border-colour: lighten($colour-grey-4, 8%);
+// iOS transparency fix: https://css-tricks.com/thing-know-gradients-transparent-black/
+$colour-tab-transparency: rgba($colour-white, 0);
+
+.tabs {
+    position: relative;
+
+    &:first-child,
+    &.reduced-gutted {
+        margin-top: -12px;
+    }
+
+    &.force-gutter {
+        margin-top: 0;
+    }
+
+    > ul.nav-tabs {
+        @extend .nav;
+        @extend .nav-tabs;
+        @extend .nav-fill;
+        margin-bottom: 20px;
+        border-bottom: 1px solid $tab-border-colour;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -ms-overflow-style: scrollbar;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        margin-right: -15px;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            background: linear-gradient(to left, $colour-white, $colour-tab-transparency);
+            right: -15px;
+            top: 0;
+            bottom: 0;
+            width: 20px;
+            height: 42px;
+            pointer-events: all;
+        }
+
+        &:after {
+            display: inline-block;
+            width: 20px;
+            height: 10px;
+            content: '-';
+            visibility: hidden;
+        }
+
+        @include ie11-override {
+            > li {
+                > a {
+                    &.active {
+                        // IE11 has weird issues recalulating width with bold text, so disable for IE11.
+                        font-weight: normal !important;
+                    }
+                }
+            }
+        }
+
+        > li {
+            @extend .nav-item;
+            display: inline-block;
+            margin-top: 6px;
+            margin-right: 25px;
+            margin-bottom: -1px;
+            flex: none;
+
+            > a {
+                @extend .nav-link;
+                color: $colour-deep-purple;
+                border-radius: 0;
+                border: none;
+                border-bottom: 1px solid $tab-border-colour;
+                text-decoration: none;
+                text-align: center;
+                white-space: nowrap;
+                padding: 2px 0 4px 0;
+                border-bottom-color: transparent;
+                border-bottom-width: 4px;
+                display: inline-block;
+                width: auto;
+
+                &.active {
+                    background: $colour-white;
+                    border-bottom-color: $colour-purple;
+                    @include font-bold;
+                    border-bottom-width: 4px;
+                    cursor: default;
+                }
+
+                &:focus:not(.active) {
+                    background-color: $colour-mint;
+                }
+
+                &:hover:not(.active) {
+                    border-bottom-color: $tab-border-colour;
+                }
+
+                .info {
+                    display: block;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+
+    .tab-content {
+        display: block;
+    }
+
+    &.tabs-stacked-md {
+        > ul.nav-tabs {
+            padding: 0 !important;
+            margin-right: -15px;
+            width: auto;
+            position: static;
+
+            @include media-breakpoint-up(md) {
+                margin-right: 0;
+                padding: 0;
+
+                &:after,
+                &:before {
+                    display: none;
+                }
+            }
+        }
+
+        .tab-content {
+            padding: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 0;
+
+            &.tabs-stacked-md-full-page {
+                margin: -20px;
+
+                ul.nav-tabs {
+                    border: none;
+
+                    > li {
+                        &:last-child {
+                            border-bottom: 1px solid $tab-border-colour;
+                        }
+                    }
+                }
+
+                .tab-content {
+                    border-color: transparent;
+                    border-left-color: $tab-border-colour;
+                }
+            }
+
+            > ul.nav-tabs {
+                @extend .col-md-3;
+                padding: 0;
+                display: block;
+                border-bottom-color: transparent;
+                margin-bottom: 0;
+                border: 1px solid $tab-border-colour;
+
+                > li {
+                    margin-right: 0;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    display: block;
+                    border-bottom: 1px solid $tab-border-colour;
+
+                    > a {
+                        border-left: 5px solid transparent;
+                        padding: 20px;
+                        display: block;
+                        background-color: $colour-grey-6;
+                        border-bottom: none;
+                        white-space: normal;
+
+                        &.active {
+                            border-left-color: $colour-purple;
+                            background-color: $colour-white;
+                            font-weight: $font-weight-bold !important;
+                        }
+
+                        &:hover:not(.active) {
+                            border-left-color: $colour-grey-4;
+                        }
+                    }
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+            }
+
+            .tab-content {
+                @extend .col-md-9;
+                padding: 20px;
+                border: 1px solid $tab-border-colour;
+                border-top: none;
+
+                @include media-breakpoint-up(md) {
+                    border: 1px solid $tab-border-colour;
+                    margin-left: -1px;
+                }
+
+                h1, h2, h3, h4, h5 {
+                    max-width: 100%;
+                }
+
+                > .heading {
+                    margin-bottom: 15px;
+
+                    h1, h2, h3, h4, h5 {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+}

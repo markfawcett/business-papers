@@ -1,0 +1,556 @@
+.card {
+    background-color: $colour-grey-4;
+    padding: 0; // Padding only in case we want to style up a background between the outer and inner element
+    margin-bottom: 15px;
+    position: relative;
+    display: block;
+    border: none;
+    border-radius: 0;
+    @include shadow-border;
+
+    @include media-print {
+        border: 1px solid $colour-grey-4;
+        box-shadow: none;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .card-inner {
+        padding: 10px 15px 10px 15px;
+        border-left: 6px solid $colour-deep-purple-light;
+        position: relative;
+        background-color: $colour-white;
+        height: calc(100%);
+        min-height: 80px;
+
+        .content {
+            strong {
+                color: $colour-deep-purple;
+            }
+
+            .primary-info {
+                @include font-bold;
+                color: $colour-deep-purple;
+                @include font-size-epsilon;
+
+                .light {
+                    font-weight: normal;
+                    color: $colour-grey-2;
+                }
+            }
+
+            .text {
+                margin-top: 8px;
+                @include font-size-milli;
+                line-height: $line-height-milli * 1.15;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                .title {
+                    margin-bottom: 3px;
+                    @include font-bold;
+                }
+
+                p {
+                    margin-bottom: 2px;
+                }
+
+                &.text-spaced {
+                    p {
+                        margin-bottom: 6px;
+
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+
+                &.text-secondary {
+                    color: $colour-grey-3;
+                }
+            }
+
+            .list {
+                @include font-size-milli;
+                color: lighten($colour-deep-purple-light, 5%);
+                margin-top: 8px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                .item {
+                    margin-top: 3px;
+
+                    .label {
+                        color: $colour-deep-purple;
+
+                        &:after {
+                            display: inline-block;
+                            font-family: "Font Awesome 5 Free";
+                            font-weight: 900;
+                            font-size: 0.95rem;
+                            vertical-align: -1px;
+                            margin: 0 2px 0 7px;
+                            content: "\f0da";
+                        }
+                    }
+                }
+
+                + .list {
+                    margin-top: 0;
+                }
+            }
+
+            .secondary-info {
+                margin-top: 4px;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            .tertiary-info {
+                margin-top: 3px;
+                color: $colour-grey-2;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+
+            .infographic {
+                border-top: 1px dotted $colour-grey-4;
+                margin-top: 10px;
+                padding-top: 10px;
+                margin-left: -15px;
+                padding-left: 15px;
+
+                .items {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .item {
+                        .value {
+                            color: $colour-deep-purple-light;
+                        }
+
+                        .label {
+                            @include font-size-milli;
+                            color: $colour-grey-3;
+                        }
+
+                        &.item-single {
+                            margin-right: 45px;
+
+                            .value {
+                                @include font-size-delta;
+                                @include font-bold;
+                            }
+                        }
+
+                        &.item-double {
+                            margin-top: 2px;
+
+                            .sub-item {
+                                margin-top: -2px;
+
+                                .label,
+                                .value {
+                                    display: inline-block;
+                                }
+
+                                .label {
+                                    width: 50px;
+                                }
+
+                                .value {
+                                    margin-right: 2px;
+                                    text-align: right;
+                                    width: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .info {
+            margin: 10px -15px -10px -15px;
+            padding: 0 15px;
+            border-top: 1px dotted $colour-grey-4;
+
+            .info-inner {
+                text-align: right;
+                @include font-size-milli;
+                padding-top: 7px;
+                text-align: left;
+                overflow: hidden;
+
+                .indicators-left,
+                .indicators-right {
+                    margin-bottom: 6px;
+                }
+
+                .indicators-right {
+                    position: sticky;
+                    z-index: 15; // 15 so above card-link-overlay-scss value
+
+                    // IE11 doesn't understand sticky - so use relative, which does the job in IE.
+                    @include ie11-override {
+                        position: relative;
+                    }
+
+                    @include edge-override {
+                        // Edge has a bug where it sporadically renders the right indicators incorrectly - but resizing the window
+                        // or setting the same value in the dev tools causes the element to redraw and appear correctly. So in edge
+                        // we have an animation which sets a negative margin and padding which is visually identically, but the
+                        // animation causes Edge to redraw the element.
+                        animation: edge-redraw-fix 0.25s infinite;
+                    }
+                }
+
+                .indicators-left {
+                    + .indicators-right {
+                        margin-top: 8px;
+                        margin-bottom: 8px;
+                    }
+                }
+
+                .indicator {
+                    text-align: left;
+                    margin-bottom: 10px;
+                    @include font-size-micro;
+                    color: $colour-grey-3;
+
+                    .icon {
+                        width: 15px;
+                        height: 13px;
+                        display: inline-block;
+                        margin-right: 1px;
+                        vertical-align: middle;
+                        margin-top: -2px;
+                        color: $colour-deep-purple-light;
+                    }
+
+                    &[title] {
+                        cursor: help;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    &.indicator-label {
+                        color: $colour-grey-3;
+                        @include font-size-milli;
+                    }
+
+                    &.indicator-house {
+                        .icon {
+                            background-repeat: no-repeat;
+                            opacity: 0.7; // Opacity to make more subtle
+                            height: 15px;
+                            margin-top: -3px;
+                        }
+
+                        &.indicator-house-commons {
+                            .icon {
+                                // Source of this image is in the img folder (portcullis-small-commons.png)
+                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAkElEQVQ4T2NkwAcKgv4zTFjHiEsJRAJZEYwNomEAZAAWNQjNIIUwRTA2TDPMIDR5hJOQbcLrF6glDAwMqM4m4Ee406HqMDUTYytOzUiBI5Hn8//FpC2IwEIOzAnrGPHaLPHvF8MLJjZUtyAZjt3PUBsoshmr94m1GT106RfapNuMnI7Roga/swklEOS0DrQEAFgRxRAMulL8AAAAAElFTkSuQmCC');
+                            }
+                        }
+
+                        &.indicator-house-lords {
+                            .icon {
+                                // Source of this image is in the img folder (portcullis-small-lords.png)
+                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAbElEQVQ4T2NkwAPmchj8T/5xgRGXErAEsiIYG0TDNIEMwKYGrhmkEKYIxoZphhmELg93ErJN+LyCbDCKswn5EdlLIFdgaCbGVpghWG1GtwEXf9RmpFSFK9SRUxt1QxvZZEJRhpExCCUS5IwEAM71AB+1to3lAAAAAElFTkSuQmCC');
+                            }
+                        }
+
+                        &.indicator-house-bicameral {
+                            .icon {
+                                background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAABvSURBVDhPY/iPB8TrboGysAMmBiBI0NsKosAAxsZFgwCMDdYMAuiSCy55wzE2jSDACLIexEAWJARABoIBSDPMb4T8iK6OBWIEApDiArifYQDmJFw0MsDQDLMZF40MRm0GAopsJgkgpxhiAUT9//8AWx/sQ/RrtykAAAAASUVORK5CYII=');
+                            }
+                        }
+                    }
+                }
+
+                a.indicator {
+                    background-color: transparent;
+                    cursor: pointer;
+                    text-decoration: none;
+                    display: inline-block;
+
+                    .label {
+                        border-bottom: 1px dotted $colour-deep-purple-light;
+                    }
+
+                    &:focus {
+                        background-color: $colour-mint;
+
+                        .label {
+                            border-bottom-color: transparent;
+                            color: $colour-deep-purple;
+                        }
+                    }
+
+                    &.indicator-action {
+                        width: 100%;
+                        display: inline-block;
+                        vertical-align: top;
+
+                        @include media-breakpoint-up(md) {
+                            width: auto;
+                        }
+
+                        .indicator-inner {
+                            display: inline-block;
+                            text-align: center;
+                            margin-bottom: -10px;
+                            border-radius: 0.25rem;
+                            margin-top: -1px;
+                            border-bottom-left-radius: 0;
+                            border-bottom-right-radius: 0;
+                            border: 2px solid $colour-deep-purple;
+                            background-color: $colour-deep-purple;
+                            padding: 2px 10px 3px 10px;
+                            vertical-align: middle;
+                            color: $colour-white;
+                            width: 100%;
+                            // For some reason IE and Edge have issues with the text position,
+                            // so we need to override.
+                            // NOTE: IE11 won't show the focus styling when clicked, but works with
+                            // the keyboard navigation. Never been able to figure out why.
+                            @include media-breakpoint-up(md) {
+                                width: auto;
+                            }
+
+                            @include edge-override {
+                                margin-bottom: -8px;
+                            }
+
+                            @include ie11-override {
+                                margin-bottom: -8px;
+                            }
+
+                            @include media-breakpoint-up(md) {
+                                margin-top: -1px;
+                            }
+
+                            .label {
+                                @include font-size-milli;
+                                border-bottom: none;
+                                text-decoration: underline;
+                            }
+
+                            .icon {
+                                color: $colour-white;
+                                margin-right: 2px;
+                                margin-left: -4px;
+                            }
+                        }
+
+                        &:focus,
+                        &:focus:hover:active,
+                        &:focus:hover {
+                            box-shadow: none;
+
+                            .indicator-inner {
+                                border-color: $colour-mint;
+                                color: $colour-white;
+
+                                .icon {
+                                    color: $colour-white;
+                                }
+
+                                .label {
+                                    color: $colour-white;
+                                }
+                            }
+                        }
+
+                        &:hover {
+                            .indicator-inner {
+                                color: $colour-white;
+                            }
+                        }
+
+                        &.indicator-action-expand {
+                            .icon {
+                                vertical-align: 0;
+                                font-size: 0.85rem;
+
+                                &:after {
+                                    @include icon-chevron-down;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.card-light {
+        .card-inner {
+            .content {
+                .primary-info {
+                    color: $colour-deep-purple-light;
+                    opacity: 0.85;
+                }
+
+                .secondary-info {
+                    opacity: 0.85;
+                }
+            }
+        }
+    }
+
+    &.card-small {
+        .card-inner {
+            min-height: 65px;
+
+            .content {
+                .primary-info {
+                    @include font-size-base;
+
+                    &:after {
+                        top: 1px;
+                    }
+                }
+
+                .secondary-info {
+                    @include font-size-base;
+                    margin-top: 0;
+                }
+            }
+
+            .info {
+                margin-top: 8px;
+
+                .info-inner {
+                    .indicator-label {
+                        @include font-size-micro;
+                        vertical-align: 1px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(sm) {
+        .card-inner {
+            .info {
+                .info-inner {
+                    .indicator {
+                        margin-bottom: 0;
+                    }
+
+                    .indicators-right {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        .card-inner {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            .info {
+                .info-inner {
+                    .indicators-left {
+                        + .indicators-right {
+                            margin-top: -1px;
+                            margin-bottom: 5px;
+                        }
+                    }
+
+                    .indicators-left {
+                        float: left;
+                        display: inline-block;
+                        margin-right: 15px;
+                    }
+
+                    .indicators-right {
+                        float: right;
+                        display: inline-block;
+                        margin-top: -1px;
+                    }
+
+                    .indicator {
+                        margin: 0 15px 0 0;
+                        width: auto;
+                        border-bottom: none;
+                        display: inline-block;
+                        margin-right: 15px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Link specific styles
+a.card, 
+.card-clickable {
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+
+    .content {
+        .primary-info {
+            padding-right: 30px;
+            position: relative;
+
+            &:after {
+                @include icon-chevron-right;
+                font-size: 1rem;
+                color: $colour-grey-3;
+                position: absolute;
+                right: 0;
+                top: 3px;
+            }
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+
+        .card-inner {
+            background-color: $colour-grey-6;
+        }
+    }
+
+    &:focus {
+        background-color: $colour-mint;
+        @include focus-highlight-border-3;
+    }
+}
+
+@keyframes edge-redraw-fix {
+    from {
+        padding-right: 1px;
+        margin-right: -1px;
+    }
+
+    to {
+        padding-right: 0;
+        margin-right: 0;
+    }
+}
+

@@ -1,0 +1,41 @@
+/*  ---- CSS for anchor link  ---- */
+
+/* Change anchor link to white on headings */
+.paraBusinessTodayChamberHeading a.anchor-link,
+.paraBusinessTodayChamberHeading a.anchor-link:link,
+.paraBusinessTodayChamberHeading a.anchor-link:visited,
+.paraBusinessTodayChamberHeading a.anchor-link:focus,
+.paraBusinessTodayChamberHeading a.anchor-link:active,
+.paraBusinessSub-SectionHeading a.anchor-link,
+.paraBusinessSub-SectionHeading a.anchor-link:link,
+.paraBusinessSub-SectionHeading a.anchor-link:visited,
+.paraBusinessSub-SectionHeading a.anchor-link:focus,
+.paraBusinessSub-SectionHeading a.anchor-link:active {
+  color: inherit !important;
+}
+@font-face {font-family: "hocLinkIcon";
+    src: url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8TDNEAAAC8AAAAYGNtYXD/rgHVAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZhjFPzoAAAF4AAABXGhlYWQTibEUAAAC1AAAADZoaGVhB8EDxgAAAwwAAAAkaG10eAoAAAAAAAMwAAAAFGxvY2EAKADCAAADRAAAAAxtYXhwAAgAYgAAA1AAAAAgbmFtZVdmxuUAAANwAAABtnBvc3QAAwAAAAAFKAAAACAAAwMAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAABAAAAApwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAgAKf//f//AAAAAAAgAKf//f//AAH/4/9dAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACAAD/wQP/A7IALwBfAAAlBw4BJy4BNTQ2PwE+ARcWMjc2NCcmJyYGBwYPAQ4BFRQWFx4BMzI2PwE2NCcmIgcBJicuAQcGDwEGFBcWMj8BNhYXHgEVFAYPAQYmJyYiBwYUFx4BMzI2PwE+ATU2JicBdzQiXyIQEhIQvh5hKRM1EhMTIioqWy4vLb4iJSUiI1kvLlkkNBISEzQTAkIlKytYKioiQRISEzQTQSNVHhASEhDMRUgOEzUSExMgSCYvYi/LIyQBJSKUMyEBIhApFxcoEb0dNykSEhI2EiIODgsZGSy9I1gvMFkhJCIjIzMSNRMSEgLeJRQTBBAQI0ASNRMTE0AkEh4QKhYXKRDKRhkOEhITNRIgIDAuyiJYMDFXIgABAAAAAQAA9WCCgV8PPPUACwQAAAAAANg1tlIAAAAA2DW2UgAA/8ED/wOyAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAP/AAEAAAAAAAAAAAAAAAAAAAAFBAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAoAFAAeAK4AAQAAAAUAYAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAsAAAABAAAAAAACAAcAhAABAAAAAAADAAsAQgABAAAAAAAEAAsAmQABAAAAAAAFAAsAIQABAAAAAAAGAAsAYwABAAAAAAAKABoAugADAAEECQABABYACwADAAEECQACAA4AiwADAAEECQADABYATQADAAEECQAEABYApAADAAEECQAFABYALAADAAEECQAGABYAbgADAAEECQAKADQA1GhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblJlZ3VsYXIAUgBlAGcAdQBsAGEAcmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbkZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format("truetype");}
+[data-anchor-icon]::after {content: attr(data-anchor-icon);}
+.anchor-link{
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'hocLinkIcon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 0.9em;
+    vertical-align:middle;
+    /*hide unless hover on parent*/
+    display: none;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+/*show anchor link on hover*/
+:hover > .anchor-link{display: inline; text-decoration: none;}
+
+/* ---- End of CSS for anchor link ---- */

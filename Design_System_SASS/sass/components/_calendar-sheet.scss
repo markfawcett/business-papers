@@ -1,0 +1,26 @@
+﻿.calendar-sheet {
+    border: 2px solid $colour-grey-5;
+    text-align: center;
+    width: 85px;
+
+    .month {
+        text-transform: uppercase;
+        background-color: $colour-deep-purple-light;
+        @include font-bold;
+        color: $colour-white;
+        line-height: 1.4rem;
+    }
+
+    .day {
+        font-size: 2.5rem;
+        line-height: 2.65rem;
+        @include font-bold;
+    }
+
+    .year {
+        color: $colour-grey-3;
+        @include font-size-milli;
+        margin-top: -3px;
+        margin-bottom: 2px;
+    }
+}

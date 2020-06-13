@@ -1,0 +1,9 @@
+// These classes are used by the truncation component to hide text until truncation has completed.
+
+[data-truncate-lines] {
+    visibility: hidden;
+}
+
+[data-truncated=true] {
+    visibility: visible;
+}

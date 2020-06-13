@@ -1,0 +1,53 @@
+h1, h2, h3, h4, h5, h6 {
+    color: $colour-deep-purple;
+
+    @include media-breakpoint-up(lg) {
+        max-width: 75%;
+    }
+
+    .no-top-margin,
+    &:first-child {
+        margin-top: 0;
+    }
+	
+	.no-bottom-margin,
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+h1, .heading-level-1 {
+    @include font-size-alpha();
+    margin-bottom: 26px;
+
+    + p.sub-heading {
+        @include font-size-epsilon;
+        color: $colour-grey-3;
+        margin-top: -17px;
+        margin-bottom: 26px;
+    }
+}
+
+h2, .heading-level-2 {
+    @include font-size-gamma;
+    margin-top: 30px;
+    margin-bottom: 22px;
+}
+
+h3, .heading-level-3 {
+    @include font-size-delta;
+    margin-top: 30px;
+    margin-bottom: 18px;
+}
+
+h4, .heading-level-4 {
+    @include font-size-epsilon;
+    margin-top: 30px;
+    margin-bottom: 6px;
+}
+
+h5, .heading-level-5 {
+    @include font-size-base;
+    margin-top: 25px;
+    margin-bottom: 3px;
+}

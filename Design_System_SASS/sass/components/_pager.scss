@@ -1,0 +1,106 @@
+﻿.pager {
+    background: $colour-grey-6;
+    padding: 10px;
+
+    .result-text {
+        text-align: center;
+        margin-bottom: 8px;
+
+        @include media-breakpoint-up(md) {
+            text-align: left;
+            margin: 6px 0;
+        }
+    }
+
+    .page-select {
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            text-align: right;
+        }
+
+        ul {
+            margin-bottom: 0;
+            justify-content: center;
+            border-radius: 0;
+
+            @include media-breakpoint-up(md) {
+                margin-top: 0;
+                justify-content: flex-end;
+            }
+
+            @include ie11-override {
+                // IE11 doesn't handle flexbox properly, so we have to override and set a fixed width
+                display: inline-flex;
+
+                li {
+                    width: 40px;
+                }
+            }
+
+            li {
+                max-width: 40px;
+                height: 40px;
+                display: inline-block;
+                background: #fff;
+                border: 1px solid $colour-grey-4;
+                border-right: none;
+                flex-grow: 1;
+                text-align: center;
+
+                &.active {
+                    background: $colour-deep-purple;
+                    color: #fff;
+                    padding-top: 5px;
+                }
+
+                span {
+                    display: block;
+                    text-align: center;
+                }
+
+                &.ellipsis {
+                    padding-top: 1px;
+                }
+
+                a {
+                    @extend span;
+                    color: $colour-deep-purple;
+                    text-decoration: none;
+                    display: block;
+                    height: 100%;
+                    padding-top: 5px;
+
+                    &:hover {
+                        background: $colour-deep-purple-light;
+                        color: $colour-white;
+                    }
+
+                    &:focus {
+                        border: 3px solid $colour-mint-dark;
+                        padding-top: 2px;
+                        background: $colour-white;
+                        color: $colour-deep-purple;
+                    }
+                }
+
+                &:last-child {
+                    border-right: 1px solid $colour-grey-4;
+                }
+            }
+        }
+    }
+}
+
+.pager {
+    + .card-list {
+        margin-top: 15px;
+    }
+}
+
+.card-list {
+    + .pager {
+        margin-top: 15px;
+    }
+}
+

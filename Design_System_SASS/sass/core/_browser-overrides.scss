@@ -1,0 +1,17 @@
+﻿@mixin ie11-override() {
+    @media all and (-ms-high-contrast:none) {
+        @content;
+    }
+}
+
+@mixin edge-override() {
+    @supports (-ms-ime-align:auto) {
+        @content;
+    }
+}
+
+@mixin firefox-override() {
+    @-moz-document url-prefix() {
+        @content;
+    }
+}

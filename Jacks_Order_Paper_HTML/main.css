@@ -1,0 +1,816 @@
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+
+/*** Global styles ***/
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 40%;
+    margin-top: 35px;
+}
+
+.hr1 {
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    margin:0;
+    padding: 0;
+}
+
+.hr2 {
+    margin-left: 50px;
+    width: 72%;
+}
+
+
+h1,h2,h3,h4,p {
+    display: block;
+    text-decoration: none;
+    margin-right: 40%;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+
+
+h1 {
+    font-size: 15pt;
+    letter-spacing: 0.1em;
+    line-height: 1.75em;
+    padding: 25px 0px 25px 0px;
+    font-weight: bold;
+    margin-right: 40%;
+}
+
+h2 {
+    font-size: 13pt;
+    letter-spacing: 0.06em;
+    line-height: 1.65em;
+    padding: 35px 0px 5px 0px;
+    font-weight: bold;
+    color: #373151;
+}
+
+h3 {
+    font-size: 5pt;
+    letter-spacing: 0.04em;
+    line-height: 1.65em;
+    padding: 25px 0px 25px 0px;
+    font-weight: bold;
+    color: #373151;
+}
+
+h4 {
+    font-size: 12pt;
+    letter-spacing: 0.04em;
+    line-height: 1.3em;
+    padding: 1px 0px 1px 0px;
+    color: #373151;
+}
+
+h5 {
+ font-size:9pt;
+ font-weight:normal;
+}
+
+p {
+    font-size: 12pt;
+    letter-spacing: 0.04em;
+    line-height: 1.65em;
+    color: #4d4d4d;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 800px) {
+
+h1, h2, h3, h4, p {
+   margin-right: 15%;
+  }
+
+h1 {
+
+font-size: 14pt;
+line-height: 1.3em;
+
+ }
+
+}
+
+/*******************************/
+/****** TABLE OF CONTENTS ******/
+/*******************************/
+
+/* TABLE OF CONTENTS CONTAINER */
+/* This div is already present in the InDesign HTML output */
+/* It has been unused - i.e. left empty - to date */
+
+
+div.float-right p {
+    background-color: #006e46;
+    list-style: none;
+    color: white;
+    font-weight: bold;
+    padding: 0px 10px 0px 13px;
+    margin-left: 50px;
+    width: 77%;
+}
+
+
+div.float-right {
+    float: right;
+    height: auto;
+    width: 27%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    margin-top: 35px;
+    margin-right: 5%;
+    transition: all 1.5s ease-out;
+    font-size: 12pt;
+    line-height: 1.3em;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+nav#toc {
+    /*background: #f2f2f2;
+	border-top: 7px solid #ccc;*/
+    /*border-radius: 1em;*/
+    padding: 0em 0.5em 0em 0.75em;
+    list-style: none;
+}
+
+
+/* TABLE OF CONTENTS 1st LEVEL LISTS */
+
+nav#toc>ul.ToC-list>li {
+    background: url("square-bullet-1.gif") no-repeat left 5px;
+    padding: 0 0 4px 14px;
+    line-height: 1.3em;
+    list-style: none;
+    /*transition: all 0.75s ease-out;*/
+}
+
+nav#toc>ul.ToC-list>li.active {
+    background: url("SquareBullet2.png") no-repeat left 5px;
+    padding: 0 0 4px 14px;
+    line-height: 1.3em;
+    list-style: none;
+
+    /* TABLE OF CONTENTS 2nd LEVEL LISTS */
+}
+
+nav#toc>ul.ToC-list>li>ul.sub-ToC-list {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    line-height: 1.6em;
+    height: 1px;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    display: list-item;
+}
+
+nav#toc>ul.ToC-list>li.active>ul.sub-ToC-list {
+    margin: 0 0 0 0.5em;
+    position: static;
+    width: auto;
+    height: auto;
+    transition: all 0.5s ease-out;
+   display: list-item;
+    list-style-position: inside;
+}
+
+/* TABLE OF CONTENTS LINKS */
+
+li.ToC-paraBusinessSub-SectionHeading>a {
+   list-style-type: square;
+    /*text-transform:lowercase;*/
+    /*	font-size:70%;
+	padding-left: 8px;*/
+}
+
+
+li.ToC-paraBusinessTodayChamberHeading>a {
+	 list-style-type: square;
+    background-color: #373151;
+    color: white;
+    /*text-transform:lowercase;*/
+    /*	font-size: 83%;
+	padding-left:8px;*/
+}
+
+
+li.ToC-paraBusinessSub-SectionHeading>a:hover {
+    color: #d4d1e0;
+}
+
+
+li.ToC-paraBusinessTodayChamberHeading>a:hover {
+    color: #d4d1e0;
+}
+
+.hr2 {
+    width: 77%;
+}
+
+/* TABLE OF CONTENTS MOBILE */
+
+@media screen and (max-width: 800px) {
+
+    div.float-right {
+        height: auto;
+        width: 100%;
+        top: 0;
+        float: none;
+        position: relative;
+        margin: 0px;
+        padding: 0px; 
+        transition: none;
+    }
+
+    div.float-right p {
+       background-color: #006e46;
+        list-style: none;
+        color: white;
+        font-weight: bold;
+        padding: 0px 10px 0px 13px;
+        margin-left: 0px;
+        width: 85%;
+    }
+
+nav#toc {
+    /*background: #f2f2f2;
+	border-top: 7px solid #ccc;*/
+    /*border-radius: 1em;*/
+    padding: 0em 0em 0em 0em;
+    list-style: disc;
+}
+
+ nav#toc>ul.ToC-list {
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+
+.hr2 {
+	margin-left: 0px;
+    width: 85%;
+}
+
+hr {
+	margin-left: 0px;
+    width: 85%;
+   }
+}
+/* TABLE OF CONTENTS 2nd LEVEL LISTS */
+
+nav#toc>ul.ToC-list>li>ul.sub-ToC-list {
+    position: absolute;
+    top: auto;
+    width: 1px;
+    line-height: 1.6em;
+    height: 1px;
+    overflow: hidden;
+    transition: all 0.5s ease-in;
+    list-style: none !important;
+}
+
+nav#toc>ul.ToC-list>li.active>ul.sub-ToC-list {
+    margin: 0 0 0 0em;
+    position: static;
+    width: auto;
+    height: auto;
+    transition: all 0.5s ease-out;
+    list-style: none !important;
+ }
+
+}
+
+/*** TABLE OF CONTENTS HIGHLIGHTING***/
+
+/*.active {
+	color: white;
+	border-left: 2px solid #085196;
+	background: url("square-bullet-2.gif") no-repeat left 5px;
+	}*/
+
+/*.noShow {
+	position:absolute;
+	left:-10000px;
+	top:auto;
+	width:1px;
+	height:1px;
+	overflow:hidden;
+	}*/
+
+/* TABLE OF CONTENTS FADE */
+
+.fade {
+    opacity: 0.2;
+}
+
+
+/*** CLEAR FLOATS ***/
+
+.clear {
+    clear: both;
+}
+
+
+/********************************/
+/*** ALTERATIONS to existing styles ***/
+/*******************************/
+
+/* ---- Anchor link ---- */
+
+@font-face {
+    font-family: "hocLinkIcon";
+    src: url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8TDNEAAAC8AAAAYGNtYXD/rgHVAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZhjFPzoAAAF4AAABXGhlYWQTibEUAAAC1AAAADZoaGVhB8EDxgAAAwwAAAAkaG10eAoAAAAAAAMwAAAAFGxvY2EAKADCAAADRAAAAAxtYXhwAAgAYgAAA1AAAAAgbmFtZVdmxuUAAANwAAABtnBvc3QAAwAAAAAFKAAAACAAAwMAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAABAAAAApwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAgAKf//f//AAAAAAAgAKf//f//AAH/4/9dAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACAAD/wQP/A7IALwBfAAAlBw4BJy4BNTQ2PwE+ARcWMjc2NCcmJyYGBwYPAQ4BFRQWFx4BMzI2PwE2NCcmIgcBJicuAQcGDwEGFBcWMj8BNhYXHgEVFAYPAQYmJyYiBwYUFx4BMzI2PwE+ATU2JicBdzQiXyIQEhIQvh5hKRM1EhMTIioqWy4vLb4iJSUiI1kvLlkkNBISEzQTAkIlKytYKioiQRISEzQTQSNVHhASEhDMRUgOEzUSExMgSCYvYi/LIyQBJSKUMyEBIhApFxcoEb0dNykSEhI2EiIODgsZGSy9I1gvMFkhJCIjIzMSNRMSEgLeJRQTBBAQI0ASNRMTE0AkEh4QKhYXKRDKRhkOEhITNRIgIDAuyiJYMDFXIgABAAAAAQAA9WCCgV8PPPUACwQAAAAAANg1tlIAAAAA2DW2UgAA/8ED/wOyAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAP/AAEAAAAAAAAAAAAAAAAAAAAFBAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAoAFAAeAK4AAQAAAAUAYAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAsAAAABAAAAAAACAAcAhAABAAAAAAADAAsAQgABAAAAAAAEAAsAmQABAAAAAAAFAAsAIQABAAAAAAAGAAsAYwABAAAAAAAKABoAugADAAEECQABABYACwADAAEECQACAA4AiwADAAEECQADABYATQADAAEECQAEABYApAADAAEECQAFABYALAADAAEECQAGABYAbgADAAEECQAKADQA1GhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblJlZ3VsYXIAUgBlAGcAdQBsAGEAcmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbkZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format("truetype");
+}
+
+[data-anchor-icon]::after {
+    content: attr(data-anchor-icon);
+}
+
+.anchor-link {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'hocLinkIcon' !important;
+    color: inherit;
+    line-height: 1;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: rgba(0, 123, 255, .5);
+    transition: color .25s ease-out, opacity .25s ease-in-out;
+    /*hide unless hover on parent*/
+    opacity: 0;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*show anchor link on hover*/
+:hover>.anchor-link,
+.anchor-link:focus {
+    opacity: 9;
+    display: inline;
+    color: #d4d1e0;
+    text-decoration: none;
+}
+
+/* ---- End of CSS for anchor link ---- */
+
+.container .portcullis-container {
+    padding-left: 60px;
+}
+
+/* ---- These pages are being tested ---- */
+
+#page-test-notification {
+    background-color: #625a75;
+    width: 100%;
+    height: 35px;
+}
+
+@media screen and (max-width: 400px) {
+#page-test-notification {
+    background-color: #625a75;
+    width: 100%;
+    height: 45px;
+  }
+
+}
+
+.test {
+    margin-left: 15%;
+    padding-bottom: 10px;
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 2pt;
+    letter-spacing: 0.04em;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.test p {
+	padding-top: 7px;
+    font-weight: normal;
+    color: white;
+    margin-top: 0;
+    font-size: 9pt;
+}
+
+
+.test a {
+    font-weight: bold;
+    color: white;
+}
+
+
+.test a:hover {
+    color: #d4d1e0;
+}
+
+@media screen and (max-width: 800px) {
+	.test p{
+     font-size: 8pt;
+}
+
+.test a {
+   font-size: 8pt;
+  }
+
+}
+
+/* ---- NAVBAR ---- */
+
+.navbar {
+    background-color: #373151;
+    margin-left: none;
+    border: none;
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+    min-height: 50px;
+    height: 90px;
+    margin-bottom: 0px;
+    padding: 0;
+    display: block;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+
+}
+
+.uk_parliament {
+    margin-left: 15%;
+    padding-top: 8-px;
+}
+
+.navbar>.container {
+    padding-top: 15px;
+    padding-bottom: 17px;
+}
+
+
+
+.commons-banner {
+background-color: #006e46;
+    margin: 0;
+    adding: 0;
+    border: none;
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+    min-height: 40px;
+    height:15px;
+    margin-bottom: 50px;
+}
+
+.commons-banner p {
+	padding-top: 6px;
+	color:  white;
+	margin-left:15%;
+	font-weight: bold;
+	font size: 13pt;
+	margin-top: 0;
+}
+
+/* ---- END OF NAVBAR ---- */
+
+body .content {
+    margin-left: 15%;
+}
+
+.mainTitle {
+    font-style: normal;
+    font-size: 2.7rem;
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 600px) {
+	.mainTitle {
+	font-size: 2.3rem;
+	}
+}
+
+.titleBlockTitle {
+    text-align: left;
+}
+
+#titleBlockLink1 a {
+    padding: 20px 0px 10px 0px;
+}
+
+#titleBlockLink1 a:hover {
+    color: #d4d1e0;
+}
+
+#titleBlockLink2 a {
+    padding: 20px 0px 20px 0px;
+    margin-bottom: 20px;
+}
+
+#titleBlockLink2 a:hover {
+    color: #d4d1e0;
+}
+
+/* ----- TABLE ----- */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 60%;
+    overflow-x: auto;
+}
+
+td {
+    margin-left: 0px;
+}
+
+tr:nth-child(odd) {
+    background-color: #f2f2f2;
+    display: table-row;
+    vertical-align: inherit;
+}
+
+th {
+    color: white;
+}
+
+table p {
+    margin-right: 0px
+}
+
+.Front-Page-Table.Alline-left {
+    text-align: left;
+    padding-left: 2.0%;
+    padding-right: 0%;
+    padding-top: 0%;
+    padding-bottom: 0%
+}
+
+.Front-Page-Table.Alline-Right {
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #DADADA;
+    text-align: right;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.paraSummaryAgendaItemTiming {
+    font-weight: bolder;
+    padding-right: 0px;
+}
+
+.paraChamberSummaryHeading {
+    background-color: #006e46;
+    color: white;
+    padding: 0px 0px 0px 10px;
+    margin-top: 60px;
+    width: 60%;
+    font-size: 15pt;
+}
+
+.paraChamberSummaryHeading a:hover {
+    color: white;
+}
+
+.TableStyles_TableStyle a:hover {
+    color: #d4d1e0;
+}
+
+@media only screen and (max-width: 600px) {
+	.paraChamberSummaryHeading {
+		font-size: 16px;
+
+	}
+}
+
+.paraOrderofBusinessItemTiming {
+    font-weight: bolder;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 800px) {
+    table {
+        width: 85%;
+    }
+
+    .paraChamberSummaryHeading {
+        width: 85%;
+    }
+}
+
+/* ----- END OF TABLE ----- */
+
+.paraBusinessTodayChamberHeading {
+   background-color: #006e46;
+    list-style: none;
+    font-size: 15pt;
+    color: white;
+    padding: 0px 0px 0px 10px;
+    margin-top: 80px;
+    width: 60%;
+    min-width: 40%;
+}
+
+.paraBusinessSub-SectionHeading {
+    font-style: normal;
+    font-size: 1.0rem;
+    padding: 0px 0px 0px 10px;
+    margin: 50px 0px 20px 0px;
+    background-color: gray;
+    color: white;
+    width: 60%;
+}
+
+.paraBusinessItemHeading {
+    padding: 10px 0px 10px 0px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.paraBusinessListItem {
+    margin-left: 10px;
+}
+
+.paraBusinessItemHeading-bulleted {
+    padding: 0px 0px 10px 0px;
+    font-weight: bold;
+    display;: block;
+    display: list-item;
+    list-style-type: square;
+    list-style-position: inside;
+        margin-left: 10px;
+}
+
+.paraBusinessItemHeading-bulleted2 {
+    display: list-item;
+    list-style-type: square;
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+.charBallotNumber {
+    display: inline-block;
+    width: 2em;
+    /* padding: 0px 15px 0px 0px; */
+    font-weight: bold;
+    /* font-size: 12pt; */
+    margin-left: -2.0em;
+
+}
+
+.paraQuestion {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.45em;
+    padding-left: 2.5em;
+    /* text-indent: -2.55em; */
+    margin-left: 0em;
+}
+
+.charMember {
+    padding: 0px 0px 0px 0px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.paraMotionSponsor {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.45em;
+    padding-left:0.6em;
+    margin-left: 0em;
+}
+
+.paraMotionText {
+    margin-left: 10px;
+}
+
+.paraMinisterialStatement {
+margin-top: 1em;
+    margin-bottom: 1em;
+    line-height: 1.45em;
+    padding-left: 2.6em;
+    /* margin-left: 0em; */
+}
+
+.paraMotionText {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.paraOrderofBusinessItemTiming2 {
+    padding: 20px 0px 20px 0px;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.paraNotesTag {
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.paraNotesText {
+    margin-left: 50px;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.charUIN {
+    font-size: 0.8em;
+
+}
+
+
+@media only screen and (max-width: 800px) {
+
+    .paraBusinessTodayChamberHeading {
+        width: 85%;
+    }
+
+    .paraBusinessSub-SectionHeading {
+        width: 85%;
+    }
+
+    .paraBusinessItemHeading {
+        padding: 5px 0px 10px 0px;
+        font-weight: bold;
+        margin-left: 10px;
+    }
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+    background: #373151;
+    width: 100%;
+    padding-bottom: 35px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+footer h2 {
+    color: white;
+    margin-left: 15%;
+}
+
+footer ul {
+    padding:0;
+}
+
+footer ul li {
+    list-style-type: none;
+    line-height: 1.2em
+}
+
+footer a {
+    color: white;
+    font-family: 'Libre Franklin', sans-serif;
+    line-height: 1.8em;
+    margin-left: 15%;
+    padding: 0;
+}
+
+footer a:hover {
+    color: #d4d1e0
+}

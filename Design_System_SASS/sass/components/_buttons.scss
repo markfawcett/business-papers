@@ -1,0 +1,129 @@
+@mixin standard-button($foreground-colour, $border-colour, $background-colour, $hover-colour) {
+    @include font-size-base;
+    background-color: $background-colour;
+    border: 2px solid $border-colour;
+    color: $foreground-colour;
+    padding: 5px 17px;
+    text-decoration: none;
+
+    @include media-breakpoint-up(md) {
+        min-width: 100px;
+    }
+
+    &:focus {
+        @include focus-highlight-border-4();
+        background-color: $background-colour;
+        color: $foreground-colour;
+    }
+
+    &:active,
+    &:active:not(.disabled) {
+        background-color: $background-colour;
+        color: $foreground-colour;
+        border-color: $border-colour;
+    }
+
+    &:hover {
+        background-color: $hover-colour;
+    }
+}
+
+.btn {
+    &.btn-primary {
+        @extend .btn-blue-solid;
+    }
+
+    &.btn-secondary {
+        @extend .btn-blue-regular;
+    }
+
+    &.btn-link {
+        @extend .btn-purple-regular;
+    }
+
+    &.btn-blue-regular {
+        @include standard-button($colour-blue, $colour-blue, transparent, lighten($colour-blue, 54%));
+    }
+
+    &.btn-blue-solid {
+        @include standard-button($colour-white, $colour-blue, $colour-blue, $colour-blue-dark);
+        padding: 7px 17px 4px 17px;
+        border: none;
+        border-bottom: 3px solid $colour-blue-dark;
+
+        &:hover {
+            background-color: $colour-blue-dark;
+            border-bottom: 3px solid $colour-blue-dark;
+        }
+    }
+
+    &.btn-purple-light-regular {
+        @include standard-button($colour-deep-purple-light, $colour-deep-purple-light, transparent, lighten($colour-deep-purple-light, 50%));
+    }
+
+    &.btn-purple-deep-regular {
+        @include standard-button($colour-deep-purple, $colour-deep-purple, transparent, lighten($colour-deep-purple, 68%));
+    }
+
+    &.btn-purple-deep-solid {
+        @include standard-button($colour-white, $colour-deep-purple, $colour-deep-purple, darken($colour-deep-purple, 10%));
+    }
+
+    &.btn-white-regular {
+        @include standard-button($colour-white, $colour-white, transparent, lighten($colour-deep-purple, 68%));
+    }
+
+    &.btn-purple-regular {
+        @include standard-button($colour-purple, $colour-purple, transparent, lighten($colour-purple, 68%));
+    }
+
+    &.btn-slim {
+        padding: 3px 15px;
+    }
+
+    &.btn-full-width {
+        width: 100%;
+    }
+
+    &.btn-icon-right {
+        &:after {
+            font-size: 0.85rem;
+            margin-left: 8px;
+            vertical-align: 0;
+        }
+    }
+
+    &.btn-view-more {
+        &:after {
+            @include icon-chevron-right;
+        }
+
+        @extend .btn-icon-right;
+    }
+
+    &.btn-mini {
+        @include font-size-milli;
+        padding: 3px 14px 2px 14px;
+        min-width: 70px;
+    }
+
+    .icon {
+        font-size: 15px;
+        vertical-align: middle;
+        display: inline-block;
+        margin-top: -3px;
+        margin-left: 8px;
+        margin-right: -2px;
+
+        &.icon-left {
+            margin-right: 5px;
+            margin-left: 0;
+        }
+    }
+
+    .additional-text {
+        @include font-size-micro;
+        display: block;
+        margin: 1px 0 4px 0;
+    }
+}

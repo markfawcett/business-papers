@@ -1,0 +1,115 @@
+﻿.filter {
+    background-color: $colour-purple-lighter;
+    padding: 15px;
+    margin-bottom: 20px;
+
+    .basic {
+        margin-bottom: 15px;
+    }
+
+    .advanced {
+        display: none;
+    }
+
+    .row {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .actions {
+        border-top: 1px dotted darken($colour-purple-light, 10%);
+        margin: 15px -15px 0 -15px;
+        padding: 15px 15px 0 15px;
+
+        .advanced-toggle {
+            text-align: center;
+            margin: 3px 0 5px 0;
+
+            @include media-breakpoint-up(md) {
+                padding-top: 6px;
+                margin: 0;
+                text-align: left;
+            }
+
+            a {
+                color: $colour-deep-purple;
+                text-decoration: none;
+
+                .label {
+                    text-decoration: underline;
+                }
+
+                &:before {
+                    display: inline-block;
+                    margin-right: 6px;
+                    vertical-align: 0;
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .buttons {
+            .btn {
+                width: 100%;
+                margin-bottom: 10px;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+                text-align: right;
+
+                .btn {
+                    margin-right: 10px;
+                    width: auto;
+                    margin-bottom: 0;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    &[aria-expanded=true] {
+        .advanced {
+            display: block;
+        }
+
+        .actions {
+            .advanced-toggle {
+                a {
+                    &:before {
+                        @include icon-chevron-up;
+                    }
+
+                    &.show-button {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &[aria-expanded=false] {
+        .actions {
+            .advanced-toggle {
+                a {
+                    &:before {
+                        @include icon-chevron-down;
+                    }
+
+                    &.hide-button {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

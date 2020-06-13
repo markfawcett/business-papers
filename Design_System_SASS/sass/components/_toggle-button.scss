@@ -1,0 +1,71 @@
+﻿.toggle-button {
+    .btn-group-toggle {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        flex-wrap: wrap;
+        color: $colour-grey-2;
+
+        label.btn {
+            border: 2px solid $colour-grey-4;
+            padding: 21px 13px 2px 13px;
+            border-radius: 0;
+            background: $colour-white;
+            font-weight: normal !important;
+            border-right: none;
+            cursor: pointer;
+            outline: none;
+            box-shadow: none;
+            position: relative;
+            @include font-size-milli;
+            color: $colour-grey-2;
+
+            &:before {
+                @include icon-circle;
+                position: absolute;
+                top: 3px;
+                left: 0;
+                right: 0;
+                color: $colour-grey-4;
+                opacity: 0.7;
+                font-size: 0.9rem;
+            }
+
+            &:last-child {
+                border-right: 2px solid $colour-grey-4;
+            }
+
+            &.active {
+                background-color: $colour-purple;
+                color: $colour-white;
+                @include font-bold;
+                padding-top: 20px;
+
+                &:before {
+                    @include icon-circle-tick;
+                    color: $colour-white;
+                    opacity: 1;
+                }
+            }
+
+            &:hover {
+                border-left: 2px solid $colour-grey-4;
+            }
+
+            &.focus {
+                position: relative;
+
+                &:after {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    content: '';
+                    border: 2px solid $colour-mint;
+                }
+            }
+        }
+    }
+}

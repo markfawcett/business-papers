@@ -1,0 +1,65 @@
+﻿.brand-bicameral {
+    .brand-colour {
+        color: $colour-purple;
+    }
+
+    .brand-background-colour {
+        background-color: $colour-purple;
+    }
+
+    .brand-border-colour {
+        border-color: $colour-purple;
+    }
+}
+
+.brand-commons {
+    .brand-colour {
+        color: $colour-commons;
+    }
+
+    .brand-background-colour {
+        background-color: $colour-commons;
+    }
+
+    .brand-border-colour {
+        border-color: $colour-commons;
+    }
+}
+
+.brand-lords {
+    .brand-colour {
+        color: $colour-lords-dark;
+    }
+
+    .brand-background-colour {
+        background-color: $colour-lords-dark;
+    }
+
+    .brand-border-colour {
+        border-color: $colour-lords-dark;
+    }
+}
+
+.colour-commons {
+    color: $colour-commons !important;
+}
+
+.background-colour-commons {
+    background-color: $colour-commons !important;
+}
+
+.colour-lords {
+    color: $colour-lords-dark !important;
+}
+
+.background-colour-lords {
+    background-color: $colour-lords-dark !important;
+}
+
+.colour-bicameral {
+    color: $colour-purple !important;
+}
+
+.background-colour-bicameral {
+    background-color: $colour-purple !important;
+}

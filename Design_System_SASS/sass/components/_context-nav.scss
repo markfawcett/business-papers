@@ -1,0 +1,392 @@
+﻿// iOS transparency fix: https://css-tricks.com/thing-know-gradients-transparent-black/
+$colour-context-nav-transparency: rgba($colour-deep-purple-light, 0);
+$colour-context-nav-transparency-lords: rgba($colour-lords-dark, 0);
+$colour-context-nav-transparency-commons: rgba($colour-commons, 0);
+
+.context-nav {
+    background-color: $colour-deep-purple-light;
+    color: $colour-white;
+    padding: 5px 0;
+    position: relative;
+    @include font-size-milli;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        &:not(.default-width) {
+            width: 100%;
+        }
+    }
+
+    ul {
+        margin: 0;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    a {
+        color: $colour-white;
+        text-decoration: underline;
+
+        &:hover {
+            color: $colour-white;
+        }
+
+        &:focus {
+            color: $colour-deep-purple;
+            @include focus-highlight-border-2;
+        }
+    }
+
+    .breadcrumb {
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        display: block;
+        background-color: transparent;
+        width: 100%;
+        overflow: visible;
+        text-overflow: initial;
+        // If adaptive, hide it until JS loads it
+        &.breadcrumb-adaptive {
+            visibility: hidden;
+        }
+        // If not adaptive, go back to default behaviour. This is really only
+        // for apps that have the old breadcrumb, so we don't break their behaviour.
+        &:not(.breadcrumb-adaptive) {
+            padding: 0;
+            margin: 0 -15px 0 0;
+            border-radius: 0;
+            display: block;
+            background-color: transparent;
+            // Scroll on mobile
+            overflow-x: auto;
+            overflow-y: hidden;
+            -ms-overflow-style: scrollbar;
+            -webkit-overflow-scrolling: touch;
+            white-space: nowrap;
+            padding-right: 30px;
+            width: auto;
+
+            @include media-breakpoint-up(sm) {
+                margin-right: 0;
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                background: linear-gradient(to left, $colour-deep-purple-light, $colour-context-nav-transparency);
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 25px;
+
+                @include media-breakpoint-up(sm) {
+                    width: 60px;
+                }
+            }
+
+            &:after {
+                display: inline-block;
+                width: 20px;
+                height: 10px;
+                content: '-';
+                visibility: hidden;
+                pointer-events: all;
+            }
+
+            @include media-breakpoint-up(md) {
+                // Truncate on desktop
+                overflow: hidden;
+                text-overflow: ellipsis;
+                min-width: 0;
+                width: 100%;
+                padding-right: 0;
+                margin-right: 0;
+
+                &:before,
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        &.breadcrumb-loaded {
+            visibility: visible;
+        }
+
+        &.breadcrumb-split {
+            padding-right: 30px;
+        }
+
+        &.breadcrumb-touch {
+            position: relative;
+            margin-right: -30px;
+
+            @include media-breakpoint-up(sm) {
+                margin-right: 0;
+            }
+
+            ul {
+                // Scroll on touch version
+                overflow-x: auto;
+                overflow-y: hidden;
+                -ms-overflow-style: scrollbar;
+                -webkit-overflow-scrolling: touch;
+                white-space: nowrap;
+                margin-right: -15px;
+
+                @include media-breakpoint-up(sm) {
+                    margin-right: 0;
+                }
+
+                &:after {
+                    display: inline-block;
+                    width: 30px;
+                    height: 10px;
+                    content: '-';
+                    visibility: hidden;
+                    pointer-events: all;
+                }
+            }
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                background: linear-gradient(to left, $colour-deep-purple-light, $colour-context-nav-transparency);
+                right: -15px;
+                top: 0;
+                bottom: 0;
+                width: 40px;
+                margin-right: 0;
+
+                @include media-breakpoint-up(sm) {
+                    right: 0;
+                }
+            }
+
+            .toggle {
+                display: none;
+            }
+        }
+
+        &.breadcrumb-expandable {
+            ul {
+                position: relative;
+            }
+
+            &[aria-expanded=true] {
+                ul {
+                    li {
+                        &:nth-last-child(2) {
+                            &:after {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            // The expand behaviour is all done through the TypeScript component.
+            .toggle {
+                a {
+                    background-color: $colour-white;
+                    color: $colour-deep-purple-light;
+                    padding: 0 4px;
+                    opacity: 0.9;
+                    border-radius: 2px;
+
+                    .icon {
+                        vertical-align: -4px;
+                        font-size: 1rem;
+
+                        @include ie11-override {
+                            display: none;
+                        }
+                    }
+                    // IE11 renders the icon weirdly, so fall back to a normal ellipsis
+                    @include ie11-override {
+                        text-decoration: none;
+
+                        &:before {
+                            content: "…";
+                            vertical-align: middle;
+                        }
+                    }
+
+                    &:hover {
+                        opacity: 0.75;
+                    }
+
+                    &:focus {
+                        opacity: 1;
+                    }
+                }
+
+                &.toggle-more {
+                    a {
+                        margin-right: 2px;
+                    }
+                }
+
+                &.toggle-less {
+                    a {
+                        color: $colour-white;
+                        background-color: $colour-deep-purple-light;
+                        opacity: 1;
+                        padding: 3px 12px;
+                        background-color: $colour-deep-purple-light;
+                        position: absolute;
+                        bottom: -33px;
+                        right: 0;
+                        display: inline-block;
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                        border-bottom-left-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        text-decoration: none;
+
+                        &:focus {
+                            box-shadow: none;
+                            background-color: $colour-mint;
+                            color: $colour-deep-purple;
+                        }
+
+                        &:before {
+                            display: inline-block;
+                            margin-right: 8px;
+                            vertical-align: 0;
+                            font-size: 0.8rem;
+                            @include icon-chevron-up;
+                        }
+                    }
+                }
+            }
+        }
+
+        li {
+            display: inline;
+            margin-right: 5px;
+
+            &:after {
+                @include icon-chevron-right;
+                font-size: 12px;
+                margin-left: 7px;
+            }
+
+            &:last-child {
+                margin-right: 0;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            .text {
+                opacity: 0.8;
+
+                &.text-spaced-both {
+                    margin-left: 2px;
+                    margin-right: 2px;
+                }
+
+                &.text-spaced-left {
+                    margin-left: 2px;
+                }
+
+                &.text-spaced-right {
+                    margin-right: 2px;
+                }
+            }
+        }
+    }
+
+    ul.actions {
+        margin: 0;
+        float: right;
+        white-space: nowrap;
+
+        li {
+            display: inline-block;
+
+            &.action-item {
+                margin-right: 12px;
+
+                .icon {
+                    margin-right: 6px;
+                    vertical-align: middle;
+                }
+
+                &.action-item-right {
+                    margin-left: 5px;
+
+                    .icon {
+                        margin-left: 7px;
+                        margin-right: 0;
+                    }
+                }
+
+                &:last-child {
+                    margin-right: 0;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// If next to a hero banner, as a separator in for some branding
+.context-nav {
+    + main {
+        .hero-banner {
+            border-top: 1px dotted lighten($colour-deep-purple-lighter, 5%);
+        }
+    }
+}
+
+.brand-lords,
+.brand-commons {
+    // Set branded context-nav if we set the class .context-nav-brand. This ensures
+    // we opt into it. In the future we can remove this opt it an apply it always.
+    .context-nav-brand {
+        @extend .brand-background-colour;
+
+        + main {
+            .hero-banner-brand {
+                border-top: 1px dotted rgba($colour-white, 0.4);
+            }
+        }
+    }
+}
+
+.brand-lords {
+    .context-nav {
+        .breadcrumb {
+            &.breadcrumb-touch, 
+            &:not(.breadcrumb-adaptive) {
+                &:before {
+                    background: linear-gradient(to left, $colour-lords-dark, $colour-context-nav-transparency-lords);
+                }
+            }
+        }
+    }
+}
+
+.brand-commons {
+    .context-nav {
+        .breadcrumb {
+            &.breadcrumb-touch,
+            &:not(.breadcrumb-adaptive) {
+                &:before {
+                    background: linear-gradient(to left, $colour-commons, $colour-context-nav-transparency-commons);
+                }
+            }
+        }
+    }
+}

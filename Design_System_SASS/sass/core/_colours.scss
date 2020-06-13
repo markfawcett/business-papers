@@ -1,0 +1,66 @@
+// Brand colours
+// Taken from: https://www.brandcloudlines.com/uk-parliament/brand-assets/web-colours
+
+// Purples
+$colour-deep-purple: #373151;
+$colour-deep-purple-light: #625a75;
+$colour-deep-purple-lighter: lighten($colour-deep-purple-light, 15%);
+$colour-purple-dark: #3e1d78;
+$colour-purple: #5f2db4;
+$colour-purple-light: #E7DFF4;
+$colour-purple-lighter: lighten($colour-purple-light, 6%);
+
+// Blues
+$colour-blue: #2b57ab;
+$colour-blue-dark: #214282;
+
+// Greys
+$colour-grey-1: #393939;
+$colour-grey-2: #4D4D4D;
+$colour-grey-3: #717171;
+$colour-grey-4: #CBC9CD;
+$colour-grey-5: #EBE9E8;
+$colour-grey-6: #F8F7F7;
+
+// Greens
+$colour-mint-light: #DFF4EB;
+$colour-mint: #96DCBE;
+$colour-mint-dark: #6ec29e;
+
+// State colours
+$colour-info: $colour-purple-light;
+$colour-info-dark: $colour-purple;
+$colour-neutral: $colour-grey-5;
+$colour-neutral-dark: $colour-grey-2;
+$colour-warning-dark: #E0B507;
+$colour-warning-light: #FEF3C7;
+$colour-error-dark: #A72326;
+$colour-error-light: #F7CBCC;
+$colour-success-dark: #0D9D56;
+$colour-success-light: #D9FFF0;
+
+// House colours
+$colour-lords: #b50938;
+$colour-lords-dark: darken(#b50938, 5%);
+$colour-commons: #006e46;
+$colour-commons-dark: #005434;
+$colour-bicameral: $colour-purple;
+$colour-bicameral-dark: $colour-purple-dark;
+
+// Other
+$colour-white: #ffffff;
+$colour-black: #000000;
+$colour-westminster-white: #ebe9e8;
+
+// Specialist colours (not for general use - you should discuss whether to use them or not).
+$colour-magenta: #a81a71;
+$colour-magenta-dark: #a81a71;
+$colour-indigo: #4541e6;
+$colour-indigo-dark: #353375;
+$colour-blue-vibrant: #0a78ff;
+$colour-plum: #7C1389;
+
+// Internal colours
+$colour-card-accent: rgba(248, 246, 252,.5)
+
+

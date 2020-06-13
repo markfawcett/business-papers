@@ -1,0 +1,58 @@
+﻿.highlight {
+    border-left: 6px solid transparent;
+    padding: 17px 20px;
+    margin-bottom: 20px;
+    color: $colour-grey-2;
+
+    a {
+        color: $colour-grey-2;
+        text-decoration: underline;
+    }
+
+    &.highlight-error {
+        border-left-color: $colour-error-dark;
+        background-color: $colour-error-light;
+    }
+
+    &.highlight-warning {
+        border-left-color: $colour-warning-dark;
+        background-color: $colour-warning-light;
+    }
+
+    &.highlight-info {
+        border-left-color: $colour-info-dark;
+        background-color: $colour-info;
+    }
+
+    &.highlight-neutral {
+        border-left-color: $colour-neutral-dark;
+        background-color: $colour-neutral;
+    }
+
+    &.highlight-success {
+        border-left-color: rgba($colour-success-dark, 0.6);
+        background-color: $colour-success-light;
+    }
+
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    ul {
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+
+    .separator {
+        margin-bottom: 12px;
+        margin-top: -6px;
+        border-top: 1px dotted transparent;
+    }
+
+    &.highlight-info {
+        .separator {
+            border-top-color: darken($colour-info, 25%);
+        }
+    }
+}

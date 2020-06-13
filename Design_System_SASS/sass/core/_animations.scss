@@ -1,0 +1,14 @@
+﻿@mixin animation-spin() {
+    animation: spin 1.2s infinite linear;
+    transform-origin: 50% 50%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(1turn);
+    }
+}

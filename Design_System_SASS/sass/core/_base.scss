@@ -1,0 +1,92 @@
+html {
+    /* Loading FOUC trick ... */
+    visibility: visible;
+    height: 100%;
+    /* Loading FOUC trick ... */
+}
+
+body {
+    color: $colour-black;
+    @include national-regular;
+    @include font-size-base;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $colour-westminster-white;
+
+    @include media-print {
+        background-color: $colour-white;
+    }
+    // IE11 has glitches with flexbox and makes the header randomly increase in size when window is resized. So disable.
+    @include ie11-override() {
+        display: block;
+    }
+
+    .reading-width {
+        @include reading-width();
+    }
+
+    .reduced-paragraph-spacing {
+        p {
+            margin-bottom: 12px;
+        }
+    }
+
+    main {
+        flex: 1 0 auto;
+        color: $colour-grey-2;
+
+        article {
+            margin: 15px 0;
+
+            @include media-breakpoint-up(lg) {
+                margin: 30px 0;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
+    a {
+        color: $colour-deep-purple;
+        text-decoration: underline;
+
+        &:focus {
+            background-color: $colour-mint;
+            color: $colour-deep-purple;
+            outline: none;
+        }
+
+        &:hover {
+            color: $colour-deep-purple;
+        }
+
+        &[disabled] {
+            opacity: 0.55;
+            pointer-events: none;
+        }
+    }
+}
+
+p {
+    margin-bottom: 18px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+table, th, td {
+    border: 1px solid;
+}
+
+.light {
+    font-weight: normal;
+}
+
+.width-100 {
+    display: block;
+    width: 100%;
+}

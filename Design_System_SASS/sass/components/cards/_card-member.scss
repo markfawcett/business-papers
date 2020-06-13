@@ -1,0 +1,68 @@
+﻿.card {
+    &.card-member {
+        .card-inner {
+            min-height: 115px;
+            padding-left: 90px;
+            position: relative;
+
+            @include media-breakpoint-up(md) {
+                padding-left: 120px;
+            }
+
+            .content {
+                .image-outer {
+                    border: 1px solid #bbb;
+                    display: inline-block;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 13px;
+                    top: 11px;
+
+                    // Small image on mobile, then increase in size on md-upwards
+                    .image {
+                        background-position: center center;
+                        background-size: contain;
+                        border-radius: 50%;
+                        height: 60px;
+                        width: 60px;
+                        background-repeat: no-repeat;
+                        border: 2px solid $colour-grey-2;
+
+                        @include media-breakpoint-up(md) {
+                            height: 90px;
+                            width: 90px;
+                            border-width: 3px;
+                        }
+                    }
+                }
+            }
+
+            .info {
+                padding-left: 0;
+                margin-left: 0;
+            }
+        }
+
+        &.card-member-small {
+            @extend .card-small;
+
+            .card-inner {
+                padding-left: 85px;
+				min-height: 110px;
+
+                .content {
+                    .image-outer {
+                        left: 11px;
+                        top: 11px;
+
+                        .image {
+                            height: 60px;
+                            width: 60px;
+                            border-width: 2px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

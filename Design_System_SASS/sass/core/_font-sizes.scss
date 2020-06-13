@@ -1,0 +1,109 @@
+// Font sizes are in rems, line heights are unitless values
+$font-size-base: 1.125;
+$line-height-base: 1.5;
+
+$font-size-alpha: 2.6;
+$line-height-alpha: 1.1;
+
+$font-size-beta: 2.3;
+$line-height-beta: 1.1;
+
+$font-size-gamma: 2.05;
+$line-height-gamma: 1.2;
+
+$font-size-delta: 1.66;
+$line-height-delta: 1.2;
+
+$font-size-epsilon: 1.25;
+$line-height-epsilon: 1.35;
+
+$font-size-milli: 1;
+$line-height-milli: 1.4;
+
+$font-size-micro: 0.85;
+$line-height-micro: 1.2;
+
+@mixin font-size($font-size, $line-height) {
+    font-size: #{$font-size}rem;
+    line-height: $line-height;
+}
+
+@mixin font-size-base() {
+    @include font-size($font-size-base, $line-height-base);
+}
+
+@mixin font-size-alpha() {
+    @include font-size($font-size-alpha - 0.3, $line-height-alpha);
+
+    @include media-breakpoint-up(md) {
+        @include font-size($font-size-alpha, $line-height-alpha);
+    }
+}
+
+@mixin font-size-beta() {
+    @include font-size($font-size-beta - 0.3, $line-height-beta);
+
+    @include media-breakpoint-up(md) {
+        @include font-size($font-size-beta, $line-height-beta);
+    }
+}
+
+@mixin font-size-gamma() {
+    @include font-size($font-size-gamma - 0.2, $line-height-gamma);
+
+    @include media-breakpoint-up(md) {
+        @include font-size($font-size-gamma, $line-height-gamma);
+    }
+}
+
+@mixin font-size-delta() {
+    @include font-size($font-size-delta, $line-height-delta);
+}
+
+@mixin font-size-epsilon() {
+    @include font-size($font-size-epsilon, $line-height-epsilon);
+}
+
+@mixin font-size-milli() {
+    @include font-size($font-size-milli, $line-height-milli);
+}
+
+@mixin font-size-micro() {
+    @include font-size($font-size-micro, $line-height-micro);
+}
+
+.font-size-base {
+	@include font-size-base;
+}
+
+.font-size-alpha {
+	@include font-size-alpha;
+}
+
+.font-size-beta {
+	@include font-size-beta;
+}
+
+.font-size-gamma {
+	@include font-size-gamma;
+}
+
+.font-size-delta {
+	@include font-size-delta;
+}
+
+.font-size-epsilon {
+	@include font-size-epsilon;
+}
+
+.font-size-epsilon {
+	@include font-size-epsilon;
+}
+
+.font-size-milli {
+	@include font-size-milli;
+}
+
+.font-size-micro {
+	@include font-size-micro;
+}

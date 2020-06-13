@@ -1,0 +1,41 @@
+﻿.spinner {
+    padding: 75px 20px;
+    text-align: center;
+
+    .spinner-icon {
+        margin: 0 auto;
+        @include animation-spin;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+
+        &:after {
+            @include icon-spinner;
+            color: $colour-deep-purple;
+            text-align: center;
+            display: inline-block;
+            font-size: 30px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+
+            @include ie11-override {
+                line-height: normal;
+            }
+        }
+    }
+
+    &.spinner-short {
+        padding: 35px 20px;
+    }
+
+    &.spinner-long {
+        padding: 150px 20px;
+    }
+
+    p {
+        text-align: center;
+        color: $colour-grey-3;
+        margin-top: 8px;
+    }
+}

@@ -1,0 +1,20 @@
+ a.skip-to-content {
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: none;
+	overflow: hidden;
+	position: absolute;
+
+	&:focus {
+		margin: 0;
+		z-index: 2;
+		width: auto;
+		height: auto;
+		overflow: visible;
+		padding: 10px 12px;
+		top: 0;
+		left: 0;
+		@include font-bold;
+	}
+}

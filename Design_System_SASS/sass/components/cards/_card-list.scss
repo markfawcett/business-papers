@@ -1,0 +1,61 @@
+﻿.card-list {
+    > .card {
+        flex: 1 1 auto;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .card-list {
+        &.card-list-1-col {
+            margin-bottom: -15px;
+        }
+
+        &.card-list-2-col,
+        &.card-list-3-col {
+            display: flex;
+            justify-content: flex-start;
+            align-items: stretch;
+            flex-wrap: wrap;
+            margin-bottom: -15px;
+        }
+
+        > .card {
+            &:last-child {
+                margin-bottom: 15px;
+            }
+        }
+
+        &.card-list-2-col {
+            > .card {
+                margin-right: 2%;
+                width: 49%;
+                max-width: 49%;
+
+                &:nth-child(2n) {
+                    margin-right: 0; // Remove from right hand side (2nd col) items.
+                }
+            }
+        }
+
+        &.card-list-3-col {
+            > .card {
+                width: 32%;
+                margin-right: 2%; // 32% x 3 = 96%, leaving 4% remaining We have 2 gaps on 3 col, so 2% each.
+                max-width: 32%;
+
+                &:nth-child(3n) {
+                    margin-right: 0; // Remove from right hand side (3rd col) items.
+                }
+            }
+        }
+    }
+}

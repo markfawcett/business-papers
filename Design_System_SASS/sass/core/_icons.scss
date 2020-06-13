@@ -1,0 +1,79 @@
+﻿@mixin icon($icon-code) {
+    content: $icon-code;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+
+@mixin icon-caret-right() {
+    @include icon("\f0da");
+}
+
+@mixin icon-caret-left() {
+    @include icon("\f0d9");
+}
+
+@mixin icon-chevron-right() {
+    @include icon("\f054");
+}
+
+@mixin icon-chevron-up() {
+    @include icon("\f077");
+}
+
+@mixin icon-chevron-down() {
+    @include icon("\f078");
+}
+
+@mixin icon-arrow-down() {
+    @include icon("\f309");
+}
+
+@mixin icon-arrow-right() {
+    @include icon("\f138");
+}
+
+@mixin icon-arrow-right() {
+    @include icon("\f138");
+}
+
+@mixin icon-arrow-up() {
+    @include icon("\f30c");
+}
+
+@mixin icon-link-external() {
+    @include icon("\f360");
+}
+
+@mixin icon-spinner() {
+    @include icon("\f2f1");
+}
+
+@mixin icon-help() {
+    @include icon("\f059");
+}
+
+@mixin icon-circle() {
+    @include icon("\f111");
+    font-weight: 200;
+}
+
+@mixin icon-circle-tick() {
+    @include icon("\f058");
+}
+
+@mixin icon-close() {
+    @include icon("\f057");
+    font-weight: 200;
+}
+
+@mixin icon-caret-down() {
+    @include icon("\f0d7");
+}
+
+@mixin icon-dot-circle() {
+    @include icon("\f192");
+	font-weight: 200;
+}
+
+
+

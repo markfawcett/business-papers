@@ -1,0 +1,78 @@
+// Overrides to address spacing between columns on mobile
+[class^="col-sm"] {
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 0;
+    }
+}
+
+[class^="col-md"] {
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(md) {
+        margin-bottom: 0;
+    }
+}
+
+[class^="col-lg"] {
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 0;
+    }
+}
+
+[class^="col-xl"] {
+    margin-bottom: 15px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-up(xl) {
+        margin-bottom: 0;
+    }
+}
+
+.col-no-spacing {
+    margin-bottom: 0;
+}
+
+.row-with-spacing {
+    margin-bottom: 15px;
+
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 30px;
+    }
+}
+
+.col-border-right-xl {
+    @include media-breakpoint-up(xl) {
+        padding-right: 30px;
+        border-right: 1px dotted $colour-grey-4;
+    }
+}
+
+.col-border-right-md {
+    @include media-breakpoint-up(md) {
+        padding-right: 30px;
+        border-right: 1px dotted $colour-grey-4;
+    }
+}

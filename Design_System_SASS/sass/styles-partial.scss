@@ -1,0 +1,39 @@
+@import 'core/fonts';
+@import 'core/font-sizes';
+@import 'core/colours';
+@import 'partial/base-partial';
+@import 'core/browser-overrides';
+
+.apply-design-system {
+    @import 'core/mixins';
+    @import 'core/browser-overrides';
+    @import 'core/animations';
+    @import 'core/headings';
+    @import 'core/branding';
+    @import 'core/spacing';
+    @import 'core/icons';
+
+    @import 'components/highlight';
+    @import 'components/header';
+    @import 'components/footer';
+    @import 'components/block';
+    @import 'components/widget';
+    @import 'components/context-nav';
+    @import 'components/spinner';
+    @import 'components/house-logo';
+
+    @import 'components/banners/product-banner';
+    @import 'components/banners/hero-banner';
+
+    @import 'components/cards/card';
+    @import 'components/cards/card-member';
+    @import 'components/cards/card-badge';
+    @import 'components/cards/card-house';
+    @import 'components/cards/card-party';
+    @import 'components/cards/card-list';
+    @import 'components/cards/card-link-overlay';
+    @import 'components/cards/card-expandable';
+
+    @import 'components/tiles/tile';
+    @import 'components/tiles/tile-list';
+}

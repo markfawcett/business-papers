@@ -1,0 +1,130 @@
+﻿.tile {
+    @extend .card;
+
+    .tile-inner {
+        @extend .card-inner;
+        padding: 15px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .top {
+            .icon-box {
+                background-color: $colour-deep-purple-light;
+                color: $colour-white;
+                height: 70px;
+                margin-bottom: 15px;
+
+                .illustration {
+                    @include centre-vertically();
+                    margin: 0 auto;
+                    width: 45px;
+
+                    @include media-breakpoint-up(md) {
+                        width: 65px;
+                    }
+
+                    &.illustration-wide {
+                        width: 65px;
+
+                        @include media-breakpoint-up(md) {
+                            width: 90px;
+                        }
+                    }
+                }
+
+                .icon {
+                    @include centre-vertically();
+                    margin: 0 auto;
+                    width: 35px;
+                    height: 100%;
+
+                    &.icon-wide {
+                        width: 45px;
+                    }
+
+                    &.icon-narrow {
+                        width: 25px;
+                    }
+                }
+
+                img {
+                    width: 70px;
+                    @include centre-vertically();
+                    margin: 0 auto;
+
+                    &.image-wide {
+                        width: 90px;
+                    }
+                }
+
+                &.icon-box-small {
+                    height: 50px;
+
+                    .icon {
+                        width: 25px;
+
+                        &.icon-wide {
+                            width: 40px;
+                        }
+
+                        &.icon-narrow {
+                            width: 18px;
+                        }
+                    }
+                }
+
+                @include media-breakpoint-up(md) {
+                    height: 100px;
+
+                    .icon {
+                        width: 38px;
+
+                        &.icon-wide {
+                            width: 55px;
+                        }
+                    }
+
+                    &.icon-box-small {
+                        height: 70px;
+
+                        .icon {
+                            width: 35px;
+
+                            &.icon-wide {
+                                width: 45px;
+                            }
+
+                            &.icon-narrow {
+                                width: 25px;
+                            }
+                        }
+                    }
+
+                    &.icon-box-colour {
+                        height: 50px;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            @include media-breakpoint-up(md) {
+                margin-bottom: -10px;
+            }
+
+            .info {
+                margin-top: 10px;
+
+                .indicators-left {
+                    margin-bottom: 1px;
+                }
+            }
+        }
+    }
+}
+
+a.tile {
+    @extend a.card;
+}

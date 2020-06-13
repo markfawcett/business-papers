@@ -1,0 +1,26 @@
+﻿// Card link overlay is a special mechanism for allowing an entire .card to be clickable,
+// but also allowing a.indicator links inside it to be clickable too (in an accessible and W3C valid way).
+// If you have clickable indicators, and wish to make the entire card clickable too, an a.overlay-link
+// is added inside the .content section with the card link (with the card element remaining a div). 
+// CSS then makes it look like the card is clickable, whilst remaining accessible and valid HTML.
+.card {
+    .card-inner {
+        .content {
+            .overlay-link {
+                display: block;
+                position: absolute;
+                top: 0px;
+                left: -6px;
+                bottom: 0px;
+                right: 0px;
+                z-index: 10; // 10 so below card.scss .info value
+                background: transparent;
+
+                &:focus {
+                    @include focus-highlight-border-3;
+                    background: transparent;
+                }
+            }
+        }
+    }
+}

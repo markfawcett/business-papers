@@ -1,0 +1,20 @@
+﻿.article {
+    .secondary-content {
+        h2 {
+            max-width: 100%;
+        }
+    }
+
+    &.with-separator {
+        @include media-breakpoint-up(lg) {
+            .primary-content {
+                border-right: 1px dotted $colour-grey-4;
+                padding-right: 30px;
+            }
+
+            .secondary-content {
+                padding-left: 30px;
+            }
+        }
+    }
+}

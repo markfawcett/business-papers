@@ -1,0 +1,31 @@
+﻿.heading-block {
+    margin-bottom: 10px;
+
+    h1, h2, h3, h4, h5 {
+        margin-bottom: 8px;
+    }
+
+    .btn {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+        width: 100%;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+
+    @include media-breakpoint-up(md) {
+        h1, h2, h3, h4, h5 {
+            float: left;
+        }
+
+        .btn {
+            float: right;
+            margin-top: 0;
+            margin-bottom: 0;
+            width: auto;
+        }
+    }
+}

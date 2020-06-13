@@ -1,0 +1,436 @@
+*,*:before,*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+
+/*** Global styles ***/
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-decoration: none;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-right: 40%;
+    margin-top: 35px;
+}
+
+h1, h2, h3, h4, p {
+  display: block;
+  text-decoration: none;
+  margin-right: 40%;
+  font-family: 'Libre Franklin', sans-serif;
+} 
+
+h1 { 
+    font-size: 15pt;
+    letter-spacing: 0.04em;
+    line-height: 1.65em;
+    padding: 25px 0px 25px 0px;
+    font-weight: bold;
+    color: #373151;  
+}
+
+h2 {
+    font-size: 13pt;
+    letter-spacing: 0.06em;
+    line-height: 1.65em;
+    padding: 35px 0px 5px 0px;
+    font-weight: bold;
+    color: #373151;
+}
+
+h3 {
+    font-size: 5pt;
+    letter-spacing: 0.04em;
+    line-height: 1.65em;
+    padding: 25px 0px 25px 0px;
+    font-weight: bold;
+    color: #373151;
+}
+
+h4 {
+    font-size: 15pt;
+    letter-spacing: 0.04em;
+    line-height: 1.4em;
+    padding: 1px 0px 1px 0px;
+    color: #373151;
+}
+
+h5 {
+    font-size: 10pt;
+    letter-spacing: 0.04em;
+    line-height: 1.4em;
+    font-weight: normal; 
+}
+
+p {
+    font-size: 12pt;
+    letter-spacing: 0.04em;
+    line-height: 1.65em;
+    color: #4d4d4d;
+}
+a {
+   text-decoration: none;
+}
+
+a:hover {
+   text-decoration: underline;
+}
+
+
+/* ---- Anchor link ---- */
+
+
+
+@font-face {
+    font-family: "hocLinkIcon";
+    src: url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8TDNEAAAC8AAAAYGNtYXD/rgHVAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZhjFPzoAAAF4AAABXGhlYWQTibEUAAAC1AAAADZoaGVhB8EDxgAAAwwAAAAkaG10eAoAAAAAAAMwAAAAFGxvY2EAKADCAAADRAAAAAxtYXhwAAgAYgAAA1AAAAAgbmFtZVdmxuUAAANwAAABtnBvc3QAAwAAAAAFKAAAACAAAwMAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAABAAAAApwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAgAKf//f//AAAAAAAgAKf//f//AAH/4/9dAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACAAD/wQP/A7IALwBfAAAlBw4BJy4BNTQ2PwE+ARcWMjc2NCcmJyYGBwYPAQ4BFRQWFx4BMzI2PwE2NCcmIgcBJicuAQcGDwEGFBcWMj8BNhYXHgEVFAYPAQYmJyYiBwYUFx4BMzI2PwE+ATU2JicBdzQiXyIQEhIQvh5hKRM1EhMTIioqWy4vLb4iJSUiI1kvLlkkNBISEzQTAkIlKytYKioiQRISEzQTQSNVHhASEhDMRUgOEzUSExMgSCYvYi/LIyQBJSKUMyEBIhApFxcoEb0dNykSEhI2EiIODgsZGSy9I1gvMFkhJCIjIzMSNRMSEgLeJRQTBBAQI0ASNRMTE0AkEh4QKhYXKRDKRhkOEhITNRIgIDAuyiJYMDFXIgABAAAAAQAA9WCCgV8PPPUACwQAAAAAANg1tlIAAAAA2DW2UgAA/8ED/wOyAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAP/AAEAAAAAAAAAAAAAAAAAAAAFBAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAoAFAAeAK4AAQAAAAUAYAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAsAAAABAAAAAAACAAcAhAABAAAAAAADAAsAQgABAAAAAAAEAAsAmQABAAAAAAAFAAsAIQABAAAAAAAGAAsAYwABAAAAAAAKABoAugADAAEECQABABYACwADAAEECQACAA4AiwADAAEECQADABYATQADAAEECQAEABYApAADAAEECQAFABYALAADAAEECQAGABYAbgADAAEECQAKADQA1GhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblJlZ3VsYXIAUgBlAGcAdQBsAGEAcmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbkZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format("truetype");
+}
+
+[data-anchor-icon]::after {
+    content: attr(data-anchor-icon); 
+}
+
+.anchor-link {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'hocLinkIcon' !important;
+    color:inherit;
+    line-height: 1;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-size: 0.9em;
+    font-weight: 400;
+    color: rgba(0,123,255,.5);
+    transition: color .25s ease-out,opacity .25s ease-in-out;
+    /*hide unless hover on parent*/
+    opacity: 0;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/*show anchor link on hover*/
+:hover>.anchor-link, .anchor-link:focus {
+    opacity: 9;
+    display: inline;	
+    color: #d4d1e0;
+    text-decoration: none;
+}
+
+/* ---- End of CSS for anchor link ---- */
+
+.container .portcullis-container {
+    padding-left: 60px;
+}
+/* ---- These pages are being tested ---- */
+
+#page-test-notification {
+    background-color: #625a75;
+    width: 100%;
+    height: 55px;
+}
+
+.test {
+    margin-left: 60px;
+    padding-top: 0.1px;
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 2pt;
+    letter-spacing: 0.04em;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.test a {
+    font-weight: bold;
+    color: white;
+}
+
+
+.test a:hover {
+    color: #d4d1e0;
+}
+
+/* ---- NAVBAR ---- */
+
+.navbar {
+    background-color: #373151;
+    margin-left: none;
+    border: none;
+    width: 100%;
+    border-radius: 0;
+    position: relative;
+    min-height: 50px;
+    height: 90px;
+    margin-bottom: 20px;
+    padding: 0;
+    width: 100%;
+    display: block;
+    border: 1px solid transparent;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+
+}
+
+.uk_parliament {
+    margin-left: 60px;
+    padding-top: 8-px;
+}
+
+.navbar>.container {
+    padding-top: 15px;
+    padding-bottom: 17px;
+}
+
+/* ---- END OF NAVBAR ---- */
+
+body .content {
+    margin-left: 60px;
+}
+
+.mainTitle {
+    font-style: normal;
+    font-size: 2.75rem;
+    line-height: 45px;
+}
+
+.titleBlockTitle {
+    text-align: left;
+}
+
+#titleBlockLink1 a {
+    padding: 20px 0px 15px 0px;
+}
+
+#titleBlockLink1 a:hover {
+    color: #d4d1e0;
+}
+
+#titleBlockLink2 a {
+    padding: 20px 0px 20px 0px;
+    margin-bottom: 20px;
+}
+
+#titleBlockLink2 a:hover {
+     color: #d4d1e0;
+}
+
+/* ----- TABLE ----- */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 60%;
+  min-width: 30%;
+  overflow-x:auto;
+}
+
+th, td {
+  margin-left: 0px;
+}
+
+tr:nth-child(odd){
+	background-color: #f2f2f2;
+	display: table-row;
+    vertical-align: inherit;
+}
+
+th {
+  color: white;
+}
+
+.Front-Page-Table.Alline-left {
+	padding-left: 20px;
+	text-align: left;
+}
+
+.Front-Page-Table.Alline-Right {
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-right-color: #DADADA;
+    text-align: right;
+    padding-left: 150px;
+    padding-right: 0px;
+}
+
+
+.paraSummaryAgendaItemTiming {
+    font-weight: bolder;
+    padding-right: 10px;
+}
+
+.paraChamberSummaryHeading {
+    background-color: #373151;
+    color: white;
+    padding: 0px 0px 0px 10px;
+    margin-top: 60px;
+    width: 60%;
+    font-size: 15pt;
+}
+
+.paraChamberSummaryHeading a:hover {
+ 	color: white;
+}
+
+.TableStyles_TableStyle a:hover {
+ 	color: #d4d1e0;
+}
+
+.paraOrderofBusinessItemTiming {
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+/* ----- END OF TABLE ITEMS ----- */
+
+
+
+.paraBusinessTodayChamberHeading {
+    background-color: #373151;
+    font-size: 15pt;
+    color: white;
+    padding: 0px 0px 0px 10px;
+    margin-top: 80px;
+    width: 60%;
+    min-width: 40%;
+}
+
+.paraBusinessSub-SectionHeading {
+    font-style: normal;
+    font-size: 1.0rem;
+    padding: 0px 0px 0px 10px;
+    margin: 50px 0px 20px 0px;
+    background-color: gray;
+    color: white;
+    width: 60%;
+}
+
+.paraBusinessItemHeading {
+    padding: 10px 0px 10px 0px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.paraBusinessListItem {
+    margin-left: 10px;
+}
+
+.paraBusinessItemHeading-bulleted {
+    padding: 0px 0px 10px 0px;
+    font-weight: bold;
+    margin-left: 10px;
+    display: list-item;         
+    list-style-type: square;       
+    list-style-position: inside;
+}
+
+.paraBusinessItemHeading-bulleted2 {
+    display: list-item;         
+    list-style-type: square;       
+    list-style-position: inside;
+    margin-left: 10px;
+
+}
+.charBallotNumber {
+    padding: 0px 20px 0px 0px;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-left: 10px;
+}
+
+.paraQuestion {
+ margin-left: 10px;
+}
+
+.charMember {
+    padding: 0px 0px 0px 0px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+
+.paraMotionSponsor {
+    padding: 0px 0px 0px 0px;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-left: 10px;
+}
+
+.paraMotionText {
+  margin-left: 10px;
+
+}
+
+.paraMotionText {
+    font-size: 15px;
+    line-height: 25px;
+}
+
+.paraOrderofBusinessItemTiming2 {
+    padding: 20px 0px 20px 0px;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+
+.paraNotesTag {
+    margin-left: 50px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.paraNotesText {
+    margin-left: 50px;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+/* ----- FOOTER ----- */
+
+footer {
+    background: #373151;
+    width: 100%;
+    padding-bottom: 35px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+footer h2 {
+    color: white;
+    margin-left: 60px;
+}
+
+
+footer ul li {
+    list-style-type: none;
+    line-height: 1.2em
+}
+
+
+footer a {
+    color: white;
+    font-family: 'Libre Franklin', sans-serif;
+    line-height: 1.8em;
+    margin-left: 20px;
+}
+
+footer a:hover {
+    color: #d4d1e0
+}

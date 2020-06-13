@@ -1,0 +1,80 @@
+﻿.tile-list {
+    .tile {
+        flex: 1 1 auto;
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .tile-list {
+        display: flex;
+        justify-content: flex-start;
+        align-items: stretch;
+        flex-wrap: wrap;
+
+        .tile {
+            &:last-child {
+                margin-bottom: 15px;
+            }
+        }
+
+        &.tile-list-2-col {
+            margin-bottom: -15px;
+
+            .tile {
+                margin-right: 2%;
+                width: 49%;
+                max-width: 49%;
+
+                &:nth-child(2n) {
+                    margin-right: 0; // Remove from right hand side (2nd col) items.
+                }
+            }
+        }
+
+        &.tile-list-3-col {
+            margin-bottom: -15px;
+
+            .tile {
+                width: 32%;
+                margin-right: 2%; // 32% x 3 = 96%, leaving 4% remaining We have 2 gaps on 3 col, so 2% each.
+                max-width: 32%;
+
+                &:nth-child(3n) {
+                    margin-right: 0; // Remove from right hand side (3rd col) items.
+                }
+            }
+        }
+
+        &.tile-list-4-col {
+            // Until we go to large size, use 3 column layout
+            @extend .tile-list-3-col;
+
+            @include media-breakpoint-up(lg) {
+                margin-bottom: -15px;
+
+                .tile {
+                    width: 23.5%;
+                    margin-right: 2%; // 23.5% x 4 = 94%, leaving 6% remaining We have 3 gaps on 4 col, so 2% each.
+                    max-width: 23.5%;
+
+                    &:nth-child(3n) {
+                        margin-right: 2% 
+                    }
+
+                    &:nth-child(4n) {
+                        margin-right: 0; // Remove from right hand side (4rd col) items.
+                    }
+                }
+            }
+        }
+    }
+}

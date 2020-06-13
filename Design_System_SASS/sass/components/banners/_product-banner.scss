@@ -1,0 +1,142 @@
+﻿.product-banner {
+    background-color: $colour-deep-purple;
+    color: $colour-white;
+    padding: 25px 0 30px 0;
+    border-top: 1px solid $colour-deep-purple-light;
+
+    a {
+        color: $colour-white;
+
+        &:hover {
+            color: $colour-white;
+        }
+
+        &:focus {
+            color: $colour-deep-purple;
+        }
+    }
+
+    h1 {
+        @include font-size-beta();
+    }
+
+    h1, h2, h3, h4 {
+        margin-bottom: 25px;
+        margin-top: 0;
+        color: $colour-white;
+    }
+
+    .separator {
+        background-color: $colour-white;
+        height: 4px;
+        width: 80px;
+        margin: 24px 0 22px 0;
+    }
+
+    .image {
+        display: none;
+        margin: -20px 0;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+
+            img {
+                height: 200px;
+                float: right;
+                @include centre-vertically();
+            }
+        }
+
+        &.image-padding { // Put image-padding class on to increase spacing around image
+            margin: -10px 0;
+
+            @include media-breakpoint-up(md) {
+                img {
+                    height: 180px;
+                }
+            }
+        }
+		
+		&.image-slim { // Put image-slim class on to create a slimmer banner
+			img {
+				height: 140px;
+			}
+		}
+
+        &.member-image {
+            .image-outer {
+                display: inline-block;
+                border-radius: 50%;
+                @include centre-vertically;
+                float: right;
+                // Small image on mobile, then increase in size on md-upwards
+                .image-inner {
+                    background-position: center center;
+                    background-size: contain;
+					background-color: $colour-white;
+                    border-radius: 50%;
+                    height: 200px;
+                    width: 200px;
+                    background-repeat: no-repeat;
+                    border: 3px solid $colour-grey-2;
+                }
+            }
+        }
+    }
+
+    &.product-banner-search {
+        .search-box {
+            form {
+                .label {
+                    @include font-size-epsilon;
+                    margin-bottom: 3px;
+                }
+
+                .link {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        @include media-breakpoint-up(md) {
+            p {
+                width: 90%;
+            }
+
+            .search-box {
+                form {
+                    display: flex;
+                    justify-content: flex-start;
+                    width: 100%;
+
+                    .label {
+                        margin-right: 20px;
+                        padding-top: 8px;
+                        margin-bottom: 0;
+                    }
+
+                    .search {
+                        flex-grow: 2;
+                    }
+
+                    .link {
+                        padding-top: 7px;
+                        margin-top: 0;
+                        margin-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include media-print {
+        background-color: $colour-white;
+        border-top: none;
+        color: $colour-deep-purple;
+        border-bottom: 1px solid $colour-grey-4;
+
+        h1, h2, a {
+            color: $colour-deep-purple;
+        }
+    }
+}
