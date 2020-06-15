@@ -1,4 +1,20 @@
+.Front-Page-Table {
+  border: none; }
+
+.Front-Page-Table .Alline-Right {
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #393939;
+  padding-right: 0.75em; }
+
+.Front-Page-Table .Alline-left {
+  padding-left: 0.75em; }
+
+.Alline-Right {
+  text-align: right; }
+
 .paraBusinessTodayChamberHeading {
+  max-width: none;
   text-transform: uppercase;
   background-color: #4D4D4D;
   padding-left: 4.7%;
