@@ -2,7 +2,25 @@
 @import '../Design_System_SASS/sass/core/colours.scss';
 
 
+// sumary agenda table
+.Front-Page-Table{
+    border: none;
+}
+.Front-Page-Table .Alline-Right {
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-right-color: $colour-grey-1;
+    padding-right: 0.75em;
+}
+.Front-Page-Table .Alline-left {
+    padding-left: 0.75em;
+}
+.Alline-Right{
+    text-align: right;
+}
+
 .paraBusinessTodayChamberHeading {
+    max-width: none;
     text-transform: uppercase;
     // margin-top: 38px;
     // line-height: 1.1em;
