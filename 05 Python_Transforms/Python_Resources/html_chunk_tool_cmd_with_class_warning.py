@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 
 # module needed to parse command line arguments
 import sys
@@ -176,23 +176,16 @@ def massarge_input_file(input_file_name):
         except IndexError:
             # dont do anything if there is no tab
             pass
-    # add span to beginning of all business headings
-    # dark_gray_headings = input_root.xpath('//*[@class="paraBusinessTodayChamberHeading"]')
-    # for gray_heading in dark_gray_headings:
-    #     gray_heading.append(html.fromstring('<span style="display : block; float : left; width : 4.7%; height : 1em;">&nbsp;</span>'))
-    # light_gray_headings = input_root.xpath('//*[@class="paraBusinessSub-SectionHeading"]')
-    # for light_gray_heading in light_gray_headings:
-    #     light_gray_heading.append(html.fromstring('<span style="display : block; float : left; width : 1.2%; height : 1em;">&nbsp;</span>'))
+
+
     # sort out all the bullets
     bullets = input_root.xpath('//span[@class="pythonFindBullet"]')
     for bullet in bullets:
         bullet.text = ""
-        # bullet.attrib['style'] = 'display : block; float : left; width : 2.1em; height : 1em;'
-        bullet.attrib.pop('class', None)  # None means dont error if class not there
-        # change the alt attrib to "" for accessability (it will be ignored by screen readers if
-        # the alt attrib is present but null).
-        # Could also use, role="presentation" but not as well supported
-        # bullet.append(html.fromstring('<img alt="" src="' + location_of_button_gif + '" style="display : inline; margin : 0;">'))
+
+        # bullet.attrib.pop('class', None)  # None means dont error if class not there
+        bullet.classes.clear()
+
         # also turn the strong to a span. This is for FBA where there are tabs between the time and the rest.
         next_strong_t = bullet.getnext()
         if next_strong_t is not None and next_strong_t.tag == 'strong':
@@ -201,6 +194,7 @@ def massarge_input_file(input_file_name):
                 next_strong_t.tag = 'span'
                 # next_strong_t.attrib.pop('class', None)
                 # next_strong_t.attrib['style'] = 'display : block; float : left; width : 5.7em; height : 1em;'
+
     # sort the numbers
     numbers = input_root.xpath('//p[@class="paraQuestion"]/span[1]')
     for number in numbers:
@@ -212,6 +206,7 @@ def massarge_input_file(input_file_name):
         number_parent = number.getparent()
         new_span.append(number)
         number_parent.insert(0, new_span)
+
     # sort ministerial statements
     statements = input_root.xpath('//p[@class="paraMinisterialStatement"]/span[1]')
     for statement in statements:
@@ -225,6 +220,7 @@ def massarge_input_file(input_file_name):
         number_parent = statement.getparent()
         new_span.append(statement)
         number_parent.insert(0, new_span)
+
     # sort the front page tables
     front_page_tables = input_root.xpath('//table[@class="Front-Page-Table"]')
     for table in front_page_tables:
@@ -232,7 +228,7 @@ def massarge_input_file(input_file_name):
         table.set('role', 'presentation')
     front_page_table_colgroups = input_root.xpath('//table[@class="Front-Page-Table"]/colgroup')
     for colgroup in front_page_table_colgroups:
-        colgroup[0].attrib.pop("class", None)  # None means dont error if class not there
+        colgroup[0].attrib.pop("class", None)
         colgroup[0].attrib['width'] = '24%'
         colgroup[1].attrib.pop("class", None)
         colgroup[1].attrib['width'] = '76%'
@@ -254,6 +250,15 @@ def massarge_input_file(input_file_name):
             sponsor_span = SubElement(sponsor_group, 'span')
             sponsor_span.classes.add('sponsor-span')
             sponsor_span.text = sponosr_name
+
+    # change FBA location to .heading-level-3
+    # for fba_location_heading in input_root.xpath('//*[@class="FbaLocation"]'):
+    #     fba_location_heading.classes.discard('FbaLocation')
+    #     fba_location_heading.classes.add('heading-level-3')
+
+    # <strong class="Bold"> is overkill
+    for strong_ele in input_root.xpath('//strong'):
+        strong_ele.classes.discard('Bold')
 
 
     # Add IDs and perminant ancors to the html
@@ -287,21 +292,19 @@ def massarge_input_file(input_file_name):
 
 
 def split_and_output(input_root, template_file_name, input_file_name):
+
     output_root = html.parse(template_file_name).getroot()
     # put element lists in dict with file_lable as the key
     file_lables_element_lists = {'new_ob': [], 'new_fb': [], 'an': []}
     # select all the paragraphs etc within the top levle divs
     paragraph_elements = input_root.xpath('//body/div/*')
     list_to_add_to = file_lables_element_lists['new_ob']
+
     # look through all the paragraph elemets and find out if any are Annoncements etc
     for paragraph_element in paragraph_elements:
-        # if (paragraph_element.get('class') == 'paraBusinessTodayChamberHeading' and
-        #    (paragraph_element.text is not None and paragraph_element.text.upper().strip() == 'ANNOUNCEMENTS') or
-        #    (len(paragraph_element) != 0 and paragraph_element[0].tail is not None and
-        #    paragraph_element[0].tail.upper().strip() == 'ANNOUNCEMENTS')):
-        #     # start new list for announcements
-        #     list_to_add_to = file_lables_element_lists['an']
-        if paragraph_element.get('class') == 'DocumentTitle' and 'PART 2' in html.tostring(paragraph_element).decode(encoding='UTF-8').upper():
+
+        if (paragraph_element.get('class') == 'DocumentTitle'
+             and 'PART 2' in paragraph_element.text_content().upper()):
             # start new list for future business
             list_to_add_to = file_lables_element_lists['new_fb']
         list_to_add_to.append(paragraph_element)
@@ -309,13 +312,10 @@ def split_and_output(input_root, template_file_name, input_file_name):
     # build up output trees
     for file_lable, element_list in file_lables_element_lists.items():
         if len(element_list) != 0:
-            # make the filename from the label and the sittig date compact
-            filename = file_lable + DATES.sitting_date_super_compact + fileextension
+
             # copy the template tree and add elements needed for this section
             temp_output_root = deepcopy(output_root)
-            # sort out things in the head section
-            # temp_output_root.xpath('//head/meta[@name="Date"]')[0].attrib['content'] = DATES.creation_date_medium
-            # temp_output_root.xpath('//head/meta[@name="Identifier"]')[0].attrib['content'] = 'Filename: ' + filename
+
             # change the title
             if file_lable == 'new_ob':
                 title_text = 'Order Paper for ' + DATES.sitting_date_medium
@@ -325,6 +325,7 @@ def split_and_output(input_root, template_file_name, input_file_name):
                 h1_text = 'Future Business as of ' + DATES.sitting_date_long
             temp_output_root.xpath('//h1[@id="mainTitle"]')[0].text = h1_text
             temp_output_root.xpath('//head/title')[0].text = title_text
+
             # get the position (in the template) where we will inject html (from the input)
             code_injection_point = temp_output_root.xpath('//div[@id="content-goes-here"]')[0]
             for element in element_list:
@@ -332,19 +333,6 @@ def split_and_output(input_root, template_file_name, input_file_name):
                 if element.get('class', default=None) == 'DocumentTitle':
                     continue
                 code_injection_point.append(element)
-
-            # Add IDs to Future business
-            # Added at the request of IDMS
-            # if file_lable == 'fb':
-            #     # get all elements with the class 'paraBusinessItemHeading'
-            #     xpath = '*[@class="paraBusinessItemHeading"]/span'
-            #     paraBusinessItemHeadings = code_injection_point.xpath(xpath)
-            #     for span_element in paraBusinessItemHeadings:
-            #         span_text = span_element.text
-            #         if span_text:
-            #             paragraph_element = span_element.getparent()
-            #             number_text = 'FBB-' + span_text.strip().strip('.')
-            #             paragraph_element.set('id', number_text)
 
             # write out the output html files
             outputfile_name = os.path.join(os.path.dirname(input_file_name),

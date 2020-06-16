@@ -40,10 +40,13 @@ $para-spacing: 18px;
 }
 
 // sponsors
-.paraMotionSponsor{
-    @include font-bold();
+.paraMotionSponsor, .MemberInCharge{
     margin-bottom: 0;
 }
+.paraMotionSponsor{
+    @include font-bold();
+}
+
 
 // Notes
 .paraNotesTag, .paraNotesText{
@@ -58,7 +61,8 @@ $para-spacing: 18px;
     margin-bottom: $para-spacing/2;
 }
 // need less space after a motion
-.paraMotionText+.paraNotesTag, .paraBusinessListItem+.paraNotesTag{
+.paraMotionText+.paraNotesTag,
+.paraBusinessListItem+.paraNotesTag{
     margin-top: -$para-spacing/2;
 }
 
@@ -99,23 +103,17 @@ $para-spacing: 18px;
     // margin-right: 3.35%;
     padding-left: 0.66rem;
     margin-left: -0.66rem;
+    margin-top: $para-spacing*2.5;
+    margin-bottom: $para-spacing*1.5;
     color: $colour-white;
 }
 .paraBusinessItemHeading-bulleted{
-    margin-left: $indent-amount;
+
     margin-top: $para-spacing/2;
     margin-bottom: 0;
     @include font-bold();
 }
 
-.paraBusinessListItem:before, .paraBusinessItemHeading-bulleted:before{
-    content: '■ ' ;
-    display: inline-block;
-    width: $indent-amount;
-    margin-left: -$indent-amount;
-
-    // content: '<span class="hang-bullet">■ </span>'
-}
 .paraBusinessItemHeading{
     @include font-bold();
     margin-top: $para-spacing * 2;
@@ -123,18 +121,33 @@ $para-spacing: 18px;
     text-transform: uppercase;
 }
 
+// --------- bulleted styles --------
+.paraBusinessListItem,
+.paraQuestion,
+.paraBusinessItemHeading-bulleted,
+.paraFutureBusinessItemHeadingwithTiming{
+    margin-left: $indent-amount;
+}
+.paraBusinessListItem:before,
+.paraBusinessItemHeading-bulleted:before,
+.paraFutureBusinessItemHeadingwithTiming:before {
+    content: '■ ' ;
+    display: inline-block;
+    width: $indent-amount;
+    margin-left: -$indent-amount;
+}
+
+
 // --------------paragraphs ----------------
 .paraOrderofBusinessItemTiming{
     // margin-bottom: 0;
     margin-top: $para-spacing / 2;
     margin-bottom: $para-spacing / 2;
 }
-.paraBusinessListItem, .paraQuestion{
-    margin-left: $indent-amount;
-}
 .paraBusinessListItem+.paraBusinessListItem,
 .paraMotionText+.paraMotionText,
-.paraMinisterialStatement+.paraMinisterialStatement{
+.paraMinisterialStatement+.paraMinisterialStatement,
+.paraFutureBusinessItemHeadingwithTiming+.paraFutureBusinessItemHeadingwithTiming{
     margin-top: -$para-spacing/2;
 }
 .paraMinisterialStatement{
@@ -144,6 +157,13 @@ $para-spacing: 18px;
         width: $indent-amount;
     }
 }
+.FbaLocation{
+    @include font-size-delta;
+    @include font-bold();
+    margin-top: $para-spacing * 2.5;
+    margin-bottom: $para-spacing;
+}
+.MemberInCharge
 
 
 // --------------- character styles ---------
@@ -198,7 +218,10 @@ $para-spacing: 18px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.paraBusinessTodayChamberHeading .anchor-link, .paraBusinessSub-SectionHeading .anchor-link{
+.paraBusinessTodayChamberHeading .anchor-link,
+.paraBusinessSub-SectionHeading .anchor-link,
+h2 .anchor-link{
+    // sometimes it looks a bit big
     font-size: 0.7em;
 }
 /*show anchor link on hover*/

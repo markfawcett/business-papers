@@ -96,9 +96,11 @@ strong {
 .Alline-Right {
   text-align: right; }
 
-.paraMotionSponsor {
-  font-weight: 500;
+.paraMotionSponsor, .MemberInCharge {
   margin-bottom: 0; }
+
+.paraMotionSponsor {
+  font-weight: 500; }
 
 .paraNotesTag, .paraNotesText {
   margin-left: 2.8rem;
@@ -112,7 +114,8 @@ strong {
 .paraNotesText {
   margin-bottom: 9px; }
 
-.paraMotionText + .paraNotesTag, .paraBusinessListItem + .paraNotesTag {
+.paraMotionText + .paraNotesTag,
+.paraBusinessListItem + .paraNotesTag {
   margin-top: -9px; }
 
 .paraBusinessTodayChamberHeading {
@@ -134,19 +137,14 @@ strong {
   background-color: #717171;
   padding-left: 0.66rem;
   margin-left: -0.66rem;
+  margin-top: 45px;
+  margin-bottom: 27px;
   color: #ffffff; }
 
 .paraBusinessItemHeading-bulleted {
-  margin-left: 2.8rem;
   margin-top: 9px;
   margin-bottom: 0;
   font-weight: 500; }
-
-.paraBusinessListItem:before, .paraBusinessItemHeading-bulleted:before {
-  content: '■ ';
-  display: inline-block;
-  width: 2.8rem;
-  margin-left: -2.8rem; }
 
 .paraBusinessItemHeading {
   font-weight: 500;
@@ -154,16 +152,28 @@ strong {
   margin-bottom: 0;
   text-transform: uppercase; }
 
+.paraBusinessListItem,
+.paraQuestion,
+.paraBusinessItemHeading-bulleted,
+.paraFutureBusinessItemHeadingwithTiming {
+  margin-left: 2.8rem; }
+
+.paraBusinessListItem:before,
+.paraBusinessItemHeading-bulleted:before,
+.paraFutureBusinessItemHeadingwithTiming:before {
+  content: '■ ';
+  display: inline-block;
+  width: 2.8rem;
+  margin-left: -2.8rem; }
+
 .paraOrderofBusinessItemTiming {
   margin-top: 9px;
   margin-bottom: 9px; }
 
-.paraBusinessListItem, .paraQuestion {
-  margin-left: 2.8rem; }
-
 .paraBusinessListItem + .paraBusinessListItem,
 .paraMotionText + .paraMotionText,
-.paraMinisterialStatement + .paraMinisterialStatement {
+.paraMinisterialStatement + .paraMinisterialStatement,
+.paraFutureBusinessItemHeadingwithTiming + .paraFutureBusinessItemHeadingwithTiming {
   margin-top: -9px; }
 
 .paraMinisterialStatement .number-span {
@@ -171,6 +181,14 @@ strong {
   display: inline-block;
   width: 2.8rem; }
 
+.FbaLocation {
+  font-size: 1.66rem;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-top: 45px;
+  margin-bottom: 18px; }
+
+.MemberInCharge
 .charUIN {
   font-size: 0.85rem;
   line-height: 1.2; }
@@ -224,7 +242,9 @@ strong {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.paraBusinessTodayChamberHeading .anchor-link, .paraBusinessSub-SectionHeading .anchor-link {
+.paraBusinessTodayChamberHeading .anchor-link,
+.paraBusinessSub-SectionHeading .anchor-link,
+h2 .anchor-link {
   font-size: 0.7em; }
 
 /*show anchor link on hover*/
