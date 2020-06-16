@@ -10,14 +10,14 @@ from copy import deepcopy
 # stuff needed for parsing and manipulating HTML (or XML)
 from lxml import html  # type: ignore
 from lxml.html import Element  # type: ignore
-from lxml.etree import SubElement  # type: ignore
+from lxml.etree import SubElement, ElementTree, iselement  # type: ignore
 # stuff for file paths
 import os
 # for regular expresions
 import re
 
 # some variables used throughout
-doctype = '<!DOCTYPE html>'
+DOCTYPE = '<!DOCTYPE html>'
 xml_declaration        = ''
 location_of_button_gif = '/images/OP%20button.gif'
 fileextension          = '.html'
@@ -181,19 +181,16 @@ def massarge_input_file(input_file_name):
     # sort out all the bullets
     bullets = input_root.xpath('//span[@class="pythonFindBullet"]')
     for bullet in bullets:
-        bullet.text = ""
-
-        # bullet.attrib.pop('class', None)  # None means dont error if class not there
-        bullet.classes.clear()
-
-        # also turn the strong to a span. This is for FBA where there are tabs between the time and the rest.
-        next_strong_t = bullet.getnext()
-        if next_strong_t is not None and next_strong_t.tag == 'strong':
-            # now check that there is a bold class and the next char is a tab
-            if next_strong_t.get('class') == 'Bold' and next_strong_t.tail is not None and next_strong_t.tail[0] == '\u0009':
-                next_strong_t.tag = 'span'
-                # next_strong_t.attrib.pop('class', None)
-                # next_strong_t.attrib['style'] = 'display : block; float : left; width : 5.7em; height : 1em;'
+        bullet.drop_tree()
+        # bullet.text = ""
+        # # also turn the strong to a span. This is for FBA where there are tabs between the time and the rest.
+        # next_strong_t = bullet.getnext()
+        # if iselement(next_strong_t) and next_strong_t.tag == 'strong':
+        #     # now check that there is a bold class and the next char is a tab
+        #     if next_strong_t.get('class') == 'Bold' and next_strong_t.tail and next_strong_t.tail[0] == '\u0009':
+        #         next_strong_t.tag = 'span'
+        #         # next_strong_t.attrib.pop('class', None)
+        #         # next_strong_t.attrib['style'] = 'display : block; float : left; width : 5.7em; height : 1em;'
 
     # sort the numbers
     numbers = input_root.xpath('//p[@class="paraQuestion"]/span[1]')
@@ -260,6 +257,21 @@ def massarge_input_file(input_file_name):
     for strong_ele in input_root.xpath('//strong'):
         strong_ele.classes.discard('Bold')
 
+    # dont need <span class="Hyperlink"> in a <a>
+    for span in input_root.xpath('//a/span[@class="Hyperlink"]'):
+        span.drop_tag()
+
+    # seems like sometimes there are empty span.charStandingOrderReference
+    for span in input_root.xpath('//span[@class="charStandingOrderReference"]'):
+        if not span.text or span.text.isspace():
+            span.drop_tag()
+
+    # Front-Page-Table doesnt need to be on the table the row and the td
+    for tr in input_root.xpath('//table[@class="Front-Page-Table"]//tr[@class="Front-Page-Table"]'):
+        tr.classes.discard('Front-Page-Table')
+        for child in tr.iterchildren('td', 'th'):
+            child.classes.discard('Front-Page-Table')
+
 
     # Add IDs and perminant ancors to the html
     # Added at the request of IDMS
@@ -293,7 +305,8 @@ def massarge_input_file(input_file_name):
 
 def split_and_output(input_root, template_file_name, input_file_name):
 
-    output_root = html.parse(template_file_name).getroot()
+    output_tree = html.parse(template_file_name)
+    output_root = output_tree.getroot()
     # put element lists in dict with file_lable as the key
     file_lables_element_lists = {'new_ob': [], 'new_fb': [], 'an': []}
     # select all the paragraphs etc within the top levle divs
@@ -337,9 +350,12 @@ def split_and_output(input_root, template_file_name, input_file_name):
             # write out the output html files
             outputfile_name = os.path.join(os.path.dirname(input_file_name),
                                            file_lable + DATES.sitting_date_compact[2:] + fileextension)
-            outputfile = open(outputfile_name, 'w')
-            outputfile.write(xml_declaration + '\n' + doctype + '\n')
-            outputfile.write(html.tostring(temp_output_root).decode(encoding='UTF-8'))
+            temp_output_tree = ElementTree(temp_output_root)
+            temp_output_tree.write(outputfile_name,
+                                   doctype=DOCTYPE,
+                                   encoding='UTF-8',
+                                   method="html",
+                                   xml_declaration=False)
             print(file_lable + ' file is at:\t' + outputfile_name)
 
 
