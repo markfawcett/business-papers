@@ -1,0 +1,1838 @@
+/* DEFAULT PROPERTIES */
+
+@viewport { width : device-width; zoom : 1.0; user-zoom : fixed; min-zoom : 1.0; max-zoom : 1.0; }
+
+@-ms-viewport { width : device-width; }
+
+body {
+font-family : "Frutiger LT Std 55 Roman","Arial","Helvetica",sans-serif;
+}
+
+a[href]:link {text-decoration: inherit; color: #085196}
+
+a[href]:visited {text-decoration: inherit; color: #085196}
+
+a[href]:hover {text-decoration: underline; color: #085196}
+
+a[href]:active {text-decoration: inherit; color: #085196}
+
+div.section { margin-left : 0; margin-right : 0; }
+
+span.float { display : block; float : none; }
+
+@media screen and (min-width: 480px) {
+
+div.section {
+margin-left : 11.4%;
+margin-right : 11.4%;
+}
+
+}
+
+@media screen and (min-width: 540px) {
+
+span.float { display : block; float : right; }
+
+}
+
+@media screen and (max-width: 480px) {
+
+div.table-nowrap { font-size : 0.8em; }
+
+}
+
+@media screen and (max-width: 350px) {
+
+div.table-nowrap { font-size : 0.7em; }
+
+}
+
+@media screen and (max-width: 327px) {
+
+div.table { font-size : 0.8em; }
+
+}
+
+@media screen and (max-width: 279px) {
+
+div.table { font-size : 0.7em; }
+
+}
+
+table { border-collapse : collapse; }
+
+p { margin : 0; }
+
+/* SECTION STYLES */
+
+div.sect1 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+div.sect2 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+div.sect3 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+div.sect4 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+div.sect5 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+div.sect6 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+div.sect7 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+div.sect8 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+div.sect9 {
+margin-right : 11.4%;
+margin-left : 11.4%;
+}
+
+/* PARAGRAPH STYLES */
+
+.paraBalloonText
+/* Word style name: Balloon Text */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+font-size : 0.7em;
+}
+
+.paraSECTIONHEADING
+/* Word style name: SECTION HEADING */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraChamberSummaryHeading
+/* Word style name: Chamber Summary Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.6em;
+line-height : 1.1em;
+font-weight : bold;
+text-transform : uppercase;
+color : #000000;
+font-size : 1.3em;
+}
+
+.paraSummaryAgendaItemTiming
+/* Word style name: Summary Agenda Item Timing */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+text-align : right;
+color : #000000;
+}
+
+.paraSummaryAgendaItemText
+/* Word style name: Summary Agenda Item Text */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraWestminsterHallSummaryHeading
+/* Word style name: Westminster Hall Summary Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.6em;
+line-height : 1.1em;
+font-weight : bold;
+text-transform : uppercase;
+color : #000000;
+font-size : 1.3em;
+}
+
+.paraNotesTag
+/* Word style name: Notes Tag */
+{
+margin-top : 1.3em;
+margin-bottom : 0.3em;
+line-height : 1.2em;
+font-weight : bold;
+color : #000000;
+font-size : 0.8em;
+margin-left : 3.8%;
+}
+
+.paraNotesText
+/* Word style name: Notes Text */
+{
+line-height : 1.2em;
+margin-top : 0em;
+margin-bottom : 0em;
+color : #000000;
+font-size : 0.8em;
+margin-left : 3.8%;
+}
+
+.paraSectionNotice
+/* Word style name: Section Notice */
+{
+margin-top : 0em;
+margin-bottom : 1.3em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraBusinessSub-SectionHeading
+/* Word style name: Business Sub-Section Heading */
+{
+background-color : #818285;
+margin-top : 2.1em;
+margin-bottom : 0.8em;
+line-height : 1.5em;
+margin-right : -1.2%;
+padding-left : 1.2%;
+text-indent : -1.2%;
+font-weight : bold;
+text-transform : uppercase;
+color : #FFFFFF;
+vertical-align : 0.2%;
+margin-left : -1.2%;
+}
+
+.paraDebateTimingRubric
+/* Word style name: Debate Timing Rubric */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraPrivateBusinessItemHeading
+/* Word style name: Private Business Item Heading */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 2.1em;
+text-indent : -2.1em;
+font-weight : bold;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraOralQuestionsHeading
+/* Word style name: Oral Questions Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 2.1em;
+text-indent : -2.1em;
+font-weight : bold;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraQuestion
+/* Word style name: Question */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 2.1em;
+text-indent : -2.1em;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraOrderofBusinessItemTiming
+/* Word style name: Order of Business Item Timing */
+{
+line-height : 2.1em;
+margin-top : 0em;
+margin-bottom : 0em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraBusinessItemHeading-bulleted
+/* Word style name: Business Item Heading - bulleted */
+{
+margin-top : 1.5em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+font-weight : bold;
+color : #000000;
+margin-left : 0%;
+}
+
+.paraMotionSponsor
+/* Word style name: Motion Sponsor */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraBusinessListItem
+/* Word style name: Business List Item */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 2.1em;
+text-indent : -2.1em;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraBusinessTodayChamberHeading
+/* Word style name: Business Today Chamber Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraBusinessTodayWestminsterHallHeading
+/* Word style name: Business Today Westminster Hall Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraWrittenMinisterialStatementsHeading
+/* Word style name: Written Ministerial Statements Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraMinister
+/* Word style name: Minister */
+{
+margin-bottom : 0em;
+margin-top : 1em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraMinisterialStatement
+/* Word style name: Ministerial Statement */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 2.1em;
+text-indent : -2.1em;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraWrittenQuestionsHeading
+/* Word style name: Written Questions Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraCommitteeListsHeading
+/* Word style name: Committee Lists Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraCommitteeMeetingLocation
+/* Word style name: Committee Meeting Location */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraCommitteeName
+/* Word style name: Committee Name */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraCommitteeBusinessDescription
+/* Word style name: Committee Business Description */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraCommitteeMeetingTiming
+/* Word style name: Committee Meeting Timing */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraCommitteeMeetingWitnesses
+/* Word style name: Committee Meeting Witnesses */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraCommitteeReportsPublishedTodayHeading
+/* Word style name: Committee Reports Published Today Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraCommitteeReportTitle
+/* Word style name: Committee Report Title */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+padding-left : 2.1em;
+text-indent : -2.1em;
+font-weight : bold;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraReportTimeofPublication
+/* Word style name: Report Time of Publication */
+{
+line-height : 1.4em;
+margin-top : 0em;
+margin-bottom : 0em;
+color : #000000;
+margin-left : 3.8%;
+}
+
+.paraAnnouncementsHeading
+/* Word style name: Announcements Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraAnnouncementItemHeading
+/* Word style name: Announcement Item Heading */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+font-weight : bold;
+color : #000000;
+margin-left : 0%;
+}
+
+.paraAnnouncementText
+/* Word style name: Announcement Text */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraAnnouncementCross-Heading
+/* Word style name: Announcement Cross-Heading */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraBackbenchBusinessItem
+/* Word style name: Backbench Business Item */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraBusinessItemSeparator
+/* Word style name: Business Item Separator */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.5em;
+font-style : italic;
+color : #FF0000;
+}
+
+.paraMotionSeparator
+/* Word style name: Motion Separator */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1em;
+font-style : italic;
+color : #FF0000;
+font-size : 0.5em;
+}
+
+.paraHCLogo
+/* Word style name: HC Logo */
+/* Based on:  */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+margin-left : -7.9%;
+}
+
+.paraDocumentTitle
+/* Word style name: Document Title */
+{
+border-top-style : solid;
+border-top-width : 1px;
+padding-top : 1.5%;
+border-top-color : #818285;
+border-bottom-style : solid;
+border-bottom-width : 1px;
+padding-bottom : 1.5%;
+border-bottom-color : #818285;
+margin-top : 0.8em;
+margin-bottom : 2em;
+line-height : 1.1em;
+margin-right : -4.7%;
+color : #000000;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraContentsTable
+/* Word style name: Contents Table */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+color : #000000;
+}
+
+.paraContentsHeading
+/* Word style name: Contents Heading */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+background-color : #58585A;
+font-weight : bold;
+text-transform : uppercase;
+color : #FFFFFF;
+font-size : 1.3em;
+}
+
+.paraPartContentsHeading
+/* Word style name: Part Contents Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+text-transform : uppercase;
+color : #000000;
+}
+
+.paraContentsItem
+/* Word style name: Contents Item */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraFutureBusinessSectionHeading
+/* Word style name: Future Business Section Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraFutureBusinessSub-SectionHeading
+/* Word style name: Future Business Sub-Section Heading */
+{
+background-color : #818285;
+margin-top : 2.1em;
+margin-bottom : 0.8em;
+line-height : 1.4em;
+margin-right : -1.2%;
+padding-left : 1.2%;
+text-indent : -1.2%;
+font-weight : bold;
+text-transform : uppercase;
+color : #FFFFFF;
+vertical-align : 0.2%;
+margin-left : -1.2%;
+}
+
+.paraFutureBusinessItemGroupHeading
+/* Word style name: Future Business Item Group Heading */
+{
+margin-top : 1.5em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraFutureBusinessDebateTimingRubric
+/* Word style name: Future Business Debate Timing Rubric */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraFutureBusinessItemHeading
+/* Word style name: Future Business Item Heading */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+font-weight : bold;
+color : #000000;
+margin-left : 0%;
+}
+
+.paraFutureBusinessItemHeadingwithTiming
+/* Word style name: Future Business Item Heading with Timing */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 7.7em;
+text-indent : -7.7em;
+font-weight : bold;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraFutureBusinessListItem
+/* Word style name: Future Business List Item */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+color : #000000;
+margin-left : 0%;
+}
+
+.paraFutureBusinessHeading
+/* Word style name: Future Business Heading */
+{
+margin-top : 0em;
+margin-bottom : 1.2em;
+line-height : 1.1em;
+font-weight : bold;
+color : #000000;
+font-size : 1.3em;
+}
+
+.paraFutureBusinessIntroHeading
+/* Word style name: Future Business Intro Heading */
+{
+margin-top : 1.5em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 2.1em;
+text-indent : -2.1em;
+font-weight : bold;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraFutureBusinessIntroText
+/* Word style name: Future Business Intro Text */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+margin-left : 3.8%;
+}
+
+.paraBusinessItemHeading
+/* Word style name: Business Item Heading */
+{
+margin-top : 1.5em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+text-transform : uppercase;
+}
+
+.paraBusinessSub-ItemHeading
+/* Word style name: Business Sub-Item Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+font-weight : bold;
+color : #000000;
+margin-left : 0%;
+}
+
+.paraAmendmentNumber
+/* Word style name: Amendment Number */
+{
+margin-bottom : 0em;
+margin-top : 1em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+margin-left : 3.8%;
+}
+
+.paraAmendmentSponsor
+/* Word style name: Amendment Sponsor */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+margin-left : 3.8%;
+}
+
+.paraAmendmentSponsorGroup
+/* Word style name: Amendment Sponsor Group */
+{
+line-height : 1.4em;
+margin-top : 0em;
+margin-bottom : 0em;
+color : #000000;
+margin-left : 3.8%;
+}
+
+.paraMotionCross-Heading
+/* Word style name: Motion Cross-Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraMotionCross-Heading-bold
+/* Word style name: Motion Cross-Heading - bold */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraMotionNumberedParagraph
+/* Word style name: Motion Numbered Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraMotionNumberedParagraph-hanging
+/* Word style name: Motion Numbered Paragraph - hanging */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+color : #000000;
+margin-left : 0%;
+}
+
+.paraMotionSponsorGroup
+/* Word style name: Motion Sponsor Group */
+{
+line-height : 1.4em;
+margin-top : 0em;
+margin-bottom : 0em;
+color : #000000;
+}
+
+.paraMotionSub-Paragraph
+/* Word style name: Motion Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+margin-left : 3.8%;
+}
+
+.paraMotionSub-Sub-Paragraph
+/* Word style name: Motion Sub-Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+margin-left : 7.6%;
+}
+
+.paraMotionText
+/* Word style name: Motion Text */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraMotionText-continued
+/* Word style name: Motion Text - continued */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+margin-left : 3.8%;
+}
+
+.paraTableColumnHeading
+/* Word style name: Table Column Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraTableListItem
+/* Word style name: Table List Item */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraTableText
+/* Word style name: Table Text */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraTableText-centred
+/* Word style name: Table Text - centred */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraTableText-hanging
+/* Word style name: Table Text - hanging */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+color : #000000;
+margin-left : 0%;
+}
+
+.paraTableTitle
+/* Word style name: Table Title */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraClauseTitle
+/* Word style name: Clause Title */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraCross-Heading-centre
+/* Word style name: Cross-Heading - centre */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+text-align : center;
+font-weight : bold;
+color : #000000;
+}
+
+.paraCross-Heading-left
+/* Word style name: Cross-Heading - left */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraCross-Heading-right
+/* Word style name: Cross-Heading - right */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+text-align : right;
+font-weight : bold;
+color : #000000;
+}
+
+.paraDefinitionList
+/* Word style name: Definition List */
+{
+line-height : 1.4em;
+margin-top : 0em;
+margin-bottom : 0em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraParagraph
+/* Word style name: Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraParagraph-continued
+/* Word style name: Paragraph - continued */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraProcedureandMoneyResolutionsHeading
+/* Word style name: Procedure and Money Resolutions Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+font-weight : bold;
+color : #000000;
+}
+
+.paraScheduleParagraph
+/* Word style name: Schedule Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraScheduleParagraph-continued
+/* Word style name: Schedule Paragraph - continued */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraSchedulePartNumber
+/* Word style name: Schedule Part Number */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraSchedulePartTitle
+/* Word style name: Schedule Part Title */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraScheduleSub-Paragraph
+/* Word style name: Schedule Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraScheduleSub-Paragraph-continued
+/* Word style name: Schedule Sub-Paragraph - continued */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraScheduleSub-Sub-Paragraph
+/* Word style name: Schedule Sub-Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraScheduleSub-Sub-Paragraph-continued
+/* Word style name: Schedule Sub-Sub-Paragraph - continued */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraScheduleSub-Sub-Sub-Paragraph
+/* Word style name: Schedule Sub-Sub-Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraScheduleSub-Sub-Sub-Paragraph-continued
+/* Word style name: Schedule Sub-Sub-Sub-Paragraph - continued */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraScheduleSub-Sub-Sub-Sub-Paragraph
+/* Word style name: Schedule Sub-Sub-Sub-Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraStandingOrderAmendmentText
+/* Word style name: Standing Order Amendment Text */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraStandingOrderParagraph-indented
+/* Word style name: Standing Order Paragraph - indented */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraStandingOrderSub-Paragraph
+/* Word style name: Standing Order Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraStandingOrderSub-Sub-Paragraph
+/* Word style name: Standing Order Sub-Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraStandingOrderTitle
+/* Word style name: Standing Order Title */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraSub-Paragraph
+/* Word style name: Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraSub-Paragraph-continued
+/* Word style name: Sub-Paragraph - continued */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraSub-Section
+/* Word style name: Sub-Section */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #FFFFFF;
+}
+
+.paraSub-Section-continued
+/* Word style name: Sub-Section - continued */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #FFFFFF;
+}
+
+.paraSub-Sub-Paragraph
+/* Word style name: Sub-Sub-Paragraph */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraHeader
+/* Word style name: header */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+}
+
+.paraFooter
+/* Word style name: footer */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+}
+
+.paraSummaryAgendaTable
+/* Word style name: Summary Agenda Table */
+{
+margin-top : 0.5em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraFutureBusinessBItemHeading
+/* Word style name: Future Business B Item Heading */
+{
+margin-top : 1.5em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+font-weight : bold;
+text-transform : uppercase;
+color : #000000;
+margin-left : -3.8%;
+}
+
+.paraFutureBusinessBSectionHeading
+/* Word style name: Future Business B Section Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -8.6%;
+}
+
+.paraFutureBusinessBSectionNote
+/* Word style name: Future Business B Section Note */
+{
+margin-top : 0em;
+margin-bottom : 1.3em;
+line-height : 1.4em;
+color : #000000;
+margin-left : -3.8%;
+}
+
+.paraSummarySub-Heading
+/* Word style name: Summary Sub-Heading */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+text-align : right;
+font-weight : bold;
+color : #000000;
+}
+
+.paraFutureBusinessItemGroupNotesTag
+/* Word style name: Future Business Item Group Notes Tag */
+/* Based on:  */
+{
+margin-bottom : 0.3em;
+line-height : 1.2em;
+font-weight : bold;
+color : #000000;
+font-size : 0.8em;
+margin-top : 2.5em;
+margin-left : 3.8%;
+}
+
+.paraSummaryAgendaItemText-bulleted
+/* Word style name: Summary Agenda Item Text - bulleted */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 3.8%;
+text-indent : -3.8%;
+color : #000000;
+margin-left : 0%;
+}
+
+.paraOPHeaderRecto
+/* Word style name: OP Header Recto */
+{
+margin-top : 0em;
+border-bottom-style : solid;
+border-bottom-width : 1px;
+padding-bottom : 2.4%;
+border-bottom-color : #818285;
+margin-bottom : 0.6em;
+line-height : 1.7em;
+margin-right : -4.7%;
+color : #000000;
+font-size : 0.8em;
+margin-left : -4.7%;
+}
+
+.paraOPHeaderVerso
+/* Word style name: OP Header Verso */
+{
+margin-top : 0em;
+border-bottom-style : solid;
+border-bottom-width : 1px;
+padding-bottom : 2.4%;
+border-bottom-color : #818285;
+margin-bottom : 0.6em;
+line-height : 1.7em;
+margin-right : -4.7%;
+color : #000000;
+font-size : 0.8em;
+margin-left : -3.1em;
+}
+
+.paraFutureBusinessBOPHeaderRecto
+/* Word style name: Future Business B OP Header Recto */
+{
+margin-top : 0em;
+border-bottom-style : solid;
+border-bottom-width : 1px;
+padding-bottom : 2.4%;
+border-bottom-color : #818285;
+margin-bottom : 0.6em;
+line-height : 1.7em;
+margin-right : -4.7%;
+color : #000000;
+font-size : 0.8em;
+margin-left : -8.6%;
+}
+
+.paraFutureBusinessBOPHeaderVerso
+/* Word style name: Future Business B OP Header Verso */
+{
+margin-top : 0em;
+border-bottom-style : solid;
+border-bottom-width : 1px;
+padding-bottom : 2.4%;
+border-bottom-color : #818285;
+margin-bottom : 0.6em;
+line-height : 1.7em;
+margin-right : -4.7%;
+color : #000000;
+font-size : 0.8em;
+margin-left : -8.6%;
+}
+
+.paraUrgentBusinessItemHeading
+/* Word style name: Urgent Business Item Heading */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 2.1em;
+text-indent : -2.1em;
+font-weight : bold;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraTableText-nospaceafter
+/* Word style name: Table Text - no space after */
+{
+margin-top : 0em;
+margin-bottom : 0em;
+line-height : 1.4em;
+color : #000000;
+}
+
+.paraCommemorativeNotice
+/* Word style name: Commemorative Notice */
+{
+margin-top : 0.3em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+margin-right : 1%;
+text-align : center;
+color : #000000;
+margin-left : 1%;
+}
+
+.paraFurtherInformationHeading
+/* Word style name: Further Information Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraPrivateBusinessSectionHeading
+/* Word style name: Private Business Section Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraDeferredDivisionsHeading
+/* Word style name: Deferred Divisions Heading */
+/* Based on:  */
+{
+margin-top : 0em;
+background-color : #58585A;
+margin-bottom : 1em;
+line-height : 1.5em;
+margin-right : -4.7%;
+padding-left : 4.7%;
+text-indent : -4.7%;
+font-weight : bold;
+color : #FFFFFF;
+vertical-align : 0.3%;
+font-size : 1.3em;
+margin-left : -4.7%;
+}
+
+.paraFutureBusinessWHItemHeadingwithTiming
+/* Word style name: Future Business WH Item Heading with Timing */
+{
+margin-top : 1em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+padding-left : 7.7em;
+text-indent : -7.7em;
+color : #000000;
+margin-left : 0em;
+}
+
+.paraMemberinCharge
+/* Word style name: Member in Charge */
+{
+margin-top : 0em;
+margin-bottom : 0.5em;
+line-height : 1.4em;
+color : #000000;
+}
+
+/* CHARACTER STYLES */
+
+.charStandingOrderReference
+/* Word style name: Standing Order Reference */
+{
+font-weight : bold;
+font-size : 1em;
+}
+
+.charBallotNumber
+/* Word style name: Ballot Number */
+{
+font-weight : bold;
+}
+
+.charMember
+/* Word style name: Member */
+{
+font-weight : bold;
+font-size : 1em;
+}
+
+.charConstituency
+/* Word style name: Constituency */
+{
+font-size : 1em;
+}
+
+.charRelevantInterestDeclared
+/* Word style name: Relevant Interest Declared */
+{
+font-size : 1em;
+}
+
+.charTransferredQuestions
+/* Word style name: Transferred Questions */
+{
+font-size : 1em;
+}
+
+.charUIN
+/* Word style name: UIN */
+{
+font-size : 0.8em;
+}
+
+.charPresenterSponsor
+/* Word style name: Presenter Sponsor */
+{
+font-weight : bold;
+font-size : 1em;
+}
+
+.charItemNumber
+/* Word style name: Item Number */
+{
+font-weight : bold;
+font-size : 1em;
+}
+
+.charCommitteeMeetingWitnessesTag
+/* Word style name: Committee Meeting Witnesses Tag */
+{
+font-weight : bold;
+}
+
+.charCommitteeReportNumber
+/* Word style name: Committee Report Number */
+{
+font-weight : bold;
+}
+
+.charTimeofPublicationTag
+/* Word style name: Time of Publication Tag */
+{
+font-weight : bold;
+font-size : 1em;
+}
+
+.charOPNumber
+/* Word style name: OP Number */
+{
+color : #818285;
+font-size : 0.8em;
+}
+
+.charFutureBusinessItemTiming
+/* Word style name: Future Business Item Timing */
+{
+font-weight : bold;
+font-size : 1em;
+}
+
+.charBusinessSub-ItemHeading-runin
+/* Word style name: Business Sub-Item Heading - run in */
+{
+font-weight : bold;
+color : #000000;
+}
+
+.charLineNumber
+/* Word style name: line number */
+{
+font-size : 0.8em;
+}
+
+.charMainBusinessItem
+/* Word style name: Main Business Item */
+{
+font-weight : bold;
+font-size : 1em;
+}
+
+.charQueensConsent
+/* Word style name: Queens Consent */
+{
+color : #000000;
+font-size : 1em;
+}
+
+.charWebAddress
+/* Word style name: Web Address */
+{
+}
+
+.charOPDate
+/* Word style name: OP Date */
+{
+font-weight : bold;
+font-size : 0.8em;
+}
+
+.charOPSection
+/* Word style name: OP Section */
+{
+font-weight : bold;
+color : #000000;
+font-size : 0.8em;
+}
+
+.charSittingDate
+/* Word style name: Sitting Date */
+{
+font-weight : bold;
+color : #000000;
+font-size : 1.3em;
+}
+
+.charHeavy
+/* Word style name: Heavy */
+{
+font-weight : bold;
+font-size : 1em;
+}
+
+.charHyperlink
+/* Word style name: Hyperlink */
+{
+color : #0000FF;
+text-decoration : underline;
+}
+
+.charBookTitle
+/* Word style name: Book Title */
+{
+font-weight : bold;
+font-style : italic;
+}
+
+.charCommentReference
+/* Word style name: annotation reference */
+{
+font-size : 0.7em;
+}
+
+.charEmphasis
+/* Word style name: Emphasis */
+{
+font-style : italic;
+}
+
+.charEndnoteReference
+/* Word style name: endnote reference */
+{
+vertical-align : super;
+}
+
+.charFollowedHyperlink
+/* Word style name: FollowedHyperlink */
+{
+color : #800080;
+text-decoration : underline;
+}
+
+.charFootnoteReference
+/* Word style name: footnote reference */
+{
+vertical-align : super;
+}
+
+.charHTMLAcronym
+/* Word style name: HTML Acronym */
+{
+}
+
+.charHTMLCite
+/* Word style name: HTML Cite */
+{
+font-style : italic;
+}
+
+.charHTMLCode
+/* Word style name: HTML Code */
+{
+font-size : 0.9em;
+}
+
+.charHTMLDefinition
+/* Word style name: HTML Definition */
+{
+font-style : italic;
+}
+
+.charHTMLKeyboard
+/* Word style name: HTML Keyboard */
+{
+font-size : 0.9em;
+}
+
+.charHTMLSample
+/* Word style name: HTML Sample */
+{
+font-size : 1.1em;
+}
+
+.charHTMLTypewriter
+/* Word style name: HTML Typewriter */
+{
+font-size : 0.9em;
+}
+
+.charHTMLVariable
+/* Word style name: HTML Variable */
+{
+font-style : italic;
+}
+
+.charIntenseEmphasis
+/* Word style name: Intense Emphasis */
+{
+font-style : italic;
+color : #58585A;
+}
+
+.charIntenseReference
+/* Word style name: Intense Reference */
+{
+font-weight : bold;
+font-variant : small-caps;
+color : #58585A;
+}
+
+.charPageNumber
+/* Word style name: page number */
+{
+}
+
+.charPlaceholderText
+/* Word style name: Placeholder Text */
+{
+color : #808080;
+}
+
+.charStrong
+/* Word style name: Strong */
+{
+font-weight : bold;
+}
+
+.charSubtleEmphasis
+/* Word style name: Subtle Emphasis */
+{
+font-style : italic;
+color : #404040;
+}
+
+.charSubtleReference
+/* Word style name: Subtle Reference */
+{
+font-variant : small-caps;
+color : #5A5A5A;
+}
+

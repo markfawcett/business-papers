@@ -1,0 +1,26 @@
+/*standard layout*/
+#mainTextBlock,#titleBlock,#footerBlock {
+	width:90%;
+	float:left;
+	clear:both;
+}
+#titleBlockTitle {
+	width:60%;
+	float:left;
+}
+#titleBlockLinks {
+	width:39%;
+	float:right;
+}
+#footerBlockCopyright {
+	float:left;
+	width:49%;
+}
+#footerBlockDate {
+	float:right;
+	width:49%;
+	text-align:right;
+}
+#footerBlock {
+    border-top: 1px solid #CFCFCF;
+}
