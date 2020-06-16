@@ -2,7 +2,7 @@
   "name": "business-papers",
   "version": "1.0.0",
   "description": "Redesign of House of Commons business papers pages",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "node-sass sass/businesspapers.scss css/businesspapers.css -w & live-server"
