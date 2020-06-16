@@ -1,10 +1,30 @@
 // import colours from PDS design system
+@import '../Design_System_SASS/sass/compatibility/bootstrap-3/bootstrap-3-shims.scss';
 @import '../Design_System_SASS/sass/core/colours.scss';
+@import '../Design_System_SASS/sass/core/fonts.scss';
+@import '../Design_System_SASS/sass/core/font-sizes.scss';
+
+$OP-margin-left: 3rem;
+
+// standard indent level
+$indent-amount: 2.8rem;
+
+// default margin bottom from design system
+$para-spacing: 18px;
+
+// order paper left margin
+.OP-left-margin{
+    margin-left: $OP-margin-left;
+}
 
 
 // sumary agenda table
 .Front-Page-Table{
     border: none;
+}
+.Front-Page-Table td{
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
 }
 .Front-Page-Table .Alline-Right {
     border-right-style: solid;
@@ -19,6 +39,30 @@
     text-align: right;
 }
 
+// sponsors
+.paraMotionSponsor{
+    @include font-bold();
+    margin-bottom: 0;
+}
+
+// Notes
+.paraNotesTag, .paraNotesText{
+    margin-left: $indent-amount;
+    @include font-size-milli();
+}
+.paraNotesTag{
+    @include font-bold();
+    margin-bottom: 0;
+}
+.paraNotesText{
+    margin-bottom: $para-spacing/2;
+}
+// need less space after a motion
+.paraMotionText+.paraNotesTag, .paraBusinessListItem+.paraNotesTag{
+    margin-top: -$para-spacing/2;
+}
+
+// --------------- Headings -----------------
 .paraBusinessTodayChamberHeading {
     max-width: none;
     text-transform: uppercase;
@@ -30,7 +74,11 @@
     // margin-bottom: 1em;
     // line-height: 1.5em;
     // margin-right: -4.7%;
-    padding-left: 4.7%;
+    // padding-left: 4.7%;
+    padding-left: $OP-margin-left;
+    margin-left: -$OP-margin-left;
+    margin-top: 60px;
+    margin-bottom: 44px;
     // text-indent: -4.7%;
     // font-weight: 700;
     color: $colour-white;
@@ -38,6 +86,80 @@
     // font-size: 1.3em;
     // margin-left: -4.7%;
 }
+
+.paraOrderofBusinessItemTiming {
+    @include font-bold();
+}
+.paraBusinessSub-SectionHeading {
+    max-width: none;
+    text-transform: uppercase;
+    background-color: $colour-grey-3;
+    // padding-left: 1.35%;
+    // margin-left: 3.35%;
+    // margin-right: 3.35%;
+    padding-left: 0.66rem;
+    margin-left: -0.66rem;
+    color: $colour-white;
+}
+.paraBusinessItemHeading-bulleted{
+    margin-left: $indent-amount;
+    margin-top: $para-spacing/2;
+    margin-bottom: 0;
+    @include font-bold();
+}
+
+.paraBusinessListItem:before, .paraBusinessItemHeading-bulleted:before{
+    content: '■ ' ;
+    display: inline-block;
+    width: $indent-amount;
+    margin-left: -$indent-amount;
+
+    // content: '<span class="hang-bullet">■ </span>'
+}
+.paraBusinessItemHeading{
+    @include font-bold();
+    margin-top: $para-spacing * 2;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+// --------------paragraphs ----------------
+.paraOrderofBusinessItemTiming{
+    // margin-bottom: 0;
+    margin-top: $para-spacing / 2;
+    margin-bottom: $para-spacing / 2;
+}
+.paraBusinessListItem, .paraQuestion{
+    margin-left: $indent-amount;
+}
+.paraBusinessListItem+.paraBusinessListItem,
+.paraMotionText+.paraMotionText,
+.paraMinisterialStatement+.paraMinisterialStatement{
+    margin-top: -$para-spacing/2;
+}
+.paraMinisterialStatement{
+    .number-span{
+        @include font-bold();
+        display: inline-block;
+        width: $indent-amount;
+    }
+}
+
+
+// --------------- character styles ---------
+.charUIN{
+    @include font-size-micro();
+}
+.charBallotNumber{
+    margin-left: -$indent-amount;
+    display: inline-block;
+    width: $indent-amount;
+    @include font-bold();
+}
+.charMember{
+    @include font-bold();
+}
+
 
 /*  ---- CSS for anchor link  ---- */
 
@@ -68,13 +190,16 @@
     line-height: 1;
     padding-left: 1em;
     padding-right: 1em;
-    font-size: 0.7em;
+    font-size: 0.9em;
     vertical-align:middle;
     /*hide unless hover on parent*/
     display: none;
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+.paraBusinessTodayChamberHeading .anchor-link, .paraBusinessSub-SectionHeading .anchor-link{
+    font-size: 0.7em;
 }
 /*show anchor link on hover*/
 :hover > .anchor-link{display: inline; text-decoration: none;}

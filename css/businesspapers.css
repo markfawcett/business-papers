@@ -1,5 +1,88 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'National';
+  src: url("~@pds-design-system/core/src/fonts//National-LFS-Book.eot");
+  src: url("~@pds-design-system/core/src/fonts//National-LFS-Book.eot?#iefix") format("embedded-opentype"), url("~@pds-design-system/core/src/fonts//National-LFS-Book.woff2") format("woff2"), url("~@pds-design-system/core/src/fonts//National-LFS-Book.woff") format("woff"); }
+
+@font-face {
+  font-family: 'National';
+  src: url("~@pds-design-system/core/src/fonts//National-LF-BookItalic.eot");
+  src: url("~@pds-design-system/core/src/fonts//National-LF-BookItalic.eot?#iefix") format("embedded-opentype"), url("~@pds-design-system/core/src/fonts//National-LF-BookItalic.woff2") format("woff2"), url("~@pds-design-system/core/src/fonts//National-LF-BookItalic.woff") format("woff");
+  font-style: italic; }
+
+@font-face {
+  font-family: 'National';
+  src: url("~@pds-design-system/core/src/fonts//National-LFS-Semibold.eot");
+  src: url("~@pds-design-system/core/src/fonts//National-LFS-Semibold.eot?#iefix") format("embedded-opentype"), url("~@pds-design-system/core/src/fonts//National-LFS-Semibold.woff2") format("woff2"), url("~@pds-design-system/core/src/fonts//National-LFS-Semibold.woff") format("woff");
+  font-weight: 500; }
+
+@font-face {
+  font-family: 'National';
+  src: url("~@pds-design-system/core/src/fonts//National-LF-SemiboldItalic.eot");
+  src: url("~@pds-design-system/core/src/fonts//National-LF-SemiboldItalic.eot?#iefix") format("embedded-opentype"), url("~@pds-design-system/core/src/fonts//National-LF-SemiboldItalic.woff2") format("woff2"), url("~@pds-design-system/core/src/fonts//National-LF-SemiboldItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic; }
+
+strong {
+  font-weight: 500; }
+
+.font-size-base {
+  font-size: 1.125rem;
+  line-height: 1.5; }
+
+.font-size-alpha {
+  font-size: 2.3rem;
+  line-height: 1.1; }
+  @media (min-width: 992px) {
+    .font-size-alpha {
+      font-size: 2.6rem;
+      line-height: 1.1; } }
+
+.font-size-beta {
+  font-size: 2rem;
+  line-height: 1.1; }
+  @media (min-width: 992px) {
+    .font-size-beta {
+      font-size: 2.3rem;
+      line-height: 1.1; } }
+
+.font-size-gamma {
+  font-size: 1.85rem;
+  line-height: 1.2; }
+  @media (min-width: 992px) {
+    .font-size-gamma {
+      font-size: 2.05rem;
+      line-height: 1.2; } }
+
+.font-size-delta {
+  font-size: 1.66rem;
+  line-height: 1.2; }
+
+.font-size-epsilon {
+  font-size: 1.25rem;
+  line-height: 1.35; }
+
+.font-size-epsilon {
+  font-size: 1.25rem;
+  line-height: 1.35; }
+
+.font-size-milli {
+  font-size: 1rem;
+  line-height: 1.4; }
+
+.font-size-micro {
+  font-size: 0.85rem;
+  line-height: 1.2; }
+
+.OP-left-margin {
+  margin-left: 3rem; }
+
 .Front-Page-Table {
   border: none; }
+
+.Front-Page-Table td {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em; }
 
 .Front-Page-Table .Alline-Right {
   border-right-style: solid;
@@ -13,12 +96,93 @@
 .Alline-Right {
   text-align: right; }
 
+.paraMotionSponsor {
+  font-weight: 500;
+  margin-bottom: 0; }
+
+.paraNotesTag, .paraNotesText {
+  margin-left: 2.8rem;
+  font-size: 1rem;
+  line-height: 1.4; }
+
+.paraNotesTag {
+  font-weight: 500;
+  margin-bottom: 0; }
+
+.paraNotesText {
+  margin-bottom: 9px; }
+
+.paraMotionText + .paraNotesTag, .paraBusinessListItem + .paraNotesTag {
+  margin-top: -9px; }
+
 .paraBusinessTodayChamberHeading {
   max-width: none;
   text-transform: uppercase;
   background-color: #4D4D4D;
-  padding-left: 4.7%;
+  padding-left: 3rem;
+  margin-left: -3rem;
+  margin-top: 60px;
+  margin-bottom: 44px;
   color: #ffffff; }
+
+.paraOrderofBusinessItemTiming {
+  font-weight: 500; }
+
+.paraBusinessSub-SectionHeading {
+  max-width: none;
+  text-transform: uppercase;
+  background-color: #717171;
+  padding-left: 0.66rem;
+  margin-left: -0.66rem;
+  color: #ffffff; }
+
+.paraBusinessItemHeading-bulleted {
+  margin-left: 2.8rem;
+  margin-top: 9px;
+  margin-bottom: 0;
+  font-weight: 500; }
+
+.paraBusinessListItem:before, .paraBusinessItemHeading-bulleted:before {
+  content: '■ ';
+  display: inline-block;
+  width: 2.8rem;
+  margin-left: -2.8rem; }
+
+.paraBusinessItemHeading {
+  font-weight: 500;
+  margin-top: 36px;
+  margin-bottom: 0;
+  text-transform: uppercase; }
+
+.paraOrderofBusinessItemTiming {
+  margin-top: 9px;
+  margin-bottom: 9px; }
+
+.paraBusinessListItem, .paraQuestion {
+  margin-left: 2.8rem; }
+
+.paraBusinessListItem + .paraBusinessListItem,
+.paraMotionText + .paraMotionText,
+.paraMinisterialStatement + .paraMinisterialStatement {
+  margin-top: -9px; }
+
+.paraMinisterialStatement .number-span {
+  font-weight: 500;
+  display: inline-block;
+  width: 2.8rem; }
+
+.charUIN {
+  font-size: 0.85rem;
+  line-height: 1.2; }
+
+.charBallotNumber {
+  margin-left: -2.8rem;
+  display: inline-block;
+  width: 2.8rem;
+  font-weight: 500; }
+
+.charMember {
+  font-weight: 500; }
 
 /*  ---- CSS for anchor link  ---- */
 /* Change anchor link to white on headings */
@@ -52,13 +216,16 @@
   line-height: 1;
   padding-left: 1em;
   padding-right: 1em;
-  font-size: 0.7em;
+  font-size: 0.9em;
   vertical-align: middle;
   /*hide unless hover on parent*/
   display: none;
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.paraBusinessTodayChamberHeading .anchor-link, .paraBusinessSub-SectionHeading .anchor-link {
+  font-size: 0.7em; }
 
 /*show anchor link on hover*/
 :hover > .anchor-link {
