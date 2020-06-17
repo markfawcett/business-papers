@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node-sass sass/businesspapers.scss css/businesspapers.css -w & live-server --ignore=\"**/*.py\""
+    "serve": "node-sass sass/businesspapers.scss css/businesspapers.css -w & live-server --port=80 --ignore=\"**/*.py,**/.git\""
   },
   "repository": {
     "type": "git",
