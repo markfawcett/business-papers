@@ -9,9 +9,12 @@
   <title>UK Parliament</title>
   <link rel="stylesheet" href="/css/design-system.css?v=1.0">
   <link rel="stylesheet" href="/css/businesspapers.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+  <!-- <link rel="stylesheet"
+    href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/> -->
 </head>
 
-<body class="brand-commons">
+<body class="brand-commons"  data-spy="scroll" data-target="#toc">
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
   <header>
     <div class="container">
@@ -24,27 +27,27 @@
     </div>
     <div class="product-header">
       <div class="container">
-        <a class="title" href="#">Business Papers</a>
+        <a class="title" href="/index.html">Business Papers</a>
       </div>
     </div>
   </header>
   <div class="hero-banner">
     <div class="container">
         <h1 id="mainTitle"></h1>
-        <h2>Part 1: Summary Agenda and Order of Business</h2>
+        <h2 data-toc-skip>Part 1: Summary Agenda and Order of Business</h2>
         <div class="reading-width">
             <p>Read the agenda for business in the House of Commons chamber, Westminster Hall and Commons Committees.</p>
             <p><a href="#">Find out more about this item</a></p>
         </div>
     </div>
   </div>
-  <main id="main-content">
+  <main id="main-content" class="js-toc-content">
     <!-- Product banner area -->
     <article>
       <div class="container">
         <div class="block block-page">
           <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-9">
                 <div class="OP-left-margin">
                   <!-- Main content area -->
                   <!-- <h1>Order Paper for Monday, 15 June 2020</h1> -->
@@ -52,15 +55,50 @@
                   </div>
                 </div>
             </div>
-            <div class="col-md-2">
-              <h3>Contents</h3>
+            <div class="col-md-3">
+              <div class="toc sticky-top">
+                <h3 data-toc-skip>Contents</h3>
+                <nav class="js-toc" id="toc" data-toggle="toc"></nav>
+                <!-- <nav id="toc"></nav> -->
+              </div>
             </div>
           </div>
         </div>
       </div>
     </article>
   </main>
-  <script src="/js/scripts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+  <script>
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.js-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.js-toc-content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: 'h2, h3',
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+    });
+  </script>
+  <!-- <script src="/js/scripts.js"></script> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  <script src="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.js"></script> -->
+  <!-- <script>
+    $(function() {
+      var navSelector = "#toc";
+      var $myNav = $(navSelector);
+      Toc.init({
+        $scope: $("h2, h3")
+        $nav: $myNav,
+      });
+      $("body").scrollspy({
+        target: navSelector
+      });
+    });
+  </script> -->
+
 </body>
 
 </html>

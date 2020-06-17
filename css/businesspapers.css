@@ -74,6 +74,9 @@ strong {
   font-size: 0.85rem;
   line-height: 1.2; }
 
+.OP-left-margin {
+  overflow-wrap: break-word; }
+
 .test {
   display: block; }
 
@@ -103,7 +106,7 @@ strong {
   font-weight: 500; }
 
 .paraNotesTag, .paraNotesText {
-  margin-left: 2.8rem;
+  margin-left: 2.2rem;
   font-size: 1rem;
   line-height: 1.4; }
 
@@ -156,15 +159,15 @@ strong {
 .paraQuestion,
 .paraBusinessItemHeading-bulleted,
 .paraFutureBusinessItemHeadingwithTiming {
-  margin-left: 2.8rem; }
+  margin-left: 2.2rem; }
 
 .paraBusinessListItem:before,
 .paraBusinessItemHeading-bulleted:before,
 .paraFutureBusinessItemHeadingwithTiming:before {
   content: '■ ';
   display: inline-block;
-  width: 2.8rem;
-  margin-left: -2.8rem; }
+  width: 2.2rem;
+  margin-left: -2.2rem; }
 
 .paraOrderofBusinessItemTiming {
   margin-top: 9px;
@@ -179,7 +182,7 @@ strong {
 .paraMinisterialStatement .number-span {
   font-weight: 500;
   display: inline-block;
-  width: 2.8rem; }
+  width: 2.2rem; }
 
 .FbaLocation {
   font-size: 1.66rem;
@@ -193,9 +196,9 @@ strong {
   line-height: 1.2; }
 
 .charBallotNumber {
-  margin-left: -2.8rem;
+  margin-left: -2.2rem;
   display: inline-block;
-  width: 2.8rem;
+  width: 2.2rem;
   font-weight: 500; }
 
 .charMember {
