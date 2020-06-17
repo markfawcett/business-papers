@@ -1,6 +1,9 @@
 # the font is not an open font so maybe don't put on github etc.
 # fonts/  # I think I have changed my mind
 
+# I think we can ignore newHTML/ as the contents can be made via python
+newHTML/
+
 # mac junk
 .DS_Store
 
