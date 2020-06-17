@@ -1,5 +1,7 @@
 # the font is not an open font so maybe don't put on github etc.
-# fonts/  # I think I have changed my mind
+BusinessPaperTemplate/fonts/
+Design_System_SASS/fonts/
+# fonts/  # I think I have changed my mind about the main fonts
 
 # I think we can ignore newHTML/ as the contents can be made via python
 newHTML/
