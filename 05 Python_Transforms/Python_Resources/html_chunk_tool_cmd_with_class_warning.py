@@ -12,6 +12,7 @@ from lxml import html  # type: ignore
 from lxml.html import Element  # type: ignore
 from lxml.etree import SubElement, ElementTree, iselement  # type: ignore
 # stuff for file paths
+from pathlib import Path
 import os
 # for regular expresions
 import re
@@ -216,7 +217,7 @@ def massarge_input_file(input_file_name):
         new_span.tail = statement_tail_text
         number_parent = statement.getparent()
         new_span.append(statement)
-        number_parent.insert(0, new_span)
+        number_parent.insert(0,  new_span)
 
     # sort the front page tables
     front_page_tables = input_root.xpath('//table[@class="Front-Page-Table"]')
@@ -296,14 +297,13 @@ def massarge_input_file(input_file_name):
         anchor.set('title', permalink_for)
         anchor.set('data-anchor-icon', '§')
         anchor.set('class', 'anchor-link')
-        # SubElement(anchor, 'span').text = '§'
 
 
     # return the modified input html root element
     return input_root
 
 
-def split_and_output(input_root, template_file_name, input_file_name):
+def split_and_output(input_root, template_file_name, input_file_name, output_folder=''):
 
     output_tree = html.parse(template_file_name)
     output_root = output_tree.getroot()
@@ -348,15 +348,24 @@ def split_and_output(input_root, template_file_name, input_file_name):
                 code_injection_point.append(element)
 
             # write out the output html files
-            outputfile_name = os.path.join(os.path.dirname(input_file_name),
-                                           file_lable + DATES.sitting_date_compact[2:] + fileextension)
+            # outputfile_name = os.path.join(os.path.dirname(input_file_name),
+            #                                file_lable + DATES.sitting_date_compact[2:] + fileextension)
+
+            outputfile_name = f'{file_lable}{DATES.sitting_date_compact[2:]}{ fileextension}'
+            if output_folder:
+                outputfile_path = Path(output_folder).joinpath(outputfile_name)
+                print(outputfile_path)
+            else:
+                outputfile_path = Path(input_file_name).parent.joinpath(outputfile_name)
+
+            # created element tree so we can use write method
             temp_output_tree = ElementTree(temp_output_root)
-            temp_output_tree.write(outputfile_name,
+            temp_output_tree.write(str(outputfile_path),
                                    doctype=DOCTYPE,
                                    encoding='UTF-8',
                                    method="html",
                                    xml_declaration=False)
-            print(file_lable + ' file is at:\t' + outputfile_name)
+            print(f'{file_lable} file is at:\t{outputfile_path}')
 
 
 def show_error(error_text):
