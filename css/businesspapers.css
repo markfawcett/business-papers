@@ -74,10 +74,10 @@ strong {
   font-size: 0.85rem;
   line-height: 1.2; }
 
-.OP-left-margin {
-  margin-left: 3rem; }
+.test {
+  display: block; }
 
-.Front-Page-Table {
+.Front-Page-Table, .Front-Page-Table td {
   border: none; }
 
 .Front-Page-Table td {
@@ -122,8 +122,8 @@ strong {
   max-width: none;
   text-transform: uppercase;
   background-color: #4D4D4D;
-  padding-left: 3rem;
-  margin-left: -3rem;
+  padding-left: 0.66rem;
+  margin-left: -0.66rem;
   margin-top: 60px;
   margin-bottom: 44px;
   color: #ffffff; }
@@ -188,7 +188,6 @@ strong {
   margin-top: 45px;
   margin-bottom: 18px; }
 
-.MemberInCharge
 .charUIN {
   font-size: 0.85rem;
   line-height: 1.2; }
@@ -201,6 +200,14 @@ strong {
 
 .charMember {
   font-weight: 500; }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .OP-left-margin {
+    margin-left: 3rem; }
+  .paraBusinessTodayChamberHeading {
+    padding-left: 3rem;
+    margin-left: -3rem; } }
 
 /*  ---- CSS for anchor link  ---- */
 /* Change anchor link to white on headings */

@@ -12,14 +12,13 @@ $indent-amount: 2.8rem;
 // default margin bottom from design system
 $para-spacing: 18px;
 
-// order paper left margin
-.OP-left-margin{
-    margin-left: $OP-margin-left;
+
+.test{
+    display: block;
 }
 
-
 // sumary agenda table
-.Front-Page-Table{
+.Front-Page-Table, .Front-Page-Table td{
     border: none;
 }
 .Front-Page-Table td{
@@ -70,25 +69,12 @@ $para-spacing: 18px;
 .paraBusinessTodayChamberHeading {
     max-width: none;
     text-transform: uppercase;
-    // margin-top: 38px;
-    // line-height: 1.1em;
-    // padding: 4px 0 3px 4.7%;
-    // margin-top: 0;
     background-color: $colour-grey-2;
-    // margin-bottom: 1em;
-    // line-height: 1.5em;
-    // margin-right: -4.7%;
-    // padding-left: 4.7%;
-    padding-left: $OP-margin-left;
-    margin-left: -$OP-margin-left;
+    padding-left: 0.66rem;
+    margin-left: -0.66rem;
     margin-top: 60px;
     margin-bottom: 44px;
-    // text-indent: -4.7%;
-    // font-weight: 700;
     color: $colour-white;
-    // vertical-align: .3%;
-    // font-size: 1.3em;
-    // margin-left: -4.7%;
 }
 
 .paraOrderofBusinessItemTiming {
@@ -163,8 +149,6 @@ $para-spacing: 18px;
     margin-top: $para-spacing * 2.5;
     margin-bottom: $para-spacing;
 }
-.MemberInCharge
-
 
 // --------------- character styles ---------
 .charUIN{
@@ -178,6 +162,19 @@ $para-spacing: 18px;
 }
 .charMember{
     @include font-bold();
+}
+
+// ---------- media queries ----------
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    // order paper left margin
+    .OP-left-margin{
+        margin-left: $OP-margin-left;
+    }
+    .paraBusinessTodayChamberHeading {
+        padding-left: $OP-margin-left;
+        margin-left: -$OP-margin-left;
+    }
 }
 
 
