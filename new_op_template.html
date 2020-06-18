@@ -9,7 +9,7 @@
   <title>UK Parliament</title>
   <link rel="stylesheet" href="/css/design-system.css?v=1.0">
   <link rel="stylesheet" href="/css/businesspapers.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css"> -->
   <!-- <link rel="stylesheet"
     href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/> -->
 </head>
@@ -41,13 +41,13 @@
         </div>
     </div>
   </div>
-  <main id="main-content" class="js-toc-content">
+  <main id="main-content">
     <!-- Product banner area -->
     <article>
       <div class="container">
         <div class="block block-page">
           <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-9 js-toc-content">
                 <div class="OP-left-margin">
                   <!-- Main content area -->
                   <!-- <h1>Order Paper for Monday, 15 June 2020</h1> -->
@@ -56,9 +56,9 @@
                 </div>
             </div>
             <div class="col-md-3">
-              <div class="toc sticky-top">
+              <div class="sticky-top">
                 <h3 data-toc-skip>Contents</h3>
-                <nav class="js-toc" id="toc" data-toggle="toc"></nav>
+                <nav class="js-toc toc" id="toc" data-toggle="toc"></nav>
                 <!-- <nav id="toc"></nav> -->
               </div>
             </div>
@@ -98,7 +98,5 @@
       });
     });
   </script> -->
-
 </body>
-
 </html>
