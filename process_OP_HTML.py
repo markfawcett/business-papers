@@ -15,14 +15,14 @@ table_markup = """<table class="table table-bordered table-responsive-md">
   <tbody></tbody>
 </table>"""
 
-dist_folder_path = Path('dist/')
+dist_folder_path = Path('demo/')
 if not dist_folder_path.exists():
-    print('Error: No dist folder')
+    print('Error: No demo folder')
     exit()
 
 path_to_index_template = 'index_template.html'
 path_to_index_output_path = dist_folder_path.joinpath('index.html')
-path_to_index_output_str = str(Path('dist/index.html'))
+path_to_index_output_str = str(dist_folder_path.joinpath('index.html'))
 
 existing_base_url = 'https://publications.parliament.uk/pa/cm5801/cmagenda/'
 
