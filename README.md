@@ -9,5 +9,5 @@ Redesign of House of Commons business papers pages
 3. Using your your terminal or Git for windows, navigate to the folder where you would like to work on this project. E.g. `cd "~/OneDrive - UK Parliament"`
 4. do `git clone https://github.com/markfawcett/business-papers.git`
 5. then do `npm install`
-6. If everything worked then `npm run serve` should start a web server.
+6. If everything worked then `npm run serve` should start a web server (Ctrl+c to quit).
 
