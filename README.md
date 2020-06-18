@@ -14,7 +14,7 @@ Redesign of House of Commons business papers pages
 
 ## Developing
 * If everything worked then `npm run serve` should start a web server (Ctrl+c to quit).
-* your browser should open automatically
+* Your browser should open automatically. If not you may need to try entering an ip address in your browser `http://127.0.0.1:80`
 
 
 ## Publishing
