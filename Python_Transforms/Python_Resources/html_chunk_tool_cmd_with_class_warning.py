@@ -86,7 +86,7 @@ def main():
 def bad_classes(input_file_name):
     # import allowed classes
     try:
-        from classesInOPHtml import ALLOWED_CLASSES as allowed_classes  # type: ignore
+        from .classesInOPHtml import ALLOWED_CLASSES as allowed_classes  # type: ignore
     except ModuleNotFoundError:
         try:
             from Python_Resources.classesInOPHtml import ALLOWED_CLASSES as allowed_classes
@@ -354,7 +354,7 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
             outputfile_name = f'{file_lable}{DATES.sitting_date_compact[2:]}{ fileextension}'
             if output_folder:
                 outputfile_path = Path(output_folder).joinpath(outputfile_name)
-                print(outputfile_path)
+                # print(outputfile_path)
             else:
                 outputfile_path = Path(input_file_name).parent.joinpath(outputfile_name)
 
