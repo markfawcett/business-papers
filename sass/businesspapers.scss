@@ -1,8 +1,11 @@
+// override font location
+$font-path: '../fonts';
 // import colours from PDS design system
 @import '../Design_System_SASS/sass/compatibility/bootstrap-3/bootstrap-3-shims.scss';
 @import '../Design_System_SASS/sass/core/colours.scss';
 @import '../Design_System_SASS/sass/core/fonts.scss';
 @import '../Design_System_SASS/sass/core/font-sizes.scss';
+
 
 $OP-margin-left: 3rem;
 

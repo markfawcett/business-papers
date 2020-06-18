@@ -8,7 +8,7 @@ import sys
 from lxml import html  # type: ignore
 from lxml.html import Element  # type: ignore
 
-import Python_Transforms.Python_Resources.html_chunk_tool_cmd_with_class_warning as script
+import Python_Transforms.Python_Resources.html_chunk_tool_cmd_with_class_warning as script  # type: ignore
 
 table_markup = """<table class="table table-bordered table-responsive-md">
   <thead class="thead-light"><tr><th scope="col">Date</th><th scope="col">New HTML files</th><th scope="col">Original HTML files</th></tr></thead>
