@@ -8,6 +8,7 @@ Redesign of House of Commons business papers pages
 2. Install Node.js. Use the LTS version. [Node downloads](https://nodejs.org/en/download/)
 3. Using Git for windows or your terminal, navigate to the folder where you would like to work on this project. E.g. `cd ~/path_to_folder`
 4. do `git clone https://github.com/markfawcett/business-papers.git`
+5. change directory into your new business-papers folder. `cd business-papers`
 5. then do `npm install`
 
 
