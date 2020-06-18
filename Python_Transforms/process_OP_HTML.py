@@ -10,12 +10,12 @@ from lxml.html import Element  # type: ignore
 
 import Python_Resources.html_chunk_tool_cmd_with_class_warning as script
 
-table_markup = """<table class="table table-bordered">
-  <thead class="thead-light"><tr><th scope="col">Date</th><th scope="col">Original files</th><th scope="col">New files</th></tr></thead>
+table_markup = """<table class="table table-bordered table-responsive-md">
+  <thead class="thead-light"><tr><th scope="col">Date</th><th scope="col">New HTML files</th><th scope="col">Original HTML files</th></tr></thead>
   <tbody></tbody>
 </table>"""
 
-path_to_index_file = '/Users/mark/projects/business-papers/index.html'
+path_to_index_file = '/Users/mark/projects/business-papers/index_template.html'
 
 existing_base_url = 'https://publications.parliament.uk/pa/cm5801/cmagenda/'
 
@@ -51,18 +51,18 @@ def main():
         new_ob_filename = f'new_{ob}l'
         new_fb_filename = f'new_{fb}l'
 
-        new_ob_html_filepath = '/newHTML/' + new_ob_filename
-        new_fb_html_filepath = '/newHTML/' + new_fb_filename
+        new_ob_html_filepath = '/business-papers/newHTML/' + new_ob_filename
+        new_fb_html_filepath = '/business-papers/newHTML/' + new_fb_filename
 
         row_markup = ('<tr><td>'
                       + script.DATES.sitting_date_long
                       + '</td><td>'
+                      f'<a href="{new_ob_html_filepath}">{new_ob_filename}</a><br/>'
+                      f'<a href="{new_fb_html_filepath}">{new_fb_filename}</a><br/>'
+                      '</td><td>'
                       f'<a href="{existing_base_url}{ob}">{ob}</a><br/>'
                       f'<a href="{existing_base_url}{an}">{an}</a><br/>'
                       f'<a href="{existing_base_url}{fb}">{fb}</a><br/>'
-                      '</td><td>'
-                      f'<a href="{new_ob_html_filepath}">{new_ob_filename}</a><br/>'
-                      f'<a href="{new_fb_html_filepath}">{new_fb_filename}</a><br/>'
                       '</td></tr>')
 
         tbody = html_table.find('tbody')
@@ -79,7 +79,7 @@ def main():
         div.remove(table)
     div.append(html_table)
 
-    html_tree.write(path_to_index_file,
+    html_tree.write('',
                     doctype='<!DOCTYPE html>',
                     encoding='UTF-8',
                     method="html",
