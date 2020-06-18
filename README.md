@@ -1,7 +1,7 @@
 # business-papers
 Redesign of House of Commons business papers pages
 
-## Set up
+## First time Set up
 
 1. Install git.
     a. [Windows](https://git-scm.com/download/win)
@@ -9,5 +9,13 @@ Redesign of House of Commons business papers pages
 3. Using your your terminal or Git for windows, navigate to the folder where you would like to work on this project. E.g. `cd "~/OneDrive - UK Parliament"`
 4. do `git clone https://github.com/markfawcett/business-papers.git`
 5. then do `npm install`
-6. If everything worked then `npm run serve` should start a web server (Ctrl+c to quit).
+
+
+## Developing
+* If everything worked then `npm run serve` should start a web server (Ctrl+c to quit).
+
+
+
+## Publishing
+* To publish files to github pages for external review do `npm run deploy`.
 
