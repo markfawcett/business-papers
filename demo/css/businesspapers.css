@@ -1,25 +1,25 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'National';
-  src: url("~@pds-design-system/core/src/fonts//National-LFS-Book.eot");
-  src: url("~@pds-design-system/core/src/fonts//National-LFS-Book.eot?#iefix") format("embedded-opentype"), url("~@pds-design-system/core/src/fonts//National-LFS-Book.woff2") format("woff2"), url("~@pds-design-system/core/src/fonts//National-LFS-Book.woff") format("woff"); }
+  src: url("../fonts/National-LFS-Book.eot");
+  src: url("../fonts/National-LFS-Book.eot?#iefix") format("embedded-opentype"), url("../fonts/National-LFS-Book.woff2") format("woff2"), url("../fonts/National-LFS-Book.woff") format("woff"); }
 
 @font-face {
   font-family: 'National';
-  src: url("~@pds-design-system/core/src/fonts//National-LF-BookItalic.eot");
-  src: url("~@pds-design-system/core/src/fonts//National-LF-BookItalic.eot?#iefix") format("embedded-opentype"), url("~@pds-design-system/core/src/fonts//National-LF-BookItalic.woff2") format("woff2"), url("~@pds-design-system/core/src/fonts//National-LF-BookItalic.woff") format("woff");
+  src: url("../fonts/National-LF-BookItalic.eot");
+  src: url("../fonts/National-LF-BookItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/National-LF-BookItalic.woff2") format("woff2"), url("../fonts/National-LF-BookItalic.woff") format("woff");
   font-style: italic; }
 
 @font-face {
   font-family: 'National';
-  src: url("~@pds-design-system/core/src/fonts//National-LFS-Semibold.eot");
-  src: url("~@pds-design-system/core/src/fonts//National-LFS-Semibold.eot?#iefix") format("embedded-opentype"), url("~@pds-design-system/core/src/fonts//National-LFS-Semibold.woff2") format("woff2"), url("~@pds-design-system/core/src/fonts//National-LFS-Semibold.woff") format("woff");
+  src: url("../fonts/National-LFS-Semibold.eot");
+  src: url("../fonts/National-LFS-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/National-LFS-Semibold.woff2") format("woff2"), url("../fonts/National-LFS-Semibold.woff") format("woff");
   font-weight: 500; }
 
 @font-face {
   font-family: 'National';
-  src: url("~@pds-design-system/core/src/fonts//National-LF-SemiboldItalic.eot");
-  src: url("~@pds-design-system/core/src/fonts//National-LF-SemiboldItalic.eot?#iefix") format("embedded-opentype"), url("~@pds-design-system/core/src/fonts//National-LF-SemiboldItalic.woff2") format("woff2"), url("~@pds-design-system/core/src/fonts//National-LF-SemiboldItalic.woff") format("woff");
+  src: url("../fonts/National-LF-SemiboldItalic.eot");
+  src: url("../fonts/National-LF-SemiboldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/National-LF-SemiboldItalic.woff2") format("woff2"), url("../fonts/National-LF-SemiboldItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic; }
 
@@ -246,7 +246,6 @@ strong {
   padding-right: 1em;
   font-size: 0.9em;
   vertical-align: middle;
-  transition: color .25s ease-out, opacity .25s ease-in-out;
   /*hide unless hover on parent*/
   display: none;
   /* Better Font Rendering =========== */
