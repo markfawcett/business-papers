@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/reset.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/grid.css">
+<link rel="stylesheet" type="text/css" media="screen" href="/assets/css/main.css">
+<!-- <link rel="stylesheet" type="text/css" media="screen" href="/styles/tsoLayout.css" > -->
+<link rel="stylesheet" type="text/css" media="screen" href="/styles/votesandproceedings.css">
+<meta charset="utf-8">
+<meta name="Title" content="House of Commons Votes and Proceedings">
+<meta name="Subject" content="Votes and Proceedings">
+<meta name="Publisher" content="Houses of Parliament, Westminster">
+<meta name="OtherAgent" content="Houses of Parliament, Westminster">
+<meta name="Date" content="">
+<meta name="ObjectType" content="Agenda">
+<meta name="Form" content="text/html">
+<meta name="Source" content="House of Commons Vote Bundle No. 55">
+<meta name="Language" content="English">
+<title>Votes and Proceedings (Vote Bundle No. 55)</title>
+<style>
+   /*From TSO layout*/
+   #mainTextBlock, #titleBlock, #footerBlock {
+       float: left;
+       clear: both;
+       width: 90%;
+   }
+   #titleBlockTitle {
+       float: left;
+       width: 60%;
+   }
+   #titleBlockLinks {
+       float: right;
+       width: 39%;
+   }
+   #footerBlockCopyright {
+       float: left;
+       width: 49%;
+   }
+   #footerBlockDate {
+       float: right;
+       text-align: right;
+       width: 49%;
+   }
+   #footerBlock { border-top: 1px solid #cfcfcf }
+   /*End from TSO layout*/
+
+   /*add space above subheadings e.g. Other Papers*/
+   h2.underline{ margin-top: 2em; }
+   /*add space arround signatures*/
+   .Sig1{margin-top: 1em; margin-bottom: 1em;}
+
+   /*remove the first line indent*/
+   .indent{ text-indent: 0; }
+
+   /*indents*/
+   .NormalIndent3{
+    padding-left: 15%;
+   }
+   .NormalIndent4{
+    padding-left: 20%;
+   }
+   .NormalIndent5{
+    padding-left: 25%;
+   }
+   /*end indents*/
+
+   /*default table paragraph styles*/
+   .TableBody, .TableHeader, table .ItemTimingHeading{
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+   }
+
+    /* Tables */
+  .StandardTable{ margin-left: 3.5%; }
+
+  table.allLines{
+    width: 85%;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  .allLines{
+
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  .allLines p.Normal-Haning{
+    padding-left: 0;
+    margin-bottom: 0;
+   }
+
+  table.allInnerLines{
+    /*border: none; /* this wont win so do the below */
+    margin-left: 3.5%;
+    width: 85%;
+    border-style: hidden;
+  }
+  .allInnerLines p.Normal-Haning{
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .allInnerLines td, .allInnerLines th{
+    border: 1px solid black;
+  }
+  .allInnerLines{
+    border-collapse: collapse;
+  }
+
+  table.innerColumnLinesAndAllInnerHeaderLines{
+    margin-left: auto;
+    margin-right: auto;
+    /*margin-left: 3.5%;*/
+    width: 85%;
+    border-style: hidden;
+  }
+  .innerColumnLinesAndAllInnerHeaderLines p{
+    margin-bottom: 0;
+  }
+  .innerColumnLinesAndAllInnerHeaderLines td{
+    border-right: 1px solid black;
+  }
+  .innerColumnLinesAndAllInnerHeaderLines th td,
+  .innerColumnLinesAndAllInnerHeaderLines thead td{
+    border: 1px solid black;
+  }
+  .innerColumnLinesAndAllInnerHeaderLines{
+    border-collapse: collapse;
+  }
+  /* End Tables */
+
+   .InDesignBold{ font-weight: bold; }
+
+   .InDesignRightAlligned{
+       clear: both;
+       text-align: right;
+   }
+   p.Normal-Haning{
+       padding-left: 6%;
+       text-indent: 0;
+   }
+   .ItemTimingHeading {
+       margin-bottom: 1em;
+       margin-top: 1.5em;
+   }
+   #mainTextBlock{
+       float: none;
+       margin: auto;
+   }
+
+   /*CSS for anchor link*/
+   @font-face {font-family: "hocLinkIcon";
+       src: url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8TDNEAAAC8AAAAYGNtYXD/rgHVAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZhjFPzoAAAF4AAABXGhlYWQTibEUAAAC1AAAADZoaGVhB8EDxgAAAwwAAAAkaG10eAoAAAAAAAMwAAAAFGxvY2EAKADCAAADRAAAAAxtYXhwAAgAYgAAA1AAAAAgbmFtZVdmxuUAAANwAAABtnBvc3QAAwAAAAAFKAAAACAAAwMAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAABAAAAApwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAgAKf//f//AAAAAAAgAKf//f//AAH/4/9dAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACAAD/wQP/A7IALwBfAAAlBw4BJy4BNTQ2PwE+ARcWMjc2NCcmJyYGBwYPAQ4BFRQWFx4BMzI2PwE2NCcmIgcBJicuAQcGDwEGFBcWMj8BNhYXHgEVFAYPAQYmJyYiBwYUFx4BMzI2PwE+ATU2JicBdzQiXyIQEhIQvh5hKRM1EhMTIioqWy4vLb4iJSUiI1kvLlkkNBISEzQTAkIlKytYKioiQRISEzQTQSNVHhASEhDMRUgOEzUSExMgSCYvYi/LIyQBJSKUMyEBIhApFxcoEb0dNykSEhI2EiIODgsZGSy9I1gvMFkhJCIjIzMSNRMSEgLeJRQTBBAQI0ASNRMTE0AkEh4QKhYXKRDKRhkOEhITNRIgIDAuyiJYMDFXIgABAAAAAQAA9WCCgV8PPPUACwQAAAAAANg1tlIAAAAA2DW2UgAA/8ED/wOyAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAP/AAEAAAAAAAAAAAAAAAAAAAAFBAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAoAFAAeAK4AAQAAAAUAYAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAsAAAABAAAAAAACAAcAhAABAAAAAAADAAsAQgABAAAAAAAEAAsAmQABAAAAAAAFAAsAIQABAAAAAAAGAAsAYwABAAAAAAAKABoAugADAAEECQABABYACwADAAEECQACAA4AiwADAAEECQADABYATQADAAEECQAEABYApAADAAEECQAFABYALAADAAEECQAGABYAbgADAAEECQAKADQA1GhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblJlZ3VsYXIAUgBlAGcAdQBsAGEAcmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbkZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format("truetype");}
+   [data-anchor-icon]::after {content: attr(data-anchor-icon);}
+   .anchor-link{
+       /* use !important to prevent issues with browser extensions that change fonts */
+       font-family: 'hocLinkIcon' !important;
+       speak: none;
+       font-style: normal;
+       font-weight: normal;
+       font-variant: normal;
+       text-transform: none;
+       line-height: 1;
+       padding-left: 1em;
+       padding-right: 1em;
+       font-size: 0.9em;
+       vertical-align:middle;
+       /*hide unless hover on parent*/
+       display: none;
+       /* Better Font Rendering =========== */
+       -webkit-font-smoothing: antialiased;
+       -moz-osx-font-smoothing: grayscale;
+   }
+   /*show anchor link on hover*/
+   p:hover .anchor-link,
+   h2:hover .anchor-link{display: inline;}
+   /* End of CSS for anchor link*/
+</style>
+</head>
+
+<body class="main">
+   <!--#include virtual="/server-side/banner_pubs2010.htm"-->
+   <!--#exec cgi="/cgi-bin/breadcrumb-trail.pl"-->
+        <div id="content" class="wide">
+            <div id="content-small">
+                <div id="titleBlock">
+                    <div id="titleBlockTitle">
+                        <p style="text-align:right;"><strong>House of Commons</strong></p>
+                    </div>
+                    <div id="titleBlockLinks">
+                        <p style="text-align:right;" class="mainLinks">
+                            <strong>Session 2019-21</strong>
+                            <br>
+                        </p>
+                    </div>
+                </div>
+                <div id="mainTextBlock">
+                    <a id="skipToContent"></a>
+                    <h1 class="mainTitle" id="MainTitleWithDate">Votes and Proceedings<br>Wednesday 6 May 2020</h1>
+                    <p class="VPIssueNumber">No. 55</p>
+                    <div class="tempory"></div>
+
+                    <!-- Content goes here -->
+
+
+                <p class="ItemTimingHeading">The House met at 11.30 am (Order, 22 April).</p>
+			<p class="indent">Prayers</p>
+			<p class="numbered InDesignBold"><span class="number">1</span><span class="text" id="anchor-0">Speaker's Statement: Remote voting (temporary authorisation)<a href="#anchor-0" aria-label="Anchor" title="Permalink for Speaker's Statement: Remote voting (temporary authorisation)" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="numbered InDesignBold"><span class="number">2</span><span class="text" id="anchor-1">Questions to (1) the Minister for Women and Equalities<a href="#anchor-1" aria-label="Anchor" title="Permalink for Questions to (1) the Minister for Women and Equalities" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="V2"><strong class="_5-bold">(2) the Prime Minister</strong></p>
+			<p class="numbered InDesignBold"><span class="number">3</span><span class="text" id="anchor-2">Urgent Question: Guidelines for workplace safety after the lifting of lockdown (Paul Scully)<a href="#anchor-2" aria-label="Anchor" title="Permalink for Urgent Question: Guidelines for workplace safety after the lifting of lockdown (Paul Scully)" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="numbered InDesignBold"><span class="number">4</span><span class="text" id="anchor-3">Statement: International COVID-19 response (Secretary Anne-Marie Trevelyan)<a href="#anchor-3" aria-label="Anchor" title="Permalink for Statement: International COVID-19 response (Secretary Anne-Marie Trevelyan)" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">As it was more than two hours after the commencement of hybrid scrutiny proceedings, the Speaker brought proceedings on the statement to a close (Order (Scrutiny proceedings (1)), 21 April).</p>
+			<p class="numbered InDesignBold"><span class="number">5</span><span class="text" id="anchor-4">Business of the House (6 May)<a href="#anchor-4" aria-label="Anchor" title="Permalink for Business of the House (6 May)" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Motion made, That:—</p>
+			<p class="indent">(1) The following arrangements shall apply to today’s business:</p>
+			<table id="table001" class="StandardTable _idGenTablePara-1">
+				<colgroup>
+					<col>
+					<col>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="StandardTable">
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">Business</p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">Timings</p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">Remote division designation</p>
+						</td>
+					</tr>
+					<tr class="StandardTable">
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">Business Statement</p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">Up to 30 minutes</p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">None</p>
+						</td>
+					</tr>
+					<tr class="StandardTable">
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">Census: Motion to approve the draft Census (England and Wales) Order 2020</p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">Up to 90 minutes</p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning">None</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="indent">(2) At the conclusion of each debate, the Speaker shall put the Question on each of the motions on the Order Paper relating to the business listed in the table for that debate.—(<em class="Oblique">James Morris</em>.)</p>
+			<p class="indent">The Speaker declared the Question agreed to (Order (Substantive proceedings (4)), 22 April).</p>
+			<p class="numbered InDesignBold"><span class="number">6</span><span class="text" id="anchor-5">Business Statement (Leader of the House)<a href="#anchor-5" aria-label="Anchor" title="Permalink for Business Statement (Leader of the House)" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">As it was more than thirty minutes after the commencement of the Business Statement, the Speaker brought proceedings on the statement to a close (Order, today).</p>
+			<p class="numbered InDesignBold"><span class="number">7</span><span class="text" id="anchor-6">Census<a href="#anchor-6" aria-label="Anchor" title="Permalink for Census" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Motion made and Question proposed, That items 2 (resident particulars), 5, 6 (visitor particulars), 10, 11, 13, 16, 19, 21, 22, 23, 24 (demographic particulars), 27, 28, 29, 32, 33, 34, 36(d) (education and employment particulars), 41, 42, 43 (accommodation particulars), 45, 46 (additional particulars for individual returns) in Schedule 2, and items 1, 2, 3 and 4 in Schedule 3 to the draft Census (England and Wales) Order 2020, which was laid before this House on 2 March, be approved.—(<em class="Oblique">Chloe Smith</em>.)</p>
+			<p class="indent">The Deputy Speaker announced a time limit on backbench speeches (Standing Order No. 47(1)).</p>
+			<p class="indent">Question put and agreed to.</p>
+			<p class="numbered InDesignBold"><span class="number">8</span><span class="text" id="anchor-7">Deputy Speaker's Statement: Election of the Chairs of Select Committees<a href="#anchor-7" aria-label="Anchor" title="Permalink for Deputy Speaker's Statement: Election of the Chairs of Select Committees" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">The Deputy Speaker announced that the following Members had been elected to be Chairs of Select Committees (Standing Order No. 122B and Order ((Select committee chair by-elections), 22 April):</p>
+			<table id="table002" class="StandardTable _idGenTablePara-1">
+				<colgroup>
+					<col>
+					<col>
+				</colgroup>
+				<tbody>
+					<tr class="StandardTable">
+						<td class="StandardTable Body">
+							<p class="Normal-Haning"><em class="Oblique"> </em>Committee</p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning"><em class="Oblique"> </em>Elected</p>
+						</td>
+					</tr>
+					<tr class="StandardTable">
+						<td class="StandardTable Body">
+							<p class="Normal-Haning"> Business, Energy and Industrial Strategy </p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning"> Darren Jones</p>
+						</td>
+					</tr>
+					<tr class="StandardTable">
+						<td class="StandardTable Body">
+							<p class="Normal-Haning"> Standards</p>
+						</td>
+						<td class="StandardTable Body">
+							<p class="Normal-Haning"> Chris Bryant</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<p class="numbered InDesignBold"><span class="number">9</span><span class="text" id="anchor-8">Adjournment<a href="#anchor-8" aria-label="Anchor" title="Permalink for Adjournment" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">The Deputy Speaker adjourned the House without Question put (Order (Hybrid proceedings (5)), 22 April).</p>
+			<p class="InDesignRightAlligned">Adjourned at 3.54 pm until Monday 11 May (Order, 22 April).</p>
+			<h2 class="underline" id="anchor-9">Other Proceedings<a href="#anchor-9" aria-label="Anchor" title="Permalink for Other Proceedings" data-anchor-icon="§" class="anchor-link"></a></h2>
+			<h3 class="ItemTimingHeading"><em class="Oblique">Reports from Select Committees</em></h3>
+			<p class="numbered InDesignBold"><span class="number">10</span><strong class="_5-bold">Defence Committee </strong><span class="text" id="anchor-10"><a href="#anchor-10" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent"><em class="Oblique">Correspondence with the Secretary of State relating to Huawei and F35s</em>: Written evidence, to be published (Mr Tobias Ellwood).</p>
+			<p class="numbered InDesignBold"><span class="number">11</span><strong class="_5-bold">Human Rights (Joint Committee on)</strong><span class="text" id="anchor-11"><a href="#anchor-11" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">(1) <em class="Oblique">Human Rights and the Government’s Response to COVID-19: Digital Contact Tracing</em>: Third Report, to be printed, with the formal minutes relating to the Report (HC 343);</p>
+			<p class="indent">(2) <em class="Oblique">The Government’s response to COVID-19: human rights implications</em>: Written evidence, to be published (HC 265)</p>
+			<p class="indent">(Ms Harriet Harman).</p>
+			<p class="numbered InDesignBold"><span class="number">12</span><strong class="_5-bold">International Trade Committee</strong><span class="text" id="anchor-12"><a href="#anchor-12" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">(1) <em class="Oblique">The COVID-19 pandemic and international trade</em>: Oral and written evidence, to be published (HC 286);</p>
+			<p class="indent">(2)<em class="Oblique"> Department for International Trade Main Estimate 2020–21</em>: Written evidence, to be published</p>
+			<p class="indent">(Angus Brendan MacNeil).</p>
+			<p class="numbered InDesignBold"><span class="number">13</span><strong class="_5-bold">Public Accounts (Committee of) </strong><span class="text" id="anchor-13"><a href="#anchor-13" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">(1)<em class="Oblique"> Defence Nuclear Infrastructure</em>: Second Report, to be printed, with the formal minutes relating to the report (HC 86);</p>
+			<p class="indent">(2)<em class="Oblique"> High Speed 2</em>:<em class="Oblique"> Spring 2020 Update</em>: Third Report, to be printed, with the formal minutes relating to the report (HC 84);</p>
+			<p class="indent">(3)<em class="Oblique"> Correspondence with the Cabinet Office relating to challenges of using data across Government</em>: Written evidence, to be published;</p>
+			<p class="indent">(4)<em class="Oblique"> Correspondence with the Northern Ireland Office relating to the Northern Ireland Office’s Excess Vote in 2018–19</em>: Written evidence, to be published;</p>
+			<p class="indent">(5)<em class="Oblique"> Gambling regulation: problem gambling and protecting vulnerable people</em>: Written evidence, to be published (HC 134)</p>
+			<p class="indent">(Meg Hillier).</p>
+			<p class="numbered InDesignBold"><span class="number">14</span><strong class="_5-bold">Statutory Instruments (Joint Committee on)</strong><span class="text" id="anchor-14"><a href="#anchor-14" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Tenth Report, to be printed (HC 75-x) (Jessica Morden).</p>
+			<p class="numbered InDesignBold"><span class="number">15</span><strong class="_5-bold">Statutory Instruments (Select Committee on)</strong><span class="text" id="anchor-15"><a href="#anchor-15" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Ninth Report, to be printed, with the formal minutes relating to the Report (HC 73-ix) (Jessica Morden).</p>
+			<p class="numbered InDesignBold"><span class="number">16</span><strong class="_5-bold">Transport Committee </strong><span class="text" id="anchor-16"><a href="#anchor-16" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent"><em class="Oblique">Coronavirus: implications for transport</em>: Oral evidence, to be published (HC 268) (Huw Merriman).</p>
+			<p class="numbered InDesignBold"><span class="number">17</span><strong class="_5-bold">Women and Equalities Committee</strong><span class="text" id="anchor-17"><a href="#anchor-17" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent"><em class="Oblique">Unequal impact: Coronavirus (Covid-19) and the impact on people with protected characteristic</em>: Oral evidence, to be published (HC 276) (Caroline Nokes).</p>
+			<p class="numbered InDesignBold"><span class="number">18</span><strong class="_5-bold">Work and Pensions Committee</strong><span class="text" id="anchor-18"><a href="#anchor-18" aria-label="Anchor" title="Permalink for " data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">(1) <em class="Oblique">DWP’s response to the coronavirus outbreak</em>: Oral and written evidence, to be published (HC 178);</p>
+			<p class="indent">(2)<em class="Oblique"> Correspondence from the Permanent Secretary relating to the DWP's publication of statistics</em>: Written evidence, to be published;</p>
+			<p class="indent">(3) <em class="Oblique">Correspondence with the Secretary of State relating to DWP's preparations for a recession</em>: Written evidence, to be published;</p>
+			<p class="indent">(4) <em class="Oblique">The work of the Money and Pensions Service</em>: Written evidence, to be published (HC 135)</p>
+			<p class="indent">(Stephen Timms).</p>
+			<p class="Sig1">Lindsay Hoyle</p>
+			<p class="InDesignRightAlligned">Speaker</p>
+			<h2 class="underline" id="anchor-19">Papers Laid<a href="#anchor-19" aria-label="Anchor" title="Permalink for Papers Laid" data-anchor-icon="§" class="anchor-link"></a></h2>
+			<h3 class="ItemTimingHeading">Papers subject to Affirmative Resolution</h3>
+			<p class="numbered InDesignBold"><span class="number">1</span><span class="text" id="anchor-20">Banks and Banking<a href="#anchor-20" aria-label="Anchor" title="Permalink for Banks and Banking" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Draft Northern Ireland Banknote (Designation of Authorised Bank) Regulations 2020 (by Act), with an Explanatory Memorandum (by Command) (John Glen)</p>
+			<p class="numbered InDesignBold"><span class="number">2</span><span class="text" id="anchor-21">Exiting the European Union (Financial Services and Markets)<a href="#anchor-21" aria-label="Anchor" title="Permalink for Exiting the European Union (Financial Services and Markets)" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Draft Financial Services (Miscellaneous Amendments) (EU Exit) Regulations 2020 (by Act), with an Explanatory Memorandum (by Act) (John Glen)</p>
+			<p class="numbered InDesignBold"><span class="number">3</span><span class="text" id="anchor-22">Terms and Conditions of Employment<a href="#anchor-22" aria-label="Anchor" title="Permalink for Terms and Conditions of Employment" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Draft National Minimum Wage (Offshore Employment) (Amendment) Order 2020 (by Act), with an Explanatory Memorandum (by Command) (Secretary Grant Shapps)</p>
+			<h3 class="ItemTimingHeading">Papers subject to Negative Resolution</h3>
+			<p class="numbered InDesignBold"><span class="number">4</span><span class="text" id="anchor-23">Constitutional Law<a href="#anchor-23" aria-label="Anchor" title="Permalink for Constitutional Law" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Social Security (Scotland) Act 2018 (Information-Sharing and Scottish Child Payment) (Consequential Provision and Modifications) Order 2020 (SI, 2020, No. 482), dated 30 April 2020 (by Act), with an Explanatory Memorandum (by Command) (Secretary Alister Jack)</p>
+			<h3 class="ItemTimingHeading">Other papers</h3>
+			<p class="numbered InDesignBold"><span class="number">5</span><span class="text" id="anchor-24">Northern Ireland<a href="#anchor-24" aria-label="Anchor" title="Permalink for Northern Ireland" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Report of the Chief Electoral Officer for Northern Ireland for 2018–19 (by Act), to be printed (HC 94) (Secretary Brandon Lewis)</p>
+			<p class="numbered InDesignBold"><span class="number">6</span><span class="text" id="anchor-25">Port of London<a href="#anchor-25" aria-label="Anchor" title="Permalink for Port of London" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Report and Accounts of Port of London Authority for 2019 (by Act) (Secretary Grant Shapps)</p>
+			<h3 class="ItemTimingHeading">Withdrawn papers</h3>
+			<p class="numbered InDesignBold"><span class="number">7</span><span class="text" id="anchor-26">Exiting the European Union (Financial Services and Markets)<a href="#anchor-26" aria-label="Anchor" title="Permalink for Exiting the European Union (Financial Services and Markets)" data-anchor-icon="§" class="anchor-link"></a></span></p>
+			<p class="indent">Draft Financial Services (Miscellaneous Amendments) (EU Exit) Regulations 2020, with an Explanatory Memorandum (laid 21 April)</p>
+			<p class="FullLine"> </p>
+			<p class="ItemTimingHeading">CORRECTIONS</p>
+			<p class="indent">Wednesday 25 March 2020</p>
+			<p class="indent">Item 26 should have read:</p>
+			<p class="indent"><strong class="_5-bold">Statutory Instruments (Joint Committee on)</strong> </p>
+			<p class="indent">Seventh Report, to be printed (HC 75-vii) (Jessica Morden) (Order of 24 March).</p>
+			<p class="indent">Wednesday 22 April 2020</p>
+			<p class="indent">Items 22 and 23 should have read:</p>
+			<p class="indent"><strong class="_5-bold">Statutory Instruments (Joint Committee on) </strong></p>
+			<p class="indent">Eighth Report, to be printed (HC 75-viii) (Jessica Morden) (Order of 24 March).</p>
+			<p class="indent"><strong class="_5-bold">Statutory Instruments (Select Committee on) </strong></p>
+			<p class="indent">Seventh Report, to be printed, with the formal minutes relating to the Report (HC 73-vii) (Jessica Morden) (Order of 24 March).</p>
+			<p class="indent">Wednesday 29 April 2020</p>
+			<p class="indent">This item should have been included after Item 14:</p>
+			<p class="indent"><strong class="_5-bold">Human Rights (Joint Committee on)</strong></p>
+			<p class="indent"><em class="Oblique">The Right to Privacy (Article 8) and the Digital Revolution: Government Response to the Committee’s Third Report of Session 2019</em>: First Special Report, to be printed (HC 313) (Ms Harriet Harman) (Order of 24 March). </p>
+			<p class="indent">Tuesday 5 May 2020</p>
+			<p class="indent">Item 11 should have read:</p>
+			<p class="indent"><strong class="_5-bold">European Statutory Instruments Committee</strong></p>
+			<p class="indent">Fourth Report, to be printed, with the formal minutes relating to the Report (HC 130), and including the following recommendation:</p>
+			<p class="V2">That the affirmative procedure should apply to the instrument titled: The Alternative Dispute Resolution for Consumer Disputes (Extension of Time Limits for Legal Proceedings) (Amendment etc.) (EU Exit) Regulations 2020</p>
+			<p class="indent">(Andrew Jones). </p>
+		</div>
+                <div id="footerBlock">
+                    <div id="footerBlockCopyright">
+                        <p> </p>
+                    </div>
+                    <div id="footerBlockDate">
+                        <p>Prepared 6 May 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+   <!--#include virtual="/server-side/footer2010.htm"-->
+</body>
+</html>
