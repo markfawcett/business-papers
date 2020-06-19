@@ -222,7 +222,7 @@ $para-spacing: 18px;
     vertical-align:middle;
     transition: color .25s ease-out, opacity .25s ease-in-out;
     /*hide unless hover on parent*/
-    display: none;
+    opacity: 0;
     /* Better Font Rendering =========== */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -234,7 +234,8 @@ h2 .anchor-link{
     font-size: 0.7em;
 }
 /*show anchor link on hover*/
-:hover > .anchor-link{display: inline; text-decoration: none;}
+:hover > .anchor-link{display: inline; text-decoration: none; opacity: 9;}
+
 
 /* ---- End of CSS for anchor link ---- */
 
