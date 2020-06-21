@@ -57,12 +57,15 @@ def main():
     output_html_tree = html.parse(path_to_index_template)
     output_html_root = output_html_tree.getroot()
 
-    output_div = output_html_root.xpath('//div[@id="op-before-after"]')[0]
+    op_div = output_html_root.find('.//div[@id="op"]')
+    vnp_div = output_html_root.find('.//div[@id="vnp"]')
     # remove any existing tables
-    for table in output_div.iterfind('table'):
-        output_div.remove(table)
+    for div in op_div, vnp_div:
+        for table in div.iterfind('table'):
+            div.remove(table)
 
-    output_div.extend((op_table, vnp_table))
+    op_div.append(op_table)
+    vnp_div.append(vnp_table)
 
     output_html_tree.write(path_to_index_output_str,
                            doctype='<!DOCTYPE html>',
@@ -88,7 +91,7 @@ def make_vnp_table(vnp_file_paths):
                   '  skipping...')
             continue
 
-        vnp_template_Path = Path('pyhonScripts/VnP_tempate_file.html').resolve()
+        vnp_template_Path = Path('pyhonScripts/new_VnP_tempate.html').resolve()
 
         output_Path = vnp.fix_VnP_HTML(input_path_str,
                                        str(vnp_template_Path),
@@ -136,6 +139,7 @@ def make_op_table(op_file_paths):
             input_file_path_str,
             output_folder=str(dist_folder_path.resolve())
         )
+        print()
 
         ob = file_name.replace('OP', 'ob').replace('.html', '.htm')
         an = file_name.replace('OP', 'an').replace('.html', '.htm')

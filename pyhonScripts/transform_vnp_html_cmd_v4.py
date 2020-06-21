@@ -28,7 +28,7 @@ def main():
 
 
 def fix_VnP_HTML(input_file_name: str, template_file_name: str,
-                 today_string: str='',  output_folder: str='') -> Path:
+                 today_string: str = '',  output_folder: str = '') -> Path:
 
     # fisrt print the full location of the input file
     print('Input file is at:  {}'.format(Path(input_file_name).resolve()))
@@ -65,14 +65,14 @@ def fix_VnP_HTML(input_file_name: str, template_file_name: str,
         vnP_day_of_week = 'Noday'
         vnP_date = 'Num Month Year'
     # add this to the output
-    h1_title = output_root.find('.//h1[@id="MainTitleWithDate"]')
+    h1_title = output_root.find('.//h1[@id="mainTitle"]')
     if h1_title is not None:
         h1_title.text = 'Votes and Proceedings'
         SubElement(h1_title, 'br').tail = f'{vnP_day_of_week} {vnP_date}'
     # also add the date to the botttom of the page
-    prepared_date_element = output_root.find('.//div[@id="footerBlockDate"]/p')
-    if prepared_date_element is not None and prepared_date_element.text:
-        prepared_date_element.text += vnP_date
+    # prepared_date_element = output_root.find('.//div[@id="footerBlockDate"]/p')
+    # if prepared_date_element is not None and prepared_date_element.text:
+    #     prepared_date_element.text += vnP_date
 
     # change the input root so that all the paragraphs with numbered spans have another span
     spans = input_root.findall('.//p[@class="numbered InDesignBold"]/span[last()]')
@@ -115,7 +115,7 @@ def fix_VnP_HTML(input_file_name: str, template_file_name: str,
         anchor.set('class', 'anchor-link')
 
     # get a handle in the output root for appending stuff from the input
-    append_point = output_root.find('.//div[@id="mainTextBlock"]')
+    append_point = output_root.find('.//div[@id="content-goes-here"]')
     # append_point.append(html.fromstring('<p class="VPIssueNumber">' + vnP_number + '</p>'))
     if append_point is None:
         input('Error: The template root does not have a div with an id of "mainTextBlock" '

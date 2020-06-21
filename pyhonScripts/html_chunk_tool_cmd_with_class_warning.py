@@ -13,7 +13,6 @@ from lxml.html import Element  # type: ignore
 from lxml.etree import SubElement, ElementTree, iselement  # type: ignore
 # stuff for file paths
 from pathlib import Path
-import os
 # for regular expresions
 import re
 
@@ -131,9 +130,6 @@ def bad_classes(input_file_name):
             if len(close_matches) == 1:
                 print('    suggestion  \033[1m' + item + ' -> ' + close_matches[0] + '\033[0m')
 
-    print()
-
-
 
 def massarge_input_file(input_file_name):
     # test for bad classes
@@ -155,7 +151,8 @@ def massarge_input_file(input_file_name):
             print('override')
             paragraph.set('class', re.sub(r' ?_idGenParraOveride\d\d?\d?', '', paragraph.get('class', default='')))
     # remove filename for internal hyperlinks
-    inDesign_file_name = os.path.basename(input_file_name)
+    # inDesign_file_name = os.path.basename(input_file_name)
+    inDesign_file_name = Path(input_file_name).name
     all_links = input_root.xpath('//a')
     for link in all_links:
         if 'href' in link.attrib:
