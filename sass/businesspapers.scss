@@ -235,7 +235,11 @@ h2 .anchor-link{
     font-size: 0.7em;
 }
 /*show anchor link on hover*/
-:hover > .anchor-link{display: inline; text-decoration: none; opacity: 9;}
+:hover > .anchor-link{
+    display: inline;
+    text-decoration: none;
+    opacity: 9;
+}
 
 /* ---- End of CSS for anchor link ---- */
 
