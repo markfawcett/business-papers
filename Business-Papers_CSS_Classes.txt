@@ -1,0 +1,17 @@
+Business Papers CSS Classes to merge
+
+
+Here are some ideas I've had for merging the CSS: 
+
+Bold > _5-Bold
+Master-and-Title-Page_OPDate > DateTitle 
+DocumentTitle > VnP-Title
+ 
+Could replace/simplify some of the ‘para’ CSS classes in OP HTML with some merging of the ItemTimingHeading, indent and Oblique classes used in VP HTML
+
+Could use the CSS classes numbered InDesignBold and number in OP HTML
+ 
+In general there seems to be a lot less CSS classes in the VP HTML - I remember thinking that the classes in the OP HTML could be simplified a bit if you would agree? That would make it a lot easier to have one CSS file
+
+
+ 
