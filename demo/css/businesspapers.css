@@ -74,6 +74,24 @@ strong {
   font-size: 0.85rem;
   line-height: 1.2; }
 
+.ItemTimingHeading {
+  text-align: center; }
+
+.InDesignBold {
+  font-weight: 500; }
+
+span.number {
+  margin-left: -2.2rem;
+  display: inline-block;
+  width: 2.2rem;
+  font-weight: 500; }
+
+.numbered.InDesignBold + p {
+  margin-top: -9px; }
+
+.container-fluid {
+  max-width: 1140px; }
+
 .OP-left-margin {
   overflow-wrap: break-word; }
 
@@ -266,6 +284,7 @@ h2 .anchor-link {
   opacity: 9; }
 
 /* ---- End of CSS for anchor link ---- */
+/* ----------- Automatic Toc  --------------- */
 .toc {
   overflow-y: auto; }
 
@@ -316,5 +335,4 @@ a.toc-link:hover {
 .is-active-link::before {
   background-color: #3e1d78; }
 
-/* ----------- Automatic Toc  --------------- */
 /* ------ End of Automatic Toc  ------------- */
