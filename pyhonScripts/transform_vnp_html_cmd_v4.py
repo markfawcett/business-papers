@@ -89,7 +89,7 @@ def fix_VnP_HTML(input_file_name: str, template_file_name: str,
     # Add IDs and perminant ancors to the html
     # Added at the request of IDMS
     # need to get all the heading elements
-    xpath = '//*[@class="numbered InDesignBold"]/span[@class="text"]|//h2[@class="underline"]'
+    xpath = '//*[@class="numbered InDesignBold"]/span[@class="text"]|//h2[@class="underline"]|//h3'
     linkables = input_root.xpath(xpath)
     # print(len(linkables))
     for i, heading in enumerate(linkables):
@@ -113,6 +113,12 @@ def fix_VnP_HTML(input_file_name: str, template_file_name: str,
         anchor.set('title', permalink_for)
         anchor.set('data-anchor-icon', '§')
         anchor.set('class', 'anchor-link')
+
+    # do some clean ups
+    for em in input_root.xpath('//em[@class="Oblique"]'):
+        em.classes.remove('Oblique')
+    for strong in input_root.xpath('//strong[@class="_5-bold"]'):
+        strong.classes.remove('_5-bold')
 
     # get a handle in the output root for appending stuff from the input
     append_point = output_root.find('.//div[@id="content-goes-here"]')

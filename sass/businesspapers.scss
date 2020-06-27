@@ -6,14 +6,16 @@ $font-path: '../fonts';
 @import '../Design_System_SASS/sass/core/fonts.scss';
 @import '../Design_System_SASS/sass/core/font-sizes.scss';
 
+@import 'variables.scss';
+// import vnp styles
+@import 'vnp.scss';
 
-$OP-margin-left: 3rem;
 
-// standard indent level
-$indent-amount: 2.2rem;
+.container-fluid{
+    max-width: 1140px;
+}
 
-// default margin bottom from design system
-$para-spacing: 18px;
+
 
 
 .OP-left-margin{
