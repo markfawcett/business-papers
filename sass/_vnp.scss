@@ -1,0 +1,21 @@
+
+@import 'variables.scss';
+
+.ItemTimingHeading {
+    text-align: center;
+}
+
+.InDesignBold {
+    @include font-bold();
+}
+
+span.number{
+    margin-left: -$indent-amount;
+    display: inline-block;
+    width: $indent-amount;
+    @include font-bold();
+}
+
+.numbered.InDesignBold + p{
+    margin-top: -$para-spacing/2
+}
