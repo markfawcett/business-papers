@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 
 from lxml import html  # type: ignore
+from lxml.etree import SubElement  # type: ignore
 # from lxml.html import Element  # type: ignore
 
 # Order Paper
@@ -57,6 +58,7 @@ def main():
     output_html_tree = html.parse(path_to_index_template)
     output_html_root = output_html_tree.getroot()
 
+    contents_div = output_html_root.find('.//div[@id="contents"]')
     op_div = output_html_root.find('.//div[@id="op"]')
     vnp_div = output_html_root.find('.//div[@id="vnp"]')
     # remove any existing tables
@@ -66,6 +68,17 @@ def main():
 
     op_div.append(op_table)
     vnp_div.append(vnp_table)
+
+    # put contents in
+    ul = SubElement(contents_div, 'ul')
+    headings = output_html_root.xpath('//h2')
+    for i, heading in enumerate(headings, start=1):
+        id_val = f'heading-{i}'
+        heading.set('id', id_val)
+        li = SubElement(ul, 'li')
+        a = SubElement(li, 'a')
+        a.set('href', f'#{id_val}')
+        a.text = heading.text
 
     output_html_tree.write(path_to_index_output_str,
                            doctype='<!DOCTYPE html>',
