@@ -190,6 +190,31 @@ $font-path: '../fonts';
     }
 }
 
+/* Create Flexbox for Motion Sponser */
+.container-1 {
+  display: flex;
+  line-height: 0.5em;
+}
+.container-2 {
+  display: flex;
+  line-height: 0.5em;
+  padding-top:18px;
+}
+.paraMotionSponsorAlt {
+  flex: 1;
+  padding-bottom: 18px;
+}
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .container-1 {
+        flex-direction: column;
+   }
+    .container-2 {
+        flex-direction: column;
+   }
+ }
+/*End of Flexbox for Motion Sponser */
 
 /*  ---- CSS for anchor link  ---- */
 
