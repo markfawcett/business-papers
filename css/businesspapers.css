@@ -74,6 +74,24 @@ strong {
   font-size: 0.85rem;
   line-height: 1.2; }
 
+.ItemTimingHeading {
+  text-align: center; }
+
+.InDesignBold {
+  font-weight: 500; }
+
+span.number {
+  margin-left: -2.2rem;
+  display: inline-block;
+  width: 2.2rem;
+  font-weight: 500; }
+
+.numbered.InDesignBold + p {
+  margin-top: -9px; }
+
+.container-fluid {
+  max-width: 1140px; }
+
 .OP-left-margin {
   overflow-wrap: break-word; }
 
@@ -104,6 +122,9 @@ strong {
 
 .paraMotionSponsor {
   font-weight: 500; }
+
+.paraMotionSponsor > p + p {
+  margin-top: -18px; }
 
 .paraNotesTag, .paraNotesText {
   margin-left: 2.2rem;
@@ -212,6 +233,31 @@ strong {
     padding-left: 3rem;
     margin-left: -3rem; } }
 
+/* Create Flexbox for Motion Sponser */
+.container-1 {
+  display: flex;
+  line-height: 0.5em; }
+
+.container-2 {
+  display: flex;
+  line-height: 0.5em;
+  padding-top: 18px; }
+
+.paraMotionSponsorAlt {
+  flex: 1;
+  padding-bottom: 18px; }
+
+.paraMotionSponsorGroup {
+  padding-bottom: 18px; }
+
+/* Small devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .container-1 {
+    flex-direction: column; }
+  .container-2 {
+    flex-direction: column; } }
+
+/*End of Flexbox for Motion Sponser */
 /*  ---- CSS for anchor link  ---- */
 /* Change anchor link to white on headings */
 .paraBusinessTodayChamberHeading a.anchor-link,
@@ -266,6 +312,7 @@ h2 .anchor-link {
   opacity: 9; }
 
 /* ---- End of CSS for anchor link ---- */
+/* ----------- Automatic Toc  --------------- */
 .toc {
   overflow-y: auto; }
 
@@ -316,5 +363,4 @@ a.toc-link:hover {
 .is-active-link::before {
   background-color: #3e1d78; }
 
-/* ----------- Automatic Toc  --------------- */
 /* ------ End of Automatic Toc  ------------- */
