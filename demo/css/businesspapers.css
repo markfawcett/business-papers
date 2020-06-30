@@ -123,6 +123,9 @@ span.number {
 .paraMotionSponsor {
   font-weight: 500; }
 
+.paraMotionSponsor > p + p {
+  margin-top: -18px; }
+
 .paraNotesTag, .paraNotesText {
   margin-left: 2.2rem;
   font-size: 1rem;
@@ -233,29 +236,28 @@ span.number {
 /* Create Flexbox for Motion Sponser */
 .container-1 {
   display: flex;
-  line-height: 0.5em;
-}
+  line-height: 0.5em; }
+
 .container-2 {
   display: flex;
   line-height: 0.5em;
-  padding-top:18px;
-}
+  padding-top: 18px; }
+
 .paraMotionSponsorAlt {
   flex: 1;
-  padding-bottom: 18px;
-}
+  padding-bottom: 18px; }
+
+.paraMotionSponsorGroup {
+  padding-bottom: 18px; }
+
 /* Small devices (tablets, 768px and down) */
 @media (max-width: 768px) {
   .container-1 {
-        flex-direction: column;
-   }
-    .container-2 {
-        flex-direction: column;
-   }
- }
+    flex-direction: column; }
+  .container-2 {
+    flex-direction: column; } }
+
 /*End of Flexbox for Motion Sponser */
-
-
 /*  ---- CSS for anchor link  ---- */
 /* Change anchor link to white on headings */
 .paraBusinessTodayChamberHeading a.anchor-link,

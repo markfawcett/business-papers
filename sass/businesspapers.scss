@@ -56,7 +56,7 @@ $font-path: '../fonts';
 .paraMotionSponsor{
     @include font-bold();
 }
-.paraMotionSponsor>p + .paraMotionSponsor>p{
+.paraMotionSponsor > p + p{
     margin-top: -$para-spacing;
 }
 
@@ -205,6 +205,9 @@ $font-path: '../fonts';
 .paraMotionSponsorAlt {
   flex: 1;
   padding-bottom: 18px;
+}
+.paraMotionSponsorGroup{
+    padding-bottom: $para-spacing;
 }
 
 /* Small devices (tablets, 768px and down) */
