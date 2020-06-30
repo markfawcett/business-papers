@@ -244,7 +244,7 @@ def massarge_input_file(input_file_name):
         sponsor_group.text = None
         for sponosr_name in sponosr_names:
             sponsor_span = SubElement(sponsor_group, 'span')
-            sponsor_span.classes.update(('col-12', 'col-sm-6' 'col-lg-4'))
+            sponsor_span.classes.update(('col-12', 'col-sm-6', 'col-lg-4'))
             sponsor_span.text = sponosr_name
 
     # change FBA location to .heading-level-3
