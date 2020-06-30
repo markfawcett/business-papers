@@ -238,12 +238,13 @@ def massarge_input_file(input_file_name):
         # print(html.tostring(sponsor_group))
         if not sponsor_group.text:
             continue
-        # split text on the tab character
+        sponsor_group.classes.add('row')
+        # split text on the tab character (InDesign puts in)
         sponosr_names = sponsor_group.text.split('\u0009')
         sponsor_group.text = None
         for sponosr_name in sponosr_names:
             sponsor_span = SubElement(sponsor_group, 'span')
-            sponsor_span.classes.add('sponsor-span')
+            sponsor_span.classes.update(('col-12', 'col-sm-6' 'col-lg-4'))
             sponsor_span.text = sponosr_name
 
     # change FBA location to .heading-level-3
@@ -274,7 +275,8 @@ def massarge_input_file(input_file_name):
     # Add IDs and perminant ancors to the html
     # Added at the request of IDMS
     # need to get all the heading elements
-    xpath = '//h1|//h2|//h3|//h4|//h5|//h6|//*[@class="paraBusinessItemHeading"]|//*[@class="paraBusinessItemHeading-bulleted"]|//*[@class="FbaLocation"]'
+    xpath = '//h1|//h2|//h3|//h4|//h5|//h6|//*[@class="paraBusinessItemHeading"]' \
+            '|//*[@class="paraBusinessItemHeading-bulleted"]|//*[@class="FbaLocation"]'
     headings = input_root.xpath(xpath)
     for i, heading in enumerate(headings):
         # generate id text
