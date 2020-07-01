@@ -50,37 +50,56 @@ $font-path: '../fonts';
 }
 
 // sponsors
-.paraMotionSponsor, .MemberInCharge{
+.paraMotionSponsor,
+.Sponsor,  // new class name
+.MemberInCharge{
     margin-bottom: 0;
 }
-.paraMotionSponsor{
+.paraMotionSponsor,
+.Sponsor,  // new class name
+{
     @include font-bold();
 }
-.paraMotionSponsor > p + p{
+.paraMotionSponsor > p + p,
+.Sponsor > p + p,  // new class name
+{
     margin-top: -$para-spacing;
 }
 
 
 // Notes
-.paraNotesTag, .paraNotesText{
+.paraNotesTag,
+.NotesTag,   // new class name
+.paraNotesText,
+.NotesText   // new class name
+{
     margin-left: $indent-amount;
     @include font-size-milli();
 }
-.paraNotesTag{
+.paraNotesTag,
+.NotesTag   // new class name
+{
     @include font-bold();
     margin-bottom: 0;
 }
-.paraNotesText{
+.paraNotesText,
+.NotesText   // new class name
+{
     margin-bottom: $para-spacing/2;
 }
 // need less space after a motion
 .paraMotionText+.paraNotesTag,
-.paraBusinessListItem+.paraNotesTag{
+p+.NotesTag,  // new class names  note no paraMotionText anymore
+.paraBusinessListItem+.paraNotesTag,
+.BusinessListItem+.NotesTag  // new class names
+{
     margin-top: -$para-spacing/2;
 }
 
 // --------------- Headings -----------------
-.paraBusinessTodayChamberHeading {
+.paraBusinessTodayChamberHeading,
+.BusinessTodayChamberHeading  // new class name
+{
     max-width: none;
     text-transform: uppercase;
     background-color: $colour-grey-2;
@@ -91,10 +110,14 @@ $font-path: '../fonts';
     color: $colour-white;
 }
 
-.paraOrderofBusinessItemTiming {
+.paraOrderofBusinessItemTiming,
+.OrderofBusinessItemTiming  // new class name
+ {
     @include font-bold();
 }
-.paraBusinessSub-SectionHeading {
+.paraBusinessSub-SectionHeading,
+.BusinessSub-SectionHeading  // new class name
+ {
     max-width: none;
     text-transform: uppercase;
     background-color: $colour-grey-3;
@@ -107,14 +130,18 @@ $font-path: '../fonts';
     margin-bottom: $para-spacing*1.5;
     color: $colour-white;
 }
-.paraBusinessItemHeading-bulleted{
+.paraBusinessItemHeading-bulleted,
+.BusinessItemHeading-bulleted  // new class name
+{
 
     margin-top: $para-spacing/2;
     margin-bottom: 0;
     @include font-bold();
 }
 
-.paraBusinessItemHeading{
+.paraBusinessItemHeading,
+.BusinessItemHeading  // new class name
+{
     @include font-bold();
     margin-top: $para-spacing * 2;
     margin-bottom: 0;
@@ -123,14 +150,23 @@ $font-path: '../fonts';
 
 // --------- bulleted styles --------
 .paraBusinessListItem,
+.BusinessListItem,  // new class name
 .paraQuestion,
+.Question,  // new class name
 .paraBusinessItemHeading-bulleted,
-.paraFutureBusinessItemHeadingwithTiming{
+.BusinessItemHeading-bulleted,  // new class name
+.paraFutureBusinessItemHeadingwithTiming,
+.FutureBusinessItemHeadingwithTiming  // new class name
+{
     margin-left: $indent-amount;
 }
 .paraBusinessListItem:before,
+.BusinessListItem:before,  // new class name
 .paraBusinessItemHeading-bulleted:before,
-.paraFutureBusinessItemHeadingwithTiming:before {
+.BusinessItemHeading-bulleted:before,  // new class name
+.paraFutureBusinessItemHeadingwithTiming:before,
+.FutureBusinessItemHeadingwithTiming:before  // new class name
+{
     content: '■ ' ;
     display: inline-block;
     width: $indent-amount;
@@ -139,18 +175,26 @@ $font-path: '../fonts';
 
 
 // --------------paragraphs ----------------
-.paraOrderofBusinessItemTiming{
+.paraOrderofBusinessItemTiming,
+.OrderofBusinessItemTiming  // new class name
+{
     // margin-bottom: 0;
     margin-top: $para-spacing / 2;
     margin-bottom: $para-spacing / 2;
 }
 .paraBusinessListItem+.paraBusinessListItem,
-.paraMotionText+.paraMotionText,
+.BusinessListItem+.BusinessListItem,  // new class name
+.paraMotionText+.paraMotionText,  // not sure what to do about this one...
 .paraMinisterialStatement+.paraMinisterialStatement,
-.paraFutureBusinessItemHeadingwithTiming+.paraFutureBusinessItemHeadingwithTiming{
+.MinisterialStatement+.MinisterialStatement,  // new class name
+.paraFutureBusinessItemHeadingwithTiming+.paraFutureBusinessItemHeadingwithTiming,
+.FutureBusinessItemHeadingwithTiming+.FutureBusinessItemHeadingwithTiming  // new class name
+{
     margin-top: -$para-spacing/2;
 }
-.paraMinisterialStatement{
+.paraMinisterialStatement,
+.MinisterialStatement  // new class name
+{
     .number-span{
         @include font-bold();
         display: inline-block;
@@ -185,7 +229,9 @@ $font-path: '../fonts';
     .OP-left-margin{
         margin-left: $OP-margin-left;
     }
-    .paraBusinessTodayChamberHeading {
+    .paraBusinessTodayChamberHeading,
+    .BusinessTodayChamberHeading  // new class name
+    {
         padding-left: $OP-margin-left;
         margin-left: -$OP-margin-left;
     }
@@ -202,11 +248,15 @@ $font-path: '../fonts';
   line-height: 0.5em;
   padding-top:18px;
 }
-.paraMotionSponsorAlt {
+.paraMotionSponsorAlt,
+.MotionSponsorAlt  // new class name
+{
   flex: 1;
   padding-bottom: 18px;
 }
-.paraMotionSponsorGroup{
+.paraMotionSponsorGroup,
+.MotionSponsorGroup  // new class name
+{
     padding-bottom: $para-spacing;
 }
 
@@ -225,17 +275,29 @@ $font-path: '../fonts';
 
 /* Change anchor link to white on headings */
 .paraBusinessTodayChamberHeading a.anchor-link,
+.BusinessTodayChamberHeading a.anchor-link,  // new class name
 .paraBusinessTodayChamberHeading a.anchor-link:link,
+.BusinessTodayChamberHeading a.anchor-link:link,  // new class name
 .paraBusinessTodayChamberHeading a.anchor-link:visited,
+.BusinessTodayChamberHeading a.anchor-link:visited,  // new class name
 .paraBusinessTodayChamberHeading a.anchor-link:focus,
+.BusinessTodayChamberHeading a.anchor-link:focus,  // new class name
 .paraBusinessTodayChamberHeading a.anchor-link:active,
+.BusinessTodayChamberHeading a.anchor-link:active,  // new class name
 .paraBusinessSub-SectionHeading a.anchor-link,
+.BusinessSub-SectionHeading a.anchor-link,  // new class name
 .paraBusinessSub-SectionHeading a.anchor-link:link,
+.BusinessSub-SectionHeading a.anchor-link:link,  // new class name
 .paraBusinessSub-SectionHeading a.anchor-link:visited,
+.BusinessSub-SectionHeading a.anchor-link:visited,  // new class name
 .paraBusinessSub-SectionHeading a.anchor-link:focus,
-.paraBusinessSub-SectionHeading a.anchor-link:active {
+.BusinessSub-SectionHeading a.anchor-link:focus,  // new class name
+.paraBusinessSub-SectionHeading a.anchor-link:active,
+.BusinessSub-SectionHeading a.anchor-link:active  // new class name
+{
   color: inherit !important;
 }
+
 @font-face {font-family: "hocLinkIcon";
     src: url(data:n/a;base64,AAEAAAALAIAAAwAwT1MvMg8TDNEAAAC8AAAAYGNtYXD/rgHVAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZhjFPzoAAAF4AAABXGhlYWQTibEUAAAC1AAAADZoaGVhB8EDxgAAAwwAAAAkaG10eAoAAAAAAAMwAAAAFGxvY2EAKADCAAADRAAAAAxtYXhwAAgAYgAAA1AAAAAgbmFtZVdmxuUAAANwAAABtnBvc3QAAwAAAAAFKAAAACAAAwMAAZAABQAAApkCzAAAAI8CmQLMAAAB6wAzAQkAAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAABAAAAApwPA/8AAQAPAAEAAAAABAAAAAAAAAAAAAAAgAAAAAAADAAAAAwAAABwAAQADAAAAHAADAAEAAAAcAAQAOAAAAAoACAACAAIAAQAgAKf//f//AAAAAAAgAKf//f//AAH/4/9dAAMAAQAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACAAD/wQP/A7IALwBfAAAlBw4BJy4BNTQ2PwE+ARcWMjc2NCcmJyYGBwYPAQ4BFRQWFx4BMzI2PwE2NCcmIgcBJicuAQcGDwEGFBcWMj8BNhYXHgEVFAYPAQYmJyYiBwYUFx4BMzI2PwE+ATU2JicBdzQiXyIQEhIQvh5hKRM1EhMTIioqWy4vLb4iJSUiI1kvLlkkNBISEzQTAkIlKytYKioiQRISEzQTQSNVHhASEhDMRUgOEzUSExMgSCYvYi/LIyQBJSKUMyEBIhApFxcoEb0dNykSEhI2EiIODgsZGSy9I1gvMFkhJCIjIzMSNRMSEgLeJRQTBBAQI0ASNRMTE0AkEh4QKhYXKRDKRhkOEhITNRIgIDAuyiJYMDFXIgABAAAAAQAA9WCCgV8PPPUACwQAAAAAANg1tlIAAAAA2DW2UgAA/8ED/wOyAAAACAACAAAAAAAAAAEAAAPA/8AAAAQAAAAAAAP/AAEAAAAAAAAAAAAAAAAAAAAFBAAAAAAAAAAAAAAAAgAAAAQAAAAAAAAAAAoAFAAeAK4AAQAAAAUAYAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABAAsAAAABAAAAAAACAAcAhAABAAAAAAADAAsAQgABAAAAAAAEAAsAmQABAAAAAAAFAAsAIQABAAAAAAAGAAsAYwABAAAAAAAKABoAugADAAEECQABABYACwADAAEECQACAA4AiwADAAEECQADABYATQADAAEECQAEABYApAADAAEECQAFABYALAADAAEECQAGABYAbgADAAEECQAKADQA1GhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblZlcnNpb24gMS4wAFYAZQByAHMAaQBvAG4AIAAxAC4AMGhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AblJlZ3VsYXIAUgBlAGcAdQBsAGEAcmhvY0xpbmtJY29uAGgAbwBjAEwAaQBuAGsASQBjAG8AbkZvbnQgZ2VuZXJhdGVkIGJ5IEljb01vb24uAEYAbwBuAHQAIABnAGUAbgBlAHIAYQB0AGUAZAAgAGIAeQAgAEkAYwBvAE0AbwBvAG4ALgAAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=) format("truetype");}
 [data-anchor-icon]::after {content: attr(data-anchor-icon);}
@@ -261,7 +323,9 @@ $font-path: '../fonts';
     -moz-osx-font-smoothing: grayscale;
 }
 .paraBusinessTodayChamberHeading .anchor-link,
+.BusinessTodayChamberHeading .anchor-link,  // new class name
 .paraBusinessSub-SectionHeading .anchor-link,
+.BusinessSub-SectionHeading .anchor-link,  // new class name
 h2 .anchor-link{
     // sometimes it looks a bit big
     font-size: 0.7em;
