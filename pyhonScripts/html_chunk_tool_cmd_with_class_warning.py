@@ -16,6 +16,9 @@ from pathlib import Path
 # for regular expresions
 import re
 
+# local imports
+import html_rationalisation as fixes
+
 # some variables used throughout
 DOCTYPE = '<!DOCTYPE html>'
 xml_declaration        = ''
@@ -297,6 +300,9 @@ def massarge_input_file(input_file_name):
         anchor.set('data-anchor-icon', '§')
         anchor.set('class', 'anchor-link')
 
+
+    # apply fixes from sepatate file
+    fixes.apply_all_fixes(input_root)
 
     # return the modified input html root element
     return input_root
