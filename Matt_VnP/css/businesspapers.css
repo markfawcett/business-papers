@@ -74,24 +74,6 @@ strong {
   font-size: 0.85rem;
   line-height: 1.2; }
 
-.ItemTimingHeading {
-  text-align: center; }
-
-.InDesignBold {
-  font-weight: 500; }
-
-span.number {
-  margin-left: -2.2rem;
-  display: inline-block;
-  width: 2.2rem;
-  font-weight: 500; }
-
-.numbered.InDesignBold + p {
-  margin-top: -9px; }
-
-.container-fluid {
-  max-width: 1140px; }
-
 .OP-left-margin {
   overflow-wrap: break-word; }
 
@@ -122,9 +104,6 @@ span.number {
 
 .paraMotionSponsor {
   font-weight: 500; }
-
-.paraMotionSponsor > p + p {
-  margin-top: -18px; }
 
 .paraNotesTag, .paraNotesText {
   margin-left: 2.2rem;
@@ -158,7 +137,7 @@ span.number {
 .paraBusinessSub-SectionHeading {
   max-width: none;
   text-transform: uppercase;
-  background-color: red;
+  background-color: #717171;
   padding-left: 0.66rem;
   margin-left: -0.66rem;
   margin-top: 45px;
@@ -233,31 +212,6 @@ span.number {
     padding-left: 3rem;
     margin-left: -3rem; } }
 
-/* Create Flexbox for Motion Sponser */
-.container-1 {
-  display: flex;
-  line-height: 0.5em; }
-
-.container-2 {
-  display: flex;
-  line-height: 0.5em;
-  padding-top: 18px; }
-
-.paraMotionSponsorAlt {
-  flex: 1;
-  padding-bottom: 18px; }
-
-.paraMotionSponsorGroup {
-  padding-bottom: 18px; }
-
-/* Small devices (tablets, 768px and down) */
-@media (max-width: 768px) {
-  .container-1 {
-    flex-direction: column; }
-  .container-2 {
-    flex-direction: column; } }
-
-/*End of Flexbox for Motion Sponser */
 /*  ---- CSS for anchor link  ---- */
 /* Change anchor link to white on headings */
 .paraBusinessTodayChamberHeading a.anchor-link,
@@ -312,7 +266,6 @@ h2 .anchor-link {
   opacity: 9; }
 
 /* ---- End of CSS for anchor link ---- */
-/* ----------- Automatic Toc  --------------- */
 .toc {
   overflow-y: auto; }
 
@@ -362,5 +315,95 @@ a.toc-link:hover {
 
 .is-active-link::before {
   background-color: #3e1d78; }
+  
+  
+  
+  /* --------------------- */
+  /* ----- Matt VnP ----- */
+  /* ------------------- */
+  
+  
+.ItemTimingHeading {
+    margin-bottom: 1em !important;
+    margin-top: 1.5em !important;
+    text-align: center;
+    max-width: 100% !important;
+    font-weight: normal !important;
+}
 
+p.ItemTimingHeading {
+    margin-bottom: 0.75em !important;
+    margin-top: 1em !important;
+    text-align: center;
+    max-width: 100% !important;
+   
+    text-indent: 0;
+    padding-left: 6%;
+}
+
+.InDesignBold {
+    font-weight: 500
+}
+
+.numbered {
+    margin-bottom: .5em;
+    line-height: 1.2em;
+}
+
+.number {
+    float: left;
+    width: 6%;
+    display: block;
+}
+
+.text {
+    display: block;
+    margin-left: 6%;
+}
+
+.V2 {
+    padding-left: 10%;
+}
+
+.indent {
+    text-indent: 0;
+    padding-left: 6%;
+}
+
+.InDesignRightAlligned {
+    clear: both;
+    text-align: right;
+}
+
+.Sig1 {
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    clear: both;
+    text-align: right;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 150%;
+}
+
+.StandardTable {
+    border: 0px;
+    margin-left: 4.5%;
+    table-layout: fixed;
+    width: 100%;
+    margin-bottom: 5%;
+}
+
+td {
+    padding: 0em 0.6em;
+}
+
+.VPIssueNumber {
+    clear: both;
+    text-align: left;
+    font-weight: 700;
+}
+
+
+
+/* ----------- Automatic Toc  --------------- */
 /* ------ End of Automatic Toc  ------------- */
