@@ -371,7 +371,7 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
                     li.set('class', 'toc-list-item')
 
                     a = SubElement(li, 'a')
-                    a.set('href', h2.get('id', ''))
+                    a.set('href', '#' + h2.get('id', ''))
                     a.set('class', 'toc-link')
                     a.text = h2.text_content()
             else:

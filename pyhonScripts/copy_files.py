@@ -2,7 +2,7 @@
 import glob
 
 def main():
-    # i gress find a bunch of files that follow a pattern
+    # i guess find a bunch of files that follow a pattern
     print(glob.glob('./200*e01.html'))
 
 
