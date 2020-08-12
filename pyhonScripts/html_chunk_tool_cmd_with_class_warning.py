@@ -19,7 +19,7 @@ import re
 # some variables used throughout
 DOCTYPE = '<!DOCTYPE html>'
 xml_declaration        = ''
-location_of_button_gif = '/images/OP%20button.gif'
+# location_of_button_gif = '/images/OP%20button.gif'
 fileextension          = '.html'
 
 
@@ -27,11 +27,11 @@ fileextension          = '.html'
 class DATES:
     # variables for the dates used
 
-    sitting_date_long          = ""   # in the form, 'Monday 12 September 2016'
-    sitting_date_medium        = ""   # e.g. 12 September 2016
-    sitting_date_compact       = ""   # 20160912
-    sitting_date_super_compact = ""   # 160912
-    creation_date_medium       = ""   # 11 September 2016
+    sitting_date_long          = ""  # in the form, 'Monday 12 September 2016'
+    sitting_date_medium        = ""  # e.g. 12 September 2016
+    sitting_date_compact       = ""  # 20160912
+    sitting_date_super_compact = ""  # 160912
+    creation_date_medium       = ""  # 11 September 2016
 
     @classmethod
     def set_up(cls, creation_date, sitting_date):
@@ -140,10 +140,12 @@ def massarge_input_file(input_file_name):
     #     show_error('There was a problem when checking for bad classes.')
 
     input_root = html.parse(input_file_name).getroot()
+
     # remove the contents div
     contents_div = input_root.xpath('body/div[@class="Contents-Box"]')
     if len(contents_div) > 0:
         contents_div[0].getparent().remove(contents_div[0])
+
     # remove all the _idGenParaOverrides
     all_paragraphs = input_root.xpath('//p|//h1|//h2|//h3|//h4|//h5|//h6')
     for paragraph in all_paragraphs:
@@ -345,6 +347,37 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
                 if element.get('class', default=None) == 'DocumentTitle':
                     continue
                 code_injection_point.append(element)
+
+
+            # create the tables of contents
+            # This will be overridden by tocbot.
+            # We still want a ToC even if JavaScript is dissabled...
+
+            # find where to put the Toc
+            nav_xpath_results = temp_output_root.xpath('//nav[@id="toc"][1]')
+
+
+            # look for all the h2's
+            # // Where to grab the headings to build the table of contents.
+            # contentSelector: '.js-toc-content'
+            h2s = temp_output_root.xpath('//*[contains(@class, "js-toc-content")]//h2')
+
+            if len(nav_xpath_results):
+                toc_injection_point = nav_xpath_results[0]
+                ol = SubElement(toc_injection_point, 'ol')
+                ol.set('class', 'toc-list')
+                for h2 in h2s:
+                    li = SubElement(ol, 'li')
+                    li.set('class', 'toc-list-item')
+
+                    a = SubElement(li, 'a')
+                    a.set('href', '#' + h2.get('id', ''))
+                    a.set('class', 'toc-link')
+                    a.text = h2.text_content()
+            else:
+                print('no element')
+
+
 
             # write out the output html files
             # outputfile_name = os.path.join(os.path.dirname(input_file_name),
