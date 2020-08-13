@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <title>UK Parliament</title>
+  <link rel="stylesheet" href="css/design-system.css?v=1.0">
+  <link rel="stylesheet" href="css/businesspapers.css">
+</head>
+
+<body class="brand-commons">
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+  <header>
+    <div class="container-fluid">
+      <a href="https://www.parliament.uk" class="parliament-home" aria-label="UK Parliament">
+        <svg aria-hidden="true" width="159" height="40" viewbox="0 0 159 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M30.3206 2.64567L30.723 2.43852C31.4274 2.68118 32.3803 3.0659 33.0728 3.37367L29.0007 12.4944C21.4732 9.15267 12.883 9.15267 5.35546 12.4944L1.29523 3.37367C2.00547 3.0659 2.95838 2.68118 3.66271 2.43852L4.06518 2.64567C3.57977 3.57761 3.47168 4.66063 3.76333 5.67013C4.26363 5.29241 4.61719 4.75264 4.76359 4.1431L5.14239 4.37393C5.47404 5.60261 6.00166 6.76977 6.70493 7.83046L6.59247 8.26252C6.17482 8.04855 5.71227 7.93698 5.243 7.93699C5.08234 7.93777 4.922 7.95162 4.76359 7.97843C5.17842 8.94052 6.10852 9.57921 7.1554 9.62089C8.20228 9.66256 9.1802 9.09981 9.6702 8.17374C9.33972 8.01835 9.09946 7.71912 9.01914 7.36288C8.96282 7.10204 9.01635 6.91096 9.06971 6.72052C9.12289 6.53069 9.1759 6.34149 9.11976 6.08444C9.01631 5.63616 8.60906 5.32453 8.14932 5.34188C7.68959 5.35923 7.30697 5.70066 7.23761 6.15546C6.82687 5.91468 6.59283 5.45774 6.63744 4.98372C6.68206 4.5097 6.99725 4.10445 7.4457 3.94453C7.89415 3.78461 8.39464 3.89897 8.72912 4.2378C8.55213 3.97332 8.4257 3.67832 8.35624 3.36775C8.19123 2.60116 8.37558 1.80089 8.85933 1.18375C9.55788 1.5425 10.061 2.19303 10.2325 2.95936C10.3028 3.27011 10.3148 3.59121 10.268 3.90635C10.4337 3.46345 10.8394 3.15543 11.3106 3.11493C11.7817 3.07442 12.2341 3.30867 12.4729 3.7168C12.7118 4.12494 12.6944 4.63408 12.4283 5.02499C12.1756 4.63717 11.6819 4.48525 11.2549 4.6639C10.8279 4.84255 10.5895 5.30076 10.6882 5.75299C10.7449 6.01837 10.8751 6.16958 11.0048 6.32015C11.1326 6.46845 11.2598 6.61612 11.3156 6.87163C11.3789 7.16536 11.3281 7.47217 11.1735 7.72984L11.1203 7.83638C12.0764 8.57116 13.3669 8.69911 14.4487 8.16638C15.5305 7.63364 16.2158 6.53271 16.2163 5.32684V5.03091C15.2387 5.1864 14.3443 5.67331 13.6831 6.40997L13.3457 6.0726V2.28463L13.689 1.94134C14.3496 2.67463 15.2416 3.15929 16.2163 3.31448C16.2167 1.967 15.3067 0.789395 14.0027 0.449829L14.3519 0.100626C15.291 0.033547 16.238 7.62939e-06 17.1929 7.62939e-06C18.1478 7.62939e-06 19.0948 0.033547 20.0339 0.100626L20.3831 0.449829C19.0769 0.789948 18.1664 1.97072 18.1695 3.3204C19.1441 3.16521 20.0362 2.68055 20.6967 1.94726L21.04 2.29055V6.08444L20.7027 6.42181C20.0415 5.68515 19.1471 5.19824 18.1695 5.04275V5.32684C18.1804 6.53176 18.8743 7.62604 19.9595 8.14979C21.0447 8.67355 22.3331 8.53599 23.2832 7.79495L23.2181 7.69433C23.0651 7.43828 23.0143 7.13388 23.0761 6.84203C23.1327 6.57665 23.263 6.42544 23.3927 6.27488C23.5204 6.12658 23.6476 5.97891 23.7035 5.7234C23.7868 5.27391 23.5413 4.82809 23.1168 4.65831C22.6923 4.48853 22.2071 4.64201 21.9574 5.02499C21.6913 4.63408 21.674 4.12494 21.9128 3.7168C22.1517 3.30867 22.604 3.07442 23.0752 3.11493C23.5463 3.15543 23.9521 3.46345 24.1178 3.90635C24.069 3.59158 24.079 3.27048 24.1474 2.95936C24.3189 2.19303 24.8219 1.5425 25.5205 1.18375C25.9825 1.79054 26.1594 2.56748 26.0058 3.31448C25.9364 3.62505 25.8099 3.92005 25.6329 4.18453C25.9674 3.84571 26.4679 3.73134 26.9164 3.89126C27.3648 4.05119 27.68 4.45643 27.7246 4.93045C27.7692 5.40447 27.5352 5.86141 27.1245 6.1022C27.0551 5.64739 26.6725 5.30596 26.2128 5.28861C25.753 5.27126 25.3458 5.58289 25.2423 6.03117C25.186 6.29201 25.2395 6.48309 25.2929 6.67353C25.3461 6.86336 25.3991 7.05256 25.3429 7.30961C25.2626 7.66586 25.0224 7.96508 24.6919 8.12047C25.1723 9.06531 26.1574 9.64544 27.2167 9.60734C28.2759 9.56924 29.2168 8.91983 29.6281 7.94291C29.4697 7.91611 29.3093 7.90226 29.1487 7.90148C28.6794 7.90146 28.2168 8.01304 27.7992 8.22701L27.6867 7.79495C28.3785 6.73599 28.896 5.57301 29.2197 4.35026L29.6222 4.1431C29.7686 4.75264 30.1221 5.29241 30.6224 5.67013C30.9141 4.66063 30.806 3.57761 30.3206 2.64567ZM56.4574 14.6228V3.3773H53.4093V13.8238C53.4093 16.5997 52.2433 17.9669 49.8285 17.9669C47.4137 17.9669 46.2773 16.6056 46.2773 13.7883V3.3773H43.235V14.611C43.235 19.0204 46.3956 20.4824 49.8344 20.4824C53.2732 20.4824 56.4574 19.0323 56.4574 14.6228ZM62.8613 12.936L67.8685 20.1272H71.5677L65.4773 11.5096L71.1356 3.3773H67.5844L62.9145 10.3199H61.6657V3.3773H58.6235V20.1272H61.6775V12.936H62.8613ZM43.235 39.6553V22.9112H48.6092C52.7878 22.9112 54.5812 24.8466 54.5812 28.2381C54.5812 31.6295 52.5925 33.7839 48.8933 33.7839H46.2773V39.6553H43.235ZM48.5617 31.2681H46.277V25.4382H48.5321C50.4971 25.4382 51.4914 26.4325 51.4914 28.3679C51.4914 30.1613 50.7516 31.2681 48.5617 31.2681ZM66.1643 36.273C66.1643 37.214 66.5905 37.4567 67.1291 37.4567C67.3925 37.4619 67.6543 37.4136 67.8985 37.3147V39.5578C67.3777 39.7821 66.814 39.8892 66.2472 39.8715C64.6847 39.8715 63.7199 39.2205 63.4062 37.7704C62.7552 39.4217 61.2755 39.9899 59.5413 39.9899C57.2389 39.9899 55.6468 38.6523 55.6468 36.4091C55.6468 33.5089 57.9196 31.8576 63.2109 32.118V30.6384C63.2109 29.1587 62.3882 28.5372 61.1098 28.5372C60.5453 28.4869 59.9867 28.6834 59.5782 29.0761C59.1696 29.4688 58.9511 30.0191 58.979 30.5851L56.0789 30.0997C56.2801 27.312 58.6949 26.2052 61.311 26.2052C64.1283 26.2052 66.1703 27.389 66.1703 30.3483L66.1643 36.273ZM58.6235 36.1052C58.6235 34.6255 59.9671 33.8561 63.2046 33.939L63.1987 35.6495C63.1987 37.0995 61.7486 37.8098 60.4997 37.8098C60.0166 37.8684 59.5319 37.714 59.1716 37.3867C58.8114 37.0595 58.6114 36.5917 58.6235 36.1052ZM86.0033 20.9413C86.5189 20.9043 87.026 21.0871 87.3993 21.4446C87.7725 21.8021 87.9771 22.3009 87.9624 22.8175C87.9056 23.8433 87.0573 24.6459 86.03 24.6459C85.0026 24.6459 84.1543 23.8433 84.0975 22.8175C84.0785 22.3091 84.2742 21.8161 84.6368 21.4592C84.9993 21.1023 85.4953 20.9143 86.0033 20.9413ZM87.5131 39.6588V26.5252H84.5538V39.6588H87.5131ZM99.7526 36.273C99.7526 37.214 100.179 37.4567 100.717 37.4567C100.981 37.4619 101.243 37.4136 101.487 37.3147V39.5578C100.966 39.7821 100.402 39.8892 99.8355 39.8715C98.2729 39.8715 97.3082 39.2205 96.9945 37.7704C96.3434 39.4217 94.8637 39.9899 93.1296 39.9899C90.8272 39.9899 89.235 38.6523 89.235 36.4091C89.235 33.5089 91.5078 31.8576 96.7992 32.118V30.6384C96.7992 29.1587 95.9765 28.5372 94.698 28.5372C94.1336 28.4869 93.575 28.6834 93.1664 29.0761C92.7579 29.4688 92.5394 30.0191 92.5673 30.5851L89.6671 30.0997C89.8683 27.312 92.2832 26.2052 94.8993 26.2052C97.7166 26.2052 99.7585 27.389 99.7585 30.3483L99.7526 36.273ZM92.2177 36.0993C92.2177 34.6197 93.5495 33.8561 96.7929 33.939V35.6436C96.7929 37.0937 95.3428 37.8039 94.094 37.8039C93.6108 37.8625 93.1261 37.7081 92.7659 37.3809C92.4057 37.0536 92.2056 36.5859 92.2177 36.0993ZM117.551 26.2084C119.741 26.2084 121.386 27.3921 121.386 30.2153V39.6557H118.427V31.2689C118.427 29.7063 117.835 28.7416 116.408 28.7416C114.982 28.7416 113.668 29.7063 113.668 32.2099V39.6557H110.709V31.2689C110.709 29.7063 110.117 28.7416 108.661 28.7416C107.205 28.7416 105.974 29.7063 105.974 32.2336V39.6557H103.014V26.5221H105.382L105.749 29.0493C106.279 27.2724 107.964 26.0952 109.815 26.2084C111.632 26.2084 113.029 26.9778 113.366 29.1085C114.059 27.0311 115.704 26.2084 117.551 26.2084ZM134.602 36.42L132.015 35.6506C131.791 36.9126 130.641 37.7952 129.364 37.6866C127.322 37.6866 126.209 36.0472 126.097 33.6797H134.442C134.591 33.0995 134.666 32.503 134.667 31.9041C134.667 28.5837 132.838 26.2162 129.34 26.2162C125.57 26.2162 123.202 28.8027 123.202 33.2358C123.202 37.5564 125.647 40.0009 129.228 40.0009C131.761 40.0009 134.01 39.0953 134.602 36.42ZM131.761 31.7269C131.775 31.5575 131.775 31.3873 131.761 31.2179C131.813 30.5045 131.562 29.8022 131.07 29.2831C130.578 28.7639 129.89 28.4759 129.175 28.4894C127.441 28.4894 126.334 29.7145 126.133 31.7328L131.761 31.7269ZM143.575 26.2118C141.586 26.2118 140.077 27.0937 139.367 29.0528L139.053 26.5255H136.638V39.6591H139.597V32.243C139.597 29.5381 140.935 28.745 142.438 28.745C143.942 28.745 144.569 29.7394 144.569 31.3019V39.6591H147.529V30.3076C147.529 27.3956 145.676 26.2118 143.575 26.2118ZM158.218 39.2002C157.15 39.7608 155.955 40.0341 154.749 39.9933C152.305 39.9933 150.796 38.7444 150.796 36.1284V28.8543H148.89V26.5223H150.796L151.476 22.9178H153.808V26.5223H157.703V28.8543H153.779V35.5128C153.779 36.9037 154.371 37.4719 155.454 37.4719C156.258 37.4691 157.039 37.1984 157.673 36.7025L158.218 39.2002ZM71.9171 26.5211L72.2841 30.1019C72.7517 28.0777 73.9472 26.527 76.3088 26.2666V29.3917H75.9004C74.1248 29.3917 72.3492 30.6109 72.3492 33.227V39.6547H69.3898V26.5211H71.9171ZM82.0261 37.2883C81.7079 37.3386 81.3845 37.2371 81.1521 37.014C80.9197 36.7909 80.8051 36.4719 80.8423 36.1519V21.4144H77.883V36.8681C77.883 38.9988 79.3627 39.8807 81.0969 39.8807C81.7018 39.8728 82.3014 39.7668 82.8725 39.567V37.1996C82.5965 37.2718 82.3111 37.3018 82.0261 37.2883Z" fill="white"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M34.3568 19.5326C34.3903 18.4398 33.6467 17.4756 32.5812 17.2303V15.9163C33.7566 15.6357 34.532 14.5148 34.38 13.3159C34.2281 12.117 33.1976 11.225 31.9893 11.2465C30.8956 11.2106 29.9301 11.9552 29.6869 13.0221H4.69812C4.45283 11.9565 3.48863 11.2129 2.39575 11.2465C1.76245 11.2283 1.14966 11.4719 0.701666 11.9199C0.253676 12.3678 0.0100872 12.9806 0.0282634 13.6139C-0.00525611 14.7068 0.738342 15.671 1.80388 15.9163V17.2362C0.744795 17.4958 0 18.4452 0 19.5356C0 20.626 0.744795 21.5754 1.80388 21.835V23.1549C0.744795 23.4145 0 24.3639 0 25.4543C0 26.5447 0.744795 27.4941 1.80388 27.7537V29.0736C0.744795 29.3332 0 30.2826 0 31.373C0 32.4634 0.744795 33.4128 1.80388 33.6724V34.9923C0.641208 35.2836 -0.120351 36.3978 0.0305448 37.5869C0.181441 38.7759 1.19718 39.6646 2.39575 39.6562C3.60403 39.6777 4.63453 38.7857 4.78648 37.5868C4.93843 36.3879 4.16304 35.267 2.98762 34.9864V33.6724C4.0467 33.4128 4.79149 32.4634 4.79149 31.373C4.79149 30.2826 4.0467 29.3332 2.98762 29.0736V27.7537C4.0467 27.4941 4.79149 26.5447 4.79149 25.4543C4.79149 24.3639 4.0467 23.4145 2.98762 23.1549V21.835C4.0467 21.5754 4.79149 20.626 4.79149 19.5356C4.79149 18.4452 4.0467 17.4958 2.98762 17.2362V15.9163C3.84051 15.7247 4.50656 15.0587 4.69812 14.2058H5.94697V39.6562H6.21923C6.82325 37.8427 7.73196 36.1454 8.90632 34.6372V34.3294H7.72258V30.7782H10.6819V34.3294H10.0901V34.6549C10.8779 36.2346 11.436 37.9187 11.7473 39.6562H11.9781C12.2913 37.9184 12.8514 36.2343 13.6413 34.6549V34.3294H13.0494V30.7782H16.0088V34.3294H15.4169V34.6549C16.2048 36.2346 16.7628 37.9187 17.0741 39.6562H17.305C17.6182 37.9184 18.1782 36.2343 18.9681 34.6549V34.3294H18.3763V30.7782H21.3356V34.3294H20.7437V34.6549C21.5316 36.2346 22.0897 37.9187 22.401 39.6562H22.6318C22.945 37.9184 23.5051 36.2343 24.295 34.6549V34.3294H23.7031V30.7782H26.6624V34.3294H25.4787V34.6372C26.6531 36.1454 27.5618 37.8427 28.1658 39.6562H28.4381V14.2058H29.6869C29.8771 15.0594 30.5438 15.7261 31.3974 15.9163V17.2362C30.3383 17.4958 29.5935 18.4452 29.5935 19.5356C29.5935 20.626 30.3383 21.5754 31.3974 21.835V23.1549C30.3383 23.4145 29.5935 24.3639 29.5935 25.4543C29.5935 26.5447 30.3383 27.4941 31.3974 27.7537V29.0736C30.3383 29.3332 29.5935 30.2826 29.5935 31.373C29.5935 32.4634 30.3383 33.4128 31.3974 33.6724V34.9923C30.2431 35.2904 29.4904 36.4002 29.6407 37.5829C29.7909 38.7656 30.7971 39.6521 31.9893 39.6521C33.1815 39.6521 34.1877 38.7656 34.3379 37.5829C34.4881 36.4002 33.7355 35.2904 32.5812 34.9923V33.6724C33.6402 33.4128 34.385 32.4634 34.385 31.373C34.385 30.2826 33.6402 29.3332 32.5812 29.0736V27.7537C33.6402 27.4941 34.385 26.5447 34.385 25.4543C34.385 24.3639 33.6402 23.4145 32.5812 23.1549V21.835C33.6467 21.5897 34.3903 20.6255 34.3568 19.5326ZM3.57993 37.2867C3.59913 37.6062 3.48059 37.9186 3.2543 38.1449C3.02801 38.3712 2.71563 38.4897 2.39619 38.4705C1.83922 38.4962 1.33981 38.1298 1.19721 37.5907C1.05462 37.0517 1.30749 36.4863 1.80431 36.2332C1.86632 36.5085 2.11406 36.7018 2.39619 36.6949C2.67831 36.7018 2.92605 36.5085 2.98806 36.2332C3.37437 36.4385 3.6056 36.85 3.57993 37.2867ZM2.98738 32.4222C3.3737 32.217 3.60493 31.8054 3.57925 31.3687C3.60493 30.932 3.3737 30.5204 2.98738 30.3152C2.92538 30.5905 2.67763 30.7837 2.39551 30.7768C2.11159 30.7832 1.86321 30.5869 1.80364 30.3093C1.42897 30.5293 1.19885 30.9313 1.19885 31.3657C1.19885 31.8002 1.42897 32.2022 1.80364 32.4222C1.86564 32.1469 2.11339 31.9537 2.39551 31.9606C2.67763 31.9537 2.92538 32.1469 2.98738 32.4222ZM3.57925 25.4491C3.60493 25.8858 3.3737 26.2974 2.98738 26.5027C2.92538 26.2273 2.67763 26.0341 2.39551 26.041C2.11339 26.0341 1.86564 26.2273 1.80364 26.5027C1.42897 26.2826 1.19885 25.8807 1.19885 25.4462C1.19885 25.0117 1.42897 24.6097 1.80364 24.3897C1.86321 24.6673 2.11159 24.8636 2.39551 24.8573C2.67763 24.8642 2.92538 24.6709 2.98738 24.3956C3.3737 24.6008 3.60493 25.0124 3.57925 25.4491ZM2.39619 14.2025C2.67831 14.1956 2.92605 14.3888 2.98806 14.6642C3.48488 14.4111 3.73775 13.8456 3.59516 13.3066C3.45256 12.7676 2.95315 12.4012 2.39619 12.4269C1.83922 12.4012 1.33981 12.7676 1.19721 13.3066C1.05462 13.8456 1.30749 14.4111 1.80431 14.6642C1.86632 14.3888 2.11406 14.1956 2.39619 14.2025ZM10.6821 28.9995H7.72278V25.4482H10.6821V28.9995ZM7.72278 23.6738H10.6821V20.1226H7.72278V23.6738ZM10.6821 18.3482H7.72278V14.797H10.6821V18.3482ZM13.049 28.9995H16.0083V25.4482H13.049V28.9995ZM16.0083 23.6738H13.049V20.1226H16.0083V23.6738ZM13.049 18.3482H16.0083V14.797H13.049V18.3482ZM21.3356 28.9995H18.3762V25.4482H21.3356V28.9995ZM18.3762 23.6738H21.3356V20.1226H18.3762V23.6738ZM21.3356 18.3482H18.3762V14.797H21.3356V18.3482ZM23.7035 28.9995H26.6628V25.4482H23.7035V28.9995ZM26.6628 23.6738H23.7035V20.1226H26.6628V23.6738ZM23.7035 18.3482H26.6628V14.797H23.7035V18.3482ZM30.8058 13.6138C30.8196 13.0431 31.2386 12.5636 31.8023 12.4734C32.3659 12.3833 32.9136 12.7083 33.1047 13.2462C33.2957 13.7841 33.0756 14.3817 32.5814 14.6673C32.5814 14.3404 32.3164 14.0754 31.9895 14.0754C31.6626 14.0754 31.3976 14.3404 31.3976 14.6673C31.0113 14.462 30.7801 14.0505 30.8058 13.6138ZM32.1762 38.4271C32.7399 38.3369 33.1589 37.8574 33.1727 37.2867C33.1984 36.85 32.9672 36.4385 32.5808 36.2332C32.5808 36.5601 32.3158 36.8251 31.989 36.8251C31.6621 36.8251 31.3971 36.5601 31.3971 36.2332C30.9028 36.5188 30.6828 37.1164 30.8738 37.6543C31.0649 38.1922 31.6125 38.5172 32.1762 38.4271ZM33.1726 31.3687C33.1983 31.8054 32.9671 32.217 32.5808 32.4222C32.5808 32.0954 32.3158 31.8304 31.9889 31.8304C31.662 31.8304 31.397 32.0954 31.397 32.4222C31.0224 32.2022 30.7922 31.8002 30.7922 31.3657C30.7922 30.9313 31.0224 30.5293 31.397 30.3093C31.397 30.6361 31.662 30.9011 31.9889 30.9011C32.3158 30.9011 32.5808 30.6361 32.5808 30.3093C32.9691 30.5154 33.2007 30.9299 33.1726 31.3687ZM32.5808 26.5027C32.9671 26.2974 33.1983 25.8858 33.1726 25.4491C33.2007 25.0104 32.9691 24.5958 32.5808 24.3897C32.5808 24.7166 32.3158 24.9816 31.9889 24.9816C31.662 24.9816 31.397 24.7166 31.397 24.3897C31.0224 24.6097 30.7922 25.0117 30.7922 25.4462C30.7922 25.8807 31.0224 26.2826 31.397 26.5027C31.397 26.1758 31.662 25.9108 31.9889 25.9108C32.3158 25.9108 32.5808 26.1758 32.5808 26.5027ZM3.57925 19.5339C3.60493 19.9706 3.3737 20.3822 2.98738 20.5875C2.92538 20.3122 2.67763 20.1189 2.39551 20.1258C2.11339 20.1189 1.86564 20.3122 1.80364 20.5875C1.42897 20.3675 1.19885 19.9655 1.19885 19.531C1.19885 19.0965 1.42897 18.6945 1.80364 18.4745C1.86321 18.7522 2.11159 18.9484 2.39551 18.9421C2.67763 18.949 2.92538 18.7557 2.98738 18.4804C3.3737 18.6856 3.60493 19.0972 3.57925 19.5339ZM32.5808 20.5875C32.9671 20.3822 33.1983 19.9706 33.1726 19.5339C33.2007 19.0952 32.9691 18.6806 32.5808 18.4745C32.5808 18.8014 32.3158 19.0664 31.9889 19.0664C31.662 19.0664 31.397 18.8014 31.397 18.4745C31.0224 18.6945 30.7922 19.0965 30.7922 19.531C30.7922 19.9655 31.0224 20.3675 31.397 20.5875C31.397 20.2606 31.662 19.9956 31.9889 19.9956C32.3158 19.9956 32.5808 20.2606 32.5808 20.5875Z" fill="white"></path>
+        </svg>
+      </a>
+    </div>
+    <div class="product-header">
+      <div class="container-fluid">
+        <a class="title" href="index.html">Business Papers</a>
+      </div>
+    </div>
+  </header>
+  <div class="hero-banner hero-banner-brand">
+    <div class="container-fluid">
+        <h1 id="mainTitle"></h1>
+
+        <div class="reading-width">
+            <p>Read the agenda Early Day Motions</p>
+            <p><a href="https://erskinemay.parliament.uk/section/6459/votes-and-proceedings/">Find out more about the Early Day Motions</a></p>
+        </div>
+    </div>
+  </div>
+  <main id="main-content">
+    <!-- Product banner area -->
+    <article>
+      <div class="container-fluid">
+        <div class="block block-page">
+          <div class="row">
+            <div class="col-md-3 order-md-last">
+              <div class="sticky-top">
+                <p class="heading-level-3" data-toc-skip>Contents</p>
+                <nav class="js-toc toc" id="toc" data-toggle="toc"><ol class="toc-list"><li class="toc-list-item"><a href="#anchor-0" class="toc-link">New EDMs</a></li><li class="toc-list-item"><a href="#anchor-10" class="toc-link">Added Names</a></li></ol></nav>
+                <!-- <nav id="toc"></nav> -->
+              </div>
+            </div>
+            <div class="col-md-9 js-toc-content">
+                <div class="OP-left-margin">
+                  <!-- Main content area -->
+                  <div id="content-goes-here" class="section">
+                  <div id="_idContainer000">
+			<p class="Title"><strong class="Bold">Published:</strong> Friday 5 June 2020</p>
+		</div>
+		<div id="_idContainer001" class="Title-Box">
+			<h1 class="mainTitle">Early Day Motions tabled on Thursday 4 June 2020</h1>
+			<p class="Intro">Early Day Motions (EDMs) are motions for which no days have been fixed.</p>
+			<p class="Intro">The number of signatories includes all members who have added their names in support of the Early Day Motion (EDM), including the Member in charge of the Motion.</p>
+			<p class="Intro">EDMs and added names are also published on the EDM database at <a href="http://www.parliament.uk/edm"><span class="Hyperlink">www.parliam</span><span class="Hyperlink">ent.uk/edm</span></a></p>
+			<p class="Intro-Note">[R]	Indicates that a relevant interest has been declared.</p>
+			</div>
+		<div id="_idContainer002">
+			<h2 class="underline" id="anchor-0">New EDMs<a href="#anchor-0" aria-label="Anchor" title="Permalink for New EDMs" data-anchor-icon="§" class="anchor-link"></a></h2>
+			<h3 class="EDMTitle" id="anchor-1"><span class="Roman"><span class="UIN">558</span></span><span class="UIN"> 	</span>Kurdish Development Association campaign against no recourse to public funds restrictions<a href="#anchor-1" aria-label="Anchor" title="Permalink for 558 	Kurdish Development Association campaign against no recourse to public funds restrictions" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	2</p>
+			<p class="MotionSponsor">Patrick Grady</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p>That this House recognises the ‘no recourse to public funds’ restrictions placed on many forms of leave to remain in the UK are a source of significant financial hardship; appreciates that a great many people have been living, working and contributing economically, socially and culturally to life in the UK while being excluded from accessing any public funds; is concerned that these restrictions, which can be a cause of hardship at the best of times, are pushing people and families into destitution during the coronavirus crisis; acknowledges that people from all backgrounds have found their livelihoods and incomes under threat due to the coronavirus and not all of those affected have been able to access financial assistance through Government coronavirus support schemes; understands that this situation is particularly desperate for those subject to no recourse to public funds restrictions as they are also excluded from the social safety which would provide support such as housing benefit or universal credit; further recognises the work of the Kurdish Development Association, and in particular Shakha Sattar, for their work in highlighting these issues and campaigning for change; believes that it is essential everyone has access to a social safety net as a basic human right; and calls on the UK Government to immediately lift the ‘no recourse to public funds’ restrictions and ensure that everyone who needs support can access it during this crisis and the recovery that follows.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-2"><span class="Roman"><span class="UIN">559</span></span><span class="UIN"> 	</span>Legal Aid and Advice<a href="#anchor-2" aria-label="Anchor" title="Permalink for 559 	Legal Aid and Advice" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	1</p>
+			<p class="MotionSponsor">Mr David Lammy</p>
+			<p>That an humble Address be presented to Her Majesty, praying that the Civil Legal Aid (Remuneration) (Amendment) (Coronavirus) Regulations 2020 (S.I., 2020, No. 515), dated 15 May 2020, a copy of which was laid before this House on 18 May 2020, be annulled.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-3"><span class="Roman"><span class="UIN">560</span></span><span class="UIN"> 	</span>World Environment Day<a href="#anchor-3" aria-label="Anchor" title="Permalink for 560 	World Environment Day" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	5</p>
+			<p class="MotionSponsor">Wera Hobhouse</p>
+			<p class="MotionSponsor">Caroline Lucas</p>
+			<p class="MotionSponsor">Deidre Brock</p>
+			<p class="MotionSponsor">Ian Byrne</p>
+			<p class="MotionSponsor">Andrew Selous</p>
+			<p>That this House recognises the profound impact covid-19 has had across the globe, affecting health and health services, impacting the global economy, and exacerbating social and economic inequalities; notes however that the world continues to face an ever-growing environmental emergency; believes the pandemic has highlighted the importance of governments working together, and that this global response must be built on to address the climate crisis; welcomes the joint statement to this effect released on World Environment Day by the national science academies of eighteen Commonwealth Nations, including the UK’s Royal Society; echoes the statement’s calls on Commonwealth governments to continue to address the joint challenges of climate change and biodiversity loss, and to ensure that global economic recovery from the pandemic is environmentally sustainable across the Commonwealth and globally; and urges the UK government to use the opportunity of COP26 to help coordinate these discussions and support a joint approach to tackling these challenges.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-4"><span class="Roman"><span class="UIN">561</span></span><span class="UIN"> 	</span>Belly Mujinga<a href="#anchor-4" aria-label="Anchor" title="Permalink for 561 	Belly Mujinga" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	9</p>
+			<p class="MotionSponsor">Bell Ribeiro-Addy</p>
+			<p class="MotionSponsor">Richard Burgon</p>
+			<p class="MotionSponsor">Zarah Sultana</p>
+			<p class="MotionSponsor">Apsana Begum</p>
+			<p class="MotionSponsor">Ms Diane Abbott</p>
+			<p class="MotionSponsor">Claudia Webbe</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Alison Thewliss</span><span class="signatory">Ben Lake</span><span class="signatory">Kenny MacAskill</span></p>
+			<p>That this House stands in solidarity with the friends, family and community of Belly Mujinga, a key worker at London Victoria station who tragically died after contracting covid-19; notes that a number of transport workers on the frontline have contracted covid-19 and some have consequently died; calls on the Government to begin an investigation into why at risk transport employees have not been given Personal Protective Equipment (PPE); and urgently calls on the Government to investigate the circumstances of Belly Mujinga’s death, the contraction of covid-19 and the assault that took place prior to her contraction of covid-19.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-5"><span class="Roman"><span class="UIN">562</span></span><span class="UIN"> 	</span>Teaching of British colonial history in schools<a href="#anchor-5" aria-label="Anchor" title="Permalink for 562 	Teaching of British colonial history in schools" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	1</p>
+			<p class="MotionSponsor">John Nicolson</p>
+			<p>That this House calls for the teaching of British colonial history in school curricula across the UK; recognises that much of Britain's wealth was built upon brutal suppression and the embedding of racism and division across the world; that great cities such as Glasgow, Liverpool and Bristol were built upon the investments of the slave trade; that our collective lack of understanding of Britain's role in cultivating notions of race and racial hierarchy misinforms discussions about racism in Britain to this day; and notes that unpicking how and why racial prejudice was constructed would make for a more sophisticated discussion about racism now and would erode the false notion that Britain was ever exclusively “white”.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-6"><span class="Roman"><span class="UIN">563</span></span><span class="UIN"> 	</span>Covid-19 global ceasefire<a href="#anchor-6" aria-label="Anchor" title="Permalink for 563 	Covid-19 global ceasefire" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	3</p>
+			<p class="MotionSponsor">Claudia Webbe</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Kate Osborne</p>
+			<p>That this House notes United Nations Secretary-General Antonio Guterres’ recent call for a global ceasefire to combat the rapid spread of COVID-19; futher notes that Foreign Secretary Dominic Raab endorsed this call for peace; is concerned that little action has been taken by the UK government to make this a reality; laments the fact that there are currently thousands of British forces in at least 35 countries around the world, including 1,000 in Afghanistan and more than 1,000 in the Middle East including in Iraq and Saudi Arabia; is appalled that Britain remains complicit in the Saudi-led coalition’s war in Yemen; recognises that the coronavirus outbreak offers our government a unique opportunity to step away from global conflicts; and calls on the Government to immediately draw up a plan to withdraw British troops from war zones.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-7"><span class="Roman"><span class="UIN">564</span></span><span class="UIN"> 	</span>George Floyd and the Black Lives Matter campaign<a href="#anchor-7" aria-label="Anchor" title="Permalink for 564 	George Floyd and the Black Lives Matter campaign" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	16</p>
+			<p class="MotionSponsor">Bell Ribeiro-Addy</p>
+			<p class="MotionSponsor">Zarah Sultana</p>
+			<p class="MotionSponsor">Ms Diane Abbott</p>
+			<p class="MotionSponsor">Richard Burgon</p>
+			<p class="MotionSponsor">Apsana Begum</p>
+			<p class="MotionSponsor">Claudia Webbe</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Stephen Farry</span><span class="signatory">Caroline Lucas</span><span class="signatory">Richard Thomson</span><span class="signatory">Ben Lake</span><span class="signatory">Anne McLaughlin</span><span class="signatory">Alison Thewliss</span><span class="signatory">Margaret Ferrier</span><span class="signatory">Deidre Brock</span><span class="signatory">Kate Osamor</span><span class="signatory">Daisy Cooper</span></p>
+			<p>That this House stands in solidarity with the friends, family and community of George Floyd in Minneapolis; recognises that George Floyd is tragically another name on the long list of unarmed Black men that have died in police custody in the United States of America (USA); notes that state-sanctioned racism is not solely an issue in the USA but also one that we experience here in the UK; acknowledges that Black people suffer disproportionately from police use of force, are more likely to receive harsher sentences than their white counterparts, and are over-represented in the prison population; is alarmed that between 1995 and 2015, regardless of the circumstances, no police office was prosecuted over the death of a Black person in custody; believes that Black Lives Matter; supports the Black Lives Matter campaign; calls on the UK Government to challenge institutional racism and address the racial disparities in our criminal justice system.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-8"><span class="Roman"><span class="UIN">565</span></span><span class="UIN"> 	</span>LGBTQ+ conversion therapy in the UK<a href="#anchor-8" aria-label="Anchor" title="Permalink for 565 	LGBTQ+ conversion therapy in the UK" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	2</p>
+			<p class="MotionSponsor">Layla Moran</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p>That this House recognises the need to make LGBTQ+ conversion therapy illegal in the United Kingdom; believes that Her Majesty’s Government must act to ensure all citizens of the LGBTQ+ community feel protected from harm; is concerned at the continuing of such archaic practices in the United Kingdom; calls on Her Majesty’s Government to make running conversion therapy in the UK a criminal offence; further calls on Her Majesty’s Government to make forcing people to attend conversion therapy a criminal offence; urges Her Majesty’s Government to make the sending of individuals abroad to try to convert them a criminal offence.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-9"><span class="Roman"><span class="UIN">566</span></span><span class="UIN"> 	</span>Carers Week 2020<a href="#anchor-9" aria-label="Anchor" title="Permalink for 566 	Carers Week 2020" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/06/20	<span class="Roman">Signatories:</span>	2</p>
+			<p class="MotionSponsor">Kenny MacAskill</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p>That this House recognises the importance of unpaid carers, the compassion and dedication that they show in their vital work in our society at all times, but especially during the Coronavirus Pandemic; commends the work of Carers Week (8-14 June 2020) in offering support to, and advocating for, unpaid carers; calls on all Members to work for better practical support, as well as much needed financial support for carers; and thanks unpaid carers for their dedication to their loved ones, and to the wellbeing of our nation.</p>
+			<h2 class="underline" id="anchor-10">Added Names<a href="#anchor-10" aria-label="Anchor" title="Permalink for Added Names" data-anchor-icon="§" class="anchor-link"></a></h2>
+			<p>Below are EDMs tabled in the last two weeks to which names have been added. Only the first 6 names and any new names are included.</p>
+			<h3 class="EDMTitle" id="anchor-11"><span class="Roman"><span class="UIN">422</span></span><span class="UIN"> 	</span>Children and Young Persons<a href="#anchor-11" aria-label="Anchor" title="Permalink for 422 	Children and Young Persons" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	4/05/20	<span class="Roman">Signatories:</span>	37</p>
+			<p class="MotionSponsor">Keir Starmer</p>
+			<p class="MotionSponsor">Rebecca Long Bailey</p>
+			<p class="MotionSponsor">Tulip Siddiq</p>
+			<p class="MotionSponsor">Margaret Greenwood</p>
+			<p class="MotionSponsor">Emma Hardy</p>
+			<p class="MotionSponsor">Mr Nicholas Brown</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span></p>
+			<p>That an humble Address be presented to Her Majesty, praying that the Adoption and Children (Coronavirus) (Amendment) Regulations 2020 (S.I., 2020, No. 445), dated 21 April 2020, a copy of which was laid before this House on 23 April 2020, be annulled.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-12"><span class="Roman"><span class="UIN">481</span></span><span class="UIN"> 	</span>Enabling people to work from home to protect against covid-19<a href="#anchor-12" aria-label="Anchor" title="Permalink for 481 	Enabling people to work from home to protect against covid-19" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	14/05/20	<span class="Roman">Signatories:</span>	11</p>
+			<p class="MotionSponsor">John Nicolson</p>
+			<p class="MotionSponsor">Chris Law</p>
+			<p class="MotionSponsor">Jonathan Edwards</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Jamie Stone</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span></p>
+			<p>That this House recognises the importance of people working from home to protect the NHS and limit the spread of covid-19; notes that many workers lack the equipment to work effectively from home and often cannot afford to pay for expensive equipment without financial support from employers; encourages the Government to work with employers to remove the barriers which prevent people from working from home; and calls for the Government to consider the introduction of legislation to reduce the cost of remote technology and office supplies for businesses aiming to facilitate home-working.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-13"><span class="Roman"><span class="UIN">487</span></span><span class="UIN"> 	</span>Fair Pay for Local Authority workers<a href="#anchor-13" aria-label="Anchor" title="Permalink for 487 	Fair Pay for Local Authority workers" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	18/05/20	<span class="Roman">Signatories:</span>	10</p>
+			<p class="MotionSponsor">Grahame Morris</p>
+			<p class="MotionSponsor">Ian Byrne</p>
+			<p class="MotionSponsor">Paula Barker</p>
+			<p class="MotionSponsor">Kate Osborne</p>
+			<p class="MotionSponsor">Jon Trickett</p>
+			<p class="MotionSponsor">Ms Diane Abbott</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Richard Burgon</span></p>
+			<p>That this House calls for a decent and fair pay rise for all workers delivering local authority services; notes that local authority and school staff are working above and beyond the call of duty with the daily risk presented by covid-19; respects workers’ dedication to keep public services running and our country on track: pays tribute to frontline local authority workers who are protecting our communities in a wide range of vital services from caring for the young, vulnerable and elderly to collecting rubbish and from cleaning streets to working in crematoria to ensure dignity for those who have, sadly, fallen victim to this virus; is deeply concerned that those workers continue to be some of the lowest paid in the economy and that many have seen their pay drop in real terms by over 20 per cent after 10 years of austerity and cuts; acknowledges that the current pay offer to local authority staff is inadequate and that the misunderstanding of the annual leave section of the joint union claim is insulting to staff; is further concerned that the lowest paid are being asked to accept a pay rise of little more than £1.82 per day; and urges the Government to take immediate action to ensure that local authority workers receive the dignity and fairness they deserve.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-14"><span class="Roman"><span class="UIN">491</span></span><span class="UIN"> 	</span>Gay and transgender conversion therapies<a href="#anchor-14" aria-label="Anchor" title="Permalink for 491 	Gay and transgender conversion therapies" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	18/05/20	<span class="Roman">Signatories:</span>	15</p>
+			<p class="MotionSponsor">Christine Jardine</p>
+			<p class="MotionSponsor">Daisy Cooper</p>
+			<p class="MotionSponsor">Jamie Stone</p>
+			<p class="MotionSponsor">Sir Edward Davey</p>
+			<p class="MotionSponsor">Mr Alistair Carmichael</p>
+			<p class="MotionSponsor">Mr Clive Betts</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span><span class="signatory">Richard Burgon</span></p>
+			<p>That this House condemns the continued practice of gay and transgender conversion therapies in the UK; notes that this practice has been linked to an increased risk of suicide, poor mental health and substance abuse; recognises that the Government has pledged to ban such practices in their LGBT Action Plan 2018 but has yet to bring forward those plans; further notes that many other jurisdictions have banned this abhorrent practice including most recently Germany; and calls on the Government to expedite plans to introduce a ban on conversion therapies in order to protect the UK's LGBT+ Community.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-15"><span class="Roman"><span class="UIN">493</span></span><span class="UIN"> 	</span>Support for students in further and higher education during coronavirus pandemic<a href="#anchor-15" aria-label="Anchor" title="Permalink for 493 	Support for students in further and higher education during coronavirus pandemic" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	18/05/20	<span class="Roman">Signatories:</span>	17</p>
+			<p class="MotionSponsor">Patrick Grady</p>
+			<p class="MotionSponsor">Carol Monaghan</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Neil Gray</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">David Linden</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span><span class="signatory">Douglas Chapman</span></p>
+			<p>That this House notes many students in further and higher education experience financial hardship during the course of their studies and that these difficulties are being exacerbated by the wider economic and social consequences of the coronavirus pandemic; further notes that financial support provided by awards agencies and student loan companies across different parts of the UK is usually provided on a term-time basis only, and that many students would seek to supplement their income with paid employment, especially during summer months; believes that many traditional summer job opportunities for students are unlikely to exist as a result of social distancing and economic restrictions; and urges all Governments across the UK  to work in partnership with each other, student representative bodies and relevant awards agencies and loans companies to ensure that adequate financial support is available to further and higher education students throughout the 2020 calendar year, including access to universal credit or other appropriate benefits, the provision of increased finance to further and higher education institutions to disburse through hardship funds, and access to other appropriate support during these unprecedented times.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-16"><span class="Roman"><span class="UIN">497</span></span><span class="UIN"> 	</span>Extension of EU transition period<a href="#anchor-16" aria-label="Anchor" title="Permalink for 497 	Extension of EU transition period" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	18/05/20	<span class="Roman">Signatories:</span>	26</p>
+			<p class="MotionSponsor">Ian Blackford</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Kenny MacAskill</p>
+			<p class="MotionSponsor">Deidre Brock</p>
+			<p class="MotionSponsor">Stephen Farry</p>
+			<p class="MotionSponsor">Colum Eastwood</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span></p>
+			<p>That this House notes with concern the UK Government’s stated position to stick rigidly to its timeline of ending the EU transition period in December 2020; recognises that this significantly increases the risk of a no-deal exit; further recognises that it will be impossible for the vast majority of businesses and communities to prepare for life outside the single market and customs union while coping with the effect of the covid-19 pandemic at the same time; notes that the devolved Governments did not give their consent to the Government’s EU Withdrawal Agreement legislation; concludes that the only realistic and reasonable approach is for the Government to revise its timeline for negotiation; further notes that Article 132 of the Withdrawal Agreement contains provisions for the UK-EU Joint Committee to adopt a single decision extending the transition for up to one or two years; calls on the Government to request a two-year extension to the transition period.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-17"><span class="Roman"><span class="UIN">498</span></span><span class="UIN"> 	</span>Public inquiry into the effect of covid-19 on BAME communities<a href="#anchor-17" aria-label="Anchor" title="Permalink for 498 	Public inquiry into the effect of covid-19 on BAME communities" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	18/05/20	<span class="Roman">Signatories:</span>	38</p>
+			<p class="MotionSponsor">Ms Diane Abbott</p>
+			<p class="MotionSponsor">Bell Ribeiro-Addy</p>
+			<p class="MotionSponsor">Richard Burgon</p>
+			<p class="MotionSponsor">Claudia Webbe</p>
+			<p class="MotionSponsor">Zarah Sultana</p>
+			<p class="MotionSponsor">Apsana Begum</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jon Trickett</span><span class="signatory">Jim Shannon</span><span class="signatory">Mrs Emma Lewell-Buck</span><span class="signatory">Colum Eastwood</span></p>
+			<p>That this House is concerned that covid-19 infections and deaths have disproportionately affected Black, Asian and Minority Ethnic (BAME) British people; notes that BAME people make up one third of covid-19 patients in intensive care, two thirds of NHS staff who have died, and out of twenty three NHS doctors who have died after contracting covid-19, twenty two are BAME; further notes that a British Medical Association survey revealed that 64 per cent of BAME doctors expressed concern about inadequate PPE, compared to 33 per cent of white doctors; believes that plans to lift the lockdown will potentially hit BAME communities harder because of their high level of representation in the NHS, transport and other public sector roles; supports the recommendation of the British Medical Association that the ethnic background of all covid-19 patients should be recorded; calls for a full independent public inquiry into the disproportionate effect of covid-19 on BAME communities; and urges the Government to ensure any such inquiry provides key findings and offers clear recommendations for systemic and transformational change in the role of the public sector and race equality.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-18"><span class="Roman"><span class="UIN">500</span></span><span class="UIN"> 	</span>Housing rough sleepers during and after the covid-19 outbreak<a href="#anchor-18" aria-label="Anchor" title="Permalink for 500 	Housing rough sleepers during and after the covid-19 outbreak" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	18/05/20	<span class="Roman">Signatories:</span>	13</p>
+			<p class="MotionSponsor">Layla Moran</p>
+			<p class="MotionSponsor">Christine Jardine</p>
+			<p class="MotionSponsor">Tracey Crouch</p>
+			<p class="MotionSponsor">Andrew Gwynne</p>
+			<p class="MotionSponsor">Wera Hobhouse</p>
+			<p class="MotionSponsor">Daisy Cooper</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Richard Burgon</span></p>
+			<p>That this House recognises that the Government’s Everyone In policy has given approximately 5,400 rough sleepers temporary accommodation during the covid-19 pandemic; notes that this approach has allowed many homeless people to access services they previously did not, including healthcare; further recognises that covid-19 is an unprecedented threat that has left the most vulnerable in our communities at risk; is concerned by reports that suggest funding from the Government to local authorities to enact the scheme will end soon; calls on the Government to confirm that Everyone In will continue so that rough sleepers can be given the dignity of a room during this crisis; further calls on the Government to take adopt a housing first approach to provide rough sleepers with permanent accommodation as a priority; and further calls on the Government to make specialist support available to people that struggle with addiction or other mental health issues, as is the case for so many people sleeping rough across the UK.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-19"><span class="Roman"><span class="UIN">502</span></span><span class="UIN"> 	</span>Treatment services during the covid-19 outbreak<a href="#anchor-19" aria-label="Anchor" title="Permalink for 502 	Treatment services during the covid-19 outbreak" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	18/05/20	<span class="Roman">Signatories:</span>	16</p>
+			<p class="MotionSponsor">Grahame Morris</p>
+			<p class="MotionSponsor">Gavin Robinson</p>
+			<p class="MotionSponsor">Kate Osborne</p>
+			<p class="MotionSponsor">Ms Diane Abbott</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Ian Lavery</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Richard Burgon</span></p>
+			<p>That this House acknowledges the vital role being performed by drug and alcohol treatment services throughout the country during the covid-19 outbreak; recognises that key workers on the frontline of critical service provision are among the unsung heroes who rarely receive the recognition they deserve; commends the dedication with which they have maintained crucial support for a most vulnerable section of our society; expresses its gratitude for the flexibility shown in adapting to meet the needs of service users in these most difficult current circumstances; recognises that the work has been achieved after a decade of depleted resources as a result of austerity and funding cuts; notes that a surge in mental health issues can be anticipated in the wake of such crises; recommends that to help people stay safe, protect the NHS and save lives, future funding for this often-overlooked sector should be safeguarded; and calls on the Government to ensure drug and alcohol treatment providers are involved in shaping plans for post-pandemic public health provision.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-20"><span class="Roman"><span class="UIN">511</span></span><span class="UIN"> 	</span>Skyrora and UK's first rocket launch test in 50 years<a href="#anchor-20" aria-label="Anchor" title="Permalink for 511 	Skyrora and UK's first rocket launch test in 50 years" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	20/05/20	<span class="Roman">Signatories:</span>	24</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="MotionSponsor">Gavin Newlands</p>
+			<p class="MotionSponsor">Stewart Malcolm McDonald</p>
+			<p class="MotionSponsor">Kirsten Oswald</p>
+			<p class="MotionSponsor">Kenny MacAskill</p>
+			<p class="MotionSponsor">Patrick Grady</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span></p>
+			<p>That this House congratulates Midlothian based Skyrora Ltd on completing the UK’s first ground rocket test in Scotland in 50 years; commends its work in making the UK ready for launching rockets into space after its team successfully built a mobile launch complex and completed a full static fire test with the Skylark-L rocket on it in only five days; recognises that Skyrora's achievements signify the first vertical static fire test of this magnitude in the UK since the Black Arrow Programme, 50 years ago; notes that the Skylark L rocket could be ready to launch from a British spaceport by spring 2021 and the inaugural launch of the low Earth orbital (LEO) Skyrora XL rocket by 2023; further notes that the company plan to use its Ecosene, an equivalent Kerosene fuel made from un-recyclable plastic waste; recognises the mammoth efforts and expert handling of everyone involved in the operation which was carried out whilst having to adhere to very strict social distancing measures, and in the remote location of the Scottish highlands; credits Skyrora in its aim to cater for the growing demand to send commercial satellites into space using a combination of proven technology, advanced manufacturing and detailed knowledge; applauds this historic milestone that is the start of the UK’s new space revolution, a fantastic example of the potential that the UK Space industry holds for future; and wishes Skyrora every success as it is poised to make the UK a serious leader in the space business once again.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-21"><span class="Roman"><span class="UIN">515</span></span><span class="UIN"> 	</span>Immigration Bill and citizenship<a href="#anchor-21" aria-label="Anchor" title="Permalink for 515 	Immigration Bill and citizenship" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	20/05/20	<span class="Roman">Signatories:</span>	25</p>
+			<p class="MotionSponsor">Hywel Williams</p>
+			<p class="MotionSponsor">Mohammad Yasin</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Wera Hobhouse</p>
+			<p class="MotionSponsor">Stephen Farry</p>
+			<p class="MotionSponsor">Caroline Lucas</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span><span class="signatory">Richard Burgon</span></p>
+			<p>That this House regrets that the Immigration and Social Security Co-ordination (EU Withdrawal) Bill 2019-2021 will end free movement of people without giving Parliament an opportunity to debate future immigration policy; urges the Government to lay a report before both Houses of Parliament that outlines its position on immigration policy in light of the covid-19 pandemic; further urges the Government to consider as part of that report the granting of free and automatic UK citizenship to all workers in the health and social care sector that have made or seek to make applications.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-22"><span class="Roman"><span class="UIN">516</span></span><span class="UIN"> 	</span>Protection for minimum wage workers on furlough<a href="#anchor-22" aria-label="Anchor" title="Permalink for 516 	Protection for minimum wage workers on furlough" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	20/05/20	<span class="Roman">Signatories:</span>	15</p>
+			<p class="MotionSponsor">Richard Burgon</p>
+			<p class="MotionSponsor">Jon Trickett</p>
+			<p class="MotionSponsor">Paula Barker</p>
+			<p class="MotionSponsor">Ian Mearns</p>
+			<p class="MotionSponsor">Kate Osborne</p>
+			<p class="MotionSponsor">Bell Ribeiro-Addy</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span></p>
+			<p>That this House is concerned that many workers earning the minimum wage are currently only receiving 80 per cent of their minimum wage salary under the Government’s furlough scheme; is concerned that workers are being expected to live on less than the state-declared minimum wage especially given that rents, bills and food prices have not fallen; is concerned that in the House on 12 May 2020, following a question calling for the introduction of a minimum wage floor to the furlough scheme, the Chancellor of the Exchequer responding by suggesting that workers could seek additional employment which for many is not possible during the covid-19 crisis; notes that women and Black, Asian and minority ethnic workers are more likely to be in lower-paid work; calls on the Government to put in place guarantees to ensure that no furloughed worker is forced to live on less than 100 per cent of the national minimum wage.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-23"><span class="Roman"><span class="UIN">520</span></span><span class="UIN"> 	</span>Sales of teargas, riot shields and rubber bullets to the United States<a href="#anchor-23" aria-label="Anchor" title="Permalink for 520 	Sales of teargas, riot shields and rubber bullets to the United States" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	46</p>
+			<p class="MotionSponsor">Dawn Butler</p>
+			<p class="MotionSponsor">Clive Lewis</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="MotionSponsor">Stephen Farry</p>
+			<p class="MotionSponsor">Joanna Cherry</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Caroline Lucas</span><span class="signatory">Stewart Malcolm McDonald</span><span class="signatory">Ben Lake</span><span class="signatory">Drew Hendry</span><span class="signatory">Mrs Emma Lewell-Buck</span><span class="signatory">Wera Hobhouse</span><span class="signatory">Stuart C McDonald</span><span class="signatory">Chris Law</span><span class="signatory">Mr Barry Sheerman</span><span class="signatory">Mick Whitley</span><span class="signatory">John Cryer</span><span class="signatory">David Linden</span><span class="signatory">Richard Burgon</span></p>
+			<p>That this House calls on the Government to ensure the immediate suspension of sales of teargas, riot shields and rubber bullets to the United States.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-24"><span class="Roman"><span class="UIN">521</span></span><span class="UIN"> 	</span>UK law on disability-selective abortion<a href="#anchor-24" aria-label="Anchor" title="Permalink for 521 	UK law on disability-selective abortion" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	22</p>
+			<p class="MotionSponsor">Carla Lockhart</p>
+			<p class="MotionSponsor">Sir Jeffrey M Donaldson</p>
+			<p class="MotionSponsor">Fiona Bruce</p>
+			<p class="MotionSponsor">Sir Mike Penning</p>
+			<p class="MotionSponsor">Gavin Robinson</p>
+			<p class="MotionSponsor">Mr Gregory Campbell</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Paul Girvan</span><span class="signatory">Mr William Wragg</span><span class="signatory">Gordon Henderson</span><span class="signatory">Jim Shannon</span><span class="signatory">Patricia Gibson</span><span class="signatory">Andrew Rosindell</span></p>
+			<p>That this House notes with concern the discrimination inherent in current UK abortion law that allows abortion up to birth for children diagnosed with cleft lip, cleft palate and clubfoot; that such disability-selective abortion up to birth is underreported according to the Department for Health and Social Care; recognises that cleft lip, cleft palate and clubfoot are treatable after birth and are not life-limiting disabilities and thus a primary diagnosis of any of the aforementioned should not qualify as a grounds for abortion under the Abortion Act 1967; that the many testimonies of individuals and celebrities born with cleft lip, cleft palate or clubfoot demonstrate that these conditions do not hold people back in life; that allowing such individuals to be aborted up to birth is contrary to the Disability Discrimination Act 1995 and Equality Act 2010; that UK abortion law does not reflect the positive change in societal attitudes towards disability in the anti-discriminatory, disability progressive culture of 2020; and recognises that UK abortion law must be changed to provide a person diagnosed with cleft lip, cleft palate or clubfoot with the same legal protections as any other person.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-25"><span class="Roman"><span class="UIN">522</span></span><span class="UIN"> 	</span>Carers Week and Lanarkshire Carers Centre<a href="#anchor-25" aria-label="Anchor" title="Permalink for 522 	Carers Week and Lanarkshire Carers Centre" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	9</p>
+			<p class="MotionSponsor">Dr Lisa Cameron</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Sir Mike Penning</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Kirsten Oswald</p>
+			<p class="MotionSponsor">Drew Hendry</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span><span class="signatory">Chris Law</span><span class="signatory">Alyn Smith</span></p>
+			<p>That this House praises the 6.5 million people in the UK who are carers; recognises the importance of Carers Week, which takes place from 8 June 2020 to 14 June 2020 in celebrating and raising awareness of the work and dedication of carers; notes the challenges that unpaid carers face; stresses the importance of Making Caring Visible and the need for more support for carers, as carers are seven times more likely to say they are lonely than the general population; further praises Lanarkshire Carers Centre for the support that organisation gives to carers, especially during the covid-19 outbreak; thanks Lanarkshire Carers Centre for checking on the wellbeing of carers and delivering practical and emotional support to carers, providing funding to carers so that they can access vital equipment and offering a course to carers around grief and bereavement so that carers can learn about coping mechanisms; acknowledges Lanarkshire Carers Centre’s mission to ensure that carers in Lanarkshire are well informed, involved, supported and empowered; and expresses immense gratitude to carers in Lanarkshire and across the UK for the incredible work they do all year-round, and for their fortitude and strength during the covid-19 outbreak.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-26"><span class="Roman"><span class="UIN">523</span></span><span class="UIN"> 	</span>Continued detention of Bahai in Yemen<a href="#anchor-26" aria-label="Anchor" title="Permalink for 523 	Continued detention of Bahai in Yemen" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	7</p>
+			<p class="MotionSponsor">Bob Blackman</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Gavin Robinson</p>
+			<p class="MotionSponsor">Kenny MacAskill</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Jamie Stone</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span></p>
+			<p>That this House notes that over two months have passed since the President of the Houthi Supreme Political Council in Yemen ordered the release of six Baha’is, who have been in long term detention in Sana’a; further notes that this includes Mr Hamed bin Haydara who was under sentence of death and that President al-Mashat ordered his pardon on 25 March; observes that all six Baha’is are still imprisoned, and that reports confirm that other detainees in their prison facility have contracted covid-19; and urges the Government to make fresh and urgent appeals to the Houthi authorities to expedite the President’s orders for release of these six prisoners of conscience.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-27"><span class="Roman"><span class="UIN">524</span></span><span class="UIN"> 	</span>East Renfrewshire Citizens Advice Bureau<a href="#anchor-27" aria-label="Anchor" title="Permalink for 524 	East Renfrewshire Citizens Advice Bureau" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	7</p>
+			<p class="MotionSponsor">Kirsten Oswald</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Drew Hendry</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p class="MotionSponsor">Chris Law</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Alyn Smith</span></p>
+			<p>That this House applauds the support and efforts of East Renfrewshire Citizens Advice Bureau; commends the staff team and volunteers who provide vital support to communities across East Renfrewshire; recognises that flexible and innovative ways of working have enabled this vital support service to continue during the covid-19 pandemic; understands that the work of the Bureau team is currently being delivered remotely; notes the wide range of services being delivered including assistance with employment, housing, debt, benefits, and consumer issues, many of which are pressing and the cause of great concern to local residents; appreciates the clear and constructive advice and support provided; further appreciates the positive outcomes achieved by advisers; notes that advisers are also supporting the new national advice phone line; and thanks the whole East Renfrewshire Citizens Advice team for their efforts on the public's behalf.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-28"><span class="Roman"><span class="UIN">525</span></span><span class="UIN"> 	</span>The Black Lives Matter campaign<a href="#anchor-28" aria-label="Anchor" title="Permalink for 525 	The Black Lives Matter campaign" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	64</p>
+			<p class="MotionSponsor">Kirsten Oswald</p>
+			<p class="MotionSponsor">Anne McLaughlin</p>
+			<p class="MotionSponsor">Dawn Butler</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="MotionSponsor">Dave Doogan</p>
+			<p class="MotionSponsor">Patrick Grady</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Douglas Chapman</span><span class="signatory">Debbie Abrahams</span><span class="signatory">Ben Lake</span><span class="signatory">Wera Hobhouse</span><span class="signatory">Jim Shannon</span><span class="signatory">Angus Brendan MacNeil</span><span class="signatory">Mr Barry Sheerman</span><span class="signatory">Brendan O'Hara</span><span class="signatory">Richard Burgon</span></p>
+			<p>That this House supports the Black Lives Matter campaign. </p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-29"><span class="Roman"><span class="UIN">526</span></span><span class="UIN"> 	</span>Green recovery<a href="#anchor-29" aria-label="Anchor" title="Permalink for 526 	Green recovery" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	9</p>
+			<p class="MotionSponsor">Caroline Lucas</p>
+			<p class="MotionSponsor">Stephen Farry</p>
+			<p class="MotionSponsor">Clive Lewis</p>
+			<p class="MotionSponsor">Claire Hanna</p>
+			<p class="MotionSponsor">Wera Hobhouse</p>
+			<p class="MotionSponsor">Mohammad Yasin</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Ben Lake</span><span class="signatory">Jim Shannon</span><span class="signatory">Richard Burgon</span></p>
+			<p>That this House notes the need for Government action to support economic renewal as covid-19 restrictions are lifted; believes that this recovery must be a green recovery, designed to deliver the urgent objectives of restoring wildlife and the natural environment on land and at sea, averting dangerous climate change, minimising the UK’s global environmental footprint, and reversing inequality; considers that strong environmental laws are necessary for public health and a resilient economy, and to ensure more people benefit from the joys of nature that many have experienced or longed for in lockdown; further notes that green projects create more jobs, deliver higher short-term returns, and lead to increased long-term cost savings according to a recent Oxford study among others; believes that restoring the environment requires close collaboration with civil society organisations; calls on the Government to pursue an green economic recovery strategy that gives top priority to the health and wellbeing of people and nature; and further calls on the Government to avoid all measures that contribute to environmental harm and instead to invest in nature-friendly farming, large-scale green infrastructure projects including habitat restoration and creation, improved and equitable access to high-quality greenspace, a regenerative circular zero-waste economy that reduces resource use and addresses over-consumption, and a decisive shift from fossil fuels to renewable energy alongside nature-based solutions to climate change.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-30"><span class="Roman"><span class="UIN">528</span></span><span class="UIN"> 	</span>Avondale community support<a href="#anchor-30" aria-label="Anchor" title="Permalink for 528 	Avondale community support" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	4</p>
+			<p class="MotionSponsor">Dr Lisa Cameron</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House recognises the exceptional community support work undertaken by selfless groups of volunteers and organisations throughout Avondale; commends those volunteers from Strathaven Foodbank run by the Strathaven Evangelical Church which continues providing essential food bank services distributing food parcels to vulnerable households; praises the Strathaven and Glassford Community Council, Banks Renewables and Falck Renewables for releasing funds to support projects across Avondale; appreciates Outreach Community Church for providing free meals to households in the shielding initiative and to those self isolating or vulnerable; commends local engineer Gary Tompsett for manufacturing 250 protective visors and Glasgow University for the frames, for use by local health care workers; further commends Glassford Community Group’s awarding 15 frontline worker nominees a £25 voucher for The Steayban local restaurant and for purchasing emergency wrap around glasses for a local pensioner; thanks Creative Strathaven CIC for producing free art kits for distribution around the community; acknowledges the immense community response and activities of everyone, with specific mention to teams headed by David Childs and Roddy Gillies and community groups including Avondale Young Farmers, churches, Community Council members and local volunteers providing prescription collections, shopping deliveries and support services throughout the greater Avondale Community; and recognises the cooperative alliances between the groups mentioned above, The Strathaven Community Resilience Group, local authority groups, VASLAN, Home Energy Scotland, Strathaven Business Association and Avondale LEAP who together strive to ensure that nobody within Avondale is forgotten and everyone knows where to find help if they need it.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-31"><span class="Roman"><span class="UIN">529</span></span><span class="UIN"> 	</span>Eviction of Palestinian family from East Jerusalem<a href="#anchor-31" aria-label="Anchor" title="Permalink for 529 	Eviction of Palestinian family from East Jerusalem" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	22</p>
+			<p class="MotionSponsor">Tommy Sheppard</p>
+			<p class="MotionSponsor">Dr Philippa Whitford</p>
+			<p class="MotionSponsor">Andy Slaughter</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="MotionSponsor">Kenny MacAskill</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Caroline Lucas</span><span class="signatory">Debbie Abrahams</span><span class="signatory">Ben Lake</span><span class="signatory">Drew Hendry</span><span class="signatory">Jonathan Edwards</span><span class="signatory">Jim Shannon</span><span class="signatory">Ian Blackford</span><span class="signatory">Patricia Gibson</span><span class="signatory">Sir Desmond Swayne</span><span class="signatory">Alyn Smith</span><span class="signatory">Richard Burgon</span><span class="signatory">Richard Thomson</span></p>
+			<p>That this House strongly condemns the ongoing attempts of the Jewish National Fund (KKL-JNF) to evict the Sumarin family from their home in East Jerusalem; recognises this within a broader context of the Israeli government’s efforts to demographically alter the population of Jerusalem, and the controversial use of Israel’s Absentee Property Law to dispossess Palestinians of their land; notes the Sumarin family have lived at their property, with deeds of ownership, for over fifty years; reiterates that ethnic cleansing is one of the most serious crimes, and that the UK is committed to upholding international law; urgently requests the Government to intervene on behalf of the Sumarin family, and calls on the Charity Commission to review the charitable status of JNF UK.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-32"><span class="Roman"><span class="UIN">530</span></span><span class="UIN"> 	</span>LEAP<a href="#anchor-32" aria-label="Anchor" title="Permalink for 530 	LEAP" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	4</p>
+			<p class="MotionSponsor">Dr Lisa Cameron</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House recognises the exceptional staff and volunteers at LEAP who deliver vital services throughout the community helping to enhance the lives of the most vulnerable in the constituency of East Kilbride, Strathaven and Lesmahagow and throughout South Lanarkshire; commends the bespoke personal shopper and pharmacy service delivered by LEAP volunteers; praises the volunteer befrienders who continue to play a vital role in combatting social isolation by maintaining existing links with vulnerable people by checking whether they need anything and monitoring their wellbeing; acknowledges the pupils of Newfield Primary School in Stonehouse for keeping their intergenerational project going by supplying treat boxes and writing letters which are delivered from LEAP’s Strathaven office; and thanks the volunteer handymen and women who carry out essential emergency repairs for clients in their own homes whenever possible.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-33"><span class="Roman"><span class="UIN">531</span></span><span class="UIN"> 	</span>Redundancies at Heathrow Express<a href="#anchor-33" aria-label="Anchor" title="Permalink for 531 	Redundancies at Heathrow Express" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	8</p>
+			<p class="MotionSponsor">John McDonnell</p>
+			<p class="MotionSponsor">Ian Mearns</p>
+			<p class="MotionSponsor">Ian Lavery</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Grahame Morris</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Paula Barker</span><span class="signatory">Richard Burgon</span></p>
+			<p>That this House notes with concern that Heathrow Express has proposed 120 redundancies among its frontline station and on-train keyworkers, in addition to a reorganisation that abolishes the frontline mobile sales advisor and customer concierge grades and cuts many roles to part-time hours; further notes that many of the company’s workers are currently furloughed via the publicly funded Coronavirus Job Retention Scheme, which aims to prevent job losses and redundancies; is aware that Heathrow Express’ latest accounts show the company made an annual profit of £34 million last year; is concerned that the proposals to reduce frontline staffing would be detrimental to passengers, particularly the disabled and elderly; and calls on the Government to urgently intervene to protect all jobs at Heathrow Express and to take the route into public ownership.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-34"><span class="Roman"><span class="UIN">532</span></span><span class="UIN"> 	</span>Marketing of breast-milk substitutes: national implementation of the International Code<a href="#anchor-34" aria-label="Anchor" title="Permalink for 532 	Marketing of breast-milk substitutes: national implementation of the International Code" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	6</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Kirsty Blackman</p>
+			<p class="MotionSponsor">Drew Hendry</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House welcomes the publication by WHO, UNICEF and IBFAN of the 2020 Status Report on the Marketing of Breast-milk Substitutes (BMS): National Implementation of the International Code; notes that over the past two years, protections against inappropriate marketing of BMS have been strengthened in 44 countries around the world; appreciates that as of April 2020, 136 (70 per cent) of 194 WHO Member States had enacted legal measures with provisions to implement the Code; is disappointed that health facilities and staff around the world are still being targeted through the provision of materials and equipment by companies who have an interest in the promotion of infant formula; notes that the UK only scores 39 out of a possible 100 on implementation of measures covered by the Code, with particular weaknesses in monitoring and enforcement, promotion of BMS in health facilities, and engagement with health workers; calls on the Government to recognise their obligations, both under international human rights law and international agreements, to promote and protect breastfeeding, to eliminate inappropriate marketing practices, to analyse and address weaknesses in existing legislation and act accordingly; believes that such actions must be backed up with appropriate funding; and requests that the Government takes action to fully implement the International Code of Marketing of Breastmilk Substitutes and all subsequent resolutions prior to the 40th anniversary of the Code in 2021.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-35"><span class="Roman"><span class="UIN">533</span></span><span class="UIN"> 	</span>The Scottish Seabird Centre 20th Anniversary<a href="#anchor-35" aria-label="Anchor" title="Permalink for 533 	The Scottish Seabird Centre 20th Anniversary" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	6</p>
+			<p class="MotionSponsor">Kenny MacAskill</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Drew Hendry</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p class="MotionSponsor">Joanna Cherry</p>
+			<p>That this House recognises the national and local importance of the Scottish Seabird Centre in North Berwick on its 20th anniversary; commends its award-winning conservation work, especially that dedicated to recording, conserving and interpreting the vital Scottish marine environment; commends its significant outreach work, in particular the work it is engaged in with schools; and recognises the importance of ensuring that the Centre, as well as the significant conservation, tourism, employment, education and economic benefits it provides continues past it’s 20th anniversary year into a sustainable future.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-36"><span class="Roman"><span class="UIN">536</span></span><span class="UIN"> 	</span>Bailey-Lee Robb: Scottish Member of the Youth Parliament of the Year 2020<a href="#anchor-36" aria-label="Anchor" title="Permalink for 536 	Bailey-Lee Robb: Scottish Member of the Youth Parliament of the Year 2020" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	8</p>
+			<p class="MotionSponsor">Neale Hanvey</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Peter Grant</p>
+			<p class="MotionSponsor">Wendy Chamberlain</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Drew Hendry</span><span class="signatory">Jim Shannon</span></p>
+			<p>That this House congratulates Bailey-Lee Robb on the achievement of being announced the Scottish Youth Parliament’s MSYP of the Year 2020; recognises Bailey-Lee as an inspirational role model who has fought to ensure young people’s voices are heard both locally and nationally including being a youth representative on Fife Council’s Education and Children’s Services Committee, through his work to promote a rights-based approach to the understanding and tackling of Adverse Childhood Experiences and as a Trustee of Young Scot; and acknowledges his tireless work for young people in the area, such as campaigning for improved school meals, since his election as MSYP for Cowdenbeath in 2017. </p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-37"><span class="Roman"><span class="UIN">537</span></span><span class="UIN"> 	</span>Children and young people with SEND: support for families and carers<a href="#anchor-37" aria-label="Anchor" title="Permalink for 537 	Children and young people with SEND: support for families and carers" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	7</p>
+			<p class="MotionSponsor">Caroline Lucas</p>
+			<p class="MotionSponsor">Mohammad Yasin</p>
+			<p class="MotionSponsor">Layla Moran</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p class="MotionSponsor">Tim Farron</p>
+			<p class="MotionSponsor">Wera Hobhouse</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Dr Lisa Cameron</span></p>
+			<p>That this House commends the extraordinary care that families and carers provide for SEND children and young people; recognises that the need to provide full time care during the covid-19 crisis has put families under chronic additional strain and pressure; notes that 50 per cent of families with disabled children are living in poverty and that Carer’s Allowance, at £67.50 per week, is insultingly low; believes that families and carers responsible for children and young people with SEND need increased support; therefore calls for SEND schools and centres to be given bespoke covid-19 guidance that meets the particular needs and behaviours of SEND children and young people, and acknowledges the specific adaptations and timescales required for a safe return to the schools and centres they attended before lockdown; and further calls on the Government to increase funding for good quality respite care centres and respite carers to alleviate the pressure on families, to recognise the extraordinary care that people provide in their own homes by paying carers a real living wage and giving them paid annual leave, and to bring forward a strategy to recruit more respite carers that recognises and pays them as professionals with specialist skills.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-38"><span class="Roman"><span class="UIN">538</span></span><span class="UIN"> 	</span>Dementia Awareness Week 2020 and Alzheimer Scotland<a href="#anchor-38" aria-label="Anchor" title="Permalink for 538 	Dementia Awareness Week 2020 and Alzheimer Scotland" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	11</p>
+			<p class="MotionSponsor">Kirsten Oswald</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Peter Grant</p>
+			<p class="MotionSponsor">Jamie Stone</p>
+			<p class="MotionSponsor">Ronnie Cowan</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Drew Hendry</span><span class="signatory">Jim Shannon</span><span class="signatory">Joanna Cherry</span><span class="signatory">Alyn Smith</span></p>
+			<p>That this House notes Dementia Awareness Week, which runs from 1 to 8 June 2020, recognises the vital work of Alzheimer Scotland, Scotland’s national dementia charity, in providing practical and emotional support and information to people with dementia, their carers and families; appreciates the efforts made to ensure the continuing nature of that work during the covid-19 pandemic; acknowledges the particular difficulties and challenges of lockdown for people living with dementia, and their carers; appreciates the imaginative and focussed work of the Alzheimer Scotland staff who are working hard to minimise the additional challenges presented by Covid-19 so that continued support can be provided; notes the ongoing delivery of services and support and the imaginative way alternative delivery methods have been put into place; applauds the teamwork between Alzheimer Scotland, health and care teams, and local volunteers and Dementia Friends, focused on supporting those living with dementia and their carers; and recognises the vital importance of the support provided by Alzheimer Scotland for people in all communities.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-39"><span class="Roman"><span class="UIN">539</span></span><span class="UIN"> 	</span>Openreach engineer Scott McPartlin<a href="#anchor-39" aria-label="Anchor" title="Permalink for 539 	Openreach engineer Scott McPartlin" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	4</p>
+			<p class="MotionSponsor">Margaret Ferrier</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Carol Monaghan</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House notes that Openreach engineer Scott McPartlin, who hails from Rutherglen, camped out on the island of Coll for three days to reconnect islanders following a lightning strike; understands that Scott camped on Feall Beach and undertook several three mile hikes to reach the most remote parts of the island to fix the broadband to residential properties and the island’s medical practice; celebrates Scott’s intrepid efforts as the so-called Openreach's Bear Grylls to ensure that some of the most vulnerable and isolated communities can stay connected during the coronavirus pandemic; believes that Scott’s actions are a shining example of the heroic efforts that key workers are doing across Scotland to keep critical national infrastructure running; and thanks each and every one of them for keeping people safe during this time of national crisis.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-40"><span class="Roman"><span class="UIN">540</span></span><span class="UIN"> 	</span>29th anniversary of the Liberation of Eritrea on 24 May 2020<a href="#anchor-40" aria-label="Anchor" title="Permalink for 540 	29th anniversary of the Liberation of Eritrea on 24 May 2020" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	7</p>
+			<p class="MotionSponsor">Carol Monaghan</p>
+			<p class="MotionSponsor">Patrick Grady</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Kenny MacAskill</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span></p>
+			<p>That this House congratulates the people of Eritrea on the 29th anniversary of the Liberation of Eritrea on 24 May 2020; understands that 24 May is also the birthday of prisoner of conscience, Aster Fissehatsion who disappeared in September 2001, together with eleven journalists and ten other politicians; and urges the Government of Eritrea to celebrate the Liberation of Eritrea by liberating Aster and the other prisoners of conscience.; understands that 24 May is also the birthday of prisoner of conscience, Aster Fissehatsion who disappeared in September 2001, together with eleven journalists and ten other politicians; and urges the Government of Eritrea to celebrate the Liberation of Eritrea by liberating Aster and the other prisoners of conscience.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-41"><span class="Roman"><span class="UIN">541</span></span><span class="UIN"> 	</span>North Ayrshire's Community Volunteers and the covid-19 outbreak<a href="#anchor-41" aria-label="Anchor" title="Permalink for 541 	North Ayrshire's Community Volunteers and the covid-19 outbreak" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	3</p>
+			<p class="MotionSponsor">Patricia Gibson</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House commends the outstanding work of community volunteers across North Ayrshire and Arran, who are selflessly offering their time and resources to support their local communities through the coronavirus pandemic; understands that more than 150 people have signed up to help in community hubs operating throughout our communities, providing a point of contact for information and support; recognises that volunteers are conducting daily check-in phone calls to local residents, providing much-needed human connection for those who are socially isolated, as well as delivering essential items such as food and prescriptions for those who are shielding; applauds the huge effort which has meant the delivery of food parcels to almost 4,000 households every week, for families in receipt of free school meals as well as the most vulnerable residents; acknowledges that much of this food is being provided by local food suppliers, providing fresh, nutritious food that is so important in staying healthy at this time; also appreciates that many local shops and cafes are also participating in this community effort; pays tribute to all involved in this wonderful community effort across North Ayrshire and all those working tirelessly to ensure that the most vulnerable residents are not left behind during these extremely challenging times.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-42"><span class="Roman"><span class="UIN">542</span></span><span class="UIN"> 	</span>Dominic Cummings<a href="#anchor-42" aria-label="Anchor" title="Permalink for 542 	Dominic Cummings" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	51</p>
+			<p class="MotionSponsor">Ian Blackford</p>
+			<p class="MotionSponsor">Kirsty Blackman</p>
+			<p class="MotionSponsor">Deidre Brock</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Tommy Sheppard</p>
+			<p class="MotionSponsor">Patrick Grady</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Ben Lake</span><span class="signatory">Bell Ribeiro-Addy</span></p>
+			<p>That this House calls on the Prime Minister to seek the immediate resignation of his chief adviser, Mr Dominic Cummings; notes with concern the damage Mr Cummings' breach of clear lockdown rules during the Covid-19 pandemic has done to public health advice and public confidence in it; further notes that other senior public employees have resigned or been removed for similar breaches of lockdown rules; and further calls on the Cabinet Secretary to conduct a swift inquiry into the sanctioning of this breach of lockdown rules and any measures taken within government to restrict full transparency on this matter; concludes that there cannot be one rule for the Prime Minister’s senior advisers and separate rules for everyone else.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-43"><span class="Roman"><span class="UIN">543</span></span><span class="UIN"> 	</span>Universal Credit deductions<a href="#anchor-43" aria-label="Anchor" title="Permalink for 543 	Universal Credit deductions" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	34</p>
+			<p class="MotionSponsor">Mrs Emma Lewell-Buck</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Claire Hanna</p>
+			<p class="MotionSponsor">Gavin Robinson</p>
+			<p class="MotionSponsor">Owen Thompson</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Ian Mearns</span><span class="signatory">Ben Lake</span><span class="signatory">Yvonne Fovargue</span><span class="signatory">Mr Gregory Campbell</span><span class="signatory">Paul Girvan</span><span class="signatory">Deidre Brock</span><span class="signatory">Wera Hobhouse</span><span class="signatory">Jim Shannon</span><span class="signatory">Kate Osborne</span><span class="signatory">Daisy Cooper</span><span class="signatory">Mark Tami</span><span class="signatory">Hywel Williams</span><span class="signatory">Ms Diane Abbott</span><span class="signatory">Christine Jardine</span><span class="signatory">Richard Burgon</span><span class="signatory">Anne McLaughlin</span></p>
+			<p>This House welcomes the three-month suspension of debts and overpayments being deducted from universal credit; notes that sums to repay advance payments continue to be deducted from universal credit, and that such deductions are a main driver of need for food banks; notes also that the continuation of deductions will eliminate much of the effect on claimants' living standards of the twelve-month increase in the standard allowance; and calls on the Government to introduce with immediate effect its stated policy, which is not due to take effect until October 2021, of easing the rate of deductions from universal credit by extending the repayment period and lowering the monthly cap on deductions.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-44"><span class="Roman"><span class="UIN">544</span></span><span class="UIN"> 	</span>Animal welfare during covid-19<a href="#anchor-44" aria-label="Anchor" title="Permalink for 544 	Animal welfare during covid-19" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	3</p>
+			<p class="MotionSponsor">Jamie Stone</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House acknowledges the excellent work of all animal welfare organisations during covid-19; notes that Cats Protection, along with other animal welfare organisations, is responding to a high number of inquiries including questions related to pets and covid-19; supports the actions taken by these organisations to provide advice and information on cat welfare to cat owners; celebrates the activities and efforts of the Cat Protection staff and its thousands of volunteers across the UK in helping cats in these challenging times; acknowledges Cats Protection and other companion animal welfare charities are facing funding uncertainty at this time; supports Cats Protection in rolling out hands-free homing to allow cats to once again be re-homed by the charity; is concerned about the potential for a kitten crisis given that it is now kitten season and access to neutering is currently limited; and notes that Cats Protection estimates that, up to an additional 84,000 kittens could be born, based on the number of cats the charity neutered last year and other factors.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-45"><span class="Roman"><span class="UIN">545</span></span><span class="UIN"> 	</span>Government support for the UK's cultural and creative industries<a href="#anchor-45" aria-label="Anchor" title="Permalink for 545 	Government support for the UK's cultural and creative industries" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	9</p>
+			<p class="MotionSponsor">Caroline Lucas</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p class="MotionSponsor">Jonathan Edwards</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Jamie Stone</p>
+			<p class="MotionSponsor">Mohammad Yasin</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jim Shannon</span><span class="signatory">Bell Ribeiro-Addy</span><span class="signatory">Richard Burgon</span></p>
+			<p>That this House notes the enormous economic and social value of the UK’s cultural and creative industries; recognises that this sector is particularly hard hit by the coronavirus crisis, including because of the likelihood that they will be amongst the last to fully open because of social distancing measures; believes that the Self Employed Income Support Scheme (SEISS)should be expanded to ensure no creative is left behind and extended until social distancing measures are no longer in force and mass gatherings are permitted; commends the German Government for establishing a 50 billion euro rescue package for the music and wider creative sector; calls on the Government to show similar ambition, starting with a Cultural Sector Hardship Relief Fund to take action on grassroots theatres, arts centres, community pubs, and other cultural spaces in our communities, and funded in part by redirecting the £122 million earmarked for the 2022 Festival of Great Britain; and further calls on the Government to establish a dedicated live entertainment taskforce and to ensure that both it and the cultural taskforce includes more representation from people with understanding and experience of the cultural and creative sectors, including at grassroots level.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-46"><span class="Roman"><span class="UIN">546</span></span><span class="UIN"> 	</span>The Buffalo Farm Scottish Craft Butcher Awards 2020<a href="#anchor-46" aria-label="Anchor" title="Permalink for 546 	The Buffalo Farm Scottish Craft Butcher Awards 2020" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	4</p>
+			<p class="MotionSponsor">Neale Hanvey</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House congratulates Steven Mitchell and all of the staff at The Buffalo Farm on achieving gold awards for beef steak burger and buffalo Tuscan burger as well as silver awards for buffalo steak burger and pork and black pudding sausage at the 2020 Scottish Craft Butcher awards; recognises that these are the latest in a string of awards for The Buffalo Farm, which has Scotland's largest herd of Water Buffalo roaming the hills of Clentrie Farm, Auchtertool, Fife; and commends recent efforts to establish contact free collection and delivery services to continue access to their high quality meat products for the people of Fife throughout the coronavirus pandemic. </p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-47"><span class="Roman"><span class="UIN">547</span></span><span class="UIN"> 	</span>Cumnock Juniors Community Enterprise<a href="#anchor-47" aria-label="Anchor" title="Permalink for 547 	Cumnock Juniors Community Enterprise" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	3</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House recognises the outstanding contribution to the communities of East Ayrshire by Cumnock Juniors Community Enterprise, who for the last seven years have provided sports and recreational facilities which have improved the physical and mental wellbeing of the community; notes with great sadness the recent sudden death of Eric Bennett an  inspirational, dedicated volunteer and founding Trustee whose vision, commitment and energy led to the formation and continuing success of the Enterprise; recognises the successful partnership and association with Cumnock Juniors Football Club which has enabled the development and sustainability of football teams of all ages and enables high levels of sporting excellence to be achieved; notes  the range of physical activities available in their Community Sports Programme including girls' football, netball, basketball, cheerleading, futsal and mini-kickers; the provision of sport in local primary schools and successful walking football for those of over 50 years of age; recognises the contribution of  Mhairi McWilliam, Derek King and especially that of the 60 local volunteers including those, who during the continuing covid-19 pandemic, working together with East Ayrshire Council staff, have established a community resilience and Food Larder project which has delivered almost 600 emergency food packages to those who are shielding, self-isolating, or vulnerable; and recognises the contribution of Councillor Jim McMahon and Councillor Jacqui Todd of East Ayrshire Council  for their exceptional commitment and support of this project.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-48"><span class="Roman"><span class="UIN">548</span></span><span class="UIN"> 	</span>Kayleigh Jamieson-Tait's fundraising for Edinburgh Children’s Hospital Charity<a href="#anchor-48" aria-label="Anchor" title="Permalink for 548 	Kayleigh Jamieson-Tait's fundraising for Edinburgh Children’s Hospital Charity" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	2/06/20	<span class="Roman">Signatories:</span>	4</p>
+			<p class="MotionSponsor">Kenny MacAskill</p>
+			<p class="MotionSponsor">Chris Stephens</p>
+			<p class="MotionSponsor">Drew Hendry</p>
+			<p class="MotionSponsor">Jim Shannon</p>
+			<p>That this House recognises the efforts of Kayleigh Jamieson-Tait from Macmerry who is currently in the midst of cycling 1000 miles on her exercise bike at home while in lockdown to raise money for Edinburgh Children’s Hospital Charity and to mark her son Jack’s tenth birthday; congratulates her on raising over £500 to date; acknowledges the work done by that charity in supporting Jack and many other children who require hospital care across Scotland; wishes Kayleigh luck in completing her mileage and fundraising goals; and wishes Jack a very happy tenth birthday.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-49"><span class="Roman"><span class="UIN">549</span></span><span class="UIN"> 	</span>US civil protests and UK supply of police equipment<a href="#anchor-49" aria-label="Anchor" title="Permalink for 549 	US civil protests and UK supply of police equipment" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	3/06/20	<span class="Roman">Signatories:</span>	13</p>
+			<p class="MotionSponsor">Mr Alistair Carmichael</p>
+			<p class="MotionSponsor">Sir Edward Davey</p>
+			<p class="MotionSponsor">Layla Moran</p>
+			<p class="MotionSponsor">Sir Mike Penning</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Ben Lake</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Jonathan Edwards</span><span class="signatory">Bell Ribeiro-Addy</span><span class="signatory">Paula Barker</span><span class="signatory">Mr Barry Sheerman</span><span class="signatory">Munira Wilson</span><span class="signatory">Anne McLaughlin</span><span class="signatory">Alison Thewliss</span></p>
+			<p>That this House condemns the violent rhetoric used by US President Donald Trump in response to protests over the killing of George Floyd and racial injustice; urges the Government to express this strength of feeling in the strongest terms publicly and to their US counterparts; and calls on the Government to review exports to the US of equipment including tear gas, rubber bullets and riot shields immediately, amid reports that these are being used against civil rights protesters.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-50"><span class="Roman"><span class="UIN">550</span></span><span class="UIN"> 	</span>School children's access to online learning<a href="#anchor-50" aria-label="Anchor" title="Permalink for 550 	School children's access to online learning" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	3/06/20	<span class="Roman">Signatories:</span>	6</p>
+			<p class="MotionSponsor">Bell Ribeiro-Addy</p>
+			<p class="MotionSponsor">Jonathan Edwards</p>
+			<p class="MotionSponsor">Kate Osborne</p>
+			<p class="MotionSponsor">Ian Byrne</p>
+			<p class="MotionSponsor">Claudia Webbe</p>
+			<p class="MotionSponsor">Paula Barker</p>
+			<p>That this House recognises that teachers are working hard to ensure that children are sufficiently supplied with resources for home learning; notes that a large majority of these resources are online; is concerned that school children from disadvantaged social-economic backgrounds may not have access to computers, laptops, tablets or broadband; notes that pre-existing inequalities in access to educational resources have been exasperated due to this digital divide; acknowledges the current Government scheme which provides care leavers, children and young people aged 0 to 19 with a social worker and disadvantaged year 10 pupils with digital devices, and care leavers, young people aged 11 to 19 with a social worker and disadvantaged year 10 pupils with internet access provided through 4G hotspot devices; notes that this scheme does not go far enough; applauds the Welsh Government which is providing all school pupils that do not have their own internet-connected devices with school laptops and 4G mobile wifi; and calls on the Government to provide all school children across the UK who receive free school meals and any others in need with a laptop or tablet and broadband.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-51"><span class="Roman"><span class="UIN">551</span></span><span class="UIN"> 	</span>Support for local and regional newspapers during the covid-19 outbreak<a href="#anchor-51" aria-label="Anchor" title="Permalink for 551 	Support for local and regional newspapers during the covid-19 outbreak" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	3/06/20	<span class="Roman">Signatories:</span>	4</p>
+			<p class="MotionSponsor">Layla Moran</p>
+			<p class="MotionSponsor">Ben Lake</p>
+			<p class="MotionSponsor">Mr Barry Sheerman</p>
+			<p class="MotionSponsor">Jamie Stone</p>
+			<p>That this House calls on the Government to extend the business rates holiday to local and regional newspapers in the UK; notes that business rates relief has been extended to the news media sector in Scotland by the Scottish Government; recognises that the media industry is under severe financial pressure due to the covid-19 outbreak; thanks local newspapers and media outlets for providing their communities with a vital service during the present crisis; further recognises that more than 2,000 staff in the national and regional press in the UK have temporarily lost their jobs as a result of the outbreak, according to the Press Gazette; further notes that circulation of paid for newspapers was down as much as 39 per cent in April 2020 compared to in March 2020; and further calls on the Government to recognise the importance of a diverse media industry for preserving our liberal democracy and take firm steps to save our media outlets.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-52"><span class="Roman"><span class="UIN">554</span></span><span class="UIN"> 	</span>World Environment Day 2020<a href="#anchor-52" aria-label="Anchor" title="Permalink for 554 	World Environment Day 2020" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	3/06/20	<span class="Roman">Signatories:</span>	3</p>
+			<p class="MotionSponsor">Layla Moran</p>
+			<p class="MotionSponsor">Mr Barry Sheerman</p>
+			<p class="MotionSponsor">Jamie Stone</p>
+			<p>That this House celebrates World Environment Day on 5 June 2020; notes that it is time to recognise the nature emergency; calls for the UK to become carbon negative not neutral; notes that young people, given that they will have to carry the main burden, should be involved in the decision-making process for achieving that goal; calls for a Young Citizens’ Assembly to be formed to make this a reality; acknowledges the part that biodiversity catastrophe plays in pandemics; recognises that to build resilience there needs to be talk about habitat as well as carbon; calls on the Government to implement green bailouts such as rescuing the car industry by incentivising electric vehicle purchases; further calls for a ban on new fossil fuel cars by 2030, taking such cars off the road completely by 2045, alongside the introduction of a green scrappage scheme to encourage the uptake of electric vehicles; further recognises that many people may be reluctant to use public transport after the covid-19 outbreak and that further encouragement for the use of electric vehicles will be needed; and calls on the Government to improve the use of subsidies for buyers of electric vehicles, bring in stricter regulation of Vehicle Excise Duty and company car taxation, invest in charging points and provide direct help to car companies.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-53"><span class="Roman"><span class="UIN">555</span></span><span class="UIN"> 	</span>Reading tax on audiobooks<a href="#anchor-53" aria-label="Anchor" title="Permalink for 555 	Reading tax on audiobooks" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	3/06/20	<span class="Roman">Signatories:</span>	15</p>
+			<p class="MotionSponsor">Marion Fellows</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Drew Hendry</p>
+			<p class="MotionSponsor">Deidre Brock</p>
+			<p class="MotionSponsor">Jonathan Edwards</p>
+			<p class="MotionSponsor">Chris Law</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Owen Thompson</span><span class="signatory">Amy Callaghan</span><span class="signatory">Ronnie Cowan</span><span class="signatory">Stephen Flynn</span><span class="signatory">Joanna Cherry</span><span class="signatory">Alyn Smith</span><span class="signatory">Alison Thewliss</span><span class="signatory">Carol Monaghan</span><span class="signatory">Kenny MacAskill</span></p>
+			<p>That this House welcomes the Government action on axing the reading tax on e-books to bring the rate of VAT in line with print books; notes with concern that audiobooks still carry the full rate of VAT; believes that audiobooks are vital for millions of people in the UK with visual impairments, dyslexia or other reading disabilities and should not be treated as a luxury; notes that many European countries have recently adjusted their rates of VAT on audiobooks and e-books to bring them into line with the treatment of physical books; and calls on the Government to immediately review the VAT treatment of audiobooks and to bring forward legislation to remove VAT from audiobooks in a timely fashion.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-54"><span class="Roman"><span class="UIN">556</span></span><span class="UIN"> 	</span>East Renfrewshire community volunteer effort<a href="#anchor-54" aria-label="Anchor" title="Permalink for 556 	East Renfrewshire community volunteer effort" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	3/06/20	<span class="Roman">Signatories:</span>	6</p>
+			<p class="MotionSponsor">Kirsten Oswald</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Drew Hendry</p>
+			<p class="MotionSponsor">Chris Law</p>
+			<p class="MotionSponsor">Alyn Smith</p>
+			<p class="MotionSponsor">Alison Thewliss</p>
+			<p>That this House notes during Volunteers Week 2020, the outstanding work of community volunteers all over East Renfrewshire, acting with imagination and kindness to support their neighbours through the Corinavirus pandemic; notes the enthusiasm and good heart with which people signed up to volunteer drives covering streets and neighbourhoods; applauds the efforts of these groups of neighbours, supporting those living in their area with shopping, prescription collection and companionship; notes the generous efforts of religious congregations, sports clubs, and community councils in assisting those in need of support or solace locally; notes the helpful assistance of local businesses and charities in the community effort; appreciates the valuable work done by community organisations making joined up work on volunteering possible; acknowledges that people in East Renfrewshire have displayed friendship, care and compassion for one another as demonstrated by the imaginative and wide ranging volunteer activities and work; and pays tribute to everyone involved in this fantastic community effort in East Renfrewshire and all those working tirelessly to ensure the most vulnerable in the community are not left behind during these extremely challenging times.</p>
+			<hr class="Half-line-after">
+			<h3 class="EDMTitle" id="anchor-55"><span class="Roman"><span class="UIN">557</span></span><span class="UIN"> 	</span>Eighth anniversary of the Istanbul Convention<a href="#anchor-55" aria-label="Anchor" title="Permalink for 557 	Eighth anniversary of the Istanbul Convention" data-anchor-icon="§" class="anchor-link"></a></h3>
+			<p class="Tabled-Names"><span class="Roman">	Tabled:</span>	3/06/20	<span class="Roman">Signatories:</span>	14</p>
+			<p class="MotionSponsor">Gavin Newlands</p>
+			<p class="MotionSponsor">Allan Dorans</p>
+			<p class="MotionSponsor">Ben Lake</p>
+			<p class="MotionSponsor">Drew Hendry</p>
+			<p class="MotionSponsor">Chris Law</p>
+			<p class="MotionSponsor">Margaret Ferrier</p>
+			<p class="Motion-Sponsor-Group"><span class="signatory">Marion Fellows</span><span class="signatory">Amy Callaghan</span><span class="signatory">Owen Thompson</span><span class="signatory">Mr Barry Sheerman</span><span class="signatory">Joanna Cherry</span><span class="signatory">Alyn Smith</span><span class="signatory">Alison Thewliss</span><span class="signatory">Kenny MacAskill</span></p>
+			<p>That this House notes that 8 June 2020 marks the eighth anniversary of the UK Government signing the Istanbul Convention on the protection of women and girls from violence; welcomes the Convention’s ratification by 33 of the original signatories including the UK's friends and neighbours in Ireland; recognises the work done by Eilidh Whiteford, formerly member for the Banff and Buchan constituency in bringing forward the Preventing and Combating Violence Against Women and Domestic Violence (Ratification of Convention) Act 2017; expresses disappointment in the UK Government not having ratified the Convention in the three years since the Act received Royal Assent; and calls on the UK Government to finally ratify this vital international agreement that will help protect women and girls here and across Europe.</p>
+		</div>
+	</div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+  <footer>
+    <div class="container-fluid">
+      <div class="row"><div class="col-md-6 col-no-spacing primary ">© UK Parliament 2020</div><div class="col-md-6 secondary"><a href="https://www.parliament.uk/site-information/accessibility/">Accessibility statement</a></div></div>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
+  <script>
+    // we only want h2s in the case of EDMs
+    var  headingSelector = 'h2';
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: '.js-toc',
+      // Where to grab the headings to build the table of contents.
+      contentSelector: '.js-toc-content',
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: headingSelector,
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+    });
+  </script>
+</body>
+</html>
