@@ -13,6 +13,7 @@ from lxml.etree import SubElement  # type: ignore
 import html_chunk_tool_cmd_with_class_warning as op  # type: ignore
 # Votes and Proceedings
 import transform_vnp_html_cmd_v4 as vnp
+import transfrom_EDMs_HTML_cmd as edm
 from html_table_template import new_table, table_row
 
 
@@ -27,6 +28,7 @@ path_to_index_output_str = str(dist_folder_path.joinpath('index.html'))
 # existing base urls for the files as current on publications.parliament
 op_base_url = 'https://publications.parliament.uk/pa/cm5801/cmagenda/'
 vnp_base_url = 'https://publications.parliament.uk/pa/cm5801/cmvote/'
+edm_base_url = 'https://publications.parliament.uk/pa/cm/cmedm/'
 
 
 def main():
@@ -43,31 +45,37 @@ def main():
     # need to separate the files into OP and VnP
     vnp_files = []
     op_files = []
+    edm_files = []
 
     for file_path in file_paths:
         if 'OP' in file_path.name:
             op_files.append(file_path)
+        elif 'e0' in file_path.name:
+            edm_files.append(file_path)
         else:
             vnp_files.append(file_path)
 
     # vnp_table(vnp_files)
     op_table = make_op_table(op_files)
     vnp_table = make_vnp_table(vnp_files)
+    edm_table = make_edm_table(edm_files)
 
     # put the new table in the right place
     output_html_tree = html.parse(path_to_index_template)
     output_html_root = output_html_tree.getroot()
 
     contents_div = output_html_root.find('.//div[@id="contents"]')
-    op_div = output_html_root.find('.//div[@id="op"]')
+    op_div  = output_html_root.find('.//div[@id="op"]')
     vnp_div = output_html_root.find('.//div[@id="vnp"]')
+    edm_div = output_html_root.find('.//div[@id="edm"]')
     # remove any existing tables
-    for div in op_div, vnp_div:
+    for div in op_div, vnp_div, edm_table:
         for table in div.iterfind('table'):
             div.remove(table)
 
     op_div.append(op_table)
     vnp_div.append(vnp_table)
+    edm_div.append(edm_table)
 
     # put contents in
     ul = SubElement(contents_div, 'ul')
@@ -85,6 +93,37 @@ def main():
                            encoding='UTF-8',
                            method="html",
                            xml_declaration=False)
+
+
+def make_edm_table(edm_file_paths):
+    # create html table element
+    html_table = new_table()
+
+    for input_file in edm_file_paths:
+        file_name = input_file.name
+
+        on_web_file = Path(input_file).name
+
+        sitting_date = datetime.strptime(file_name, '%y%m%de01.html').strftime('%Y-%m-%d')
+
+        date_long = datetime.strptime(file_name, '%y%m%de01.html').strftime('%A %d %B %Y')
+
+        output_Path = edm.transform_xml(str(input_file), 'pyhonScripts/EDMs_template.html',
+                                        prepared_date_iso=sitting_date,
+                                        output_folder=str(dist_folder_path.resolve()))
+
+        row_markup = ('<tr><td>'
+                      + date_long
+                      + '</td><td>'
+                      f'<a href="{output_Path.name}">{output_Path.name}</a><br/>'
+                      '</td><td>'
+                      f'<a href="{edm_base_url}{on_web_file}">{on_web_file}</a><br/>'
+                      '</td></tr>')
+
+        tbody = html_table.find('tbody')
+        tbody.append(html.fromstring(row_markup))
+
+    return html_table
 
 def make_vnp_table(vnp_file_paths):
 
