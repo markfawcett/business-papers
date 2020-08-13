@@ -4,10 +4,11 @@ import datetime  # dates etc.
 from tkinter import messagebox
 import sys  # parse command line args
 import os  # file paths etc.
+from pathlib import Path
 
 # stuff needed for parsing and manipulating HTML
-from lxml import html
-from lxml.etree import SubElement
+from lxml import html  # type: ignore
+from lxml.etree import SubElement  # type: ignore
 
 # output file basename
 # outputfile_basename = 'edm_daily_'
@@ -36,7 +37,9 @@ def main():
     transform_xml(sys.argv[1], sys.argv[2], sys.argv[3])
 
 
-def transform_xml(input_html_file, template_html_file, prepared_date_iso):
+def transform_xml(input_html_file, template_html_file,
+                  prepared_date_iso: str, output_folder: str = '') -> Path:
+
     # should return a formatted string in the form 26th April 2017
     prepared_date = format_date(prepared_date_iso, strftime='%d %b %Y')
     # also get the date in the form YYMMDD for the output file name
@@ -103,22 +106,23 @@ def transform_xml(input_html_file, template_html_file, prepared_date_iso):
     sponsor_groups = input_root.xpath(
         '//p[@class="Motion-Sponsor-Group"]|//p[@class="Motion-Sponsor-Group-Indent1"]')
     for sponsor_group in sponsor_groups:
-        # split text on the tab character
-        sponosr_names = sponsor_group.text.split('\t')
-        sponsor_group.text = None
-        for sponosr_name in sponosr_names:
-            if sponosr_name == '':
-                continue
-            sponsor_span = SubElement(sponsor_group, 'span')
-            sponsor_span.set('class', 'signatory')
-            sponsor_span.text = sponosr_name
-            sponsor_group.append(sponsor_span)
+        if sponsor_group.text:
+            # split text on the tab character
+            sponosr_names = sponsor_group.text.split('\t')
+            sponsor_group.text = None
+            for sponosr_name in sponosr_names:
+                if sponosr_name == '':
+                    continue
+                sponsor_span = SubElement(sponsor_group, 'span')
+                sponsor_span.set('class', 'signatory')
+                sponsor_span.text = sponosr_name
+                sponsor_group.append(sponsor_span)
 
     # put all the html from the input file into the proper place in the output file
     # get the location in the output_root we want to append to
-    append_point = output_root.xpath('//div[@id="mainTextBlock"]')
+    append_point = output_root.xpath('//div[@id="content-goes-here"]')
     if len(append_point) < 1:
-        show_error('ERROR: Script can\'t find <div id="mainTextBlock"> in the template.'
+        show_error('Script can\'t find <div id="content-goes-here"> in the template.'
                    ' This is needed as this is where we are going inject html from the input html')
         exit()
     else:
@@ -129,6 +133,60 @@ def transform_xml(input_html_file, template_html_file, prepared_date_iso):
     for div in container_divs:
         # this line will put all the child elements of the container div into the output html
         append_point.append(div)
+
+
+    # Add IDs and perminant ancors to the html
+    # Added at the request of IDMS
+    # need to get all the heading elements
+    xpath = '//h2[@class="underline"]|' \
+            '//h3[@class="EDMTitle"]'
+
+    headings = output_root.xpath(xpath)
+    for i, heading in enumerate(headings):
+        # generate id text
+        id_text = f'anchor-{i}'
+
+        if heading.get('id', default=None):
+            heading.set('name', heading.get('id'))
+
+        heading.set('id', id_text)
+
+        anchor = SubElement(heading, 'a')
+        permalink_for = 'Permalink for ' + heading.text_content()
+        anchor.set('href', '#' + id_text)
+        anchor.set('aria-label', 'Anchor')
+        anchor.set('title', permalink_for)
+        anchor.set('data-anchor-icon', '§')
+        anchor.set('class', 'anchor-link')
+
+
+    # create the tables of contents
+    # This will be overridden by tocbot.
+    # We still want a ToC even if JavaScript is dissabled...
+
+    # find where to put the Toc
+    nav_xpath_results = output_root.xpath('//nav[@id="toc"]')
+
+
+    # look for all the h2's
+    # // Where to grab the headings to build the table of contents.
+    # contentSelector: '.js-toc-content'
+    h2s = output_root.xpath('//h2[@class="underline"]')
+
+    if len(nav_xpath_results):
+        toc_injection_point = nav_xpath_results[0]
+        ol = SubElement(toc_injection_point, 'ol')
+        ol.set('class', 'toc-list')
+        for h2 in h2s:
+            li = SubElement(ol, 'li')
+            li.set('class', 'toc-list-item')
+
+            a = SubElement(li, 'a')
+            a.set('href', '#' + h2.get('id', ''))
+            a.set('class', 'toc-link')
+            a.text = h2.text_content()
+    else:
+        print('no element')
 
     # finally change the prepared date at the bottom of the page
     footerblock = output_root.xpath('//div[@id="footerBlockDate"]/p')
@@ -147,13 +205,26 @@ def transform_xml(input_html_file, template_html_file, prepared_date_iso):
     # )
 
     # overwrite the input html file
-    output_file_path = os.path.abspath(input_html_file)
 
-    # output the file for writing bytes
-    output_file = open(output_file_path, 'wb')
-    output_file.write(html.tostring(output_tree))
-    output_file.close()
-    print('Output file path: ', os.path.abspath(output_file_path), '\n')
+    output_file_name = datetime.datetime.strptime(prepared_date_iso, '%Y-%m-%d').strftime('%y%m%d')
+
+    output_file_name = 'edm' + output_file_name + '.html'
+
+    if output_folder:
+        output_file_Path = Path(output_folder).joinpath(output_file_name)
+    else:
+        # output_file_Path = path.join(base_path, output_file_name)
+        output_file_Path = Path(input_html_file).parent.joinpath(output_file_name)
+
+    output_tree.write(str(output_file_Path.resolve()),
+                      doctype='<!DOCTYPE html>',
+                      encoding='UTF-8',
+                      method="html",
+                      xml_declaration=False)
+
+    print('Output file path: ', output_file_Path.resolve(), '\n')
+
+    return output_file_Path
 
 
 def to_date_obj(date_time_string, current_format='%Y-%m-%d', default=''):
@@ -182,7 +253,7 @@ def format_date(date_time_string, strftime='%d %b %Y', current_format='%Y-%m-%d'
 def show_error(error_text):
     error_text = 'ERROR: ' + error_text
     print('\033[91m' + error_text + '\033[0m')
-    messagebox.showerror(error_text)
+    # messagebox.showerror('ERROR', error_text)
 
 
 if __name__ == "__main__": main()
