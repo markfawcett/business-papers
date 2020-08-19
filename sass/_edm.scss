@@ -1,0 +1,44 @@
+
+@import 'variables.scss';
+
+
+// headings
+h2.underline{
+    max-width: none;
+    margin-top: 30px;  // to override rule h2:first-child in design system
+}
+.EDMTitle{max-width: none;}
+.underline {
+  border-bottom: solid 1px $colour-grey-4;
+}
+
+// lines
+.Half-line-after {
+    width: 35%;
+    border-style: solid;
+    border-color: $colour-grey-4;
+    // border-top: 0;
+}
+
+// paragraphs
+.MotionSponsor{
+  @include font-bold();;
+  margin-bottom: 0;
+}
+
+.MotionSponsor+ :not(.MotionSponsor), .Motion-Sponsor-Indent1+ :not(.Motion-Sponsor-Indent1) {
+    margin-top: 15px;
+}
+
+.Tabled-Names {
+    margin-bottom: 0;
+    // margin-right: 30px;
+    // margin-top: 7.5px;
+    text-align: right;
+    @include font-bold();;
+}
+
+.Tabled-Names .Roman {
+    font-weight: normal;
+    margin-left: 20px;
+}
