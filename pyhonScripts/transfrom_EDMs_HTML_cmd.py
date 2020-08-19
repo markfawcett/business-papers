@@ -103,20 +103,33 @@ def transform_xml(input_html_file, template_html_file,
         full_line.getparent().remove(full_line)
 
     # sort motion sponsor groups
-    sponsor_groups = input_root.xpath(
-        '//p[@class="Motion-Sponsor-Group"]|//p[@class="Motion-Sponsor-Group-Indent1"]')
+    sponsor_groups_xpath = '//p[@class="Motion-Sponsor-Group"]' \
+                           '|//p[@class="Motion-Sponsor-Group-Indent1"]'
+    sponsor_groups = input_root.xpath(sponsor_groups_xpath)
     for sponsor_group in sponsor_groups:
-        if sponsor_group.text:
-            # split text on the tab character
-            sponosr_names = sponsor_group.text.split('\t')
-            sponsor_group.text = None
-            for sponosr_name in sponosr_names:
-                if sponosr_name == '':
-                    continue
-                sponsor_span = SubElement(sponsor_group, 'span')
-                sponsor_span.set('class', 'signatory')
-                sponsor_span.text = sponosr_name
-                sponsor_group.append(sponsor_span)
+        if not sponsor_group.text:
+            continue
+        sponsor_group.classes.add('row')
+        # split text on the tab character (InDesign puts in)
+        sponsor_group.text = sponsor_group.text.replace('\u0009', '\t')
+        sponosr_names = sponsor_group.text.split('\t')
+        print('sponosr_names len: ', len(sponosr_names))
+        sponsor_group.text = None
+        for sponosr_name in sponosr_names:
+            sponsor_span = SubElement(sponsor_group, 'span')
+            sponsor_span.classes.update(('col-12', 'col-sm-6', 'col-lg-4'))
+            sponsor_span.text = sponosr_name
+        # if sponsor_group.text:
+        #     # split text on the tab character
+        #     sponosr_names = sponsor_group.text.split('\t')
+        #     sponsor_group.text = None
+        #     for sponosr_name in sponosr_names:
+        #         if sponosr_name == '':
+        #             continue
+        #         sponsor_span = SubElement(sponsor_group, 'span')
+        #         sponsor_span.set('class', 'signatory')
+        #         sponsor_span.text = sponosr_name
+        #         sponsor_group.append(sponsor_span)
 
     # put all the html from the input file into the proper place in the output file
     # get the location in the output_root we want to append to
