@@ -89,6 +89,43 @@ span.number {
 .numbered.InDesignBold + p {
   margin-top: -9px; }
 
+h2.underline {
+  max-width: none;
+  margin-top: 30px; }
+
+.EDMTitle {
+  max-width: none; }
+
+.underline {
+  border-bottom: solid 1px #CBC9CD; }
+
+.Half-line-after {
+  width: 35%;
+  border-style: solid;
+  border-color: #CBC9CD; }
+
+.MotionSponsor {
+  font-weight: 500;
+  margin-bottom: 0; }
+
+.MotionSponsor + :not(.MotionSponsor), .Motion-Sponsor-Indent1 + :not(.Motion-Sponsor-Indent1) {
+  margin-top: 15px; }
+
+.Tabled-Names {
+  margin-bottom: 0;
+  text-align: right;
+  font-weight: 500; }
+
+.Tabled-Names .Roman {
+  font-weight: normal;
+  margin-left: 20px; }
+
+span.Roman, span.Prayer {
+  font-weight: normal; }
+
+.UIN {
+  margin-right: 15px; }
+
 .container-fluid {
   max-width: 1140px; }
 

@@ -43,6 +43,13 @@
       <div class="container">
         <div class="block block-page">
           <div class="row">
+            <div class="col-md-3 order-md-last">
+              <div class="sticky-top">
+                <h4 class="heading-level-3" data-toc-skip>Contents</h4>
+                <nav class="js-toc toc" id="toc" data-toggle="toc"><ol class="toc-list"><li class="toc-list-item"><a href="#20200518-44" class="toc-link">Future Business</a></li><li class="toc-list-item"><a href="#20200518-45" class="toc-link">A. Calendar of Business</a></li><li class="toc-list-item"><a href="#20200518-178" class="toc-link">B. Remaining Orders and Notices</a></li></ol></nav>
+                <!-- <nav id="toc"></nav> -->
+              </div>
+            </div>
             <div class="col-md-9 js-toc-content">
                 <div class="OP-left-margin">
                   <!-- Main content area -->
@@ -684,13 +691,6 @@
 		</div>
                 </div>
             </div>
-            <div class="col-md-3">
-              <div class="sticky-top">
-                <p class="heading-level-3" data-toc-skip>Contents</p>
-                <nav class="js-toc toc" id="toc" data-toggle="toc"></nav>
-                <!-- <nav id="toc"></nav> -->
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -703,16 +703,22 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
   <script>
+
+    var headingSelector = 'h2, h3';
+    if (window.innerWidth < 768){
+      headingSelector = 'h2';
+    }
     tocbot.init({
       // Where to render the table of contents.
       tocSelector: '.js-toc',
       // Where to grab the headings to build the table of contents.
       contentSelector: '.js-toc-content',
       // Which headings to grab inside of the contentSelector element.
-      headingSelector: 'h2, h3',
+      headingSelector: contentSelector,
       // For headings inside relative or absolute positioned containers within content.
       hasInnerContainers: true,
     });
+
   </script>
 </body>
 </html>

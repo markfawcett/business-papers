@@ -43,6 +43,13 @@
       <div class="container">
         <div class="block block-page">
           <div class="row">
+            <div class="col-md-3 order-md-last">
+              <div class="sticky-top">
+                <h4 class="heading-level-3" data-toc-skip>Contents</h4>
+                <nav class="js-toc toc" id="toc" data-toggle="toc"><ol class="toc-list"><li class="toc-list-item"><a href="#20200623-0" class="toc-link">SUMMARY AGENDA: CHAMBER</a></li><li class="toc-list-item"><a href="#20200623-1" class="toc-link">Business Today: Chamber</a></li><li class="toc-list-item"><a href="#20200623-18" class="toc-link">Written Statements</a></li><li class="toc-list-item"><a href="#20200623-20" class="toc-link">Committees Meeting Today</a></li><li class="toc-list-item"><a href="#20200623-39" class="toc-link">Announcements</a></li><li class="toc-list-item"><a href="#20200623-45" class="toc-link">Further Information</a></li></ol></nav>
+                <!-- <nav id="toc"></nav> -->
+              </div>
+            </div>
             <div class="col-md-9 js-toc-content">
                 <div class="OP-left-margin">
                   <!-- Main content area -->
@@ -500,13 +507,6 @@
 			</div>
                 </div>
             </div>
-            <div class="col-md-3">
-              <div class="sticky-top">
-                <p class="heading-level-3" data-toc-skip>Contents</p>
-                <nav class="js-toc toc" id="toc" data-toggle="toc"></nav>
-                <!-- <nav id="toc"></nav> -->
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -519,16 +519,22 @@
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"></script>
   <script>
+
+    var headingSelector = 'h2, h3';
+    if (window.innerWidth < 768){
+      headingSelector = 'h2';
+    }
     tocbot.init({
       // Where to render the table of contents.
       tocSelector: '.js-toc',
       // Where to grab the headings to build the table of contents.
       contentSelector: '.js-toc-content',
       // Which headings to grab inside of the contentSelector element.
-      headingSelector: 'h2, h3',
+      headingSelector: contentSelector,
       // For headings inside relative or absolute positioned containers within content.
       hasInnerContainers: true,
     });
+
   </script>
 </body>
 </html>
