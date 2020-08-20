@@ -113,7 +113,7 @@ def transform_xml(input_html_file, template_html_file,
         # split text on the tab character (InDesign puts in)
         sponsor_group.text = sponsor_group.text.replace('\u0009', '\t')
         sponosr_names = sponsor_group.text.split('\t')
-        print('sponosr_names len: ', len(sponosr_names))
+        # print('sponosr_names len: ', len(sponosr_names))
         sponsor_group.text = None
         for sponosr_name in sponosr_names:
             sponsor_span = SubElement(sponsor_group, 'span')
@@ -130,6 +130,18 @@ def transform_xml(input_html_file, template_html_file,
         #         sponsor_span.set('class', 'signatory')
         #         sponsor_span.text = sponosr_name
         #         sponsor_group.append(sponsor_span)
+
+    # remove unnessesary UIN elements
+    xpath = '//*[@class="UIN"]'
+    for uin_span in input_root.xpath(xpath):
+        if not uin_span.text_content() or uin_span.text.isspace():
+            uin_span.drop_tree()
+
+    # collapse roman and uin spans
+    xpath = '//span[@class="Roman"]/span[@class="UIN"]'
+    for span in input_root.xpath(xpath):
+        span.getparent().classes.add('UIN')
+        span.drop_tag()
 
     # put all the html from the input file into the proper place in the output file
     # get the location in the output_root we want to append to
