@@ -120,6 +120,12 @@ h2.underline {
   font-weight: normal;
   margin-left: 20px; }
 
+span.Roman, span.Prayer {
+  font-weight: normal; }
+
+.UIN {
+  margin-right: 15px; }
+
 .container-fluid {
   max-width: 1140px; }
 
