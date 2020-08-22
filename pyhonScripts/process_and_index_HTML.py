@@ -50,7 +50,7 @@ def main():
     for file_path in file_paths:
         if 'OP' in file_path.name:
             op_files.append(file_path)
-        elif 'e0' in file_path.name:
+        elif 'edm' in file_path.name:
             edm_files.append(file_path)
         else:
             vnp_files.append(file_path)
@@ -102,11 +102,11 @@ def make_edm_table(edm_file_paths):
     for input_file in edm_file_paths:
         file_name = input_file.name
 
-        on_web_file = Path(input_file).name
+        on_web_file = Path(input_file).name[:6] + 'e01.html'
 
-        sitting_date = datetime.strptime(file_name, '%y%m%de01.html').strftime('%Y-%m-%d')
+        sitting_date = datetime.strptime(file_name[:6], '%y%m%d').strftime('%Y-%m-%d')
 
-        date_long = datetime.strptime(file_name, '%y%m%de01.html').strftime('%A %d %B %Y')
+        date_long = datetime.strptime(file_name[:6], '%y%m%d').strftime('%A %d %B %Y')
 
         output_Path = edm.transform_xml(str(input_file), 'pyhonScripts/EDMs_template.html',
                                         prepared_date_iso=sitting_date,
