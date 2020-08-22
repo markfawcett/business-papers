@@ -4,10 +4,12 @@
 
 // headings
 h2.underline{
-    max-width: none;
+    // max-width: none;
     margin-top: 30px;  // to override rule h2:first-child in design system
 }
-.EDMTitle{max-width: none;}
+.EDMTitle{
+    // max-width: none;
+}
 .underline {
   border-bottom: solid 1px $colour-grey-4;
 }
