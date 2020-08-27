@@ -80,6 +80,13 @@ strong {
 .InDesignBold {
   font-weight: 500; }
 
+@media screen and (max-width: 769px) {
+  p.numbered span.number {
+    margin-left: -1.2rem;
+    display: inline-block;
+    width: 1.2rem;
+    font-weight: 500; } }
+
 span.number {
   margin-left: -2.2rem;
   display: inline-block;
@@ -109,6 +116,31 @@ span.number {
 .TableBody, .TableHeader, table .ItemTimingHeading {
   margin-top: 0.25em;
   margin-bottom: 0.25em; }
+
+.InDesignBold {
+  font-weight: bold; }
+
+.InDesignRightAlligned {
+  clear: both;
+  text-align: right; }
+
+.Sig1 {
+  clear: both;
+  text-align: right;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 150%; }
+
+.Sig2 {
+  clear: both;
+  text-align: right;
+  font-style: italic;
+  font-weight: 700; }
+
+/*add space arround signatures*/
+.Sig1 {
+  margin-top: 1em;
+  margin-bottom: 1em; }
 
 /**** Tables ****/
 .StandardTable {
@@ -249,31 +281,6 @@ span.Roman, span.Prayer {
 .paraMotionText + .paraNotesTag,
 .paraBusinessListItem + .paraNotesTag {
   margin-top: -9px; }
-
-.InDesignBold {
-  font-weight: bold; }
-
-.InDesignRightAlligned {
-  clear: both;
-  text-align: right; }
-
-.Sig1 {
-  clear: both;
-  text-align: right;
-  font-style: italic;
-  font-weight: 700;
-  font-size: 150%; }
-
-.Sig2 {
-  clear: both;
-  text-align: right;
-  font-style: italic;
-  font-weight: 700; }
-
-/*add space arround signatures*/
-.Sig1 {
-  margin-top: 1em;
-  margin-bottom: 1em; }
 
 @media (min-width: 992px) {
   h1, h2, h3, h4, h5, h6 {
