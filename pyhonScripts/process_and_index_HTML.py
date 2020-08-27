@@ -15,6 +15,7 @@ import html_chunk_tool_cmd_with_class_warning as op  # type: ignore
 import transform_vnp_html_cmd_v4 as vnp
 import transfrom_EDMs_HTML_cmd as edm
 import transform_FDO_HTML_cmd as fdo
+import CallList_Transform_HTML_cmd as call
 from html_table_template import new_table, table_row
 
 
@@ -31,6 +32,7 @@ op_base_url = 'https://publications.parliament.uk/pa/cm5801/cmagenda/'
 vnp_base_url = 'https://publications.parliament.uk/pa/cm5801/cmvote/'
 edm_base_url = 'https://publications.parliament.uk/pa/cm/cmedm/'
 fdo_base_url = 'https://publications.parliament.uk/pa/cm/cmfutoral/'
+call_base_url = 'https://publications.parliament.uk/pa/cm5801/cmagenda/'
 
 
 def main():
@@ -49,6 +51,7 @@ def main():
     op_files = []
     edm_files = []
     fdo_files = []
+    call_files = []
 
     for file_path in file_paths:
         if 'OP' in file_path.name:
@@ -57,12 +60,15 @@ def main():
             fdo_files.append(file_path)
         elif 'edm' in file_path.name:
             edm_files.append(file_path)
+        elif 'calllist' in file_path.name:
+            call_files.append(file_path)
         else:
             vnp_files.append(file_path)
 
     # vnp_table(vnp_files)
     op_table = make_op_table(op_files)
     vnp_table = make_vnp_table(vnp_files)
+    call_table = make_call_table(call_files)
     edm_table = make_edm_table(edm_files)
     fdo_table = make_fdo_table(fdo_files)
 
@@ -73,6 +79,7 @@ def main():
     contents_div = output_html_root.find('.//div[@id="contents"]')
     op_div  = output_html_root.find('.//div[@id="op"]')
     vnp_div = output_html_root.find('.//div[@id="vnp"]')
+    call_div = output_html_root.find('.//div[@id="calllist"]')
     edm_div = output_html_root.find('.//div[@id="edm"]')
     fdo_div = output_html_root.find('.//div[@id="fdo"]')
     # remove any existing tables
@@ -82,6 +89,7 @@ def main():
 
     op_div.append(op_table)
     vnp_div.append(vnp_table)
+    call_div.append(call_table)
     edm_div.append(edm_table)
     fdo_div.append(fdo_table)
 
@@ -101,6 +109,40 @@ def main():
                            encoding='UTF-8',
                            method="html",
                            xml_declaration=False)
+
+
+def make_call_table(file_paths):
+    html_table = new_table()
+
+    for i, input_file in enumerate(file_paths):
+        file_name = input_file.name
+
+        'calllist200716'
+        date_str = file_name[8:14]
+
+        on_web_file = f'calllist{date_str}v01.html'
+
+        sitting_date = datetime.strptime(date_str, '%y%m%d').strftime('%Y-%m-%d')
+
+        date_long = datetime.strptime(date_str, '%y%m%d').strftime('%A %d %B %Y')
+
+        output_Path = call.transform_html(
+            str(input_file), 'pyhonScripts/CallList_template.html',
+            sitting_date_iso=sitting_date,
+            output_folder=str(dist_folder_path.resolve()))
+
+        row_markup = ('<tr><td>'
+                      + date_long
+                      + '</td><td>'
+                      f'<a href="{output_Path.name}">{output_Path.name}</a><br/>'
+                      '</td><td>'
+                      f'<a href="{call_base_url}{on_web_file}">{on_web_file}</a><br/>'
+                      '</td></tr>')
+
+        tbody = html_table.find('tbody')
+        tbody.append(html.fromstring(row_markup))
+
+    return html_table
 
 
 def make_fdo_table(fdo_file_paths):
