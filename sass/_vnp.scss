@@ -1,12 +1,24 @@
 
 @import 'variables.scss';
 
+
+
 .ItemTimingHeading {
     text-align: center;
 }
 
 .InDesignBold {
     @include font-bold();
+}
+
+
+@media screen and (max-width: 769px) {
+	p.numbered span.number {
+		margin-left: -1.2rem;
+		display: inline-block;
+		width: 1.2rem;
+		font-weight: 500;
+	}
 }
 
 span.number{
