@@ -4,14 +4,15 @@ import datetime  # dates etc.
 import sys  # parse command line args
 from tkinter import messagebox
 import os  # file paths etc.
+from pathlib import Path
 
 # stuff needed for parsing and manipulating HTML
 from lxml import html  # type: ignore
-from lxml.etree import iselement  # type: ignore
+from lxml.etree import SubElement, iselement  # type: ignore
 
 # output file basename
 OUTPUTFILE_BASENAME = 'calllist'
-FILE_EXTENSION = 'v01.html'
+FILE_EXTENSION = '.html'
 
 class bcolors:
     HEADER = '\033[95m'
@@ -33,10 +34,11 @@ def main():
         exit()
     # get the input and template file paths and the prepared date from the user
     # pass user input to transform_xml function
-    transform_xml(sys.argv[1], sys.argv[2], sys.argv[3])
+    transform_html(sys.argv[1], sys.argv[2], sys.argv[3])
 
 
-def transform_xml(input_html_file, template_html_file, sitting_date_iso):
+def transform_html(input_html_file, template_html_file,
+                   sitting_date_iso, output_folder=''):
 
     # template tree
     output_tree = html.parse(template_html_file)
@@ -93,9 +95,9 @@ def transform_xml(input_html_file, template_html_file, sitting_date_iso):
 
     # put all the html from the input file into the proper place in the output file
     # get the location in the output_root we want to append to
-    append_point = output_root.xpath('//div[@id="mainTextBlock"]')
+    append_point = output_root.xpath('//div[@id="content-goes-here"]')
     if len(append_point) < 1:
-        print('ERROR: Script can\'t find <div id="mainTextBlock"> in the template.'
+        print('ERROR: Script can\'t find <div id="content-goes-here"> in the template.'
               ' This is needed as this is where we are going inject html from the input html')
         exit()
     else:
@@ -120,19 +122,23 @@ def transform_xml(input_html_file, template_html_file, sitting_date_iso):
 
 
     # clean up ToC by removing page numbers
-    for element in input_root.xpath('//p[@class="TableOfContents_Toc2"]/a'):
-        # remove any <br> as uterwise cant remove page numbers from the end
-        brs = element.findall('.//br')
-        for br in brs:
-            br.drop_tag()
-        span = element.find('span')
-        if iselement(span):
-            if span.text:
-                span.text += ' '
-            if span.tail:
-                span.tail = span.tail.rstrip('1234567890')
-            elif element.text:
-                element.text = element.text.rstrip('1234567890')
+    # for element in input_root.xpath('//p[@class="TableOfContents_Toc2"]/a'):
+    #     # remove any <br> as uterwise cant remove page numbers from the end
+    #     brs = element.findall('.//br')
+    #     for br in brs:
+    #         br.drop_tag()
+    #     span = element.find('span')
+    #     if iselement(span):
+    #         if span.text:
+    #             span.text += ' '
+    #         if span.tail:
+    #             span.tail = span.tail.rstrip('1234567890')
+    #         elif element.text:
+    #             element.text = element.text.rstrip('1234567890')
+
+    # remove Indesign toc
+    for element in input_root.xpath('//div[contains(@class,"ToC-Box")]'):
+        element.drop_tree()
 
 
     # sort the numbers (hanging indents etc)
@@ -164,14 +170,58 @@ def transform_xml(input_html_file, template_html_file, sitting_date_iso):
             title_element.text += f'Call List for {date_formatted}'
 
 
+    # Add IDs and perminant ancors to the html
+    # Added at the request of IDMS
+    # need to get all the heading elements
+    xpath = '//h3[@class="paraBusinessSub-SectionHeading"]'
+
+    headings = output_root.xpath(xpath)
+    for i, heading in enumerate(headings):
+        # generate id text
+        id_text = f'anchor-{i}'
+
+        if heading.get('id', default=None):
+            heading.set('name', heading.get('id'))
+
+        heading.set('id', id_text)
+
+        anchor = SubElement(heading, 'a')
+        permalink_for = 'Permalink for ' + heading.text_content()
+        anchor.set('href', '#' + id_text)
+        anchor.set('aria-label', 'Anchor')
+        anchor.set('title', permalink_for)
+        anchor.set('data-anchor-icon', '§')
+        anchor.set('class', 'anchor-link')
+
+
+    # find where to put the Toc
+    nav_xpath_results = output_root.xpath('//nav[@id="toc"]')
+
+    # create new toc
+    h3s = output_root.xpath('//*[contains(@class, "js-toc-content")]//h3')
+
+    if len(nav_xpath_results):
+        toc_injection_point = nav_xpath_results[0]
+        ol = SubElement(toc_injection_point, 'ol')
+        ol.set('class', 'toc-list')
+        for h3 in h3s:
+            li = SubElement(ol, 'li')
+            li.set('class', 'toc-list-item')
+
+            a = SubElement(li, 'a')
+            a.set('href', '#' + h3.get('id', ''))
+            a.set('class', 'toc-link')
+            a.text = h3.text_content()
+
+
     # finally change the prepared date at the bottom of the page
-    footerblock = output_root.xpath('//div[@id="footerBlockDate"]/p')
-    if len(footerblock) < 1:
-        warning('Can\'t find the footer block to append the prepared date to.')
-    elif footerblock[0].text is None:
-        footerblock[0].text = issued_date_text
-    else:
-        footerblock[0].text = '{}{}'.format(footerblock[0].text, issued_date_text)
+    # footerblock = output_root.xpath('//div[@id="footerBlockDate"]/p')
+    # if len(footerblock) < 1:
+    #     warning('Can\'t find the footer block to append the prepared date to.')
+    # elif footerblock[0].text is None:
+    #     footerblock[0].text = issued_date_text
+    # else:
+    #     footerblock[0].text = '{}{}'.format(footerblock[0].text, issued_date_text)
 
     # get the output file path
     input_file_base_path = os.path.dirname(input_html_file)
@@ -179,7 +229,10 @@ def transform_xml(input_html_file, template_html_file, sitting_date_iso):
     # date in PPU forn
     date_ppu = format_date(sitting_date_iso, strftime='%y%m%d')
     output_file_name = '{}{}{}'.format(OUTPUTFILE_BASENAME, date_ppu, FILE_EXTENSION)
-    output_file_path = os.path.join(input_file_base_path, output_file_name)
+    if output_folder:
+        output_file_path = os.path.join(output_folder, output_file_name)
+    else:
+        output_file_path = os.path.join(input_file_base_path, output_file_name)
 
     # output the file for writing bytes
     output_tree.write(output_file_path, encoding='UTF-8', method="html", xml_declaration=False)
@@ -187,6 +240,8 @@ def transform_xml(input_html_file, template_html_file, sitting_date_iso):
     # output_file.write(html.tostring(output_tree))
     # output_file.close()
     print('Output file path: ', output_file_path, '\n')
+
+    return Path(output_file_path)
 
 
 def to_date_obj(date_time_string, current_format='%Y-%m-%d', default=''):
