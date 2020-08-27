@@ -3,20 +3,25 @@
 # module needed to parse command line arguments
 import sys
 # working with xml
-from lxml import html
+from lxml import html  # type: ignore
 # for working with dates
 import datetime
 # for working with paths
 from os import path
+from pathlib import Path
 
 # output file name
 output_file_name = 'futoral.html'
 
 
-def html_transform(input_html, template_html, published_date, prepared_date):
+def html_transform(input_html, template_html,
+                   published_date, prepared_date,
+                   output_folder: str = '') -> Path:
 
     input_root = html.parse(input_html).getroot()
-    template_root = html.parse(template_html).getroot()
+    output_tree = html.parse(template_html)
+    output_root = output_tree.getroot()
+    # template_root = html.parse(template_html).getroot()
 
 
     # ----------------- get the date in the forms we want --------------------
@@ -63,39 +68,75 @@ def html_transform(input_html, template_html, published_date, prepared_date):
 
     # ----------------- prepare template html ------------------------
     # put date in head section
-    head_title = template_root.find('head/title')
+    head_title = output_root.find('head/title')
     if head_title is not None and head_title.text is not None:
         head_title.text += ' ' + publishing_date_long
 
     # put date in footer
-    footer_date = template_root.find('.//div[@id="footerBlockDate"]/p')
+    footer_date = output_root.find('.//div[@id="footerBlockDate"]/p')
     if footer_date is not None and footer_date.text is not None:
         footer_date.text += ' ' + prepared_date_long
 
 
     #  ---------------- put InDesign output html into a template. ---------
     # get handle in template file where we can put the html from InDesign
-    main_text_location = template_root.find('body/div/div/div[@id="mainTextBlock"]')
-    # append the html from InDesign
+    # main_text_location = output_root.find('body/div/div/div[@id="mainTextBlock"]')
+    # # append the html from InDesign
+    # input_body = input_root.find('body')
+    # for element in input_body:
+    #     main_text_location.append(element)
+
+    append_point = output_root.xpath('//div[@id="content-goes-here"]')
+    if len(append_point) < 1:
+        show_error('Script can\'t find <div id="content-goes-here"> in the template.'
+                   ' This is needed as this is where we are going inject html from the input html')
+        exit()
+    else:
+        append_point = append_point[0]
+
     input_body = input_root.find('body')
     for element in input_body:
-        main_text_location.append(element)
+        append_point.append(element)
 
-    output_string = html.tostring(template_root).decode(encoding='UTF-8')
-    # add last closign div and doctype
-    output_string = '<!DOCTYPE html>' + output_string.replace(
-        '<!-- leave extra closing div. It is for wrapper-->',
-        '<!-- leave extra closing div. It is for wrapper-->\n</div>'
-    )
-    # get input file path
-    input_file_path = path.dirname(input_html)
-    output_file = open(
-        path.join(input_file_path, output_file_name),
-        'w'
-    )
-    output_file.write(output_string)
-    print('Output file is at: {}'.format(path.abspath(output_file.name)))
-    output_file.close()
+
+
+    output_file_name = datetime.datetime.strptime(prepared_date, '%Y-%m-%d').strftime('%y%m%d')
+
+    output_file_name = 'fdo' + output_file_name + '.html'
+
+    if output_folder:
+        output_file_Path = Path(output_folder).joinpath(output_file_name)
+    else:
+        # output_file_Path = path.join(base_path, output_file_name)
+        output_file_Path = Path(input_html).parent.joinpath(output_file_name)
+
+    output_tree.write(str(output_file_Path.resolve()),
+                      doctype='<!DOCTYPE html>',
+                      encoding='UTF-8',
+                      method="html",
+                      xml_declaration=False)
+
+    print('Output file path: ', output_file_Path.resolve(), '\n')
+
+    return output_file_Path
+
+
+    # output_string = html.tostring(output_root).decode(encoding='UTF-8')
+    # # add last closign div and doctype
+    # output_string = '<!DOCTYPE html>' + output_string.replace(
+    #     '<!-- leave extra closing div. It is for wrapper-->',
+    #     '<!-- leave extra closing div. It is for wrapper-->\n</div>'
+    # )
+    # # get input file path
+    # input_file_path = path.dirname(input_html)
+    # output_file = open(
+    #     path.join(input_file_path, output_file_name),
+    #     'w'
+    # )
+    # output_file.write(output_string)
+    # print('Output file is at: {}'.format(path.abspath(output_file.name)))
+    # output_file.close()
+
 
 
 def main():
@@ -115,6 +156,12 @@ def main():
     print('Input file is located at: ' + path.abspath(input_html))
     html_transform(input_html, template_html, published_date, prepared_date)
     print('\nAll Done Chum!')
+
+
+def show_error(error_text):
+    error_text = 'ERROR: ' + error_text
+    print('\033[91m' + error_text + '\033[0m')
+    # messagebox.showerror('ERROR', error_text)
 
 
 if __name__ == "__main__": main()
