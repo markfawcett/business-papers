@@ -169,6 +169,18 @@ def transform_html(input_html_file, template_html_file,
         else:
             title_element.text += f'Call List for {date_formatted}'
 
+    # sort tables out
+    xpath = '//table[contains(@class, "Call-Sheet-Table")]' \
+            '|//table[contains(@class, "Basic-Table")]'
+
+    for table in output_root.xpath(xpath):
+        table.classes.update(['table', 'table-bordered', 'table-responsive-md'])
+
+        thead = table.find('thead')
+
+        if iselement(thead):
+            thead.classes.add('thead-light')
+
 
     # Add IDs and perminant ancors to the html
     # Added at the request of IDMS
@@ -192,6 +204,9 @@ def transform_html(input_html_file, template_html_file,
         anchor.set('title', permalink_for)
         anchor.set('data-anchor-icon', '§')
         anchor.set('class', 'anchor-link')
+
+        # I also feel like removing paraBusinessSub-SectionHeading
+        heading.classes.remove('paraBusinessSub-SectionHeading')
 
 
     # find where to put the Toc
