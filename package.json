@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "deploy": "gh-pages -d demo",
-    "watch-sass": "node-sass sass/ --output=demo/css/ --watch --recursive --source-map=demo/css/ --output-style=compressed",
+    "watch-sass": "node-sass sass/ --output=demo/css/  --watch --recursive --source-map=demo/css/ --output-style=compressed",
     "liveserver": "live-server --port=80 --wait=400 demo/",
     "serve": "concurrently --kill-others \"npm:watch-sass\" \"npm:liveserver\""
   },
