@@ -492,7 +492,7 @@ a.toc-link:hover {
   display: inline-block;
   height: inherit;
   left: 0;
-  margin-top: -0.2rem;
+  margin-top: -0.3rem;
   position: absolute;
   width: 2px; }
 
@@ -500,6 +500,6 @@ a.toc-link:hover {
   background-color: #3e1d78; }
 
 .js-toc .toc-list-item {
-  padding-top: 0.5rem; }
+  padding-top: 0.75rem; }
 
 /* ------ End of Automatic Toc  ------------- */
