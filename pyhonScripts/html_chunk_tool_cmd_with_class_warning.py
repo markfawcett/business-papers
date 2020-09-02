@@ -381,13 +381,11 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
                 print('no element')
 
             # itterate through tree and remove CR from tail and text
-            # for element in temp_output_root.iter():
-            #     if element.tail:
-            #         element.tail = element.tail.replace('\r', '')
-            #     if element.text:
-            #         element.text = element.text.replace('\r', '')
-
-
+            for element in temp_output_root.iter():
+                if element.tail:
+                    element.tail = element.tail.replace('\r', '')
+                if element.text:
+                    element.text = element.text.replace('\r', '')
 
             # write out the output html files
             # outputfile_name = os.path.join(os.path.dirname(input_file_name),
