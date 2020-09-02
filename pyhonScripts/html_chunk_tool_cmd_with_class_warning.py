@@ -132,6 +132,7 @@ def bad_classes(input_file_name):
 
 
 def massarge_input_file(input_file_name):
+
     # test for bad classes
     # try:
     bad_classes(input_file_name)
@@ -307,7 +308,7 @@ def massarge_input_file(input_file_name):
 def split_and_output(input_root, template_file_name, input_file_name, output_folder=''):
 
     output_tree = html.parse(template_file_name)
-    output_root = output_tree.getroot()
+    # output_root = output_tree.getroot()
     # put element lists in dict with file_lable as the key
     file_lables_element_lists = {'new_ob': [], 'new_fb': [], 'an': []}
     # select all the paragraphs etc within the top levle divs
@@ -328,7 +329,9 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
         if len(element_list) != 0:
 
             # copy the template tree and add elements needed for this section
-            temp_output_root = deepcopy(output_root)
+            temp_output_tree = deepcopy(output_tree)
+            # temp_output_tree = html.parse(template_file_name)
+            temp_output_root = temp_output_tree.getroot()
 
             # change the title
             if file_lable == 'new_ob':
@@ -377,6 +380,13 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
             else:
                 print('no element')
 
+            # itterate through tree and remove CR from tail and text
+            # for element in temp_output_root.iter():
+            #     if element.tail:
+            #         element.tail = element.tail.replace('\r', '')
+            #     if element.text:
+            #         element.text = element.text.replace('\r', '')
+
 
 
             # write out the output html files
@@ -391,7 +401,7 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
                 outputfile_path = Path(input_file_name).parent.joinpath(outputfile_name)
 
             # created element tree so we can use write method
-            temp_output_tree = ElementTree(temp_output_root)
+            # temp_output_tree = ElementTree(temp_output_root)
             temp_output_tree.write(str(outputfile_path),
                                    doctype=DOCTYPE,
                                    encoding='UTF-8',
