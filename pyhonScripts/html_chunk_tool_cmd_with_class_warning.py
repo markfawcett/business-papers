@@ -333,6 +333,10 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
             # get the position (in the template) where we will inject html (from the input)
             code_injection_point = temp_output_root.xpath('//div[@id="content-goes-here"]')[0]
             for element in element_list:
+                # remove Future Business heading from start of part 2
+                if 'paraChamberSummaryHeading' in element.classes:
+                    if element.text_content().lower() == 'Future Business':
+                        continue
                 # remove the docuemnt headings from the html i.e. part 1 head
                 if 'DocumentTitle' in element.classes:
                     text_content = element.text_content().lower()
@@ -344,9 +348,6 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
                     elif 'part 2' in text_content:
                         h2.text = 'Part 2: Future Business'
                         code_injection_point.append(h2)
-                if 'paraChamberSummaryHeading' in element.classes:
-                    if element.text_content().lower() == 'Future Business':
-                        continue
                 else:
                     code_injection_point.append(element)
 
