@@ -284,12 +284,12 @@ def make_op_table(op_file_paths):
         fb = file_name.replace('OP', 'fb').replace('.html', '.htm')
 
 
-        new_ob_filename = f'new_{ob}l'
-        new_fb_filename = f'new_{fb}l'
+        new_ob_filename = file_name.replace('OP', 'op')
+        # new_fb_filename = f'new_{fb}l'
 
 
         new_ob_html_filepath = new_ob_filename
-        new_fb_html_filepath = new_fb_filename
+        # new_fb_html_filepath = new_fb_filename
 
 
         # row = table_row(
@@ -305,7 +305,6 @@ def make_op_table(op_file_paths):
                       + op.DATES.sitting_date_long
                       + '</td><td>'
                       f'<a href="{new_ob_html_filepath}">{new_ob_filename}</a><br/>'
-                      f'<a href="{new_fb_html_filepath}">{new_fb_filename}</a><br/>'
                       '</td><td>'
                       f'<a href="{op_base_url}{ob}">{ob}</a><br/>'
                       f'<a href="{op_base_url}{an}">{an}</a><br/>'

@@ -275,31 +275,18 @@ def massarge_input_file(input_file_name):
             child.classes.discard('Front-Page-Table')
 
 
-    # Add IDs and perminant ancors to the html
-    # Added at the request of IDMS
-    # need to get all the heading elements
-    xpath = '//h1|//h2|//h3|//h4|//h5|//h6|//*[@class="paraBusinessItemHeading"]' \
-            '|//*[@class="paraBusinessItemHeading-bulleted"]|//*[@class="FbaLocation"]'
-    headings = input_root.xpath(xpath)
-    for i, heading in enumerate(headings):
-        # generate id text
-        id_text = f'{DATES.sitting_date_compact}-{i}'
+    heading_tags = ['h6', 'h5', 'h4', 'h3', 'h2', 'h1']
 
-        if heading.get('id', default=None):
-            heading.set('name', heading.get('id'))
-
-        heading.set('id', id_text)
-        # parmalink_span = SubElement(heading, 'span')
-        # parmalink_span.set('class', 'perma-link')
-        # anchor = SubElement(parmalink_span, 'a')
-        anchor = SubElement(heading, 'a')
-        permalink_for = 'Permalink for ' + heading.text_content()
-        anchor.set('href', '#' + id_text)
-        anchor.set('aria-label', 'Anchor')
-        anchor.set('title', permalink_for)
-        anchor.set('data-anchor-icon', '§')
-        anchor.set('class', 'anchor-link')
-
+    for i, heading_tag in enumerate(heading_tags):
+        if i == 0:
+            # dont do anything because we have h6
+            continue
+        else:
+            # we will replace heading_tag with heading_tags[i-1]
+            # so h1 -> h2, h2 -> h3 etc.
+            new_heading_tag = heading_tags[i - 1]
+            for heading in input_root.xpath(f'//{heading_tag}'):
+                heading.tag = new_heading_tag
 
     # return the modified input html root element
     return input_root
@@ -310,18 +297,18 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
     output_tree = html.parse(template_file_name)
     # output_root = output_tree.getroot()
     # put element lists in dict with file_lable as the key
-    file_lables_element_lists = {'new_ob': [], 'new_fb': [], 'an': []}
+    file_lables_element_lists = {'op': [], 'new_fb': [], 'an': []}
     # select all the paragraphs etc within the top levle divs
     paragraph_elements = input_root.xpath('//body/div/*')
-    list_to_add_to = file_lables_element_lists['new_ob']
+    list_to_add_to = file_lables_element_lists['op']
 
     # look through all the paragraph elemets and find out if any are Annoncements etc
     for paragraph_element in paragraph_elements:
 
-        if (paragraph_element.get('class') == 'DocumentTitle'
-             and 'PART 2' in paragraph_element.text_content().upper()):
-            # start new list for future business
-            list_to_add_to = file_lables_element_lists['new_fb']
+        # if (paragraph_element.get('class') == 'DocumentTitle'
+        #      and 'PART 2' in paragraph_element.text_content().upper()):
+        #     # start new list for future business
+        #     list_to_add_to = file_lables_element_lists['new_fb']
         list_to_add_to.append(paragraph_element)
 
     # build up output trees
@@ -334,12 +321,12 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
             temp_output_root = temp_output_tree.getroot()
 
             # change the title
-            if file_lable == 'new_ob':
+            if file_lable == 'op':
                 title_text = 'Order Paper for ' + DATES.sitting_date_medium
                 h1_text = 'Order Paper for ' + DATES.sitting_date_long
-            elif file_lable == 'new_fb':
-                title_text = 'Future Business as of ' + DATES.sitting_date_medium
-                h1_text = 'Future Business as of ' + DATES.sitting_date_long
+            # elif file_lable == 'new_fb':
+            #     title_text = 'Future Business as of ' + DATES.sitting_date_medium
+            #     h1_text = 'Future Business as of ' + DATES.sitting_date_long
             temp_output_root.xpath('//h1[@id="mainTitle"]')[0].text = h1_text
             temp_output_root.xpath('//head/title')[0].text = title_text
 
@@ -347,9 +334,47 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
             code_injection_point = temp_output_root.xpath('//div[@id="content-goes-here"]')[0]
             for element in element_list:
                 # remove the docuemnt headings from the html i.e. part 1 head
-                if element.get('class', default=None) == 'DocumentTitle':
-                    continue
-                code_injection_point.append(element)
+                if 'DocumentTitle' in element.classes:
+                    text_content = element.text_content().lower()
+                    h2 = Element('h2')
+                    h2.set('class', 'OP-heading-outdent')
+                    if 'part 1' in text_content:
+                        h2.text = 'Part 1: Business Today'
+                        code_injection_point.append(h2)
+                    elif 'part 2' in text_content:
+                        h2.text = 'Part 2: Future Business'
+                        code_injection_point.append(h2)
+                if 'paraChamberSummaryHeading' in element.classes:
+                    if element.text_content().lower() == 'Future Business':
+                        continue
+                else:
+                    code_injection_point.append(element)
+
+
+            # Add IDs and perminant ancors to the html
+            # Added at the request of IDMS
+            # need to get all the heading elements
+            xpath = '//h1|//h2|//h3|//h4|//h5|//h6|//*[@class="paraBusinessItemHeading"]' \
+                    '|//*[@class="paraBusinessItemHeading-bulleted"]|//*[@class="FbaLocation"]'
+            headings = temp_output_root.xpath(xpath)
+            for i, heading in enumerate(headings):
+                # generate id text
+                id_text = f'{DATES.sitting_date_compact}-{i}'
+
+                if heading.get('id', default=None):
+                    heading.set('name', heading.get('id'))
+
+                heading.set('id', id_text)
+                # parmalink_span = SubElement(heading, 'span')
+                # parmalink_span.set('class', 'perma-link')
+                # anchor = SubElement(parmalink_span, 'a')
+                anchor = SubElement(heading, 'a')
+                permalink_for = 'Permalink for ' + heading.text_content()
+                anchor.set('href', '#' + id_text)
+                anchor.set('aria-label', 'Anchor')
+                anchor.set('title', permalink_for)
+                anchor.set('data-anchor-icon', '§')
+                anchor.set('class', 'anchor-link')
 
 
             # create the tables of contents
