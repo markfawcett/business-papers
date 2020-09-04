@@ -74,6 +74,17 @@ def fix_VnP_HTML(input_file_name: str, template_file_name: str,
     # if prepared_date_element is not None and prepared_date_element.text:
     #     prepared_date_element.text += vnP_date
 
+    # put a heading is called 'Chamber business'
+    # if thefirst elemetn has, The house met at in its thing put Chamber  busines sheading
+    xpath = '//p[contains(@class,"ItemTimingHeading")]'
+    first_p = input_root.xpath(xpath)
+    if len(first_p):
+        new_heading = html.Element('h2')
+        new_heading.text = 'Chamber business'
+        new_heading.classes.add('underline')
+        first_p[0].getparent().insert(0, new_heading)
+
+
     # change the input root so that all the paragraphs with numbered spans have another span
     spans = input_root.findall('.//p[@class="numbered InDesignBold"]/span[last()]')
     # print(spans)
@@ -128,9 +139,12 @@ def fix_VnP_HTML(input_file_name: str, template_file_name: str,
               'so the script does not know where to put the elements from the input')
         exit()
 
+
+
     # put the main text flow into the output
     main_text_flow_element = input_root.find('.//div[@class="MainTextFlow"]')
     append_point.extend(main_text_flow_element)
+
 
     if today_string is None:
         output_file_name = get_date_short() + file_extension
