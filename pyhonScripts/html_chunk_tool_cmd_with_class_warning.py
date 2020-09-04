@@ -278,12 +278,11 @@ def massarge_input_file(input_file_name):
     heading_tags = ['h6', 'h5', 'h4', 'h3', 'h2', 'h1']
 
     for i, heading_tag in enumerate(heading_tags):
-        if i == 0:
-            # dont do anything because we have h6
-            continue
-        else:
+        # dont do anything if i ==0 because we have h6
+        if i != 0:
             # we will replace heading_tag with heading_tags[i-1]
             # so h1 -> h2, h2 -> h3 etc.
+            # print('here')
             new_heading_tag = heading_tags[i - 1]
             for heading in input_root.xpath(f'//{heading_tag}'):
                 heading.tag = new_heading_tag
