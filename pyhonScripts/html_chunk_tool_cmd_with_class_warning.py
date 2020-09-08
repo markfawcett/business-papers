@@ -334,7 +334,7 @@ def split_and_output(input_root, template_file_name, input_file_name, output_fol
             for element in element_list:
                 # remove Future Business heading from start of part 2
                 if 'paraChamberSummaryHeading' in element.classes:
-                    if element.text_content().lower() == 'Future Business':
+                    if element.text_content().lower() == 'future business':
                         continue
                 # remove the docuemnt headings from the html i.e. part 1 head
                 if 'DocumentTitle' in element.classes:
