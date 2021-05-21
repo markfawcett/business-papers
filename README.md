@@ -3,8 +3,7 @@ Redesign of House of Commons business papers pages
 
 ## First time Set up
 
-1. Install git.
-    a. [Windows](https://git-scm.com/download)
+1. Install git. [Windows instructions](https://git-scm.com/download)
 2. Install Node.js. Use the LTS version. [Node downloads](https://nodejs.org/en/download/)
 3. Using Git for windows or your terminal, navigate to the folder where you would like to work on this project. E.g. `cd ~/path_to_folder`
 4. do `git clone https://github.com/markfawcett/business-papers.git`
@@ -18,5 +17,5 @@ Redesign of House of Commons business papers pages
 
 
 ## Publishing
-* To publish files to github pages for external review do `npm run deploy`.
+* To publish files to [github pages](https://markfawcett.github.io/business-papers/) for external review do `npm run deploy`.
 
