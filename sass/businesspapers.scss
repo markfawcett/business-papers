@@ -52,6 +52,13 @@ $font-path: 'https://commonsbusiness.parliament.uk/external/html-papers/v1.0/';
 }
 
 // sponsors
+.paraAmendmentSponsor {
+    @include font-bold();
+    margin-bottom: 0;
+}
+.MotionAmmendmentSponsorGroup {
+    margin-top: 1rem;
+}
 .paraMotionSponsor, .MemberInCharge{
     margin-bottom: 0;
 }
@@ -61,7 +68,17 @@ $font-path: 'https://commonsbusiness.parliament.uk/external/html-papers/v1.0/';
 .paraMotionSponsor > p + p{
     margin-top: -$para-spacing;
 }
-
+@media (min-width: 768px) {
+    .paraAmendmentSponsor {
+        padding-left: $indent-amount;
+    }
+    .MotionAmmendmentSponsorGroup {
+        padding-left: $indent-amount;
+    }
+    .paraMotionSub-Paragraph {
+        padding-left: $indent-amount;
+    }    
+}
 
 // Notes
 .paraNotesTag, .paraNotesText{
