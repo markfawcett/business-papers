@@ -1,6 +1,11 @@
 // override font location
 // $font-path: 'https://designsystem.parliament.uk/apps/commons-business/v1.0/fonts';
 $font-path: 'https://commonsbusiness.parliament.uk/external/html-papers/v1.0';
+// on Thursday, 23 February 2023 and Wednesday, 22 February 2023 some fonts weren't working
+// on the live website. The fonts were attempted to be loaded from the below but there was
+// a 500 response code. The above path was not added to the live website for some reason.
+// I will consider adding both paths for the live website...
+$font-path-2: 'https://commonsbusiness.parliament.uk/dist';
 // import colours from PDS design system
 @import '../Design_System_SASS/sass/compatibility/bootstrap-3/bootstrap-3-shims.scss';
 @import '../Design_System_SASS/sass/core/colours.scss';
