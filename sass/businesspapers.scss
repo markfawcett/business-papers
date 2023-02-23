@@ -1,6 +1,6 @@
 // override font location
 // $font-path: 'https://designsystem.parliament.uk/apps/commons-business/v1.0/fonts';
-$font-path: 'https://commonsbusiness.parliament.uk/external/html-papers/v1.0/';
+$font-path: 'https://commonsbusiness.parliament.uk/external/html-papers/v1.0';
 // import colours from PDS design system
 @import '../Design_System_SASS/sass/compatibility/bootstrap-3/bootstrap-3-shims.scss';
 @import '../Design_System_SASS/sass/core/colours.scss';
@@ -77,7 +77,7 @@ $font-path: 'https://commonsbusiness.parliament.uk/external/html-papers/v1.0/';
     }
     .paraMotionSub-Paragraph {
         padding-left: $indent-amount;
-    }    
+    }
 }
 
 // Notes
